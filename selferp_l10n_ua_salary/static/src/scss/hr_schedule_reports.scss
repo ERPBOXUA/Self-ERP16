@@ -1,0 +1,129 @@
+.underlined_input {
+    height: 22px;
+    margin: 0 3px;
+    border-bottom: 1px solid black;
+    font-family: 'PT_font', serif;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.underlined_block_title {
+    flex: 0;
+    margin-right: 10px;
+    font-family: 'PT_font', serif;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.underlined_block_value_container {
+    flex: 1;
+    margin-right: 8px;
+
+    .ub_value {
+        position: relative;
+        top: -3px;
+        width: 100%;
+        min-height: 23px;
+        border-bottom: 1px solid black;
+        padding: 0 10px;
+        font-family: 'PT_font', serif;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .ub_help_info {
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
+
+.underlined_block_value_container_inline {
+    display: inline-block;
+    height: 23px;
+    padding: 0 2px;
+
+    .ub_value {
+        position: relative;
+        top: -3px;
+        display: inline-block;
+        width: 100%;
+        min-height: 23px;
+        padding: 0 5px;
+        border-bottom: 1px solid black;
+        font-family: 'PT_font', serif;
+        font-size: 20px;
+        line-height: 1.2;
+        vertical-align: bottom;
+    }
+}
+
+.underlined_block_inline_text {
+    display: inline-block;
+    margin-right: 2px;
+    height: 23px;
+    font-family: 'PT_font', serif;
+    font-size: 20px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+
+.small_text_block {
+    .underlined_block_title {
+        margin-right: 10px;
+        font-family: 'PT_font', serif;
+        font-size: 18px;
+        line-height: 1.1;
+    }
+
+    .underlined_block_value_container {
+        .ub_value {
+            min-height: 20px;
+            font-family: 'PT_font', serif;
+            font-size: 18px;
+        }
+
+        .ub_help_info {
+            font-size: 12px;
+        }
+    }
+
+    .underlined_block_value_container_inline {
+        height: 20px;
+
+        .ub_value {
+            min-height: 20px;
+            font-family: 'PT_font', serif;
+            font-size: 18px;
+        }
+    }
+
+    .underlined_block_inline_text {
+        height: 20px;
+        font-family: 'PT_font', serif;
+        font-size:  18px;
+    }
+
+}
+
+.custom_table {
+    margin-bottom: 0;
+    border: 3px solid black;
+
+    th {
+        padding: 4px 3px;
+        font-family: 'PT_font', serif;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    td {
+        padding: 2px 3px;
+        font-family: 'PT_font', serif;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+}

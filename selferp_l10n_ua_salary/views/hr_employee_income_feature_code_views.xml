@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_employee_income_feature_code_view_tree" model="ir.ui.view">
+        <field name="name">hr_employee.income.feature.code.view.tree</field>
+        <field name="model">hr.employee.income_feature_code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="short_description"/>
+                <field name="begin_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_employee_income_feature_code_view_form" model="ir.ui.view">
+        <field name="name">hr_employee.income.feature.code.view.form</field>
+        <field name="model">hr.employee.income_feature_code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="code"/>
+                        <h2>
+                            <field name="code"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="begin_date"/>
+                        </group>
+                        <group>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="short_description"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_employee_income_feature_code_action" model="ir.actions.act_window">
+        <field name="name">Income Feature Codes</field>
+        <field name="res_model">hr.employee.income_feature_code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_salary_sick_leave_rate_view_tree" model="ir.ui.view">
+        <field name="name">hr.salary.sick_leave.rate.view.tree</field>
+        <field name="model">hr.salary.sick_leave.rate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="rate" widget="percentage"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_sick_leave_rate_view_form" model="ir.ui.view">
+        <field name="name">hr.salary.sick_leave.rate.view.form</field>
+        <field name="model">hr.salary.sick_leave.rate</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="rate" widget="percentage"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_sick_leave_rate_action" model="ir.actions.act_window">
+        <field name="name">Sick Leave Rates</field>
+        <field name="res_model">hr.salary.sick_leave.rate</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

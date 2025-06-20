@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="account_report_cash_flow_analytic" model="account.report">
+        <field name="name">Cash Flow Analytic</field>
+        <field name="default_opening_date_filter">last_month</field>
+        <field name="load_more_limit" eval="0"/>
+        <field name="filter_hierarchy">optional</field>
+        <field name="filter_analytic" eval="False"/>
+        <field name="filter_analytic_groupby" eval="False"/>
+        <field name="filter_date_range" eval="True"/>
+        <field name="filter_unfold_all" eval="False"/>
+        <field name="filter_growth_comparison" eval="True"/>
+        <field name="filter_period_comparison" eval="True"/>
+        <field name="filter_account_type" eval="False"/>
+        <field name="filter_journals" eval="False"/>
+        <field name="filter_partner" eval="False"/>
+        <field name="filter_show_draft" eval="True"/>
+        <field name="filter_unreconciled" eval="False"/>
+        <field name="line_ids">
+            <record id="account_report_cash_flow_analytic_line_cash_begin" model="account.report.line">
+                <field name="name">Cash and cash equivalents at the beginning of the period</field>
+                <field name="code">OB</field>
+                <field name="groupby">account_id</field>
+                <field name="foldable" eval="True"/>
+                <field name="print_on_new_page" eval="False"/>
+                <field name="hide_if_zero" eval="False"/>
+                <field name="expression_ids">
+                    <record id="account_report_cash_flow_analytic_line_cash_begin_expression_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_id.account_type', '=', 'asset_cash')]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">to_beginning_of_period</field>
+                        <field name="figure_type">monetary</field>
+                        <field name="blank_if_zero" eval="False"/>
+                        <field name="green_on_positive" eval="True"/>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_cash_flow_analytic_line_cash_inflow" model="account.report.line">
+                <field name="name">Cash inflow</field>
+                <field name="code">BIN</field>
+                <field name="groupby">cash_flow_analytic_account_id</field>
+                <field name="foldable" eval="True"/>
+                <field name="print_on_new_page" eval="False"/>
+                <field name="hide_if_zero" eval="False"/>
+                <field name="expression_ids">
+                    <record id="account_report_cash_flow_analytic_line_cash_inflow_expression_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_id.account_type', 'in', ('asset_cash', 'liability_credit_card')), ('debit', '>', 0.0)]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">strict_range</field>
+                        <field name="figure_type">monetary</field>
+                        <field name="blank_if_zero" eval="False"/>
+                        <field name="green_on_positive" eval="True"/>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_cash_flow_analytic_line_cash_outflow" model="account.report.line">
+                <field name="name">Cash outflow</field>
+                <field name="code">BOUT</field>
+                <field name="groupby">cash_flow_analytic_account_id</field>
+                <field name="foldable" eval="True"/>
+                <field name="print_on_new_page" eval="False"/>
+                <field name="hide_if_zero" eval="False"/>
+                <field name="expression_ids">
+                    <record id="account_report_cash_flow_analytic_line_cash_outflow_expression_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_id.account_type', 'in', ('asset_cash', 'liability_credit_card')), ('credit', '>', 0.0)]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">strict_range</field>
+                        <field name="figure_type">monetary</field>
+                        <field name="blank_if_zero" eval="False"/>
+                        <field name="green_on_positive" eval="True"/>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_cash_flow_analytic_line_cash_net" model="account.report.line">
+                <field name="name">Net cash flow</field>
+                <field name="code">NB</field>
+                <field name="foldable" eval="False"/>
+                <field name="print_on_new_page" eval="False"/>
+                <field name="hide_if_zero" eval="False"/>
+                <field name="expression_ids">
+                    <record id="account_report_cash_flow_analytic_line_cash_net_expression_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">aggregation</field>
+                        <field name="formula">BIN.balance + BOUT.balance</field>
+                        <field name="date_scope">strict_range</field>
+                        <field name="figure_type">monetary</field>
+                        <field name="blank_if_zero" eval="False"/>
+                        <field name="green_on_positive" eval="True"/>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_cash_flow_analytic_line_cash_end" model="account.report.line">
+                <field name="name">Cash and cash equivalents at the end of the period</field>
+                <field name="groupby">account_id</field>
+                <field name="foldable" eval="True"/>
+                <field name="print_on_new_page" eval="False"/>
+                <field name="hide_if_zero" eval="False"/>
+                <field name="expression_ids">
+                    <record id="account_report_cash_flow_analytic_line_cash_end_expression_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_id.account_type', '=', 'asset_cash')]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">normal</field>
+                        <field name="figure_type">monetary</field>
+                        <field name="blank_if_zero" eval="False"/>
+                        <field name="green_on_positive" eval="True"/>
+                    </record>
+                </field>
+            </record>
+        </field>
+        <field name="column_ids">
+            <record id="account_report_cash_flow_analytic_column_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+                <field name="figure_type">monetary</field>
+                <field name="sortable" eval="False"/>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+        </field>
+    </record>
+
+
+</odoo>

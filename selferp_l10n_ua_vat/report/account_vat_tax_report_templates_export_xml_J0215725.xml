@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="account_vat_tax_report_template_export_xml_J0215725">
+        <t t-call="selferp_l10n_ua_ext.export_xml_template_account_base" t-translation="off">
+            <!-- HEAD -->
+            <HZN t-if="data['HZ'] == 'HZN'">1</HZN>
+            <HZU t-elif="data['HZ'] == 'HZU'">1</HZU>
+            <HZ t-else="">1</HZ>
+            <HZY><t t-out="data['HZY']"/></HZY>
+            <HZM><t t-out="data['HZM']"/></HZM>
+            <HZYP t-att="['xsi:nil', 'true' if data['HZYP'] is None else None]"><t t-out="data['HZYP']"/></HZYP>
+            <HZKVP t-if="data['HZKVP']"><t t-out="data['HZKVP']"/></HZKVP>
+            <HZMP t-elif="data['HZMP']"><t t-out="data['HZMP']"/></HZMP>
+            <HCHV t-att="['xsi:nil', 'true' if data['HCHV'] is None else None]"><t t-out="data['HCHV']"/></HCHV>
+            <HNAME><t t-out="data['HNAME']"/></HNAME>
+            <HDDGV t-att="['xsi:nil', 'true' if data['HDDGV'] is None else None]"><t t-out="data['HDDGV']"/></HDDGV>
+            <HNDGV t-att="['xsi:nil', 'true' if data['HNDGV'] is None else None]"><t t-out="data['HNDGV']"/></HNDGV>
+            <HTIN><t t-out="data['HTIN']"/></HTIN>
+            <HNPDV><t t-out="data['HNPDV']"/></HNPDV>
+
+            <!-- BODY -->
+            <R011G4 t-att="['xsi:nil', 'true' if data['R011G4'] is None else None]"><t t-out="data['R011G4']"/></R011G4>
+            <R011G5 t-att="['xsi:nil', 'true' if data['R011G5'] is None else None]"><t t-out="data['R011G5']"/></R011G5>
+            <R011G6 t-att="['xsi:nil', 'true' if data['R011G6'] is None else None]"><t t-out="data['R011G6']"/></R011G6>
+            <R011G7 t-att="['xsi:nil', 'true' if data['R011G7'] is None else None]"><t t-out="data['R011G7']"/></R011G7>
+            <R012G4 t-att="['xsi:nil', 'true' if data['R012G4'] is None else None]"><t t-out="data['R012G4']"/></R012G4>
+            <R012G5 t-att="['xsi:nil', 'true' if data['R012G5'] is None else None]"><t t-out="data['R012G5']"/></R012G5>
+            <R012G6 t-att="['xsi:nil', 'true' if data['R012G6'] is None else None]"><t t-out="data['R012G6']"/></R012G6>
+            <R012G7 t-att="['xsi:nil', 'true' if data['R012G7'] is None else None]"><t t-out="data['R012G7']"/></R012G7>
+            <R0131G4 t-att="['xsi:nil', 'true' if data['R0131G4'] is None else None]"><t t-out="data['R0131G4']"/></R0131G4>
+            <R0131G5 t-att="['xsi:nil', 'true' if data['R0131G5'] is None else None]"><t t-out="data['R0131G5']"/></R0131G5>
+            <R0131G6 t-att="['xsi:nil', 'true' if data['R0131G6'] is None else None]"><t t-out="data['R0131G6']"/></R0131G6>
+            <R0131G7 t-att="['xsi:nil', 'true' if data['R0131G7'] is None else None]"><t t-out="data['R0131G7']"/></R0131G7>
+            <R0132G4 t-att="['xsi:nil', 'true' if data['R0132G4'] is None else None]"><t t-out="data['R0132G4']"/></R0132G4>
+            <R0132G5 t-att="['xsi:nil', 'true' if data['R0132G5'] is None else None]"><t t-out="data['R0132G5']"/></R0132G5>
+            <R0132G6 t-att="['xsi:nil', 'true' if data['R0132G6'] is None else None]"><t t-out="data['R0132G6']"/></R0132G6>
+            <R0132G7 t-att="['xsi:nil', 'true' if data['R0132G7'] is None else None]"><t t-out="data['R0132G7']"/></R0132G7>
+            <R0133G4 t-att="['xsi:nil', 'true' if data['R0133G4'] is None else None]"><t t-out="data['R0133G4']"/></R0133G4>
+            <R0133G5 t-att="['xsi:nil', 'true' if data['R0133G5'] is None else None]"><t t-out="data['R0133G5']"/></R0133G5>
+            <R0133G6 t-att="['xsi:nil', 'true' if data['R0133G6'] is None else None]"><t t-out="data['R0133G6']"/></R0133G6>
+            <R0133G7 t-att="['xsi:nil', 'true' if data['R0133G7'] is None else None]"><t t-out="data['R0133G7']"/></R0133G7>
+
+            <!-- TABLE №2 -->
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG2D t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG2D'] is None else None}"><t t-out="r['T2RXXXXG2D']"/></T2RXXXXG2D>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG3S t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG3S'] is None else None}"><t t-out="r['T2RXXXXG3S']"/></T2RXXXXG3S>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG4D t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG4D'] is None else None}"><t t-out="r['T2RXXXXG4D']"/></T2RXXXXG4D>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG5S t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG5S'] is None else None}"><t t-out="r['T2RXXXXG5S']"/></T2RXXXXG5S>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG6 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG6'] is None else None}"><t t-out="r['T2RXXXXG6']"/></T2RXXXXG6>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG7 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG7'] is None else None}"><t t-out="r['T2RXXXXG7']"/></T2RXXXXG7>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG8 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG8'] is None else None}"><t t-out="r['T2RXXXXG8']"/></T2RXXXXG8>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG9 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG9'] is None else None}"><t t-out="r['T2RXXXXG9']"/></T2RXXXXG9>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG10 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG10'] is None else None}"><t t-out="r['T2RXXXXG10']"/></T2RXXXXG10>
+            </t>
+            <t t-foreach="data['T2RXXXX']" t-as="r">
+                <T2RXXXXG11 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T2RXXXXG11'] is None else None}"><t t-out="r['T2RXXXXG11']"/></T2RXXXXG11>
+            </t>
+
+            <R02G6 t-att="['xsi:nil', 'true' if data['R02G6'] is None else None]"><t t-out="data['R02G6']"/></R02G6>
+            <R02G7 t-att="['xsi:nil', 'true' if data['R02G7'] is None else None]"><t t-out="data['R02G7']"/></R02G7>
+            <R02G8 t-att="['xsi:nil', 'true' if data['R02G8'] is None else None]"><t t-out="data['R02G8']"/></R02G8>
+            <R02G9 t-att="['xsi:nil', 'true' if data['R02G9'] is None else None]"><t t-out="data['R02G9']"/></R02G9>
+            <R02G10 t-att="['xsi:nil', 'true' if data['R02G10'] is None else None]"><t t-out="data['R02G10']"/></R02G10>
+            <R02G11 t-att="['xsi:nil', 'true' if data['R02G11'] is None else None]"><t t-out="data['R02G11']"/></R02G11>
+            <R031G3 t-att="['xsi:nil', 'true' if data['R031G3'] is None else None]"><t t-out="data['R031G3']"/></R031G3>
+            <R031G4 t-att="['xsi:nil', 'true' if data['R031G4'] is None else None]"><t t-out="data['R031G4']"/></R031G4>
+            <R031G5 t-att="['xsi:nil', 'true' if data['R031G5'] is None else None]"><t t-out="data['R031G5']"/></R031G5>
+            <R031G6 t-att="['xsi:nil', 'true' if data['R031G6'] is None else None]"><t t-out="data['R031G6']"/></R031G6>
+            <R031G7 t-att="['xsi:nil', 'true' if data['R031G7'] is None else None]"><t t-out="data['R031G7']"/></R031G7>
+            <R032G3 t-att="['xsi:nil', 'true' if data['R032G3'] is None else None]"><t t-out="data['R032G3']"/></R032G3>
+            <R032G4 t-att="['xsi:nil', 'true' if data['R032G4'] is None else None]"><t t-out="data['R032G4']"/></R032G4>
+            <R032G5 t-att="['xsi:nil', 'true' if data['R032G5'] is None else None]"><t t-out="data['R032G5']"/></R032G5>
+            <R032G6 t-att="['xsi:nil', 'true' if data['R032G6'] is None else None]"><t t-out="data['R032G6']"/></R032G6>
+            <R032G7 t-att="['xsi:nil', 'true' if data['R032G7'] is None else None]"><t t-out="data['R032G7']"/></R032G7>
+            <R033G3 t-att="['xsi:nil', 'true' if data['R033G3'] is None else None]"><t t-out="data['R033G3']"/></R033G3>
+            <R033G4 t-att="['xsi:nil', 'true' if data['R033G4'] is None else None]"><t t-out="data['R033G4']"/></R033G4>
+            <R033G5 t-att="['xsi:nil', 'true' if data['R033G5'] is None else None]"><t t-out="data['R033G5']"/></R033G5>
+            <R033G6 t-att="['xsi:nil', 'true' if data['R033G6'] is None else None]"><t t-out="data['R033G6']"/></R033G6>
+            <R033G7 t-att="['xsi:nil', 'true' if data['R033G7'] is None else None]"><t t-out="data['R033G7']"/></R033G7>
+            <R041G1 t-att="['xsi:nil', 'true' if data['R041G1'] is None else None]"><t t-out="data['R041G1']"/></R041G1>
+            <R041G2 t-att="['xsi:nil', 'true' if data['R041G2'] is None else None]"><t t-out="data['R041G2']"/></R041G2>
+            <R041G3 t-att="['xsi:nil', 'true' if data['R041G3'] is None else None]"><t t-out="data['R041G3']"/></R041G3>
+            <R041G4 t-att="['xsi:nil', 'true' if data['R041G4'] is None else None]"><t t-out="data['R041G4']"/></R041G4>
+            <R041G5 t-att="['xsi:nil', 'true' if data['R041G5'] is None else None]"><t t-out="data['R041G5']"/></R041G5>
+            <R041G6 t-att="['xsi:nil', 'true' if data['R041G6'] is None else None]"><t t-out="data['R041G6']"/></R041G6>
+            <R041G7 t-att="['xsi:nil', 'true' if data['R041G7'] is None else None]"><t t-out="data['R041G7']"/></R041G7>
+            <R041G8 t-att="['xsi:nil', 'true' if data['R041G8'] is None else None]"><t t-out="data['R041G8']"/></R041G8>
+            <R041G9 t-att="['xsi:nil', 'true' if data['R041G9'] is None else None]"><t t-out="data['R041G9']"/></R041G9>
+            <R041G10 t-att="['xsi:nil', 'true' if data['R041G10'] is None else None]"><t t-out="data['R041G10']"/></R041G10>
+            <R041G11 t-att="['xsi:nil', 'true' if data['R041G11'] is None else None]"><t t-out="data['R041G11']"/></R041G11>
+            <R041G12 t-att="['xsi:nil', 'true' if data['R041G12'] is None else None]"><t t-out="data['R041G12']"/></R041G12>
+            <R041G13 t-att="['xsi:nil', 'true' if data['R041G13'] is None else None]"><t t-out="data['R041G13']"/></R041G13>
+            <R041G14 t-att="['xsi:nil', 'true' if data['R041G14'] is None else None]"><t t-out="data['R041G14']"/></R041G14>
+        </t>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_contract_view_form" model="ir.ui.view">
+        <field name="name">hr.contract.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <group name="salary" position="after">
+                <group name="accounting" string="Accounting">
+                    <field name="account_id" options="{'no_create': True}"/>
+                </group>
+            </group>
+            <group name="salary_info" position="after">
+                <group name="benefits" string="Accruals and Deductions">
+                    <field nolabel="1" colspan="2" name="payroll_contract_benefit_ids" context="{'default_contract_id': id}">
+                        <tree>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="payroll_benefit_id"/>
+                            <field name="benefit_type"/>
+                            <field name="benefit_code" optional="hide"/>
+                            <field name="is_alimony" invisible="1"/>
+                            <field name="charge_type" invisible="1"/>
+                            <field name="display_details"/>
+                            <field name="display_receiver"/>
+                            <field name="amount_base"/>
+                            <field name="display_amount"/>
+                            <field name="display_base_rule_code" optional="hide"/>
+                            <field name="schedule_pay"/>
+                            <field name="account_debit_id"/>
+                            <field name="account_credit_id"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <field name="payroll_benefit_id"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="date_from"/>
+                                        <field name="date_to"/>
+                                        <field name="benefit_type"/>
+                                        <field name="charge_type" attrs="{'invisible': [('benefit_type', '!=', 'accrual')]}"/>
+                                        <field name="schedule_pay"/>
+                                        <field name="benefit_code"/>
+                                        <field name="display_details" invisible="1"/>
+                                        <field name="is_alimony" invisible="1"/>
+                                        <field name="receiver_id" attrs="{'invisible': ['|', ('benefit_type', '!=', 'deduction'), ('is_alimony', '!=', True)], 'required': [('benefit_type', '=', 'deduction'), ('is_alimony', '=', True)]}"/>
+                                        <field name="display_receiver" invisible="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="amount_base"/>
+                                        <field name="fixed_amount" attrs="{'invisible': [('amount_base', '!=', 'fixed')], 'required': [('amount_base', '=', 'fixed')]}"/>
+                                        <field name="percent" widget="percentage" attrs="{'invisible': [('amount_base', '!=', 'percent')], 'required': [('amount_base', '=', 'percent')]}"/>
+                                        <field name="percent_in_wages" widget="percentage" attrs="{'invisible': [('amount_base', '!=', 'percent_in_wages')], 'required': [('amount_base', '=', 'percent_in_wages')]}"/>
+                                        <field name="base_rule_code" attrs="{'invisible': [('amount_base', 'not in', ['percent', 'percent_in_wages'])]}"/>
+                                        <field name="display_base_rule_code" invisible="1"/>
+                                        <field name="display_amount" invisible="1"/>
+                                        <field name="account_in_next_period" attrs="{'invisible': ['|', ('charge_type', '!=', 'bonus'), ('benefit_type', '!=', 'accrual')]}"/>
+                                        <field name="account_debit_id"/>
+                                        <field name="account_credit_id"/>
+                                    </group>
+                                </group>
+                                <group string="Children" attrs="{'invisible': ['|', ('benefit_type', '!=', 'deduction'), ('is_alimony', '!=', True)]}">
+                                    <field name="children_ids" nolabel="1" colspan="2" context="{'default_hr_payroll_contract_benefit_id': id}">
+                                        <tree editable="bottom">
+                                            <field name="children_age"/>
+                                            <field name="children_number"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <record id="hr_contract_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_payroll.hr_contract_form_inherit"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='part_time']/group/group" position="after">
+                <group name="non_fixed_working_hours">
+                    <field name="non_fixed_working_hours"/>
+                </group>
+            </xpath>
+            <xpath expr="//div[@name='hourly_wage']" position="after">
+                <field name="timesheet_based_salary" attrs="{'invisible': [('wage_type', '!=', 'hourly')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

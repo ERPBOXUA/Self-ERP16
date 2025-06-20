@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_equipment_view_form" model="ir.ui.view">
+        <field name="name">equipment.form.inherit.selferp_l10n_ua_fixed_asset</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="before">
+                <field name="asset_id" invisible="1"/>
+            </div>
+            <div name="button_box" position="inside">
+                <button name="action_show_asset"
+                        string="Asset"
+                        type="object"
+                        class="oe_stat_button"
+                        attrs="{'invisible': [('asset_id', '=', False)]}">
+                </button>
+            </div>
+
+        </field>
+    </record>
+
+
+</odoo>

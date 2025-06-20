@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_salary_inflation_index_view_tree" model="ir.ui.view" >
+        <field name="name">hr.salary.inflation_index.view.tree</field>
+        <field name="model">hr.salary.inflation_index</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="value" widget="percentage"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_inflation_index_view_form" model="ir.ui.view" >
+        <field name="name">hr.salary.inflation_index.view.form</field>
+        <field name="model">hr.salary.inflation_index</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="value" widget="percentage"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_inflation_index_action" model="ir.actions.act_window">
+        <field name="name">Inflation Indices</field>
+        <field name="res_model">hr.salary.inflation_index</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

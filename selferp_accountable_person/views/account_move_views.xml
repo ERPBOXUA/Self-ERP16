@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.selferp_accountable_person</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='button_cancel']" position="after">
+                <field name="can_convert_to_advance_report" invisible="1"/>
+                <field name="can_convert_to_vendor_bill" invisible="1"/>
+                <button name="action_convert_to_vendor_bill"
+                        type="object"
+                        string="To Vendor Bill"
+                        attrs="{'invisible': [('can_convert_to_vendor_bill', '=', False)]}"/>
+                <button name="action_convert_to_advance_report"
+                        type="object"
+                        string="To Advance Report"
+                        attrs="{'invisible': [('can_convert_to_advance_report', '=', False)]}"/>
+            </xpath>
+
+            <xpath expr="//span[hasclass('o_form_label')]/field[@name='move_type']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('move_type', '=', 'entry'), '&amp;', ('move_type', '=', 'in_invoice'), ('is_advance_report', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_title')]/span[hasclass('o_form_label')]" position="after">
+                <div class="o_form_label" attrs="{'invisible': ['|', ('move_type', '!=', 'in_invoice'), ('is_advance_report', '!=', True)]}">Advance Report</div>
+            </xpath>
+
+            <field name="partner_id" position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('is_advance_report', '=', True), ('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt'))]}</attribute>
+            </field>
+
+            <field name="partner_id" position="after">
+                <field name="is_advance_report" invisible="1"/>
+                <field name="partner_id"
+                       nolabel="1"
+                       widget="res_partner_many2one"
+                       context="{'show_address': 1, 'show_vat': True}"
+                       options="{'always_reload': True, 'no_create': True, 'no_create_edit': True}"
+                       attrs="{'invisible': ['|', ('move_type', '!=', 'in_invoice'), ('is_advance_report', '!=', True)]}"
+                       domain="[
+                            ('company_id', 'in', (company_id, False)),
+                            ('is_company', '=', False),
+                            ('employee_ids', '!=', False)
+                       ] if is_advance_report else [
+                            ('company_id', 'in', (company_id, False))
+                       ]"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_invoice_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tree.inherit.selferp_accountable_person</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_convert_to_vendor_bill_multy"
+                        type="object"
+                        string="To Vendor Bill"
+                        invisible="context.get('default_move_type') != 'in_invoice' or not context.get('default_is_advance_report')"/>
+                <button name="action_convert_to_advance_report_multy"
+                        type="object"
+                        string="To Advance Report"
+                        invisible="context.get('default_move_type') != 'in_invoice' or context.get('default_is_advance_report')"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="account_move_action_advance_reports" model="ir.actions.act_window">
+        <field name="name">Advance Reports</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="domain">[('move_type', '=', 'in_invoice'), ('is_advance_report', '=', True)]</field>
+        <field name="context">{'default_move_type': 'in_invoice', 'default_is_advance_report': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create an advance report</p>
+            <p>Create advance report, register payments and keep track of the discussions with your accountable persons.</p>
+        </field>
+    </record>
+
+
+    <menuitem id="account_move_menu_advance_reports"
+            parent="account.menu_finance_payables"
+            sequence="1"
+            action="account_move_action_advance_reports" />
+
+
+</odoo>

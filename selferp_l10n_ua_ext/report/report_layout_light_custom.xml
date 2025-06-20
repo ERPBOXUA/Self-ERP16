@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="report_layout_light_custom" model="report.layout">
+        <field name="name">Light custom</field>
+        <field name="sequence">6</field>
+        <field name="view_id" ref="selferp_l10n_ua_ext.report_layout_template_light_custom"/>
+    </record>
+
+
+</odoo>

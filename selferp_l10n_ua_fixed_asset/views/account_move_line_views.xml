@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_move_line_form_asset_inherit" model="ir.ui.view">
+        <field name="name">account.move.line.form.inherit.selferp_l10n_ua_fixed_asset</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <field name="asset_ids" position="inside">
+                <tree>
+                    <field name="name"/>
+                    <field name="acquisition_date"/>
+                    <field name="book_value"/>
+                    <field name="value_residual" widget="monetary"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

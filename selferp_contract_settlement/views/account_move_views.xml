@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.selferp_contract_settlement</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='partner_id']" position="after">
+                <field name="contract_id" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//form//field[@name='partner_id']" position="after">
+                <field name="contract_id"/>
+            </xpath>
+            <xpath expr="//group[@id='header_left_group']//field[@name='partner_shipping_id']" position="before">
+                <field name="default_contract_operation_type" invisible="1" />
+                <field name="move_type" invisible="1" />
+                <field name="contract_id"
+                       context="{'default_partner_id': partner_id, 'default_operation_type': default_contract_operation_type}"
+                       attrs="{'invisible': [('move_type', '=', 'entry')], 'readonly': [('state', 'in', ('posted', 'cancel'))]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_invoice_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tree.inherit.selferp_contract_settlement</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="ref" position="before">
+                <field name="contract_id" readonly="1" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

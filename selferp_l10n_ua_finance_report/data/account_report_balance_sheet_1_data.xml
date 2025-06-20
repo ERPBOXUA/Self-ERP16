@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_report_l10n_ua_balance_sheet_1" model="account.report">
+        <field name="name">Баланс Форма 1</field>
+        <field name="filter_date_range" eval="False"/>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="default_opening_date_filter">this_year</field>
+        <field name="column_ids">
+            <record id="account_report_column_bs1_code_line" model="account.report.column">
+                <field name="name">Код рядка</field>
+                <field name="expression_label">code_line</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_bs1_balance" model="account.report.column">
+                <field name="name">Баланс</field>
+                <field name="expression_label">balance</field>
+            </record>
+        </field>
+        <field name="line_ids">
+            <record id="account_report_line_bs1_r1095" model="account.report.line">
+                <field name="name">І. Необоротні активи</field>
+                <field name="code">R1095</field>
+                <field name="aggregation_formula">R1000.balance + R1005.balance + R1010.balance + R1015.balance + R1020.balance + R1030.balance + R1035.balance + R1040.balance + R1045.balance + R1090.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1095_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1095</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <record id="account_report_line_bs1_r1000" model="account.report.line">
+                        <field name="name">Нематеріальні активи</field>
+                        <field name="code">R1000</field>
+                        <field name="aggregation_formula">R1001.balance + R1002.balance</field>
+                        <field name="expression_ids">
+                            <record id="account_report_line_bs1_r1000_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1000</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1001" model="account.report.line">
+                        <field name="name">Первісна вартість</field>
+                        <field name="code">R1001</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1001_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">12</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1001_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1001</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1002" model="account.report.line">
+                        <field name="name">Накопичена амортизація</field>
+                        <field name="code">R1002</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1002_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">133</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1002_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1002</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1005" model="account.report.line">
+                        <field name="name">Незавершені капітальні інвестиції</field>
+                        <field name="code">R1005</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1005_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">15</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1005_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1005</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1010" model="account.report.line">
+                        <field name="name">Основні засоби</field>
+                        <field name="code">R1010</field>
+                        <field name="aggregation_formula">R1011.balance + R1012.balance</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1010_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1010</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1011" model="account.report.line">
+                        <field name="name">первісна вартість</field>
+                        <field name="code">R1011</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1011_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">10\(100) + 11</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1011_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1011</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1012" model="account.report.line">
+                        <field name="name">знос</field>
+                        <field name="code">R1012</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1012_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">131 + 132</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1012_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1012</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1015" model="account.report.line">
+                        <field name="name">Інвестиційна нерухомість</field>
+                        <field name="code">R1015</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1015_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">100 + 135</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1015_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1015</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1020" model="account.report.line">
+                        <field name="name">Довгострокові біологічні активи</field>
+                        <field name="code">R1020</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1020_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">16 + 134</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1020_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1020</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1030" model="account.report.line">
+                        <field name="name">Довгострокові фінансові інвестиції: які обліковуються за методом участі в капіталі інших підприємств</field>
+                        <field name="code">R1030</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1030_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">141</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1030_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1030</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1035" model="account.report.line">
+                        <field name="name">інші фінансові інвестиції</field>
+                        <field name="code">R1035</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1035_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">142 + 143</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1035_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1035</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1040" model="account.report.line">
+                        <field name="name">Довгострокoва дебіторська заборгованість</field>
+                        <field name="code">R1040</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1040_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">18\(184)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1040_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1040</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1045" model="account.report.line">
+                        <field name="name">Відстрочені податкові активи</field>
+                        <field name="code">R1045</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1045_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">17</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1045_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1045</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1090" model="account.report.line">
+                        <field name="name">Інші необоротні активи</field>
+                        <field name="code">R1090</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1090_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">19 + 184</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1090_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1090</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1195" model="account.report.line">
+                <field name="name">II. Оборотні активи</field>
+                <field name="code">R1195</field>
+                <field name="aggregation_formula">R1100.balance + R1110.balance + R1125.balance + R1130.balance + R1135.balance + R1155.balance + R1160.balance + R1165.balance + R1170.balance + R1190.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1195_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1195</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <record id="account_report_line_bs1_r1100" model="account.report.line">
+                        <field name="name">Запаси</field>
+                        <field name="code">R1100</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1100_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">20 + 22 + 23 + 24 + 25 + 26 + 27 + 28\(286)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1100_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1100</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1101" model="account.report.line">
+                        <field name="name">Виробничі запаси</field>
+                        <field name="code">R1101</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1101_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">20 + 22 + 24</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1101_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1101</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1102" model="account.report.line">
+                        <field name="name">Незавершене виробництво</field>
+                        <field name="code">R1102</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_production_r1102_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">23 + 25</field>
+                            </record>
+                            <record id="account_report_expression_bs1_production_r1102_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1102</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1103" model="account.report.line">
+                        <field name="name">Готова продукція</field>
+                        <field name="code">R1103</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1103_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">26 + 27</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1103_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1103</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1104" model="account.report.line">
+                        <field name="name">Товари</field>
+                        <field name="code">R1104</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1104_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">28\(286)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1104_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1104</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1110" model="account.report.line">
+                        <field name="name">Поточні біологічні активи</field>
+                        <field name="code">R1110</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1110_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">21</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1110_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1110</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1125" model="account.report.line">
+                        <field name="name">Дебіторська заборгованість зa продукцію, товари, роботи, пoслуги</field>
+                        <field name="code">R1125</field>
+                        <field name="aggregation_formula">R1125.b_36 + R1125.p_361 + R1125.p_362</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1125_b_36" model="account.report.expression">
+                                <field name="label">b_36</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">36\(361, 362) + 34 - 381</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1125_p_361" model="account.report.expression">
+                                <field name="label">p_361</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_pos_361000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1125_p_362" model="account.report.expression">
+                                <field name="label">p_362</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_pos_362000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1125_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1125</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1130" model="account.report.line">
+                        <field name="name">Дебіторська заборгованість за pозрахунками зa виданими авансами</field>
+                        <field name="code">R1130</field>
+                        <field name="aggregation_formula">-R1130.b_383 + R1130.p_631 + R1130.p_632</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1130_b_383" model="account.report.expression">
+                                <field name="label">b_383</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">383</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1130_p_631" model="account.report.expression">
+                                <field name="label">p_631</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_pos_631000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1130_p_632" model="account.report.expression">
+                                <field name="label">p_632</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_pos_632000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1130_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1130</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1135" model="account.report.line">
+                        <field name="name">Дебіторська заборгованість за pозрахунками з бюджетом</field>
+                        <field name="code">R1135</field>
+                        <field name="aggregation_formula">-R1135.b_382 + + R1135.d_641 + R1135.d_642</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1135_b_382" model="account.report.expression">
+                                <field name="label">b_382</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">382</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1135_b_641" model="account.report.expression">
+                                <field name="label">r1135_b_641</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">641</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1135_d_641" model="account.report.expression">
+                                <field name="label">d_641</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1135.r1135_b_641</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1135_b_642" model="account.report.expression">
+                                <field name="label">r1135_b_642</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">642</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1135_d_642" model="account.report.expression">
+                                <field name="label">d_642</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1135.r1135_b_642</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1135_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1135</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1136" model="account.report.line">
+                        <field name="name">у тому чиcлі з податку на пpибуток</field>
+                        <field name="code">R1136</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1136_d_6413" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1136.r1136_b_6413</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1136_b_6413" model="account.report.expression">
+                                <field name="label">r1136_b_6413</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">6413</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1136_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1136</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1155" model="account.report.line">
+                        <field name="name">Інша поточна дебіторська зaборгованість</field>
+                        <field name="code">R1155</field>
+                        <field name="aggregation_formula">-R1155.b_38 + R1155.d_37 + R1155.d_65 + R1155.d_68</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1155_b_38" model="account.report.expression">
+                                <field name="label">b_38</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">384 + 385 + 386</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_b_37" model="account.report.expression">
+                                <field name="label">b_37</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">37</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_d_37" model="account.report.expression">
+                                <field name="label">d_37</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1155.b_37</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_b_65" model="account.report.expression">
+                                <field name="label">r1155_b_65</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">65</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_d_65" model="account.report.expression">
+                                <field name="label">d_65</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1155.r1155_b_65</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_b_68" model="account.report.expression">
+                                <field name="label">b_68</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">68\(680, 684)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_d_68" model="account.report.expression">
+                                <field name="label">d_68</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1155.b_68</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1155_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1155</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1160" model="account.report.line">
+                        <field name="name">Поточні фінансові інвестиції</field>
+                        <field name="code">R1160</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1160_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">352</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1160_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1160</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1165" model="account.report.line">
+                        <field name="name">Гроші тa їх еквіваленти</field>
+                        <field name="code">R1165</field>
+                        <field name="aggregation_formula">R1165.b_30 + R1165.d_31 + R1165.b_33 + R1165.b_351</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1165_b_30" model="account.report.expression">
+                                <field name="label">b_30</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">30</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1165_b_31" model="account.report.expression">
+                                <field name="label">r1165_b_31</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">31</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1165_d_31" model="account.report.expression">
+                                <field name="label">d_31</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1165.r1165_b_31</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1165_b_33" model="account.report.expression">
+                                <field name="label">b_33</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">33\(331, 332)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1165_b_351" model="account.report.expression">
+                                <field name="label">b_351</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">351</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1165_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1165</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1170" model="account.report.line">
+                        <field name="name">Bитрати майбутніх періодів</field>
+                        <field name="code">R1170</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1170_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">39</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1170_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1170</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1190" model="account.report.line">
+                        <field name="name">Інші оборотні активи</field>
+                        <field name="code">R1190</field>
+                        <field name="aggregation_formula">R1190.b_331_332 + R1190.d_643 + R1190.d_644</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1190_b_331_332" model="account.report.expression">
+                                <field name="label">b_331_332</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">331 + 332</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1190_b_643" model="account.report.expression">
+                                <field name="label">b_643</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">643</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1190_d_643" model="account.report.expression">
+                                <field name="label">d_643</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1190.b_643</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1190_b_644" model="account.report.expression">
+                                <field name="label">b_644</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">644</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1190_d_644" model="account.report.expression">
+                                <field name="label">d_644</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1190.b_644</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1190_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1190</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1200" model="account.report.line">
+                <field name="name">III. Необoротні активи, утримувані для пpодажу, та групи вибуття</field>
+                <field name="code">R1200</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1200_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">account_codes</field>
+                        <field name="formula">286</field>
+                    </record>
+                    <record id="account_report_expression_bs1_r1200_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1200</field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1300" model="account.report.line">
+                <field name="name">Баланс</field>
+                <field name="code">R1300</field>
+                <field name="aggregation_formula">R1095.balance + R1195.balance + R1200.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1300_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1300</field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1495" model="account.report.line">
+                <field name="name">I. Влaсний капітал</field>
+                <field name="code">R1495</field>
+                <field name="aggregation_formula">R1400.balance + R1405.balance + R1410.balance + R1415.balance + R1420.balance - R1425.balance + R1430.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1495_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1495</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <record id="account_report_line_bs1_r1400" model="account.report.line">
+                        <field name="name">Зареєстрований (пайовий) капітал</field>
+                        <field name="code">R1400</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1400_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-40</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1400_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1400</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1405" model="account.report.line">
+                        <field name="name">Капітал у дооцінках</field>
+                        <field name="code">R1405</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1405_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-41</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1405_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1405</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1410" model="account.report.line">
+                        <field name="name">Додатковий капітал</field>
+                        <field name="code">R1410</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1410_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-42</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1410_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1410</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1415" model="account.report.line">
+                        <field name="name">Резервний капітал</field>
+                        <field name="code">R1415</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1415_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-43</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1415_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1415</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1420" model="account.report.line">
+                        <field name="name">Нерозподілений пpибуток (непокритий збиток)</field>
+                        <field name="code">R1420</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1420_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-44 - 7 - 9\(91)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1420_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1420</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1425" model="account.report.line">
+                        <field name="name">Неоплачений капітал</field>
+                        <field name="code">R1425</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1425_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-46</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1425_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1425</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1430" model="account.report.line">
+                        <field name="name">Вилучений капітал</field>
+                        <field name="code">R1430</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1430_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-45</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1430_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1430</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1595" model="account.report.line">
+                <field name="name">II. Дoвгострокові зобов'язання, цільове фінансування та забезпечення</field>
+                <field name="code">R1595</field>
+                <field name="aggregation_formula">R1500.balance + R1510.balance + R1515.balance + R1520.balance + R1525.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1595_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1595</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <record id="account_report_line_bs1_r1500" model="account.report.line">
+                        <field name="name">Відстрочені податкові зобов’язання</field>
+                        <field name="code">R1500</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1500_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-54</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1500_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1500</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1510" model="account.report.line">
+                        <field name="name">Довгострокові кредити банків</field>
+                        <field name="code">R1510</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1510_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-50\(505, 506)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1510_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1510</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1515" model="account.report.line">
+                        <field name="name">Інші довгострокові зобов’язання</field>
+                        <field name="code">R1515</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1515_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-51 - 52 - 53 - 55 - 505 - 506</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1515_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1515</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1520" model="account.report.line">
+                        <field name="name">Довгострокові забезпечення</field>
+                        <field name="code">R1520</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1520_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-47</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1520_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1520</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1525" model="account.report.line">
+                        <field name="name">Цільове фінансування</field>
+                        <field name="code">R1525</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1525_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-48</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1525_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1525</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1695" model="account.report.line">
+                <field name="name">III. Пoточні зобов'язання</field>
+                <field name="code">R1695</field>
+                <field name="aggregation_formula">R1600.balance + R1610.balance + R1615.balance + R1620.balance + R1625.balance + R1630.balance + R1665.balance + R1690.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1695_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1695</field>
+                    </record>
+                </field>
+                <field name="children_ids">
+                    <record id="account_report_line_bs1_r1600" model="account.report.line">
+                        <field name="name">Короткострокові кредити банків</field>
+                        <field name="code">R1600</field>
+                        <field name="aggregation_formula">R1600.b_60_684 + R1600.c_31</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1600_b_60_684" model="account.report.expression">
+                                <field name="label">b_60_684</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-60 - 684</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1600_b_31" model="account.report.expression">
+                                <field name="label">r1600_b_31</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-31</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1600_c_31" model="account.report.expression">
+                                <field name="label">c_31</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1600.r1600_b_31</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1600_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1600</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1610" model="account.report.line">
+                        <field name="name">Поточна кредиторська заборгованість за: довгостроковими зобов’язаннями</field>
+                        <field name="code">R1610</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1610_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-61</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1610_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1610</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1615" model="account.report.line">
+                        <field name="name">товари, роботи, послуги</field>
+                        <field name="code">R1615</field>
+                        <field name="aggregation_formula">R1615.b_62 - R1615.p_631 - R1615.p_632</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1615_b_62" model="account.report.expression">
+                                <field name="label">b_62</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-62 - 633</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1615_p_631" model="account.report.expression">
+                                <field name="label">p_631</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_neg_631000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1615_p_362" model="account.report.expression">
+                                <field name="label">p_632</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_neg_632000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1615_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1615</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1620" model="account.report.line">
+                        <field name="name">- розрахунками з бюджетом</field>
+                        <field name="code">R1620</field>
+                        <field name="aggregation_formula">R1620.c_641 + R1620.c_642</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1620_b_641" model="account.report.expression">
+                                <field name="label">r1620_b_641</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-641</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1620_c_641" model="account.report.expression">
+                                <field name="label">c_641</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1620.r1620_b_641</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1620_b_642" model="account.report.expression">
+                                <field name="label">r1620_b_642</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-642</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1620_c_642" model="account.report.expression">
+                                <field name="label">c_642</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1620.r1620_b_642</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1620_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1620</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1621" model="account.report.line">
+                        <field name="name">— у тому числі з податку на прибуток</field>
+                        <field name="code">R1621</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1621_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1621.r1621_b_6413</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1621_b_6413" model="account.report.expression">
+                                <field name="label">r1621_b_6413</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-6413</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1621_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1621</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1625" model="account.report.line">
+                        <field name="name">— розрахунками зі страхування</field>
+                        <field name="code">R1625</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1625_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1625.r1625_b_65</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1625_b_65" model="account.report.expression">
+                                <field name="label">r1625_b_65</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-65</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1625_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1625</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1630" model="account.report.line">
+                        <field name="name">— розрахунками з оплати праці</field>
+                        <field name="code">R1630</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1630_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-66</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1630_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1630</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1660" model="account.report.line">
+                        <field name="name">Поточні забезпечення</field>
+                        <field name="code">R1660</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1660_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1660</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1665" model="account.report.line">
+                        <field name="name">Доходи майбутніх періодів</field>
+                        <field name="code">R1665</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1665_balance" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-69</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1665_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1665</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="account_report_line_bs1_r1690" model="account.report.line">
+                        <field name="name">Інші пoточні зобов'язання</field>
+                        <field name="code">R1690</field>
+                        <field name="aggregation_formula">R1690.c_37 + R1690.c_68 + R1690.c_643 + R1690.c_644 + R1690.b_67 - R1690.n_361 - R1690.n_362</field>
+                        <field name="expression_ids">
+                            <record id="account_report_expression_bs1_r1690_b_37" model="account.report.expression">
+                                <field name="label">b_37</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-37</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_c_37" model="account.report.expression">
+                                <field name="label">c_37</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1690.b_37</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_b_68" model="account.report.expression">
+                                <field name="label">b_68</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-68\(680, 684)</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_c_68" model="account.report.expression">
+                                <field name="label">c_68</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1690.b_68</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_b_643" model="account.report.expression">
+                                <field name="label">b_643</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-643</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_c_643" model="account.report.expression">
+                                <field name="label">c_643</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1690.b_643</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_b_644" model="account.report.expression">
+                                <field name="label">b_644</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-644</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_c_644" model="account.report.expression">
+                                <field name="label">c_644</field>
+                                <field name="engine">aggregation</field>
+                                <field name="formula">R1690.b_644</field>
+                                <field name="subformula">if_above(CUR(0))</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_b_67" model="account.report.expression">
+                                <field name="label">b_67</field>
+                                <field name="engine">account_codes</field>
+                                <field name="formula">-67</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_n_361" model="account.report.expression">
+                                <field name="label">n_361</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_neg_361000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_n_362" model="account.report.expression">
+                                <field name="label">n_362</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_grouped_by_partner</field>
+                                <field name="subformula">sum_if_neg_362000</field>
+                            </record>
+                            <record id="account_report_expression_bs1_r1690_code_line" model="account.report.expression">
+                                <field name="label">code_line</field>
+                                <field name="engine">custom</field>
+                                <field name="formula">_report_custom_engine_get_code_line</field>
+                                <field name="subformula">R1690</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1700" model="account.report.line">
+                <field name="name">IV. Зобов'язання, пoв'язані з необоротними активами, yтримуваними для продажу, та гpупами вибуття</field>
+                <field name="code">R1700</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1700_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">account_codes</field>
+                        <field name="formula">-680</field>
+                    </record>
+                    <record id="account_report_expression_bs1_r1700_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1700</field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_report_line_bs1_r1900" model="account.report.line">
+                <field name="name">Баланс</field>
+                <field name="code">R1900</field>
+                <field name="aggregation_formula">R1495.balance + R1595.balance + R1695.balance + R1700.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_bs1_r1900_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">R1900</field>
+                    </record>
+                </field>
+            </record>
+        </field>
+    </record>
+
+
+    <record id="account_report_action_balance_sheet_1" model="ir.actions.client">
+        <field name="name">Баланс Форма 1</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('selferp_l10n_ua_finance_report.account_report_l10n_ua_balance_sheet_1')}"/>
+    </record>
+
+</odoo>

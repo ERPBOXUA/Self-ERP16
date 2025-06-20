@@ -1,0 +1,7 @@
+.o_account_report_inventory_report_top_header_row th:not(:first-child) {
+    border: 1px solid black;
+}
+.o_account_report_inventory_report_column_contrast{
+    background-color: #{$o-gray-100};
+    background-clip: padding-box;
+}

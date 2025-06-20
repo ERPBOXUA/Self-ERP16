@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="stock_inventory_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <t t-set="o" t-value="o.with_context(lang='uk_UA')"/>
+
+                    <div class="page">
+                        <div class="row mb-4">
+                            <div class="col-8">
+                                <h2>ІНВЕНТАРИЗАЦІЙНИЙ ОПИС</h2>
+                            </div>
+                            <div class="col-4">
+                                <div id="informations">
+                                    <div class="top-information-elem">
+                                        <strong>№</strong>
+                                        <span t-field="o.name"/>
+                                    </div>
+                                    <div t-if="o.inventory_date" class="top-information-elem" name="inventory_date">
+                                        <strong>Від:</strong>
+                                        <span t-esc="o.inventory_date.strftime('%d.%m.%Y')"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="report-custom-template-content-contacts mb-4">
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="contact-elem">
+                                        <div class="title">Підприємство</div>
+                                        <div class="text">
+                                            <t t-esc="o.company_id.name"/><br/>
+                                            <t t-if="o.company_id.company_registry">
+                                                Код за ЄДРПОУ: <t t-esc="o.company_id.company_registry"/><br/></t>
+                                            <t t-if="o.company_id.phone">
+                                                тел.: <t t-esc="o.company_id.phone"/><br/></t>
+                                            <t t-esc="o._get_custom_address()"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="contact-elem">
+                                        <div class="title">Склад</div>
+                                        <div class="text">
+                                            <t t-if="o.location_ids">
+                                                <t t-foreach="o.location_ids" t-as="location">
+                                                    <span t-field="location.complete_name"/><br/>
+                                                </t>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="contact-elem">
+                                        <div class="title">На підставі:</div>
+                                        <div class="text" id="note">
+                                            <span t-field="o.note"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <table class="table table-sm o_main_table" name="sales_invoice_line_table">
+                                <thead>
+                                    <tr>
+                                        <th name="th_num" class="text-center" style="width: 70px;"><span>№</span></th>
+                                        <th name="th_num" class="text-center" style="width: 30%;"><span>Товар</span></th>
+                                        <th name="th_product_uom_id" class="text-center"><span>Од.</span></th>
+                                        <th name="th_quantity" class="text-end"><span>Облікова кількість</span></th>
+                                        <th name="th_inventory_quantity" class="text-end"><span>Підрахована кількість</span></th>
+                                        <th name="th_quantity" class="text-end"><span>Вартість одиниці</span></th>
+                                        <th name="th_total" class="text-end"><span>Разом</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <t t-foreach="o.inventory_line_ids" t-as="line">
+                                        <tr>
+                                            <td class="text-center"><span t-esc="line_index + 1"/></td>
+                                            <td class="text-start"><span t-field="line.product_id.name"/></td>
+                                            <td class="text-center"><span t-esc="line.product_uom_id.name"/></td>
+                                            <td class="text-end"><span t-esc="line.quantity"/></td>
+                                            <td class="text-end"><span t-esc="line.inventory_quantity"/></td>
+                                             <td t-attf-class="text-end">
+                                                <span class="text-nowrap" t-esc="babel_numbers.format_currency(line.avg_cost, '')"/>
+                                            </td>
+                                            <td class="text-end o_price_total">
+                                                <span class="text-nowrap" t-esc="babel_numbers.format_currency(line.inventory_quantity * line.avg_cost, '')"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <t t-foreach="o.inventory_member_ids" t-as="member">
+                            <div class="report-custom-template-total-block row mb-3" style="page-break-inside: avoid;">
+                                <t t-if="member.role == 'chair'">
+                                    <div class="col-2"><p class="title" style="color: #767676;"><span>Голова комісії</span></p></div>
+                                </t>
+                                <t t-else="">
+                                    <div class="col-2"><p class="title" style="color: #767676;"><span>Члени комісії</span></p></div>
+                                </t>
+                                <div class="col-4"><p style="border-bottom: 1px solid #767676; padding: 0 15px;"><span t-esc="member.employee_id.name"/>&#160;</p></div>
+                                <div class="col-3"><p style="border-bottom: 1px solid #767676; padding: 0 15px;"><span t-esc="member.job_id.name"/>&#160;</p></div>
+                                <div class="col-3">
+                                    <p style="border-bottom: 1px solid #767676; margin-bottom: 0; text-align: center; border-bottom: 1px solid #767676;">
+                                        <span>&#160;</span><br/>
+                                    </p>
+                                    <p style="text-align: center; margin-bottom: 0;">
+                                        <span style="font-size: 12px; color: #767676; line-height: 1;"><i>(підпис)</i></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </t>
+
+                        <div style="page-break-inside: avoid;">
+                            <p class="pt-3 pb-3">
+                                Усі цінності, перелічені в інвентарному описі, комісією перевірені і в моїй присутності прийняті на відповідальне зберігання.
+                            </p>
+
+                            <div class="report-custom-template-signatures mb-5">
+                                <div class="signature-block">
+                                    <div class="title">Підпис матеріально відповідальної особи</div>
+                                    <div class="signature-field">
+                                        <div class="signature-line"></div>
+                                        <div class="sub-text"><i>(підпис)</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

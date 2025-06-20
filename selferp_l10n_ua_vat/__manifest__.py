@@ -1,0 +1,111 @@
+{
+    'name': 'VAT accounting for Ukraine',
+    'category': 'Accounting/Accounting',
+    'version': '16.0.1.1.1',
+    'license': 'OPL-1',
+    'price': 0,
+    'currency': 'EUR',
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+    'sequence': -999999,
+
+    'author': 'Self-ERP',
+    'website': 'https://www.self-erp.com',
+    'support': 'apps@self-erp.com',
+    'summary': """VAT accounting for Ukraine""",
+
+    'images': [
+        'static/description/banner.gif',
+        'static/description/icon.png',
+    ],
+
+    'depends': [
+        'account_accountant',
+        'account_debit_note',
+        'hr',
+        'l10n_ua',
+        'purchase',
+        'sale_management',
+        'stock_account',
+        'uom',
+        'web_enterprise',
+
+        'selferp_contract_settlement',
+        'selferp_l10n_ua_ext',
+    ],
+
+    'data': [
+        'security/ir.model.access.csv',
+        'security/account_vat_tax_report_security.xml',
+
+        'data/account_benefit_code_data.xml',
+        'data/account_report_vat_first_event_data.xml',
+        'data/account_tax_group_data.xml',
+        'data/decimal_precision_data.xml',
+        'data/ir_sequence_data.xml',
+        'data/product_product.xml',
+
+        'views/account_account_views.xml',
+        'views/account_benefit_code_views.xml',
+        'views/account_contract_views.xml',
+        'views/account_move_line_views.xml',
+        'views/account_move_vat_line_views.xml',
+        'views/account_move_views.xml',
+        'views/account_tax_group_views.xml',
+        'views/account_vat_tax_report_views.xml',
+        'views/bank_rec_widget_views.xml',
+        'views/product_template_views.xml',
+        'views/res_company_views.xml',
+        'views/res_config_settings_views.xml',
+        'views/res_partner_views.xml',
+        'views/sale_order_views.xml',
+        'views/purchase_order_views.xml',
+        'views/uom_uom_views.xml',
+
+        'views/account_menuitem.xml',
+
+        'report/account_move_templates.xml',
+        'report/account_vat_tax_report_templates_content_J0200125.xml',
+        'report/account_vat_tax_report_templates_content_J0200525.xml',
+        'report/account_vat_tax_report_templates_content_J0215225.xml',
+        'report/account_vat_tax_report_templates_content_J0200625.xml',
+        'report/account_vat_tax_report_templates_content_J0215825.xml',
+        'report/account_vat_tax_report_templates_content_J0299325.xml',
+        'report/account_vat_tax_report_templates_content_J0299825.xml',
+        'report/account_vat_tax_report_templates_content_J0215725.xml',
+        'report/account_vat_tax_report_templates.xml',
+        'report/account_vat_tax_report_reports.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0200125.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0200525.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0215225.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0200625.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0215825.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0299325.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0299825.xml',
+        'report/account_vat_tax_report_templates_export_xml_J0215725.xml',
+
+        'wizard/account_debit_note_view.xml',
+        'wizard/account_move_reversal_view.xml',
+        'wizard/account_move_vat_invoice_change_stage_view.xml',
+        'wizard/account_move_vat_invoice_import_views.xml',
+        'wizard/account_vat_calculations.xml',
+    ],
+
+    'assets': {
+        'web.assets_frontend': [
+            'selferp_l10n_ua_vat/static/src/scss/account_vat_tax_report_commons.scss',
+        ],
+        'web.assets_backend': [
+            'selferp_l10n_ua_vat/static/src/components/**/*',
+            'selferp_l10n_ua_vat/static/src/views/**/*',
+            'selferp_l10n_ua_vat/static/src/scss/account_vat_tax_report_commons.scss',
+        ],
+        'web.report_assets_common': [
+            'selferp_l10n_ua_vat/static/src/scss/account_vat_tax_report_commons.scss',
+        ],
+    },
+
+    'post_init_hook': 'post_init_hook',
+    'uninstall_hook': 'uninstall_hook',
+}

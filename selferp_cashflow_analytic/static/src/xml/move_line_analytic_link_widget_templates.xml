@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+
+
+    <t t-name="selferp_cashflow_analytic.MoveLineAnalyticLink" owl="1">
+        <t t-if="props.record &amp;&amp; props.record.data.can_change_cash_flow_analytic_account">
+            <a t-if="props.value" href="#" t-on-click="linkRecord">
+                <i class="fa fa-edit mr8"/>
+                <span t-out="props.value[1]"/>
+            </a>
+            <a t-else="" href="#" class="btn btn-sm btn-secondary" t-on-click="linkRecord">
+                <i class="fa fa-edit mr8"/>
+                <span>Select</span>
+            </a>
+        </t>
+        <span t-else="">
+            <t t-if="props.value" t-out="props.value[1]"/>
+        </span>
+    </t>
+
+
+</templates>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_employee_tax_social_benefit_code_view_tree" model="ir.ui.view">
+        <field name="name">hr.employee.tax_social_benefit.code.view.tree</field>
+        <field name="model">hr.employee.tax_social_benefit.code</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="rate" widget="percentage"/>
+                <field name="begin_date"/>
+                <field name="end_date"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_employee_tax_social_benefit_code_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.tax_social_benefit.code.view.form</field>
+        <field name="model">hr.employee.tax_social_benefit.code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="rate" widget="percentage"/>
+                        </group>
+                        <group>
+                            <field name="begin_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_employee_tax_social_benefit_code_action" model="ir.actions.act_window">
+        <field name="name">Tax Social Benefits Codes</field>
+        <field name="res_model">hr.employee.tax_social_benefit.code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="hr_order_type_recruitment" model="hr.order.type">
+        <field name="name">Recruitment</field>
+        <field name="type_group_id" ref="hr_order_type_group_personnel_orders"/>
+    </record>
+
+    <record id="hr_order_type_dismissal" model="hr.order.type">
+        <field name="name">Dismissal</field>
+        <field name="type_group_id" ref="hr_order_type_group_personnel_orders"/>
+    </record>
+
+    <record id="hr_order_type_granting_leave" model="hr.order.type">
+        <field name="name">Granting leave</field>
+        <field name="type_group_id" ref="hr_order_type_group_leave_orders"/>
+    </record>
+
+</odoo>

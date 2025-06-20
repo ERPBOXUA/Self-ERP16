@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+
+    <record id="hr_payroll_benefit_alimony" model="hr.payroll.benefit">
+        <field name="name">Alimony</field>
+        <field name="code">ALIMONY</field>
+        <field name="type">deduction</field>
+        <field name="is_alimony" eval="True"/>
+        <field name="schedule_pay">monthly</field>
+    </record>
+
+
+    <record id="hr_payroll_benefit_quarterly_bonus" model="hr.payroll.benefit">
+        <field name="name">Quarterly Bonus</field>
+        <field name="code">QUARTERLY_BONUS</field>
+        <field name="type">accrual</field>
+        <field name="charge_type">bonus</field>
+        <field name="schedule_pay">quarterly</field>
+    </record>
+
+
+    <record id="hr_payroll_benefit_annual_bonus" model="hr.payroll.benefit">
+        <field name="name">Annual Bonus</field>
+        <field name="code">ANNUAL_BONUS</field>
+        <field name="type">accrual</field>
+        <field name="charge_type">bonus</field>
+        <field name="schedule_pay">annually</field>
+    </record>
+
+
+</odoo>

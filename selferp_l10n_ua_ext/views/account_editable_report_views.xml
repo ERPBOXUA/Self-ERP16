@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_editable_report_view_tree" model="ir.ui.view">
+        <field name="name">account.editable.report.view.tree</field>
+        <field name="model">account.editable.report</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'draft'">
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="state" widget="badge" decoration-success="state == 'generated'" decoration-info="state == 'draft'"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="account_editable_report_view_search" model="ir.ui.view">
+        <field name="name">account.editable.report.view.search</field>
+        <field name="model">account.editable.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Report" filter_domain="[
+                    ('name', 'ilike', self),
+                ]"/>
+
+                <separator/>
+                <filter name="filter_state_draft" string="Draft" domain="[('state', '=', 'draft')]" />
+                <filter name="filter_state_generated" string="Generated" domain="[('state', '=', 'generated')]" />
+                <filter name="filter_state_cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]" />
+
+                <separator/>
+                <filter name="filter_date_from" string="Date from" date="date_from"/>
+                <filter name="filter_date_to" string="Date to" date="date_to"/>
+
+                <filter name="group_by_company"
+                        string="Company"
+                        groups="base.group_multi_company"
+                        domain="[]"
+                        context="{'group_by': 'company_id'}"/>
+                <filter name="group_by_date_from"
+                        string="Date from"
+                        domain="[]"
+                        context="{'group_by': 'date_from'}"/>
+                <filter name="group_by_date_to"
+                        string="Date to"
+                        domain="[]"
+                        context="{'group_by': 'date_to'}"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="account_editable_report_view_form" model="ir.ui.view">
+        <field name="name">account.editable.report.view.form</field>
+        <field name="model">account.editable.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate"
+                            type="object"
+                            string="Generate"
+                            class="btn-primary"
+                            attrs="{'invisible': ['|', ('id', '=', False), ('state', '!=', 'draft')]}"/>
+                    <button name="action_cancel"
+                            type="object"
+                            string="Cancel"
+                            class="btn-secondary"
+                            attrs="{'invisible': ['|', ('id', '=', False), ('state', '=', 'cancelled')]}"/>
+                    <button name="action_reset_to_draft"
+                            type="object"
+                            string="Reset to Draft"
+                            class="btn-secondary"
+                            attrs="{'invisible': ['|', ('id', '=', False), ('state', '!=', 'cancelled')]}"/>
+
+                    <button name="action_download_pdf"
+                            type="object"
+                            string="Download PDF"
+                            class="btn-primary"
+                            attrs="{'invisible': ['|', ('id', '=', False), ('state', '!=', 'generated')]}"/>
+
+                    <button name="action_download_xml"
+                            type="object"
+                            string="Download XML"
+                            class="btn-primary"
+                            attrs="{'invisible': ['|', ('id', '=', False), ('state', '!=', 'generated')]}"/>
+
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+
+                    <widget name="web_ribbon" title="Generated" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'generated')]}"/>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'cancelled')]}"/>
+
+                    <div class="oe_title" attrs="{'invisible': [('id', '=', False)]}">
+                        <h1><field name="name" /></h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="date_from"
+                                   widget="daterange"
+                                   options="{'related_end_date': 'date_to', 'datepicker': {'warn_future': true}}"
+                                   attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                   class="oe_inline"/>
+                            <field name="date_to"
+                                   widget="daterange"
+                                   options="{'related_start_date': 'date_from', 'datepicker': {'warn_future': true}}"
+                                   attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                   class="oe_inline"/>
+                        </group>
+                        <group>
+                            <field name="company_id"
+                                   options="{'no_create': True}"
+                                   attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                   groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+
+                    <notebook name="docs" attrs="{'invisible': ['|', ('id', '=', False), ('state', '=', 'draft')]}">
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

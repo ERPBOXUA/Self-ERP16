@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_report_form" model="ir.ui.view">
+        <field name="name">account.report.form.inherit.selferp_l10n_ua_finance_report</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <field name="filter_partner" position="before">
+                <field name="filter_product"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

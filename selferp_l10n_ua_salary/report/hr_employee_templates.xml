@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="hr_employee_card_template">
+        <t t-call="web.html_container" t-translation="off">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-set="o" t-value="o.with_context(lang='uk_UA')" />
+
+                    <t t-set="gender_select" t-value="dict(o._fields['gender']._description_selection(o.env))"/>
+                    <div class="page employee_card">
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-7 pe-3 justify-content-center">
+                                <div class="underlined_block_value_container mb-4 me-4">
+                                    <div class="ub_value pt-2 pb-1  text-center" t-esc="res_company.name"/>
+                                </div>
+                                <div style="margin-bottom: 10px; width: 100%; text-align: center;">Найменування підприємства (установи, організації)</div>
+                                <div class="text-center">
+                                    <div class="underlined_block_title-inline">Код ЄДРПОУ</div>
+                                    <div class="underlined_block_value_container_inline" style="width: 300px;">
+                                        <div class="ub_value"><t t-esc="res_company.company_registry"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div style="width: 300px; padding-bottom: 8px; text-align: right; font-size: 14px;">Типова форма № П-2</div>
+                                <p class="mb-0 text-center" style="width: 290px; line-height: 1.1;">ЗАТВЕРДЖЕНО</p>
+                                <p class="mb-0" style="line-height: 1.1;">
+                                    Наказ Держкомстату та<br/>
+                                    Міністерства оборони України<br/>
+                                    <div>
+                                        <div class="underlined_block_title-inline" style="line-height: 1.1;">25.12.2009 № 495/656</div>
+                                        <div class="underlined_block_value_container_inline" style="top: -3px; width: 140px;">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-9 pt-3">
+                                <div class="pb-3">
+                                    <table class="table table-bordered custom_table_small" style="width: 100%;">
+                                        <tr style="text-align: center">
+                                            <th>Дата заповнення</th>
+                                            <th>Табельний номер</th>
+                                            <th style="width: 140px;">Індивідуальний<br/> ідентифікаційний<br/> номер</th>
+                                            <th>Стать (чоловіча,<br/> жіноча)</th>
+                                            <th>Вид роботи (основна, за<br/> сумісництвом)</th>
+                                        </tr>
+                                        <tr style="text-align: center">
+                                            <td><t t-if="o.hire_date" t-esc="o.hire_date.strftime('%d.%m.%Y')"/>&#160;</td>
+                                            <td><t t-esc="o.registration_number"/></td>
+                                            <td><t t-esc="o.identification_id"/></td>
+                                            <td><t t-esc="gender_select.get(o.gender) or ''"/></td>
+                                            <td>
+                                                <t t-if="o.employment_type == 'employment_main_place'" t-esc="'основна'"/>
+                                                <t t-if="o.employment_type in ('external_part_time', 'internal_part_time')" t-esc="'за сумісництвом'"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <h1 style="padding-right: 60px; text-align: right; font-weight: bold; font-size: 22px;">
+                                    ОСОБОВА КАРТКА ПРАЦІВНИКА
+                                </h1>
+                                <h4>I. ЗАГАЛЬНІ ВІДОМОСТІ</h4>
+                            </div>
+                            <div class="col-3">
+                                <div class="photo_block" style="margin: 0 auto; width: 145px; height: 170px; border: 1px solid black; padding: 10px;"/>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="d-flex mb-1">
+                                    <div class="d-flex" style="width: 33.333%;">
+                                        <div class="underlined_block_title"><b>1.</b> Прізвище</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.last_name"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex" style="width: 33.333%;">
+                                        <div class="underlined_block_title">Ім’я</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.first_name"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex" style="width: 33.333%;">
+                                        <div class="underlined_block_title">По батькові</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.patronymic"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-1">
+                                    <div style="width: 50%;">
+                                        <div class="d-flex" style="width: 100%">
+                                            <div class="underlined_block_title"><b>2.</b> Дата народження</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value text-center">
+                                                    <t t-if="o.birthday">
+                                                        <t t-esc="babel_dates.format_date(o.birthday, 'dd MMMM yyyy', locale='uk_UA')"/> р.
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 50%;">
+                                        <div class="d-flex" style="width: 100%">
+                                            <div class="underlined_block_title"><b>3.</b> Громадянство</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-esc="o.country_id.name"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <b>4.</b> Освіта (базова загальна середня, повна загальна середня, професійно-технічна, неповна вища, базова вища, повна вища)
+                                </div>
+                                 <t t-set="valid_lines" t-value="o.resume_line_ids.filtered(lambda rec: rec.line_type_id == o.env.ref('hr_skills.resume_type_education'))"/>
+                                <div class="d-flex mb-1">
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value">
+                                            <t t-set="ed_type" t-value="valid_lines.mapped('education_type')"/>
+                                            <t t-set="education_type_select" t-value="dict(o.resume_line_ids._fields['education_type']._description_selection(o.env))"/>
+                                            <t t-if="ed_type">
+                                                <t t-if="ed_type.sort()"/>
+                                                <t t-if="education_type_select" t-esc="education_type_select.get(ed_type[-1])"/>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <table class="table table-bordered custom_table" style="width: 100%;">
+                                        <tr style="text-align: center;">
+                                            <th>Назва освітнього закладу</th>
+                                            <th>Диплом (свідоцтво), серія, номер</th>
+                                            <th>Рік закінчення</th>
+                                        </tr>
+                                        <t t-foreach="valid_lines" t-as="res_line">
+                                            <tr>
+                                                <td><t t-esc="res_line.name"/></td>
+                                                <td><t t-esc="res_line.diploma"/></td>
+                                                <td><t t-if="res_line.date_end" t-esc="res_line.date_end.strftime('%Y')"/></td>
+                                            </tr>
+                                        </t>
+                                        <t t-if="len(valid_lines) &lt; 4" t-foreach="range(4 - len(valid_lines))" t-as="res_line">
+                                            <tr>
+                                                <td>&#160;</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </t>
+                                        <tr style="text-align: center;">
+                                            <th>Спеціальність (професія) за дипломом (свідоцтвом)</th>
+                                            <th>Кваліфікація за дипломом<br/>(свідоцтвом)</th>
+                                            <th>Форма навчання<br/> (денна, вечірня,<br/> заочна)</th>
+                                        </tr>
+                                        <t t-set="study_form_select" t-value="dict(o.resume_line_ids._fields['study_form']._description_selection(o.env))"/>
+                                        <t t-foreach="valid_lines" t-as="res_line">
+                                            <tr>
+                                                <td><t t-esc="res_line.diploma_speciality"/></td>
+                                                <td><t t-esc="res_line.diploma_qualification"/></td>
+                                                <td><t t-if="study_form_select" t-esc="study_form_select.get(res_line.study_form)"/></td>
+                                            </tr>
+                                        </t>
+                                        <t t-if="len(valid_lines) &lt; 4" t-foreach="range(4 - len(valid_lines))" t-as="res_line">
+                                            <tr>
+                                                <td>&#160;</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+                                <t t-set="valid_lines" t-value="o.resume_line_ids.filtered(lambda rec: rec.line_type_id == o.env.ref('selferp_l10n_ua_salary.hr_resume_line_type_post_graduate'))"/>
+                                <div class="mb-2">
+                                    <t t-set="post_grad_edu" t-value="valid_lines.mapped('post_graduate_education')"/>
+                                    <t t-set="post_grad_edu_top" t-value=""/>
+                                    <t t-if="post_grad_edu">
+                                        <t t-if="post_grad_edu.sort()"/>
+                                        <t t-set="post_grad_edu_top" t-value="post_grad_edu[-1]"/>
+                                    </t>
+                                    <b>5.</b> Післядипломна професійна підготовка: навчання в
+                                    <span t-attf-class="custom_checkbox_data_elem {{ 'active' if post_grad_edu_top == '1_post_higher_edu' else '' }}">
+                                        <t t-if="post_grad_edu_top == '1_post_higher_edu'" t-esc="'X'"/>
+                                    </span> аспірантурі
+
+                                    <span t-attf-class="custom_checkbox_data_elem {{ 'active' if post_grad_edu_top == '2_adjunct' else '' }}">
+                                        <t t-if="post_grad_edu_top == '2_adjunct'" t-esc="'X'"/>
+                                    </span> ад’юнктурі
+
+                                    <span t-attf-class="custom_checkbox_data_elem {{ 'active' if post_grad_edu_top == '3_doctoral_edu' else '' }}">
+                                        <t t-if="post_grad_edu_top == '3_doctoral_edu'" t-esc="'X'"/>
+                                    </span> докторантурі (необхідне відмітити х)
+                                </div>
+                                <div class="mb-2">
+                                    <table class="table table-bordered custom_table" style="width: 100%;">
+                                        <tr style="text-align: center">
+                                            <th>Назва освітнього, наукового закладу</th>
+                                            <th>Диплом, номер, дата видачі</th>
+                                            <th>Рік закінчення</th>
+                                            <th>Науковий ступінь, учене звання</th>
+                                        </tr>
+                                        <t t-foreach="valid_lines" t-as="res_line">
+                                            <tr>
+                                                <td><t t-esc="res_line.name"/></td>
+                                                <td><t t-esc="res_line.diploma_num_state"/></td>
+                                                <td><t t-if="res_line.date_end" t-esc="res_line.date_end.strftime('%Y')"/></td>
+                                                <td><t t-esc="res_line.scientific_degree"/></td>
+                                            </tr>
+                                        </t>
+                                        <t t-if="len(valid_lines) &lt; 2" t-foreach="range(2 - len(valid_lines))" t-as="res_line">
+                                            <tr>
+                                                <td>&#160;</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+                                <t t-set="valid_lines" t-value="o.resume_line_ids.filtered(lambda rec: rec.line_type_id == o.env.ref('hr_skills.resume_type_experience'))"/>
+                                <t t-set="last_work_place" t-value=""/>
+                                <t t-foreach="valid_lines" t-as="work_place">
+                                    <t t-if="work_place and work_place.date_end">
+                                        <t t-if="not last_work_place" t-set="last_work_place" t-value="work_place"/>
+                                        <t t-if="work_place.date_end > last_work_place.date_end" t-set="last_work_place" t-value="work_place"/>
+                                    </t>
+                                </t>
+                                <div class="d-flex mb-1">
+                                    <div style="width: 50%;">
+                                        <div class="d-flex">
+                                            <div class="underlined_block_title"><b>6.</b> Останнє місце роботи</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-if="last_work_place" t-esc="last_work_place.name"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="width: 50%;">
+                                        <div class="d-flex">
+                                            <div class="underlined_block_title">посада (професія) </div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-if="last_work_place" t-esc="last_work_place.job_position"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="d-flex" style="width: 60%;">
+                                        <div class="underlined_block_title"><b>7.</b> Стаж роботи  станом на</div>
+                                        <div style="white-space: nowrap; font-size: 11px; margin-right: 15px;">
+                                            <p>
+                                                <span class="underlined_block_value_container_inline" style="width: 150px;">
+                                                    <span class="ub_value"><t t-if="o.hire_date" t-esc="o.hire_date.strftime('%d.%m.%Y')"/></span>
+                                                </span>
+                                                <span class="underlined_block_inline_text">p.</span>
+                                            </p>
+                                        </div>
+                                        <div>Загальний</div>
+                                    </div>
+                                    <div class="d-flex" style="width: 40%;">
+                                        <div class="d-flex" style="width: 30%;">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-esc="o.work_experience_days"/></div>
+                                            </div>
+                                            <div class="underlined_block_title">днів</div>
+                                        </div>
+                                        <div class="d-flex" style="width: 30%;">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-esc="o.work_experience_months"/></div>
+                                            </div>
+                                            <div class="underlined_block_title">місяців</div>
+                                        </div>
+                                        <div class="d-flex" style="width: 30%;">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-esc="o.work_experience_years"/></div>
+                                            </div>
+                                            <div class="underlined_block_title">років</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-1">
+                                    <div style="width: 60%; padding-right: 15px; text-align: right;">що дає право на надбавку за вислугу років</div>
+                                    <div class="d-flex" style="width: 40%;">
+                                        <div class="d-flex" style="width: 30%;">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"></div>
+                                            </div>
+                                            <div class="underlined_block_title">днів</div>
+                                        </div>
+                                        <div class="d-flex" style="width: 30%;">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"></div>
+                                            </div>
+                                            <div class="underlined_block_title">місяців</div>
+                                        </div>
+                                        <div class="d-flex" style="width: 30%;">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"></div>
+                                            </div>
+                                            <div class="underlined_block_title">років</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <b>8.</b> Дата та причина звільнення (скорочення штатів; за власним бажанням,
+                                    за прогул та інші порушення, невідповідність
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <div class="underlined_block_title d-flex">
+                                        <div>займаній посаді тощо)</div>
+                                        <span class="underlined_block_value_container" style="min-width: 140px;">
+                                            <div class="ub_value" style="width: 140px;">
+                                                <t t-if="last_work_place and last_work_place.date_end" t-esc="last_work_place.date_end.strftime('%d.%m.%Y')"/>
+                                            </div>
+                                        </span>
+                                        <span class="underlined_block_inline_text">p.</span>
+                                    </div>
+                                    <t t-if="last_work_place" t-set="dismissal_reason_select" t-value="dict(last_work_place._fields['dismissal_reason']._description_selection(o.env))"/>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value">
+                                            <t t-if="last_work_place and dismissal_reason_select" t-esc="dismissal_reason_select.get(last_work_place.dismissal_reason)"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><b>9.</b> Відомості про отримання пенсії (у разі наявності вказати вид пенсійних виплат згідно з чинним законодавством)</div>
+                                <div class="d-flex mb-1">
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"><t t-esc="o.information_on_receiving_pensions"/></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <div class="underlined_block_title"><b>10.</b> Родинний стан</div>
+                                    <t t-set="marital_select" t-value="dict(o._fields['marital']._description_selection(o.env))"/>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value">
+                                            <t t-if="o.marital and marital_select" t-esc="marital_select.get(o.marital)"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <table class="table table-bordered custom_table" style="width: 100%;">
+                                        <tr style="text-align: center">
+                                            <th>Ступінь родинного зв’язку<br/> (склад сім'ї)</th>
+                                            <th style="width: 50%;">ПІБ</th>
+                                            <th>Рік народження</th>
+                                        </tr>
+                                        <t t-foreach="o.family_ids" t-as="family_line">
+                                            <tr>
+                                                <td><t t-esc="family_line.family_member"/></td>
+                                                <td><t t-esc="family_line.family_member_name"/></td>
+                                                <td><t t-if="family_line.family_member_birth_date" t-esc="family_line.family_member_birth_date.strftime('%d.%m.%Y')"/></td>
+                                            </tr>
+                                        </t>
+                                        <t t-set="family_lines_range" t-value="range(4 - len(o.family_ids)) if o.family_ids and len(o.family_ids) &lt; 4 else 4"/>
+                                        <t t-foreach="family_lines_range" t-as="res_line">
+                                            <tr>
+                                                <td>&#160;</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+                                <div>
+                                    <b>11.</b> Місце фактичного проживання (область, місто, район, вулиця, № будинку, квартири, номер контактного телефону,
+                                </div>
+                                <div class="d-flex mb-1">
+                                    <div class="underlined_block_title">поштовий індекс)</div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value">
+                                            <t t-if="o.address_home_id">
+                                                <t t-if="o.address_home_id.street">
+                                                    <t t-esc="o.address_home_id.street"/>
+                                                    <t t-esc="o.address_home_id.street2"/>,
+                                                </t>
+                                                <t t-if="o.address_home_id.city">
+                                                    <t t-esc="o.address_home_id.city"/>,
+                                                </t>
+                                                <t t-if="o.address_home_id.state_id">
+                                                    <t t-esc="o.address_home_id.state_id.name"/>,
+                                                </t>
+                                                <t t-if="o.address_home_id.country_id">
+                                                    <t t-esc="o.address_home_id.country_id.name"/>,
+                                                </t>
+                                                <t t-if="o.address_home_id.zip">
+                                                    <t t-esc="o.address_home_id.zip"/>,
+                                                </t>
+                                                <t t-esc="o.address_home_id.phone"/>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="underlined_block_title"><b>12.</b> Місце проживання за державною реєстрацією</div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value">
+                                            <t t-if="o.is_equal_to_registration_address">
+                                                <t t-if="o.address_home_id">
+                                                    <t t-if="o.address_home_id.street">
+                                                        <t t-esc="o.address_home_id.street"/>
+                                                        <t t-esc="o.address_home_id.street2"/>,
+                                                    </t>
+                                                    <t t-if="o.address_home_id.city">
+                                                        <t t-esc="o.address_home_id.city"/>,
+                                                    </t>
+                                                    <t t-if="o.address_home_id.state_id">
+                                                        <t t-esc="o.address_home_id.state_id.name"/>,
+                                                    </t>
+                                                    <t t-if="o.address_home_id.country_id">
+                                                        <t t-esc="o.address_home_id.country_id.name"/>,
+                                                    </t>
+                                                    <t t-if="o.address_home_id.zip">
+                                                        <t t-esc="o.address_home_id.zip"/>,
+                                                    </t>
+                                                    <t t-esc="o.address_home_id.phone"/>
+                                                </t>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="o.registration_address"/>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="d-flex" style="width: 40%;">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex" style="width: 35%;">
+                                        <div class="d-flex" style="width: 50%;">
+                                            <div class="underlined_block_title">Паспорт: серія</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-esc="o.passport_series"/></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex" style="width: 50%;">
+                                            <div class="underlined_block_title">№</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"><t t-esc="o.passport_id"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex" style="width: 25%;">
+                                        <div class="underlined_block_title">, ким  виданий</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-1">
+                                    <div class="d-flex" style="width: 75%;">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.passport_issuing_authority"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex" style="width: 25%;">
+                                        <div class="underlined_block_title">, дата видачі</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-if="o.passport_issue_date" t-esc="o.passport_issue_date.strftime('%d.%m.%Y')"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="page-break-inside: avoid">
+                            <h4>ІІ. ВІДОМОСТІ ПРО ВІЙСЬКОВИЙ ОБЛІК</h4>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Група обліку</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.register_uit"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Категорія обліку</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.category_unit"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Склад</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.rank_group"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Військове звання</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.military_rank"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Військово-облікова спеціальність №</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.military_registration_speciality_no"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Придатність до військової служби</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.fit_for_military_service"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Назва райвійськкомату за місцем реєстрації</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.commissariat_at_registration"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Назва райвійськкомату за місцем фактичного проживання</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.commissariat_at_home_address"/></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title">Перебування на спеціальному обліку</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"><t t-esc="o.staying_on_a_special_register"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3" style="page-break-inside: avoid;">
+                            <h4>ІІІ. ПРОФЕСІЙНА ОСВІТА НА ВИРОБНИЦТВІ (ЗА РАХУНОК ПІДПРИЄМСТВА-РОБОТОДАВЦЯ)</h4>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <table class="table table-bordered custom_table" style="width: 100%;">
+                                        <tr style="text-align: center;">
+                                            <th style="width: 130px;">Дата</th>
+                                            <th>Назва структурного підрозділу</th>
+                                            <th>Період навчання</th>
+                                            <th>Вид навчання</th>
+                                            <th>Форма навчання</th>
+                                            <th style="width: 35%;">Назва документа, що посвідчує професійну освіту, ким виданий</th>
+                                        </tr>
+                                        <t t-set="valid_lines" t-value="o.resume_line_ids.filtered(lambda rec: rec.line_type_id == o.env.ref('selferp_l10n_ua_salary.hr_resume_line_type_education_company_expense'))"/>
+
+                                        <t t-foreach="valid_lines" t-as="res_line">
+                                            <tr>
+                                                <td><t t-if="res_line.company_expense_education_date" t-esc="res_line.company_expense_education_date.strftime('%d.%m.%Y')"/></td>
+                                                <td><t t-esc="res_line.company_expense_education_name"/></td>
+                                                <td><t t-esc="res_line.company_expense_education_period"/></td>
+                                                <td><t t-esc="res_line.company_expense_education_type"/></td>
+                                                <td><t t-esc="res_line.company_expense_education_form"/></td>
+                                                <td><t t-esc="res_line.company_expense_education_document"/></td>
+                                            </tr>
+                                        </t>
+                                        <t t-if="len(valid_lines) &lt; 10" t-foreach="range(10 - len(valid_lines))" t-as="res_line">
+                                            <tr>
+                                                <td>&#160;</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4>IV. ПРИЗНАЧЕННЯ І ПЕРЕВЕДЕННЯ</h4>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <table class="table table-bordered custom_table" style="width: 100%;">
+                                        <tr style="text-align: center;">
+                                            <th style="width: 130px;" rowspan="2">Дата</th>
+                                            <th rowspan="2">Назва структурного<br/> підрозділу (код)</th>
+                                            <th colspan="2">Професія, посада</th>
+                                            <th rowspan="2">Розряд<br/> (оклад)</th>
+                                            <th rowspan="2">Підстава,<br/> наказ №</th>
+                                            <th rowspan="2">Підпис<br/> працівника</th>
+                                        </tr>
+                                        <tr style="text-align: center">
+                                            <th style="width: 140px;">назва</th>
+                                            <th style="width: 100px;">код за КП*</th>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                *Відповідно до Класифікатора професій ДК 003-2005, затвердженого наказом Держстандарту України від 26.12.2005 №375,
+                                з урахуванням позначки кваліфікаційного  рівня (6 знаків, наприклад, код професії "муляр" – 7122.2).
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h4>V. ВІДПУСТКИ</h4>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <table class="table table-bordered custom_table mb-2" style="width: 100%;">
+                                        <tr style="text-align: center;">
+                                            <th rowspan="2">Вид відпустки</th>
+                                            <th rowspan="2">За який період</th>
+                                            <th colspan="2">Дата</th>
+                                            <th rowspan="2">Підстава,<br/> наказ №</th>
+                                        </tr>
+                                        <tr style="text-align: center;">
+                                            <th style="width: 120px;">початку відпустки</th>
+                                            <th style="width: 120px;">закінчення відпустки</th>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&#160;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                    <div style="page-break-inside: avoid;">
+                                        <div class="d-flex">
+                                            <div class="underlined_block_title">Додаткові відомості</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="underlined_block_title">Дата і причина звільнення (підстава)</div>
+                                            <div class="underlined_block_value_container">
+                                                <div class="ub_value"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="page-break-inside: avoid;">
+                            <div class="d-flex mb-3">
+                                <div class="d-flex" style="width: 45%;">
+                                    <div class="underlined_block_title">Працівник кадрової служби</div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value" style="text-align: center">
+                                            <t t-if="o.hr_position_id and o.hr_position_id.job_id" t-esc="o.hr_position_id.job_id.name"/>
+                                        </div>
+                                        <div class="ub_help_info">(посада)</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex" style="width: 55%;">
+                                    <div class="d-flex ps-4" style="width: 40%;">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                            <div class="ub_help_info">(підпис)</div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex ps-4" style="width: 60%;">
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value" style="text-align: center;"><t t-if="o.hr_position_id" t-esc="o.hr_position_id.name"/></div>
+                                            <div class="ub_help_info">(ПІБ)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="d-flex" style="width: 45%;">
+                                    <div class="underlined_block_title">Підпис працівника</div>
+                                    <div class="underlined_block_value_container" style="padding-left: 60px;">
+                                        <div class="ub_value"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center" style="width: 55%;">
+                                    <div class="d-flex" style="width: 400px; padding-left: 100px;">
+                                        <div class="underlined_block_title" style="margin-right: 2px;">"</div>
+                                        <div class="underlined_block_value_container flex_0" style="margin-right: 2px; min-width: 35px;">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                        <div class="underlined_block_title">"</div>
+                                        <div class="underlined_block_value_container">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                        <div class="underlined_block_title">20</div>
+                                        <div class="underlined_block_value_container flex_0" style="min-width: 35px;">
+                                            <div class="ub_value"></div>
+                                        </div>
+                                        <div class="underlined_block_title">p</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

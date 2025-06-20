@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    
+    <record id="account_analytic_plan_template_operating_expenses" model="account.analytic.plan.template">
+        <field name="name">Елементи операційних витрат</field>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" eval="False"/>
+        <field name="account_template_ids">
+            <record id="account_analytic_account_template_operating_expenses_FR2500" model="account.analytic.account.template">
+                <field name="name">Матеріальні затрати</field>
+                <field name="code">FR2500</field>
+            </record>
+            <record id="account_analytic_account_template_operating_expenses_FR2505" model="account.analytic.account.template">
+                <field name="name">Витрати на оплату праці</field>
+                <field name="code">FR2505</field>
+            </record>
+            <record id="account_analytic_account_template_operating_expenses_FR2510" model="account.analytic.account.template">
+                <field name="name">Відрахування на соціальні заходи</field>
+                <field name="code">FR2510</field>
+            </record>
+            <record id="account_analytic_account_template_operating_expenses_FR2515" model="account.analytic.account.template">
+                <field name="name">Амортизація</field>
+                <field name="code">FR2515</field>
+            </record>
+            <record id="account_analytic_account_template_operating_expenses_FR2520" model="account.analytic.account.template">
+                <field name="name">Iнші операційні витрати</field>
+                <field name="code">FR2520</field>
+            </record>
+        </field>
+    </record>
+
+
+</odoo>

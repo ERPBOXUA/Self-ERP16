@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="ADV_ESV" model="hr.salary.rule.category">
+        <field name="name">Advance Salary - ESV</field>
+        <field name="code">ADV_ESV</field>
+    </record>
+
+    <record id="ADV" model="hr.salary.rule.category">
+        <field name="name">Salary - Advance</field>
+        <field name="code">ADV</field>
+    </record>
+
+    <record id="ESV" model="hr.salary.rule.category">
+        <field name="name">Salary - ESV</field>
+        <field name="code">ESV</field>
+    </record>
+
+    <record id="PDFO" model="hr.salary.rule.category">
+        <field name="name">Salary - PDFO</field>
+        <field name="code">PDFO</field>
+    </record>
+
+    <record id="MT" model="hr.salary.rule.category">
+        <field name="name">Salary - MT</field>
+        <field name="code">MT</field>
+    </record>
+
+    <record id="TECHNICAL" model="hr.salary.rule.category">
+        <field name="name">Salary - Technical</field>
+        <field name="code">TECHNICAL</field>
+    </record>
+
+</odoo>

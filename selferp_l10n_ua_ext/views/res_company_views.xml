@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.selferp_l10n_ua_ext</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="tax_inspection_id" options="{'no_create': True}" />
+            </field>
+
+            <field name="partner_id" position="after">
+                <field name="company_legal_form" widget="radio" options="{'horizontal': True}" />
+                <field name="code_kved"/>
+                <field name="code_kprv"/>
+                <field name="code_kotauu"/>
+            </field>
+
+            <field name="currency_id" position="after">
+                <field name="general_bank_account_id" />
+            </field>
+            <sheet position="before">
+                <field name="partner_id" invisible="1"/>
+            </sheet>
+
+            <xpath expr="//page[@name='general_info']/group" position="inside">
+                <group string="Responsible Persons">
+                    <field name="director_id" />
+                    <field name="chief_accountant_id" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

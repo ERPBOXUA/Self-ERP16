@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="partner_ledger_search_template_extra_options" inherit_id="account_reports.search_template_extra_options" primary="True">
+        <!-- Modify this -->
+    </template>
+
+
+    <template id="partner_ledger_search_template" inherit_id="account_reports.search_template" primary="True">
+        <xpath expr="//div[@id='extra_options_dropdown']/t" position="replace">
+            <t t-call="selferp_l10n_ua_ext.partner_ledger_search_template_extra_options"/>
+        </xpath>
+    </template>
+
+
+    <record id="account_reports.partner_ledger_report" model="account.report">
+        <field name="filter_accounts" eval="True"/>
+        <field name="search_template">selferp_l10n_ua_ext.partner_ledger_search_template</field>
+    </record>
+
+
+</odoo>

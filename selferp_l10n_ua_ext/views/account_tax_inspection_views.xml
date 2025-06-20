@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_tax_inspection_view_tree" model="ir.ui.view">
+        <field name="name">account.tax.inspection.tree</field>
+        <field name="model">account.tax.inspection</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="not active">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="dpi_registry_code"/>
+                <field name="type"/>
+                <field name="address"/>
+                <field name="phone"/>
+                <field name="active" invisible="1"/>
+                <field name="area_code" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="account_tax_inspection_view_search" model="ir.ui.view">
+        <field name="name">account.tax.inspection.search</field>
+        <field name="model">account.tax.inspection</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Tax Inspection" filter_domain="[
+                    '|',
+                        ('code', 'ilike', self),
+                        ('name', 'ilike', self),
+                ]"/>
+
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+
+                <filter name="group_by_area_code" string="Administrative Area" context="{'group_by': 'area_code'}" />
+                <filter name="group_by_district_code" string="Administrative District" context="{'group_by': 'district_code'}" />
+                <filter name="group_by_type" string="Type" context="{'group_by': 'type'}" />
+            </search>
+        </field>
+    </record>
+
+
+    <record id="account_tax_inspection_view_form" model="ir.ui.view">
+        <field name="name">account.tax.inspection.form</field>
+        <field name="model">account.tax.inspection</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" class="text-break"/></h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="area_code"/>
+                            <field name="district_code"/>
+                            <field name="district_name"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                            <field name="dpi_registry_code"/>
+                            <field name="address"/>
+                            <field name="phone"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="account_tax_inspection_action" model="ir.actions.act_window">
+        <field name="name">Tax Inspections</field>
+        <field name="res_model">account.tax.inspection</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

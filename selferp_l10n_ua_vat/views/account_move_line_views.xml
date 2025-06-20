@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_move_line_search_bank_rec_widget" model="ir.ui.view">
+        <field name="name">account.move.line.search.bank_rec_widget.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account_accountant.view_account_move_line_search_bank_rec_widget"/>
+        <field name="priority" eval="200" />
+        <field name="arch" type="xml">
+            <field name="contract_id" position="after">
+                <field name="linked_sale_order_id"/>
+                <field name="linked_purchase_order_id"/>
+            </field>
+
+            <filter name="group_by_contract_id" position="after">
+                <filter name="group_by_linked_sale_order_id" string="Sale Order" context="{'group_by': 'linked_sale_order_id'}" />
+                <filter name="group_by_linked_purchase_order_id" string="Purchase Order" context="{'group_by': 'linked_purchase_order_id'}" />
+            </filter>
+        </field>
+    </record>
+
+
+    <record id="move_line_tree" model="ir.ui.view">
+        <field name="name">move.line.tree.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="priority" eval="200" />
+        <field name="arch" type="xml">
+           <field name="contract_id" position="after">
+               <field name="linked_sale_order_id" readonly="1" optional="hide"/>
+               <field name="linked_purchase_order_id" readonly="1" optional="hide"/>
+           </field>
+        </field>
+    </record>
+
+
+    <record id="view_account_move_line_list_bank_rec_widget" model="ir.ui.view">
+        <field name="name">account.move.line.list.bank_rec_widget.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account_accountant.view_account_move_line_list_bank_rec_widget"/>
+        <field name="priority" eval="200" />
+        <field name="arch" type="xml">
+            <field name="contract_id" position="after">
+                <field name="linked_sale_order_id" readonly="1" optional="show"/>
+                <field name="linked_purchase_order_id" readonly="1" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_move_line_form" model="ir.ui.view">
+        <field name="name">account.move.line.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="priority" eval="200" />
+        <field name="arch" type="xml">
+            <field name="contract_id" position="after">
+                <field name="linked_sale_order_id" readonly="1" />
+                <field name="linked_purchase_order_id" readonly="1" />
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

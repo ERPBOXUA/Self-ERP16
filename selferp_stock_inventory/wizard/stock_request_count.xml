@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="stock_inventory_request_count_form_view" model="ir.ui.view">
+        <field name="name">stock.request.count.form.inherit.selferp_stock_inventory</field>
+        <field name="model">stock.request.count</field>
+        <field name="inherit_id" ref="stock.stock_inventory_request_count_form_view"/>
+        <field name="arch" type="xml">
+            <button name="action_request_count" position="after">
+                <button name="action_create_inventory" type="object" string="Inventory"/>
+            </button>
+        </field>
+    </record>
+
+
+</odoo>

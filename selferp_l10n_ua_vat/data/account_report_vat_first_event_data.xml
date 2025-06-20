@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="search_template_vat_first_event" inherit_id="account_reports.search_template" primary="True">
+        <xpath expr="//div[hasclass('o_account_reports_filter_partner')]" position="before">
+            <t t-call="selferp_l10n_ua_vat.search_template_partner_account_type"/>
+            <t t-call="selferp_l10n_ua_vat.search_template_tracking_first_event"/>
+        </xpath>
+        <xpath expr="//div[@id='extra_options_dropdown']/t" position="replace">
+            <t t-call="selferp_l10n_ua_vat.search_template_extra_options_vat_first_event"/>
+        </xpath>
+    </template>
+
+
+    <template id="search_template_partner_account_type">
+        <div class="btn-group dropdown o_account_reports_filter_partner_account_type">
+            <button type="button" class="o-no-caret btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                <span class="fa fa-fw fa-user"
+                      role="img"
+                      title="Account"
+                      aria-label="Account"/>
+                <t>Account</t>:&amp;nbsp;
+                <t t-if="options['partner_account_type'] == 'asset_receivable'">Receivable</t>
+                <t t-elif="options['partner_account_type'] == 'liability_payable'">Payable</t>
+            </button>
+            <div class="dropdown-menu o_filter_menu" role="menu">
+                <a role="menuitem"
+                   class="dropdown-item js_account_reports_one_choice_filter"
+                   title="Receivable"
+                   data-filter="partner_account_type"
+                   data-id="asset_receivable"
+                >Receivable</a>
+                <a role="menuitem"
+                   class="dropdown-item js_account_reports_one_choice_filter"
+                   title="Payable"
+                   data-filter="partner_account_type"
+                   data-id="liability_payable"
+                >Payable</a>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="search_template_tracking_first_event">
+        <div class="btn-group dropdown o_account_reports_filter_tracking_first_event">
+            <button type="button" class="o-no-caret btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                <span class="fa fa-fw fa-calculator"
+                      role="img"
+                      title="Type of tracking the first event"
+                      aria-label="Type of tracking the first event"/>
+                <t>First Event</t>:&amp;nbsp;
+                <t t-if="options['tracking_first_event'] == 'in_general'">In general by counterparty</t>
+                <t t-elif="options['tracking_first_event'] == 'by_contract'">In terms of contracts</t>
+                <t t-elif="options['tracking_first_event'] == 'by_order'">In terms of orders</t>
+                <t t-elif="options['tracking_first_event'] == 'all'">All</t>
+            </button>
+            <div class="dropdown-menu o_filter_menu" role="menu">
+                <a role="menuitem"
+                   class="dropdown-item js_account_reports_one_choice_filter"
+                   title="Tracking the first event in general by counterparty"
+                   data-filter="tracking_first_event"
+                   data-id="in_general"
+                >In general by counterparty</a>
+                <a role="menuitem"
+                   class="dropdown-item js_account_reports_one_choice_filter"
+                   title="Tracking the first event in terms of contracts"
+                   data-filter="tracking_first_event"
+                   data-id="by_contract"
+                >In terms of contracts</a>
+                <a role="menuitem"
+                   class="dropdown-item js_account_reports_one_choice_filter"
+                   title="Tracking the first event in terms of orders"
+                   data-filter="tracking_first_event"
+                   data-id="by_order"
+                >In terms of orders</a>
+                <div role="separator" class="dropdown-divider"/>
+                <a role="menuitem"
+                   class="dropdown-item js_account_reports_one_choice_filter"
+                   title="Tracking the first event in general by counterparty, in terms of contracts or orders"
+                   data-filter="tracking_first_event"
+                   data-id="all"
+                >All</a>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="search_template_extra_options_vat_first_event" inherit_id="account_reports.search_template_extra_options" primary="True">
+        <xpath expr="//div[@role='menu']" position="inside">
+            <a t-if="options['tracking_first_event'] == 'by_contract'"
+               role="menuitem"
+               class="dropdown-item js_account_report_bool_filter"
+               title="Group by Contract"
+               data-filter="groupby_contract"
+            >Group by Contract</a>
+            <a t-if="options['partner_account_type'] == 'asset_receivable' and options['tracking_first_event'] == 'by_order'"
+               role="menuitem"
+               class="dropdown-item js_account_report_bool_filter"
+               title="Group by Sale Order"
+               data-filter="groupby_sale_order"
+            >Group by Sale Order</a>
+            <a t-if="options['partner_account_type'] == 'liability_payable' and options['tracking_first_event'] == 'by_order'"
+               role="menuitem"
+               class="dropdown-item js_account_report_bool_filter"
+               title="Group by Purchase Order"
+               data-filter="groupby_purchase_order"
+            >Group by Purchase Order</a>
+        </xpath>
+    </template>
+
+
+    <template id="line_template_vat_first_event" inherit_id="account_reports.line_template" primary="True">
+        <xpath expr="//span[hasclass('account_report_line_name')]" position="inside">
+            <t t-set="_line_id_model_info" t-value="report._get_model_info_from_id(line.get('id'))" />
+            <t t-if="_line_id_model_info[0] == 'res.partner' and line.get('unfoldable')">
+                <t t-if="_line_id_model_info[1]">
+                    &amp;nbsp;<a t-att-data-id="line.get('id')" action="action_open_record" class="no_print oe_link_reports">Open</a>
+                </t>
+                &amp;nbsp;<a t-att-data-line_id="line.get('id')"
+                         t-att-data-name="line.get('name')"
+                         t-att-data-view_ref="'account.view_move_line_tree_grouped_partner'"
+                         action="action_open_journal_items"
+                         class="no_print oe_link_reports">
+                    ⇒ Journal Items
+                </a>
+                <t t-if="line.get('create_vat_invoices_allowed')">
+                    &amp;nbsp;<a t-att-data-id="line.get('id')" action="action_create_vat_invoices_by_partner" class="no_print oe_link_reports">Create VAT Invoices</a>
+                </t>
+            </t>
+            <t t-elif="_line_id_model_info[0] in ('account.contract', 'sale.order', 'purchase.order') and _line_id_model_info[1]">
+                &amp;nbsp;<a t-att-data-id="line.get('id')" action="action_open_record" class="no_print oe_link_reports">Open</a>
+            </t>
+        </xpath>
+    </template>
+
+
+    <template id="main_template_vat_first_event" inherit_id="account_reports.main_template" primary="True">
+        <xpath expr="//table" position="attributes">
+            <attribute name="class">o_account_reports_table table-hover table-bold-unfold</attribute>
+        </xpath>
+    </template>
+
+
+    <record id="account_report_vat_first_event" model="account.report">
+        <field name="name">First Event</field>
+        <field name="filter_multi_company">selector</field>
+        <field name="filter_date_range" eval="True" />
+        <field name="default_opening_date_filter">last_month</field>
+        <field name="filter_show_draft" eval="False"/>
+        <field name="filter_unreconciled" eval="False"/>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="filter_period_comparison" eval="False"/>
+        <field name="filter_growth_comparison" eval="False" />
+        <field name="filter_hierarchy">never</field>
+        <field name="filter_account_type" eval="False" />
+        <field name="filter_journals" eval="False"/>
+        <field name="filter_analytic" eval="True" />
+        <field name="filter_partner" eval="True"/>
+        <field name="filter_fiscal_position" eval="False" />
+        <field name="search_bar" eval="True"/>
+        <field name="load_more_limit" eval="80"/>
+        <field name="custom_handler_model_id" ref="model_account_report_vat_first_event_handler"/>
+        <field name="search_template">selferp_l10n_ua_vat.search_template_vat_first_event</field>
+        <field name="main_template">selferp_l10n_ua_vat.main_template_vat_first_event</field>
+        <field name="line_template">selferp_l10n_ua_vat.line_template_vat_first_event</field>
+        <field name="column_ids">
+            <record id="account_report_vat_first_event_journal_code" model="account.report.column">
+                <field name="name">JRNL</field>
+                <field name="expression_label">journal_code</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_vat_first_event_account_code" model="account.report.column">
+                <field name="name">Account</field>
+                <field name="expression_label">account_code</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_vat_first_event_debit" model="account.report.column">
+                <field name="name">Debit</field>
+                <field name="expression_label">debit</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+            <record id="account_report_vat_first_event_credit" model="account.report.column">
+                <field name="name">Credit</field>
+                <field name="expression_label">credit</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+            <record id="account_report_vat_first_event_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="False"/>
+            </record>
+            <record id="account_report_vat_first_event_amount" model="account.report.column">
+                <field name="name">First Event</field>
+                <field name="expression_label">amount_first_event</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+            <record id="account_report_vat_tax_amount" model="account.report.column">
+                <field name="name">Tax</field>
+                <field name="expression_label">amount_vat_tax</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="line_template_partner_ledger_report" inherit_id="account_reports.line_template_partner_ledger_report" priority="999">
+        <xpath expr="//a[@action='action_partner_reconcile']" position="after">
+                &amp;nbsp;<a action="action_export_file_reconciliation_report" class="no_print oe_link_reports">Reconciliation report</a>
+        </xpath>
+    </template>
+
+
+</odoo>

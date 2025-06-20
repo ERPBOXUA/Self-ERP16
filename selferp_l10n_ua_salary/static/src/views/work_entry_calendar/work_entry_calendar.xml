@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="selferp_l10n_ua_salary.calendar.controlButtons" t-inherit="hr_work_entry_contract.calendar.controlButtons" t-inherit-mode="extension" owl="1">
+        <xpath expr="//span[hasclass('btn-regenerate-work-entries')]" position="after">
+            <span class="btn-print-timesheet">
+                <button class="btn btn-secondary" t-on-click="onPrintTimesheet">Print Timesheet</button>
+            </span>
+        </xpath>
+    </t>
+
+</templates>

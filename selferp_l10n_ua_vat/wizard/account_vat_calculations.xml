@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_vat_calculations_view_form" model="ir.ui.view">
+        <field name="name">account.vat.calculations.view.form</field>
+        <field name="model">account.vat.calculations</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Create VAT Invoices">
+                            <field name="period_begin_date"
+                                   placeholder="Pick start of period"
+                                   options="{'datepicker': {'warn_future': true}}" />
+                            <field name="period_end_date"
+                                   placeholder="Pick end of period"
+                                   options="{'datepicker': {'warn_future': true}}" />
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_vat_proceed" type="object" string="Proceed" class="btn-primary" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+           </form>
+        </field>
+    </record>
+
+
+    <record id="account_vat_calculations_action_create_invoices" model="ir.actions.act_window">
+        <field name="name">VAT Create invoices</field>
+        <field name="res_model">account.vat.calculations</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="accounting_vat_calculations_menu_create_invoices"
+              name="VAT Create invoices"
+              action="account_vat_calculations_action_create_invoices"
+              parent="menu_accounting_vat_mass_actions"
+              sequence="10"/>
+
+</odoo>

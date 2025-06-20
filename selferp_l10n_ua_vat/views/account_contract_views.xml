@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_contract_view_form" model="ir.ui.view">
+        <field name="name">account.contract.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.contract</field>
+        <field name="inherit_id" ref="selferp_contract_settlement.account_contract_view_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_vat_invoices"
+                        class="oe_stat_button"
+                        type="object"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('vat_invoice_total', '=', 0)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="vat_invoice_total" widget="monetary"/>
+                        </span>
+                        <span class="o_stat_text">VAT Invoices</span>
+                    </div>
+                </button>
+
+                <button name="action_view_vendor_vat_invoices"
+                        class="oe_stat_button"
+                        type="object"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('vendor_vat_invoice_total', '=', 0)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="vendor_vat_invoice_total" widget="monetary"/>
+                        </span>
+                        <span class="o_stat_text">Vendor VAT Invoices</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+
+
+</odoo>

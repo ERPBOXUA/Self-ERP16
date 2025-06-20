@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!--
+        ESV PDFO Report paper formats
+    -->
+
+    <record id="hr_salary_esv_pdfo_paperformat" model="report.paperformat">
+        <field name="name">Salary ESV-PDFO Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">6</field>
+        <field name="margin_bottom">6</field>
+        <field name="margin_left">6</field>
+        <field name="margin_right">6</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_paperformat_landscape" model="report.paperformat">
+        <field name="name">Salary ESV-PDFO Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">6</field>
+        <field name="margin_bottom">6</field>
+        <field name="margin_left">6</field>
+        <field name="margin_right">6</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+
+
+    <!--
+        ESV PDFO Report actions
+    -->
+
+    <record id="hr_salary_esv_pdfo_report_action_J0500109" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0500109)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0500109</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0500109</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat"/>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_report_action_J0510109" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0510109)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510109</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510109</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat"/>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_report_action_J0510209" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0510209)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510209</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510209</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat"/>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_report_action_J0510309" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0510309)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510309</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510309</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat"/>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_report_action_J0510409" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0510409)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510409</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510409</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat_landscape"/>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_report_action_J0510509" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0510509)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510509</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510509</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat_landscape"/>
+    </record>
+
+
+    <record id="hr_salary_esv_pdfo_report_action_J0510609" model="ir.actions.report">
+        <field name="name">Salary ESV-PDFO Report (J0510609)</field>
+        <field name="model">hr.pdfo.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510609</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_template_J0510609</field>
+        <field name="print_report_name">'Salary - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_salary.hr_salary_esv_pdfo_paperformat"/>
+    </record>
+
+
+</odoo>

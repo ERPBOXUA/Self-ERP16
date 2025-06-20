@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="line_template_partner_ledger_report" inherit_id="account_reports.line_template_partner_ledger_report">
+        <xpath expr="//span[hasclass('account_report_line_name')]" position="inside">
+            <t t-set="_line_id_model_info" t-value="report._get_model_info_from_id(line.get('id'))" />
+            <t t-if="_line_id_model_info[0] == 'account.contract' and _line_id_model_info[1]">
+                &amp;nbsp;<a t-att-data-id="line.get('id')" action="action_open_contract" class="no_print oe_link_reports">Open</a>
+            </t>
+        </xpath>
+    </template>
+
+
+    <template id="partner_ledger_search_template_extra_options_group_by_contract" inherit_id="selferp_l10n_ua_ext.partner_ledger_search_template_extra_options">
+        <xpath expr="//div[@role='menu']" position="inside">
+            <a role="menuitem"
+               class="dropdown-item js_account_report_bool_filter"
+               title="Group by Contract"
+               data-filter="groupby_contract"
+            >Group by Contract</a>
+        </xpath>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_account_asset_form" model="ir.ui.view">
+        <field name="name">account.asset.form.inherit.selferp_l10n_ua_fixed_asset</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <button name="action_asset_modify" position="attributes">
+                <attribute name="string">Operations</attribute>
+            </button>
+            <button name="set_to_running" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': ['|', ('state', '!=', 'close'), '&amp;', ('asset_type', '=', 'purchase'), ('sell_date', '!=', False)],
+                }</attribute>
+            </button>
+            <button name="action_asset_modify" position="after">
+                <button name="action_asset_sell"
+                        type="object"
+                        states="on_hold,held_on_sell"
+                        string="Sell"
+                        class="oe_highlight"/>
+            </button>
+
+            <div name="button_box" position="inside">
+                <button name="action_show_equipment"
+                        string="Equipment"
+                        type="object"
+                        class="oe_stat_button"
+                        attrs="{'invisible': ['|', ('asset_type', '!=', 'purchase'), ('equipment_id', '=', False)]}">
+                </button>
+            </div>
+
+            <field name="original_value" position="before">
+                <field name="gaap" invisible="1"/>
+                <field name="sell_date" invisible="1"/>
+                <field name="parent_id" invisible="1"/>
+                <field name="move_asset_sell_id" invisible="1"/>
+                <field name="transfer_of_assets_balances" invisible="1"/>
+                <field name="product_id" attrs="{'invisible': [('asset_type', 'in', ('sale', 'expense'))]}" options="{'no_create': True}"/>
+                <field name="asset_number" attrs="{'invisible': [('asset_type', 'in', ('sale', 'expense'))]}"/>
+                <field name="commissioning_date" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('parent_id', '!=', False)]}"/>
+                <field name="equipment_id" invisible="1"/>
+            </field>
+
+            <field name="acquisition_date" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': ['|', ('state', '=', 'model'), ('asset_type', '!=', 'purchase')],
+                    'readonly': ['|', ('state','!=','draft'), ('original_move_line_ids', '!=', [])],
+                }</attribute>
+            </field>
+            <xpath expr="//sheet/group/group/field[@name='method_progress_factor']" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('method', 'in', ('linear', '50/50', '100'))],
+                    'required': [('method', 'in', ('degressive', 'degressive_then_linear'))],
+                }</attribute>
+            </xpath>
+            <xpath expr="//sheet/notebook/page/group/group/field[@name='method_progress_factor']" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('method', 'in', ('linear', '50/50', '100'))],
+                    'required': [('method', 'in', ('degressive', 'degressive_then_linear'))],
+                }</attribute>
+            </xpath>
+            <xpath expr="//sheet/group/group/div/field[@name='method_number']" position="attributes">
+                <attribute name="attrs">{'readonly': [('method', '=', '100')], 'required': 1}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//sheet/notebook/page/group/group/div/field[@name='method_number']" position="attributes">
+                <attribute name="attrs">{'readonly': [('asset_type', '=', 'purchase'), ('method', '=', '100')], 'required': 1}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//sheet/group/group/div/field[@name='method_period']" position="attributes">
+                <attribute name="attrs">{'readonly': [('asset_type', '=', 'purchase'), ('method', '=', '100')], 'required': 1}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//sheet/notebook/page/group/group/div/field[@name='method_period']" position="attributes">
+                <attribute name="attrs">{'readonly': [('asset_type', '=', 'purchase'), ('method', '=', '100')], 'required': 1}</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//sheet/notebook/page/group/group/field[@name='prorata_date']" position="replace">
+                <field name="prorata_date"
+                       string="Prorata Date"
+                       required="1"
+                       attrs="{'invisible': [('prorata_computation_type', '=', 'none')], 'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+
+            <xpath expr="//sheet/group/group/field[@name='account_asset_id']" position="attributes">
+                <attribute name="groups"/>
+            </xpath>
+            <xpath expr="//page[@name='main_page']//field[@name='account_asset_id']" position="before">
+                <field name="account_capital_investment_id"
+                       attrs="{
+                            'required': [('state', '!=', 'model'), ('asset_type', '=', 'purchase'), ('transfer_of_assets_balances', '=', False)],
+                            'readonly': [('display_account_asset_id', '=', False)],
+                            'invisible': ['|', ('parent_id', '!=', False), ('asset_type', '!=', 'purchase')],
+                       }"/>
+            </xpath>
+            <xpath expr="//sheet/group/group/field[@name='account_depreciation_expense_id']" position="attributes">
+                <attribute name="domain">[('account_type', 'in', ('expense_depreciation', 'expense', 'asset_current'))]</attribute>
+            </xpath>
+            <xpath expr="//page[@name='main_page']//field[@name='account_depreciation_expense_id']" position="attributes">
+                <attribute name="domain">[('account_type', 'in', ('expense_depreciation', 'expense', 'asset_current'))]</attribute>
+            </xpath>
+            <xpath expr="//page[@name='main_page']//field[@name='account_asset_id']" position="attributes">
+                <attribute name="attrs">{'invisible': [('asset_type', '!=', 'purchase')]}</attribute>
+                <attribute name="groups"/>
+            </xpath>
+
+            <xpath expr="//page[@name='main_page']//field[@name='already_depreciated_amount_import']" position="before">
+                <field name="transfer_of_assets_balances" attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('asset_type', '!=', 'purchase')]}"/>
+            </xpath>
+
+            <field name="original_move_line_ids" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+                <attribute name="domain">[
+                    ('parent_state', '=', 'posted'),
+                    ('company_id', '=', company_id),
+                    ('account_id', '=', account_capital_investment_id),
+                    ('account_id.account_type', 'in', ('asset_fixed', 'asset_non_current', 'asset_current')),
+                    ('move_id.move_type', 'in', ('in_invoice', 'in_refund', 'in_receipt', 'entry')),
+                    ('move_id.asset_id', '=', False),
+                ]</attribute>
+            </field>
+
+            <page name="related_items" position="after">
+                <page name="related_invoices"
+                      string="Customer Invoices"
+                      attrs="{'invisible': ['|', ('asset_type', '!=', 'purchase'), ('move_asset_sell_id', '=', False)]}">
+                    <field name="invoice_ids" readonly="1">
+                        <tree>
+                            <field name="date"/>
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="re_evaluate_lines"
+                      string="Re-evaluate Lines"
+                      attrs="{'invisible': ['|', ('asset_type', '!=', 'purchase'), ('parent_id', '=', False)]}">
+                    <field name="account_asset_counterpart_id" invisible="1"/>
+                    <field name="re_evaluate_line_ids">
+                        <tree editable="bottom">
+                            <field name="re_evaluate_move_line_id" domain="[('account_id', '=', parent.account_asset_counterpart_id), ('debit', '>', 0)]"/>
+                            <field name="value_re_evaluate_move_line"/>
+                            <field name="value_re_evaluate" sum="Total Re-evaluate"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+
+    <record id="view_account_asset_purchase_tree" model="ir.ui.view">
+        <field name="name">account.asset.purchase.tree.inherit.selferp_l10n_ua_fixed_asset</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_purchase_tree"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <field name="method" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+            <field name="original_value" position="before">
+                <field name="method" position="move"/>
+            </field>
+            <field name="original_value" position="after">
+                <field name="gross_increase_value" optional="show"/>
+                <field name="depreciation_value"/>
+                <field name="amortized_cost" optional="hide"/>
+            </field>
+
+            <field name="value_residual" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="account_asset_action_create_equipment" model="ir.actions.server">
+        <field name="name">Create Equipment</field>
+        <field name="model_id" ref="selferp_l10n_ua_fixed_asset.model_account_asset"/>
+        <field name="binding_model_id" ref="selferp_l10n_ua_fixed_asset.model_account_asset"/>
+        <field name="binding_view_types">form</field>
+        <field name="state">code</field>
+        <field name="code">
+            records.action_create_equipment()
+        </field>
+    </record>
+
+
+</odoo>

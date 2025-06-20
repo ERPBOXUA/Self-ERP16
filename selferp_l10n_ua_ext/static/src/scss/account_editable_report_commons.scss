@@ -1,0 +1,706 @@
+.selferp_editable_report_container {
+
+    .text-left {
+        text-align: left !important;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .text-right {
+        text-align: right !important;
+    }
+
+    .table_custom_input_width input {
+        min-width: 0 !important;
+    }
+
+    .report_text {
+        margin-bottom: 10px;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .report_title_text {
+        margin-bottom: 3px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .report_subtitle_text {
+        margin-bottom: 3px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .report_head_text {
+        font-size: 10px;
+        line-height: 1.2
+    }
+
+    .date_num_block {
+        padding: 3px;
+        line-height: 12px;
+        font-size: 10px;
+
+        div {
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+        .label_text {
+            padding-top: 7px;
+            text-align: center;
+        }
+
+        .date_field,
+        .num_field {
+            display: inline-block !important;
+            width: auto !important;
+            min-width: 60px;
+            height: 12px;
+            font-size: 10px;
+
+            .report_data_elem {
+                padding-top: 4px;
+                font-size: 10px;
+                line-height: 10px;
+            }
+        }
+    }
+
+    .report_data_elem_container {
+        background-color: white !important;
+        padding: 0 !important;
+
+        &.two_inputs {
+
+            .two_inputs_container {
+                display: block;
+                text-align: center;
+                width: auto;
+
+                span,
+                input {
+                    width: auto;
+                    min-width: 0;
+                }
+                span {
+                    display: inline-block;
+                }
+
+                span:first-child,
+                input:first-child {
+                    width: auto;
+                    min-width: 0;
+                    max-width: 30px;
+                }
+
+                span.two_inputs_delim {
+                    display: inline-block;
+                    width: auto;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .full_bordered_block_value_container {
+        margin-right: 10px;
+
+        input {
+            width: 100%;
+        }
+
+        .ub_value {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 14px;
+            border: 1px solid black;
+            padding: 1px 10px;
+            font-size: 10px;
+            line-height: 1;
+        }
+
+        .ub_help_info {
+            width: 100%;
+            font-size: 8px;
+            text-align: center;
+            line-height: 1;
+        }
+    }
+
+    span.report_data_elem {
+        flex: 1;
+        display: block;
+        width: 100%;
+        min-height: 12px;
+        padding: 1px 3px;
+        line-height: 1.2;
+    }
+
+    .report_custom_data_textarea_container {
+        position: relative;
+        padding: 0 10px;
+
+        .textarea_row {
+             font-size: 10px;
+             height: 14px;
+             border-bottom: 1px solid black;
+        }
+
+        .report_custom_data_textarea_content {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             border: 0;
+
+             textarea {
+                width: 100%;
+             }
+
+             .custom_textarea_data_elem {
+                line-height: 14px;
+             }
+        }
+    }
+
+    .underlined_block_value_container {
+        flex: 1;
+        margin-right: 10px;
+
+        .ub_value {
+            width: 100%;
+            padding: 1px 10px;
+            border-bottom: 1px solid black;
+            font-size: 10px;
+            line-height: 1;
+            min-height: 14px;
+        }
+
+        .ub_help_info {
+            width: 100%;
+            font-size: 8px;
+            text-align: center;
+            line-height: 1;
+        }
+    }
+
+    .report_custom_table,
+    .full_bordered_block_value_container,
+    .underlined_block_value_container {
+
+        .report-main-title {
+            margin: 2px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    .report_custom_table {
+        table-layout: auto !important;
+        margin-bottom: 0;
+        width: auto;
+        min-height: 20px;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+
+        & > :not(:first-child) {
+            border-top: 0;
+        }
+
+        .table_title {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .table_header_small_text {
+            font-size: 9px;
+        }
+
+        th,
+        td {
+            border-top: 0;
+            border-left: 0;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            padding: 1px 3px;
+            font-size: 9px;
+            line-height: 1.2;
+            text-align: center;
+            vertical-align: middle;
+
+            .ub_value {
+                font-size: 9px;
+                line-height: 1.2;
+            }
+
+            .report_text {
+                font-size: 9px;
+            }
+
+            span.report_data_elem {
+                display: inline-block;
+            }
+
+            &.td_rowspan {
+                padding: 0;
+                vertical-align: top;
+
+                div {
+                    position: relative;
+                    top: -1px;
+                    height: 1px;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    .radio_container,
+    .checkbox_container {
+        display: block;
+        width: 100%;
+        text-align: center;
+        min-height: 14px;
+
+        .checkmark,
+        .custom_radio_data_elem,
+        .custom_checkbox_data_elem {
+            color: black;
+        }
+    }
+
+    .checkmark,
+    .custom_radio_data_elem,
+    .custom_checkbox_data_elem {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 1px;
+        width: 12px;
+        height: 14px;
+        font-size: 10px;
+        min-height: 0;
+        color: transparent;
+    }
+
+    &.selferp_edit_container {
+
+        .date_num_block {
+
+            > div {
+                height: 21px !important;
+            }
+
+            .label_text {
+                padding-top: 6px !important;
+            }
+
+            .date_field,
+            .num_field {
+                height: 18px !important;
+            }
+        }
+
+        .report_data_elem_container {
+            background-color: #ffffb2 !important;
+            padding: 0 !important;
+
+            &:hover {
+
+                input,
+                textarea {
+                    background-color: yellow;
+                }
+            }
+
+            input {
+                min-height: 18px;
+                min-width: 78px;
+                border: 0;
+                background-color: transparent;
+                text-align: center;
+                font-size: 13px;
+
+                &:focus,
+                &:focus-visible {
+                    background-color: yellow;
+                    outline: none;
+                }
+            }
+
+            .checkmark {
+                color: transparent;
+            }
+
+            label.radio_container,
+            .checkbox_container {
+                cursor: pointer;
+                user-select: none;
+            }
+
+            textarea {
+                border: 0;
+                background-color: transparent;
+                text-align: center;
+                resize: none;
+                font-size: 13px;
+
+                &:focus,
+                &:focus-visible {
+                    background-color: yellow;
+                    outline: none;
+                }
+            }
+        }
+
+        .radio_container,
+        .checkbox_container {
+
+            &:hover input ~ .checkmark {
+                color: #ccc;
+            }
+
+            input:checked ~ .checkmark {
+                color: #2196F3;
+            }
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+
+        .full_bordered_block_value_container .checkbox_container {
+            width: 20px;
+        }
+
+        .checkmark,
+        .custom_radio_data_elem,
+        .custom_checkbox_data_elem {
+            position: relative;
+            top: 2px;
+            left: 1px;
+            width: 12px;
+            height: 14px;
+            font-size: 10px;
+            min-height: 0;
+            color: transparent;
+        }
+
+        .selferp_table_row_editable {
+            .report_data_elem_container:last-child {
+                background-color: #ffffb2 !important;
+                padding: 0 !important;
+
+                &:hover {
+
+                    input,
+                    textarea {
+                        background-color: #ffffb2;
+                    }
+                }
+
+                input,
+                textarea {
+
+                    &:hover {
+                        background-color: yellow;
+                    }
+                }
+            }
+        }
+
+        .report_data_elem_container {
+
+            &.two_inputs {
+
+                .two_inputs_container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+
+                    span,
+                    input {
+                        width: 50px;
+                    }
+
+                    span:first-child,
+                    input:first-child {
+                        width: 35px;
+                        min-width: 0;
+                        max-width: 35px;
+                    }
+
+                    span.two_inputs_delim {
+                        width: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    td.J0200125_custom_td {
+        padding-bottom: 0;
+        padding-right: 0;
+
+        .first_row {
+            padding-bottom: 4px;
+            padding-right: 3px;
+            text-align: left;
+        }
+
+        .second_row {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+
+            .full_bordered_block_value_container:first-child {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                width: 55%;
+
+                .ub_value {
+                    height: 24px;
+                    border-bottom: 0;
+                    border-right: 0;
+                }
+            }
+
+            .full_bordered_block_value_container:last-child {
+                margin: 0;
+                width: 80px;
+
+                .ub_value {
+                    height: 24px;
+                    border-bottom: 0;
+                    border-right: 0;
+                }
+            }
+        }
+    }
+}
+
+td.J0200125_custom_td {
+    .second_row {
+        .full_bordered_block_value_container:first-child {
+            width: 50%;
+
+            .ub_value {
+                height: 30px;
+            }
+        }
+
+        .full_bordered_block_value_container:last-child {
+            .ub_value {
+                display: block;
+                height: 30px;
+                padding: 4px 0 !important;
+
+                .report_data_elem {
+                    display: inline-block;
+                    width: auto;
+                    padding: 1px 3px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.selferp_edit_container.container-fluid {
+    max-width: 1800px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.o_form_view .selferp_editable_report_container,
+.selferp_editable_report_container.selferp_edit_container {
+
+    .report_title_text {
+        font-size: 18px;
+    }
+
+    .report_subtitle_text {
+        font-size: 14px;
+    }
+
+    .report_text {
+        font-size: 13px;
+    }
+
+    .report_head_text {
+        font-size: 12px;
+    }
+
+    .date_num_block {
+        padding: 5px;
+        line-height: 13px;
+        font-size: 13px;
+
+        > div {
+            height: 23px;
+        }
+
+        div {
+            font-size: 13px;
+            line-height: 13px;
+        }
+
+        .label_text {
+            padding-top: 7px;
+            text-align: center;
+        }
+
+        .date_field,
+        .num_field {
+            display: inline-block !important;
+            width: auto !important;
+            min-width: 60px;
+            height: 20px;
+            font-size: 13px;
+
+            .report_data_elem {
+                padding-top: 4px;
+                font-size: 13px;
+                line-height: 13px;
+            }
+        }
+    }
+
+    .report_custom_data_textarea_container {
+        position: relative;
+        padding: 0 10px;
+
+        .textarea_row {
+            height: 20px;
+        }
+
+        .report_custom_data_textarea_content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            textarea {
+                width: 100%;
+                line-height: 20px;
+            }
+
+            .custom_textarea_data_elem {
+                line-height: 20px;
+            }
+        }
+    }
+
+    span.report_data_elem {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 20px;
+        padding: 1px 3px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .full_bordered_block_value_container,
+    .underlined_block_value_container {
+
+        input {
+            width: 100%;
+        }
+
+        .ub_value {
+            min-height: 20px;
+            font-size: 13px;
+        }
+
+        .ub_help_info {
+            font-size: 9px;
+        }
+    }
+
+    .report_custom_table,
+    .full_bordered_block_value_container,
+    .underlined_block_value_container {
+
+        .report-main-title {
+            margin: 3px;
+            font-size: 16px;
+        }
+    }
+
+    .report_custom_table {
+
+        .table_title {
+            font-size: 14px;
+        }
+
+        .table_header_small_text {
+            font-size: 14px;
+        }
+
+        tr {
+            min-height: 20px;
+        }
+
+        th,
+        td {
+            font-size: 13px;
+
+            .ub_value {
+                font-size: 13px;
+            }
+
+            .report_text {
+                font-size: 13px;
+            }
+        }
+
+        input {
+            width: 100%;
+            font-size: 13px;
+        }
+    }
+
+    .checkmark,
+    .custom_radio_data_elem,
+    .custom_checkbox_data_elem {
+        left: 1px;
+        width: 20px;
+        height: 20px;
+        font-size: 13px;
+    }
+
+    td.J0200125_custom_td {
+        .second_row {
+            .full_bordered_block_value_container:first-child {
+                width: 50%;
+
+                .ub_value {
+                    min-height: 40px;
+                }
+            }
+
+            .full_bordered_block_value_container:last-child {
+                .ub_value {
+                    display: block;
+                    min-height: 40px;
+                    padding: 9px 0 !important;
+                }
+            }
+        }
+    }
+
+}

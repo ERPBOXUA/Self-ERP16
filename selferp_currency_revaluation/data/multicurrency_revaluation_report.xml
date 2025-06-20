@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="multicurrency_report_search_template" inherit_id="account_reports.multicurrency_report_search_template">
+        <xpath expr="//div[hasclass('o_account_reports_filter_currency')]" position="before">
+            <div t-if="options.get('monetary_items')" class="btn-group dropdown o_account_reports_filter_monetary_items">
+                <button type="button" class="o-no-caret btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                    <span class="fa fa-money"
+                          role="img"
+                          title="Monetary Items"
+                          aria-label="Monetary Items"/>
+                    <t>Monetary Items</t>: <t t-out="options.get('monetary_items_display_name') or ''"/>
+                </button>
+                <div class="dropdown-menu o_filter_menu" role="menu">
+                    <t t-foreach="options['monetary_items']" t-as="monetary_item">
+                        <a role="menuitem"
+                           data-filter="monetary_items"
+                           t-att-data-id="monetary_item['id']"
+                           class="dropdown-item js_account_report_choice_filter"
+                           t-att-title="monetary_item['name']"
+                           t-out="monetary_item['name']"/>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    
+    
+    <record id="account_reports.multicurrency_revaluation_report" model="account.report">
+        <field name="filter_accounts" eval="True"/>
+        <field name="filter_journals" eval="True"/>
+    </record>
+    
+    
+</odoo>

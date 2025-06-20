@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525" name="VAT Tax Report template J0200525">
+        <div t-translation="off" t-att-class="'selferp_editable_report_container selferp_edit_container container' if edit_mode else 'selferp_editable_report_container container-fluid'">
+            <div class="row mb-2">
+                <div class="col-4 offset-8 report_head_text">
+                    Додаток 1<br/>
+                    до податкової декларації з податку на додану вартість
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <table class="report_custom_table w-100">
+                        <tr>
+                            <td rowspan="3" style="width: 80px; vertical-align: middle; text-align: center;">01</td>
+                            <td rowspan="3" style="text-align: center;">
+                                <h5 class="report-main-title">
+                                    Відомості про суми податку на додану вартість, зазначені у податкових накладних /
+                                    розрахунках коригування до податкових накладних, не зареєстрованих в Єдиному
+                                    реєстрі податкових накладних, та про податковий кредит з урахуванням його
+                                    коригування (Д1)
+                                </h5>
+                            </td>
+                            <td>011</td>
+                            <td class="report_data_elem_container" style="width: 30px;">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_radio">
+                                    <t t-set="cell_name" t-value="'HZ'"/>
+                                    <t t-set="radio_value" t-value="'HZ'"/>
+                                    <t t-set="default_value" t-value="'HZ'"/>
+                                </t>
+                            </td>
+                            <td>Звітний</td>
+                        </tr>
+                        <tr>
+                            <td>012</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_radio">
+                                    <t t-set="cell_name" t-value="'HZ'"/>
+                                    <t t-set="radio_value" t-value="'HZN'"/>
+                                    <t t-set="default_value" t-value="'HZ'"/>
+                                </t>
+                            </td>
+                            <td>Звітний новий</td>
+                        </tr>
+                        <tr>
+                            <td>013</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_radio">
+                                    <t t-set="cell_name" t-value="'HZ'"/>
+                                    <t t-set="radio_value" t-value="'HZU'"/>
+                                    <t t-set="default_value" t-value="'HZ'"/>
+                                </t>
+                            </td>
+                            <td>Уточнюючий</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex align-items-start">
+                    <table class="report_custom_table" style="width: 40%;">
+                        <tr>
+                            <td style="width: 80px; vertical-align: middle; text-align: center;">02</td>
+                            <td style="padding-right: 30px; text-align: center;">Звітний (податковий) період</td>
+                        </tr>
+                    </table>
+                    <div class="full_bordered_block_value_container mx-5">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZY'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(рік)</div>
+                    </div>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZM'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(місяць)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex align-items-start">
+                    <table class="report_custom_table" style="width: 40%;">
+                        <tr>
+                            <td style="width: 80px; vertical-align: middle; text-align: center;">03</td>
+                            <td style="padding-right: 30px; text-align: center;">Звітний (податковий) період, що уточнюється</td>
+                        </tr>
+                    </table>
+                    <div class="full_bordered_block_value_container mx-5">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZYP'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(рік)</div>
+                    </div>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZKVP'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(квартал)</div>
+                    </div>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZMP'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(місяць)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <table class="report_custom_table mb-1 w-100">
+                        <tr>
+                            <td rowspan="2" style="width: 80px; vertical-align: middle; text-align: center;">04</td>
+                            <td rowspan="2" style="width: 100px; vertical-align: middle; text-align: center;">Платник</td>
+                            <td class="report_data_elem_container px-4 py-1 text-center" style="border-bottom: 1px solid transparent;">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_textarea">
+                                    <t t-set="cell_name" t-value="'HNAME'"/>
+                                    <t t-set="rows" t-value="3"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="report_data_elem_container px-4 py-1 text-center">
+                                <div class="date_num_block">
+                                    <div class="underlined_block_value_container d-flex mx-auto" style="width: 300px;">
+                                        <div class="label_text" style="width: 30px;">від</div>
+                                        <div class="ub_value" style="margin-right: 10px; width: 100px;">
+                                            <div class="report_data_elem_container date_field">
+                                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                                    <t t-set="cell_name" t-value="'HDDGV'"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="label_text" style="width: 20px;">№</div>
+                                        <div class="ub_value" style="width: 150px;">
+                                            <div class="report_data_elem_container num_field">
+                                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                                    <t t-set="cell_name" t-value="'HNDGV'"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_help_info">
+                            (повне найменування (прізвище, ім’я, по батькові (за наявності)) платника податків згідно з реєстраційними документами, дата та номер договору (угоди))
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <div style="margin-right: 5%; width: 80%;">
+                        <table class="report_custom_table w-100">
+                            <tr>
+                                <td style="width: 80px; vertical-align: middle; text-align: center;">041</td>
+                                <td style="padding-right: 30px;">
+                                    Податковий номер платника податку<sup>1</sup> або серія (за наявності) та номер паспорта<sup>2</sup>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="full_bordered_block_value_container m-0" style="width: 15%;">
+                        <div class="ub_value report_data_elem_container text-center">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HTIN'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col d-flex">
+                    <div style="margin-right: 5%; width: 80%;">
+                        <table class="report_custom_table w-100">
+                            <tr>
+                                <td style="width: 80px; vertical-align: middle; text-align: center;">05</td>
+                                <td style="padding-right: 30px; text-align: center;">Індивідуальний податковий номер платника податку на додану вартість</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="full_bordered_block_value_container m-0" style="width: 15%;">
+                        <div class="ub_value report_data_elem_container text-center">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HNPDV'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="report_title_text mb-2" style="text-align: left;">Розділ І. Податкові зобов’язання</h4>
+            <p class="report_subtitle_text mb-2">
+                Таблиця 1.1. Відомості про включені суми податку на додану вартість, вказані в податкових накладних, не зареєстрованих в Єдиному
+                реєстрі податкових накладних на дату подання податкової декларації з податку на додану вартість, до суми податкових зобов’язнь за
+                звітний (податковий) період
+            </p>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                    <table class="report_custom_table table table-bordered w-100">
+                        <tr style="text-align: center">
+                            <td rowspan="3">
+                                № з/п
+                            </td>
+                            <td rowspan="3">Покупець (індивідуальний податковий номер або умовний ІПН)</td>
+                            <td colspan="7">Податкова накладна</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="width: 80px;">дата</td>
+                            <td rowspan="2" style="width: 80px;">номер</td>
+                            <td rowspan="2" class="table_header_small_text" style="width: 80px;">ознака здійснення операції відповідно до п. 198.5 ст. 198 та п. 199.1 ст. 199 розділу V Кодексу*</td>
+                            <td rowspan="2" style="width: 80px;">обсяг постачання (без податку на додану вартість)</td>
+                            <td colspan="3">сума податку на додану вартість</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 80px;">основна ставка</td>
+                            <td style="width: 80px;">ставка 7 %</td>
+                            <td style="width: 80px;">ставка 14 %</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" style="text-align: left;">За операціями на митній території України, що оподатковуються податком на додану вартість за основною ставкою та ставками 7 % і 14 %:</td>
+                        </tr>
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T111RXXXX</t>
+                        </t>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">Усього за звітний (податковий) період (переноситься до рядків 1.1, 1.2, 1.3, 4.1, 4.2 або 4.3 декларації)</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0111G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0111G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0111G8'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0111G9'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                        </tr>
+                        <tr>
+                            <td colspan="9" style="text-align: left;">За послугами, отриманими від нерезидента на митній території України:</td>
+                        </tr>
+
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T112RXXXX</t>
+                        </t>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">Усього за звітний (податковий) період (переноситься до рядків 6.1 або 6.2 декларації)</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0112G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0112G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0112G8'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <td>x</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <p class="report_subtitle_text mb-2">
+                Таблиця 1.2. Відомості про коригування податкових зобов’язань згідно зі ст. 192, п. 198.5 ст. 198 та п. 199.1 ст. 199 розділу V Кодексу у разі
+                збільшення суми компенсації за звітний (податковий) період на підставі розрахунків коригування, складених у звітному (податковому)
+                періоді та не зареєстрованих в Єдиному реєстрі податкових накладних на дату подання податкової декларації з податку на додану вартість
+            </p>
+            <div class="row mb-4" style="page-break-inside: avoid;">
+                <div class="col">
+                    <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                    <table class="report_custom_table table table-bordered w-100  mb-2">
+                        <tr style="text-align: center">
+                            <td rowspan="3">
+                                № з/п
+                            </td>
+                            <td rowspan="3">Покупець (індивідуальний податковий номер або умовний ІПН)</td>
+                            <td colspan="7">Розрахунок коригування кількісних і вартісних показників</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="width: 80px;">дата</td>
+                            <td rowspan="2" style="width: 80px;">номер</td>
+                            <td rowspan="2" class="table_header_small_text" style="width: 80px;">ознака здійснення операцій відповідно до п. 198.5 ст. 198 та п. 199.1 ст. 199 розділу V Кодексу*</td>
+                            <td rowspan="2" style="width: 80px;">обсяг постачання (без податку на додану вартість) та/або обсяг постачання, за яким не нараховується податок на додану вартість</td>
+                            <td colspan="3">сума податку на додану вартість</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 80px;">основна ставка</td>
+                            <td style="width: 80px;">ставка 7 %</td>
+                            <td style="width: 80px;">ставка 14 %</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" style="text-align: left;">Коригування податкових зобов’язань згідно зі ст. 192 розділу V Кодексу:</td>
+                        </tr>
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T121RXXXX</t>
+                        </t>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">Усього за звітний (податковий) період (переноситься до рядків 7, 4.1.1, 4.2.1 або 4.3.1 декларації)</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0121G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0121G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0121G8'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0121G9'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                        </tr>
+                        <tr>
+                            <td colspan="9" style="text-align: left;">За послугами, отриманими від нерезидента на митній території України:</td>
+                        </tr>
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T123RXXXX</t>
+                        </t>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">Усього за звітний (податковий) період (переноситься до рядків 6.1 або 6.2 декларації)</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0123G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0123G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0123G8'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" style="font-weight: bold;">
+                                Коригування податкових зобов’язань згідно з п. 199.1 ст. 199 розділу V Кодексу у зв’язку з перерахунком частки використання
+                                товарів/послуг, необоротних активів в оподатковуваних операціях з огляду на фактичний обсяг проведених протягом року оподатковуваних
+                                та неоподатковуваних операцій:
+                            </td>
+                        </tr>
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T124RXXXX</t>
+                        </t>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">Усього за звітний (податковий) період (переноситься до рядків 4.1.1, 4.2.1 або 4.3.1 декларації)</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0124G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0124G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0124G8'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0124G9'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                        </tr>
+                    </table>
+                    <div class="pt-1" style="width: 100px; border-top: 1px solid black;"/>
+                    <div class="report_text mb-3">* У графі проставляється позначка "+" у разі здійснення операцій відповідно до п. 198.5 ст. 198 та п. 199.1 ст. 199 розділу V Кодексу</div>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid;">
+                <h4 class="report_title_text" style="text-align: left;">Розділ ІІ. Податковий кредит</h4>
+                <p class="report_subtitle_text">
+                    Таблиця 2.1. Відомості про операції з придбання з податком на додану вартість, які підлягають оподаткуванню за основною ставкою та ставками 7 % і 14 %
+                </p>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                        <table class="report_custom_table table table-bordered w-100">
+                            <tr style="text-align: center">
+                                <td rowspan="3">
+                                    № з/п
+                                </td>
+                                <td rowspan="3">Постачальник (індивідуальний податковий номер)</td>
+                                <td colspan="3">Податкова накладна, інший документ</td>
+                                <td rowspan="3" style="width: 80px;">Обсяг постачання (без податку на додану вартість)</td>
+                                <td rowspan="2" colspan="3">Сума податку на додану вартість</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="width: 80px;">період складання місяць/рік</td>
+                                <td rowspan="2" style="width: 80px;">ознака касового методу**</td>
+                                <td rowspan="2" style="width: 80px;">ознака здійснення операцій з придбання необоротних активів***</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 80px;">основна ставка</td>
+                                <td style="width: 80px;">ставка 7 %</td>
+                                <td style="width: 80px;">ставка 14 %</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                            </tr>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                                <t t-set="table_name">T21RXXXX</t>
+                                <t t-set="min_row_count" t-value="3"/>
+                            </t>
+                            <tr>
+                                <td colspan="5" style="text-align: left;">Усього за звітний (податковий) період, у тому числі:</td>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R021G6'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R021G7'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R021G8'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R021G9'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="text-align: left; padding-left: 5px;">придбання (будівництво, спорудження, створення) необоротних активів</td>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R0211G6'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R0211G7'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R0211G8'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <td>x</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="text-align: left; padding-left: 5px;">усього за касовим методом відповідно до п. 187.10 ст. 187 розділу V Кодексу</td>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R0212G6'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                    <t t-set="cell_name" t-value="'R0212G7'"/>
+                                    <t t-set="readonly" t-value="True"/>
+                                </t>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                        </table>
+                        <div style="margin: 10px 0 5px; width: 100px; border-top: 1px solid black;"/>
+                        <div class="report_text mb-3">
+                            ** У графі проставляється позначка "+" у разі, якщо суми податку включаються до складу податкового кредиту за касовим методом
+                            відповідно до п. 187.10 ст. 187 розділу V Кодексу.
+                        </div>
+                        <div class="report_text mb-5">*** У графі проставляється позначка "+" у разі здійснення операцій з придбання (будівництва, спорудження, створення) необоротних активів.</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="report_subtitle_text">
+                Таблиця 2.2. Відомості про коригування податкового кредиту згідно зі ст. 192 розділу V Кодексу
+            </p>
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                    <table class="report_custom_table table table-bordered w-100">
+                        <tr style="text-align: center">
+                            <td rowspan="2">№ з/п</td>
+                            <td rowspan="2">Постачальник (індивідуальний податковий номер)</td>
+                            <td colspan="2">Податкові накладні, які коригуються</td>
+                            <td rowspan="2" style="width: 80px;">Обсяг постачання (без податку на додану вартість)</td>
+                            <td colspan="3">Сума податку на додану вартість</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 80px;">період</td>
+                            <td style="width: 80px;">ознака здійснення операцій з придбання необоротних активів***</td>
+                            <td style="width: 80px;">основна ставка (+/-)</td>
+                            <td style="width: 80px;">ставка 7 % (+/-)</td>
+                            <td style="width: 80px;">ставка 14 % (+/-)</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3.1</td>
+                            <td>3.2</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">Операції з придбання з податком на додану вартість, які підлягають оподаткуванню за основною ставкою та ставками 7 % і 14 % (рядок 14 декларації)</td>
+                        </tr>
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T22RXXXX</t>
+                            <t t-set="min_row_count" t-value="3"/>
+                        </t>
+                        <tr>
+                            <td colspan="4" style="text-align: left;">Усього за звітний (податковий) період (рядок 14 декларації), у тому числі:</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R022G4'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R022G5'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R022G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R022G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: left; padding-left: 5px;">придбання (будівництво, спорудження, створення) необоротних активів</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0221G4'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0221G5'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R0221G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" colspan="2" style="text-align: left; padding-left: 5px;">Усього за послугами, отриманими від нерезидента на митній території України</td>
+                            <td colspan="2">переноситься до рядка 13.1 декларації</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0223G4'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0223G5'"/>
+                                </t>
+                            </td>
+                            <td>x</td>
+                            <td>x</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">переноситься до рядка 13.2 декларації</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0224G4'"/>
+                                </t>
+                            </td>
+                            <td>x</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0224G6'"/>
+                                </t>
+                            </td>
+                            <td>x</td>
+                        </tr>
+                    </table>
+                    <div style="margin: 10px 0 5px; width: 100px; border-top: 1px solid black;"/>
+                    <div class="report_text mb-5">*** У графі проставляється позначка "+" у разі здійснення операцій з придбання (будівництва, спорудження, створення) необоротних активів.</div>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <table class="report_custom_table table table-bordered">
+                        <tr>
+                            <td style="width: 160px;">Дата подання</td>
+                            <td class="report_data_elem_container" style="width: 160px;">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'HFILL'"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </table>
+                    <p class="report_text" style="padding-left: 80px; margin-bottom: 0;">Наведена інформація є повною і достовірною.</p>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <p class="report_text" style="width: 33%">Керівник (уповноважена особа) / фізична<br/> особа (законний представник)</p>
+                    <div class="full_bordered_block_value_container m-0" style="width: 40%;">
+                        <div class="ub_value report_data_elem_container">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HBOS'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(Власне ім’я ПРІЗВИЩЕ)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <p class="report_text" style="width: 33%">Реєстраційний номер облікової картки платника<br/> податків або серія (за наявності) та номер паспорта<sup>2</sup></p>
+                    <div class="full_bordered_block_value_container m-0" style="width: 30%;">
+                        <div class="ub_value report_data_elem_container">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HKBOS'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <p class="report_text" style="width: 33%">Головний бухгалтер (особа, відповідальна за<br/> ведення бухгалтерського обліку)</p>
+                    <div class="full_bordered_block_value_container m-0" style="width: 40%;">
+                        <div class="ub_value report_data_elem_container">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HBUH'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(Власне ім’я ПРІЗВИЩЕ)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <p class="report_text" style="width: 33%">Реєстраційний номер облікової картки платника<br/> податків або серія (за наявності)
+                        та номер паспорта<sup>2</sup></p>
+                    <div class="full_bordered_block_value_container m-0" style="width: 30%;">
+                        <div class="ub_value report_data_elem_container">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HKBUH'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <div style="width: 100px; height: 2px; border-bottom: 1px solid black;"/>
+                    <p class="report_text mb-2">
+                        <sup>1</sup> Зазначається код за ЄДРПОУ платника податку або реєстраційний (обліковий) номер
+                        платника податків, який присвоюється контролюючими органами, або реєстраційний номер облікової картки платника податків –
+                        фізичної особи.
+                    </p>
+                    <p class="report_text">
+                        <sup>2</sup> Серію (за наявності) та номер паспорта зазначають фізичні особи, які через свої релігійні
+                        переконання відмовляються від прийняття реєстраційного номера облікової картки платника податків та офіційно повідомили
+                        про це відповідний контролюючий орган і мають відмітку у паспорті.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T111RXXXX" name="VAT Tax Report template J0200525 (table T111RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG3D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG4S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T111RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG8</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T111RXXXXG9</t>
+                </t>
+            </td>
+        </tr>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T112RXXXX" name="VAT Tax Report template J0200525 (table T112RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T112RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T112RXXXXG3D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T112RXXXXG4S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T112RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T112RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T112RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T112RXXXXG8</t>
+                </t>
+            </td>
+            <td>x</td>
+        </tr>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T121RXXXX" name="VAT Tax Report template J0200525 (table T121RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG3D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG4S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T121RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG8</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T121RXXXXG9</t>
+                </t>
+            </td>
+        </tr>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T123RXXXX" name="VAT Tax Report template J0200525 (table T123RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T123RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T123RXXXXG3D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T123RXXXXG4S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T123RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T123RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T123RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T123RXXXXG8</t>
+                </t>
+            </td>
+            <td>x</td>
+        </tr>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T124RXXXX" name="VAT Tax Report template J0200525 (table T124RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG3D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG4S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T124RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG8</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T124RXXXXG9</t>
+                </t>
+            </td>
+        </tr>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T21RXXXX" name="VAT Tax Report template J0200525 (table T21RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T21RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container two_inputs">
+                <span class="two_inputs_container">
+                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                        <t t-set="cell_name">T21RXXXXG31</t>
+                    </t>
+                    <span t-if="values and (values.get('T21RXXXXG31') or values.get('T21RXXXXG32'))" class="two_inputs_delim">/</span>
+                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                        <t t-set="cell_name">T21RXXXXG32</t>
+                    </t>
+                </span>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T21RXXXXG4</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T21RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T21RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T21RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T21RXXXXG8</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T21RXXXXG9</t>
+                </t>
+            </td>
+        </tr>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_content_J0200525_T22RXXXX" name="VAT Tax Report template J0200525 (table T22RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T22RXXXXG2</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container two_inputs">
+                <span class="two_inputs_container">
+                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                        <t t-set="cell_name">T22RXXXXG311</t>
+                    </t>
+                    <span t-if="values and (values.get('T22RXXXXG311') or values.get('T22RXXXXG312'))" class="two_inputs_delim">/</span>
+                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                        <t t-set="cell_name">T22RXXXXG312</t>
+                    </t>
+                </span>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_checkbox">
+                    <t t-set="cell_name">T22RXXXXG32</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T22RXXXXG4</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T22RXXXXG5</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T22RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T22RXXXXG7</t>
+                </t>
+            </td>
+        </tr>
+    </template>
+
+
+</odoo>

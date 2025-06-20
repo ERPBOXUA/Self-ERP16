@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_analytic_plan_view_search" model="ir.ui.view">
+        <field name="name">account.analytic.plan.search</field>
+        <field name="model">account.analytic.plan</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="complete_name"/>
+
+                <filter name="filter_inactive" domain="[('active', '=', False)]" string="Archived"/>
+
+                <filter name="group_by_parent" string="Parent" domain="[]" context="{'group_by': 'parent_id'}"/>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

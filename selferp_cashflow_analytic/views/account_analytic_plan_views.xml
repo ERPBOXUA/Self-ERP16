@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_analytic_plan_form_view" model="ir.ui.view">
+        <field name="name">account.analytic.plan.form.inherit.selferp_cashflow_analytic</field>
+        <field name="model">account.analytic.plan</field>
+        <field name="inherit_id" ref="analytic.account_analytic_plan_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/field[@name='company_id']" position="after">
+                <field name="cash_flow_article"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="account_analytic_plan_tree_view" model="ir.ui.view">
+        <field name="name">account.analytic.plan.tree.inherit.selferp_cashflow_analytic</field>
+        <field name="model">account.analytic.plan</field>
+        <field name="inherit_id" ref="analytic.account_analytic_plan_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="cash_flow_article"/>
+            </field>
+        </field>
+    </record>
+
+
+
+</odoo>

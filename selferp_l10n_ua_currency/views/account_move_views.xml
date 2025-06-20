@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_move_line_view_tree_prepay" model="ir.ui.view">
+        <field name="name">account.move.line.view.tree.prepay</field>
+        <field name="model">account.move.line</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <tree create="0" default_order="date">
+                <field name="date" readonly="1"/>
+                <field name="move_name" readonly="1"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="company_currency_id" invisible="1"/>
+                <field name="abs_amount_residual_currency" readonly="1" string="Amount in Currency"/>
+                <field name="abs_residual_balance" readonly="1"/>
+                <field name="currency_rate_back" readonly="1" string="Currency Rate"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.selferp_l10n_ua_currency</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field name="stock_picking_id" invisible="1"/>
+                <button name="action_show_stock_picking"
+                        type="object"
+                        groups="stock.group_stock_manager"
+                        attrs="{'invisible': [('stock_picking_id', '=', False)]}"
+                        class="oe_stat_button"
+                        icon="fa-plus-square"
+                        string="Stock Picking" />
+            </div>
+
+            <xpath expr="//group[@id='header_right_group']/field[@name='currency_id']" position="after">
+                <field name="can_be_cd" invisible="1"/>
+                <field name="is_customs_declaration" attrs="{'invisible': [('can_be_cd', '=', False)]}"/>
+
+                <field name="can_be_import_vendor_bill" invisible="1"/>
+                <field name="is_import_vendor_bill"
+                       attrs="{'invisible': [('can_be_import_vendor_bill', '=', False)], 'readonly': ['|', ('state', '=', 'posted'), ('stock_picking_id', '!=', False)]}"/>
+            </xpath>
+
+            <xpath expr="//page[@name='other_info']" position="before">
+                <page name="customs_declaration"
+                      string="Export"
+                      attrs="{'invisible': [('is_customs_declaration', '=', False)]}">
+                    <group name="customs_declaration_tab_group">
+                        <field name="cd_date" string="Export Date" class="oe_inline" attrs="{'required': [('is_customs_declaration', '=', True)]}"/>
+                        <field name="cd_currency_rate" class="oe_inline" attrs="{'required': [('is_customs_declaration', '=', True)]}"/>
+                    </group>
+                    <field name="cd_can_be_prepayment_ids" invisible="1"/>
+                    <separator string="Advance Payments"/>
+                    <field name="cd_prepayment_ids"
+                           nolabel="1"
+                           options="{'no_create': True}"
+                           attrs="{'invisible': [('state', '!=', 'draft')]}"
+                           context="{'tree_view_ref': 'selferp_l10n_ua_currency.account_move_line_view_tree_prepay'}"/>
+                </page>
+
+                <page name="import"
+                      string="Import"
+                      attrs="{'invisible': [('is_import_vendor_bill', '!=', True)]}">
+                    <group>
+                        <field name="cd_date" string="Import Date" class="oe_inline" attrs="{'required': [('is_import_vendor_bill', '=', True)]}"/>
+                        <field name="cd_currency_rate" class="oe_inline" attrs="{'required': [('is_import_vendor_bill', '=', True)]}"/>
+                    </group>
+
+                    <separator string="Advance Payments" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+
+                    <field name="import_advances_ids"
+                           nolabel="1"
+                           readonly="1"
+                           attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('stock_picking_id', '=', False)]}"
+                           context="{'tree_view_ref': 'selferp_l10n_ua_currency.account_move_line_view_tree_prepay'}"/>
+
+                    <field name="import_available_advance_ids" invisible="1"/>
+                    <field name="import_stored_advance_ids"
+                           nolabel="1"
+                           options="{'no_create': True}"
+                           attrs="{'invisible': ['|', ('state', '!=', 'draft'), ('stock_picking_id', '!=', False)]}"
+                           context="{'tree_view_ref': 'selferp_l10n_ua_currency.account_move_line_view_tree_prepay'}"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

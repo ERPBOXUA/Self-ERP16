@@ -1,0 +1,156 @@
+{
+    'name': 'Payroll for Ukraine',
+    'category': 'Human Resources',
+    'version': '16.0.1.1.1',
+    'license': 'OPL-1',
+    'price': 0,
+    'currency': 'EUR',
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+    'sequence': -999999,
+
+    'author': 'Self-ERP',
+    'website': 'https://www.self-erp.com',
+    'support': 'apps@self-erp.com',
+    'summary': """Payroll for Ukraine""",
+
+    'images': [
+        'static/description/banner.gif',
+        'static/description/icon.png',
+    ],
+
+    'depends': [
+        'account_accountant',
+        'hr',
+        'hr_contract',
+        'hr_payroll',
+        'hr_payroll_account',
+        'hr_payroll_holidays',
+        'hr_skills',
+        'hr_timesheet',
+        'web_enterprise',
+
+        'selferp_l10n_ua_ext',
+    ],
+
+    'data': [
+        'security/hr_order_security.xml',
+        'security/hr_pdfo_report_security.xml',
+        'security/hr_schedule_security.xml',
+        'security/salary_indexation_period_security.xml',
+        'security/ir.model.access.csv',
+
+        'data/hr_employee_income_feature_code_data.xml',
+        'data/hr_employee_tax_social_benefit_code_data.xml',
+        'data/hr_job_class_data.xml',
+        # Warning!!! hr_order_type_group_data.xml should be loaded before hr_order_type_data.xml
+        'data/hr_order_type_group_data.xml',
+        'data/hr_order_type_data.xml',
+        'data/hr_payroll_benefit_data.xml',
+        'data/hr_payroll_benefit_sequence_data.xml',
+        # Warning!!! hr_salary_rule_category_data.xml should be loaded before hr_payroll_structure_data.xml
+        'data/hr_salary_rule_category_data.xml',
+        # Warning!!! hr_payroll_structure_type_data.xml should be loaded before hr_payroll_structure_data.xml
+        'data/hr_payroll_structure_type_data.xml',
+        'data/hr_payroll_structure_data.xml',
+        'data/hr_salary_disability_group_data.xml',
+        'data/hr_resume_data.xml',
+        'data/hr_work_entry_type_data.xml',
+        # Warning!!! hr_leave_type_data.xml should be loaded after hr_work_entry_type_data.xml
+        'data/hr_leave_type_data.xml',
+        'data/ir_sequence_data.xml',
+        'data/resource_calendar_data.xml',
+
+        'report/hr_employee_reports.xml',
+        'report/hr_employee_templates.xml',
+        'report/hr_order_reports.xml',
+        'report/hr_order_templates.xml',
+        'report/hr_schedule_reports.xml',
+        'report/hr_schedule_templates.xml',
+        'report/hr_work_entry_report_templates.xml',
+
+        'report/hr_salary_esv_pdfo_report_reports.xml',
+        'report/hr_salary_esv_pdfo_report_templates.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0500109.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0510109.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0510209.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0510309.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0510409.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0510509.xml',
+        'report/hr_salary_esv_pdfo_report_templates_content_J0510609.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0500109.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0510109.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0510209.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0510309.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0510409.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0510509.xml',
+        'report/hr_salary_esv_pdfo_report_templates_export_xml_J0510609.xml',
+
+        'views/account_bank_statement_line_views.xml',
+        'views/bank_rec_widget_views.xml',
+        'views/hr_contract_views.xml',
+        'views/hr_employee_income_feature_code_views.xml',
+        'views/hr_employee_tax_social_benefit_code_views.xml',
+        'views/hr_employee_views.xml',
+        'views/hr_job_class_views.xml',
+        'views/hr_job_views.xml',
+        'views/hr_leave_allocation_views.xml',
+        'views/hr_leave_type_views.xml',
+        'views/hr_leave_views.xml',
+        'views/hr_order_type_group_views.xml',
+        'views/hr_order_type_views.xml',
+        'views/hr_order_views.xml',
+        'views/hr_payroll_benefit_views.xml',
+        'views/hr_payslip_run_views.xml',
+        'views/hr_payslip_views.xml',
+        'views/hr_pdfo_report_views.xml',
+        'views/hr_salary_cost_of_living_views.xml',
+        'views/hr_salary_disability_group_views.xml',
+        'views/hr_salary_inflation_index_views.xml',
+        'views/hr_salary_minimum_wage_views.xml',
+        'views/hr_salary_rule_views.xml',
+        'views/hr_salary_sick_leave_rate_views.xml',
+        'views/hr_schedule_views.xml',
+        'views/hr_skills_views.xml',
+        'views/hr_work_entry_type.xml',
+        # This must be before res_config_settings_views to work properly
+        'views/salary_indexation_period_views.xml',
+        'views/res_config_settings_views.xml',
+
+        'views/hr_salary_dictionaries_menuitem.xml',
+
+        'wizard/hr_payroll_payslips_by_employees_views.xml',
+        'wizard/hr_payslip_create_payment_views.xml',
+        'wizard/hr_work_entry_print_views.xml',
+    ],
+
+    'assets': {
+        'web.assets_backend': [
+            'selferp_l10n_ua_salary/static/src/js/work_entries_controller_mixin.js',
+            'selferp_l10n_ua_salary/static/src/js/work_entries_gantt.js',
+            'selferp_l10n_ua_salary/static/src/xml/work_entry_templates.xml',
+
+            'selferp_l10n_ua_salary/static/src/scss/hr_employee_reports.scss',
+            'selferp_l10n_ua_salary/static/src/scss/hr_order_reports.scss',
+            'selferp_l10n_ua_salary/static/src/scss/hr_schedule_reports.scss',
+
+            'selferp_l10n_ua_salary/static/src/leave_stats/*',
+
+            'selferp_l10n_ua_salary/static/src/views/**/*',
+        ],
+        'web.assets_frontend': [
+            'selferp_l10n_ua_salary/static/src/scss/hr_employee_reports.scss',
+            'selferp_l10n_ua_salary/static/src/scss/hr_order_reports.scss',
+            'selferp_l10n_ua_salary/static/src/scss/hr_schedule_reports.scss',
+        ],
+        'web.report_assets_common': [
+            'selferp_l10n_ua_salary/static/src/scss/hr_employee_reports.scss',
+            'selferp_l10n_ua_salary/static/src/scss/hr_order_reports.scss',
+            'selferp_l10n_ua_salary/static/src/scss/hr_schedule_reports.scss',
+        ],
+    },
+
+    'uninstall_hook': 'uninstall_hook',
+    'post_init_hook': 'post_init_hook',
+}

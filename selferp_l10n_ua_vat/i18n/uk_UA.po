@@ -1,0 +1,2347 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_l10n_ua_vat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-07 11:23+0000\n"
+"PO-Revision-Date: 2023-09-07 11:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "%(partner_name)s, %(issuance_date)s, %(external_number)s Vendor Vat Invoice already exists in the database"
+msgstr "Податковий документ постачальника %(partner_name)s, %(issuance_date)s, %(external_number)s вже існує у системі"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__first_event_vat_invoice_id
+msgid "First Event VAT invoice"
+msgstr "Податкова накладна"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "First event source"
+msgstr "Документ першої події"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200124
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200125
+msgid "'%s - Декларація' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200524
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200525
+msgid "'%s - Додаток 1' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215224
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215225
+msgid "'%s - Додаток 2' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200624
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200625
+msgid "'%s - Додаток 3' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0299824
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0299825
+msgid "'%s - Додаток 4' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0299324
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0299325
+msgid "'%s - Додаток 5' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215724
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215725
+msgid "'%s - Додаток 6' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215824
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215825
+msgid "'%s - Додаток 7' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__01
+msgid "01 - Composed of the amount of increase in compensation for the cost of delivered goods/services delivered"
+msgstr "01 - Складена на суму збільшення компенсації вартості поставлених товарів/послуг"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__02
+msgid "02 - Prepared for delivery to a non-taxpayer"
+msgstr "02 - Складена на постачання неплатнику податку"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__03
+msgid "03 - Drawn up for the supply of goods/services against remuneration to individuals who are in an employment relationship with the taxpayer"
+msgstr "03 - Складена на постачання товарів/послуг у рахунок оплати праці фізичним особам, які перебувають у трудових відносинах із платником податку"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__04
+msgid "04 - Prepared for delivery within the balance sheet for non-production use"
+msgstr "04 - Складена на постачання у межах балансу для невиробничого використання"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__05
+msgid "05 - Prepared in connection with the liquidation of fixed assets by the taxpayer's own decision"
+msgstr "05 - Складена у зв'язку з ліквідацією основних засобів за самостійним рішенням платника податку"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__06
+msgid "06 - Composed in connection with the transfer of production fixed assets to non-production fixed assets"
+msgstr "06 - Складена у зв'язку з переведенням виробничих основних засобів до складу невиробничих"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__07
+msgid "07 - Imposed on transactions for the export of goods outside the customs territory of Ukraine"
+msgstr "07 - Складена на операції з вивезення товарів за межі митної території України"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__08
+msgid "08 - Compiled for supply for transactions that are not subject to value added tax"
+msgstr "08 - Складена на постачання для операцій, які не є об'єктом оподаткування податком на додану вартість"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__09
+msgid "09 - Accrued for supplies for transactions that are exempt from value added tax"
+msgstr "09 - Складена на постачання для операцій, які звільнені від оподаткування податком на додану вартість"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__10
+msgid "10 - Compiled for the purpose of determining, upon cancellation of the taxpayer's registration, tax liabilities for goods/services, non-current assets, the tax amounts for which were included in the tax credit and were not used in taxable transactions within the business activity"
+msgstr "10 - Складена з метою визначення при анулюванні реєстрації платника податку податкових зобов'язань за товарами/послугами, необоротними активами, суми податку за якими були включені до складу податкового кредиту та не були використані в оподатковуваних операціях у межах господарської діяльності"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__101
+msgid "101 - price change"
+msgstr "101 - зміна цін"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__102
+msgid "102 - quantity change"
+msgstr "102 - зміна кількості"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__103
+msgid "103 - return of goods or advance payments"
+msgstr "103 - повернення товару або авансових платежів"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__104
+msgid "104 - change of nomenclature"
+msgstr "104 - зміна номенклатури"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__11
+msgid "11 - Compiled on the basis of daily transaction results"
+msgstr "11 - Складена за щоденними підсумками операцій"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__12
+msgid "12 - Drawn up for delivery to a non-payer, indicating the name of the buyer"
+msgstr "12 - Складена на постачання неплатнику, в якій зазначається назва покупця"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__13
+msgid "13 - Composed in connection with the use of production or non-production assets, other goods/services not in economic activity"
+msgstr "13 - Складена у зв'язку з використанням виробничих або невиробничих засобів, інших товарів/послуг не в господарській діяльності"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__14
+msgid "14 - Drawn up by the recipient (buyer) of services from a non-resident"
+msgstr "14 - Складена отримувачем (покупцем) послуг від нерезидента"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__15
+msgid "15 - Composed of the excess of the tax base determined in accordance with Articles 188 and 189 of the Tax Code of Ukraine over the actual delivery price"
+msgstr "15 - Складена на суму перевищення бази оподаткування, визначеної відповідно до статей 188 і 189 Податкового кодексу України, над фактичною ціною постачання"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__201
+msgid "201 - adjustments to the consolidated tax invoice drawn up in accordance with clause 198.5 of the TCU"
+msgstr "201 - коригування зведеної податкової накладної, складеної відповідно до п. 198.5 ПКУ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__202
+msgid "202 - adjustments to the consolidated tax invoice drawn up in accordance with clause 199.1 of the TCU"
+msgstr "202 - коригування зведеної податкової накладної, складеної відповідно до п. 199.1 ПКУ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__203
+msgid "203 - adjustments to the consolidated tax invoice drawn up in accordance with paragraph 11 of clause 201.4 of the TCU"
+msgstr "203 - коригування зведеної податкової накладної, складеної відповідно до абзацу 11 п. 201.4 ПКУ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__204
+msgid "204 - adjustment of a tax invoice drawn up in the course of a transaction for the free supply of goods/services"
+msgstr "204 - коригування податкової накладної, складеної при здійсненні операції з безоплатного постачання товарів/послуг"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__21
+msgid "21 - Drawn up for the supply of services to a non-resident recipient (buyer), the place of supply of which is located in the customs territory of Ukraine"
+msgstr "21 - Складена на постачання послуг отримувачу (покупцю) нерезиденту, місце постачання яких розташоване на митній території України"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__reason_type__22
+msgid "22 - Drawn up for transactions on the export outside the customs territory of Ukraine of goods subject to the export security regime, which are subject to value added tax at the basic rate or the rate of 14 percent"
+msgstr "22 - Складена на операції з вивезення за межі митної території України товарів, до яких застосовано режим експортного забезпечення, що підлягають оподаткуванню податком на додану вартість за основною ставкою або ставкою 14 відсотків"
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_reason_type__301
+msgid "301 - correction of an error (clause 24 of the Procedure for filling out a tax invoice)"
+msgstr "301 - виправлення помилки (п. 24 Порядку заповнення податкової накладної)."
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "<span class=\"fa fa-fw fa-calculator\" role=\"img\" title=\"Type of tracking the first event\" aria-label=\"Type of tracking the first event\"/>"
+msgstr "<span class=\"fa fa-fw fa-calculator\" role=\"img\" title=\"Тип відстеження першої події\" aria-label=\"Тип відстеження першої події\"/>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_partner_account_type
+msgid "<span class=\"fa fa-fw fa-user\" role=\"img\" title=\"Account\" aria-label=\"Account\"/>"
+msgstr "<span class=\"fa fa-fw fa-user\" role=\"img\" title=\"Рахунок\" aria-label=\"Рахунок\"/>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">\n"
+"                                Set up default taxes and default product which will be applied when advance payment is done\n"
+"                            </span>"
+msgstr "<span class=\"o_form_label\">Встановіть податки та продукт за замовчуванням, що будуть застосовані при внесенні авансового платежу (передоплати)</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Registration periods for VAT Invoice and VAT Invoice Adjustment</span>"
+msgstr "<span class=\"o_form_label\">Строки реєстрації ПН та РК</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Default accounts applied to transactions with VAT</span>"
+msgstr "<span class=\"o_form_label\">Рахунки за замовчуванням, що застосовуються до операцій з ПДВ</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Set up journals to record VAT transactions</span>"
+msgstr "<span class=\"o_form_label\">Встановіть журнали для відображення операцій із ПДВ.</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">VAT Payer</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"o_form_label\">Платник ПДВ</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Значення встановлені тут індивідуальні під компанію.\" aria-label=\"Значення встановлені тут індивідуальні під компанію.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_partner_form
+msgid "<span class=\"o_stat_text\">Partner Ledger</span>"
+msgstr "<span class=\"o_stat_text\">Розрахунки з партнерами</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_contract_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_order_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_partner_form
+msgid "<span class=\"o_stat_text\">VAT Invoices</span>"
+msgstr "<span class=\"o_stat_text\">Податкові накладні</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_contract_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_partner_form
+msgid "<span class=\"o_stat_text\">Vendor VAT Invoices</span>"
+msgstr "<span class=\"o_stat_text\">Податкові документі постачальника</span>"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_first_event_account_code
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_account
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_partner_account_type
+msgid "Account"
+msgstr "Рахунок"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "Сторно проведення"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_reconciliation_widget
+msgid "Account Reconciliation widget"
+msgstr "Віджет узгодження рахунку"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Accounting Date"
+msgstr "Дата бухобліку"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_report
+msgid "Accounting Report"
+msgstr "Звіт бухобліку"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__acquisition_non_current_assets
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__acquisition_non_current_assets
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__acquisition_non_current_assets
+msgid "Acquisition of non-current Assets"
+msgstr "Ознака придбання необоротних активів"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_debit_note
+msgid "Add Debit Note wizard"
+msgstr "Додати помічника дебіторського повернення"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Add a line"
+msgstr "Додати рядок"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_invoice_import__attachment_ids
+msgid "Add files for import"
+msgstr "Додати файли для імпорту"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__adjustment_group
+msgid "Adjustment group #"
+msgstr "№ групи коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "All"
+msgstr "Усі"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_line_view_form
+msgid "Amount"
+msgstr "Сума"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 1"
+msgstr "Додаток 1"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 2"
+msgstr "Додаток 2"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 3"
+msgstr "Додаток 3"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 4"
+msgstr "Додаток 4"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 5"
+msgstr "Додаток 5"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 6"
+msgstr "Додаток 6"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+#, python-format
+msgid "Appendix 7"
+msgstr "Додаток 7"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_benefit_code_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_benefit_code_view_search
+msgid "Archived"
+msgstr "Заархівовано"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_invoice_import__attachment_count
+msgid "Attachment Count"
+msgstr "Кількість прикріплених файлів"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_first_event_balance
+msgid "Balance"
+msgstr "Баланс"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Рядок банківської виписки"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_bank_rec_widget
+msgid "Bank reconciliation widget for a single statement line"
+msgstr "Віджет банківської звірки для одного рядка виписки"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__benefit_code_id
+msgid "Benefit Code"
+msgstr "Код пільги"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_benefit_code_action
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_benefit_code
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_benefit_code_menu
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_benefit_code_view_search
+msgid "Benefits Guide"
+msgstr "Коди пільг"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_invoice_stage__blocked
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_invoice_change_stage__vat_invoice_stage__blocked
+msgid "Blocked"
+msgstr "Заблоковано"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_invoice_change_stage_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_invoice_import_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_vat_calculations_view_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_invoice_stage__cancelled
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_invoice_change_stage__vat_invoice_stage__cancelled
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__cash_method
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__cash_method
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__cash_method
+msgid "Cash Method"
+msgstr "Касовий метод"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__product_uom_category_id
+msgid "Category"
+msgstr "Категорія"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_cause_type_adjustment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_cause_type_adjustment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__adjustment_cause_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_cause_type_adjustment
+msgid "Cause Type Adjustment"
+msgstr "Тип причини коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_move_vat_invoice_change_stage_action
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_invoice_change_stage_view_form
+msgid "Change Stage"
+msgstr "Змінити стадію"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_move_vat_invoice_change_stage
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_invoice_change_stage_view_form
+msgid "Change Stage VAT Invoice"
+msgstr "Змінити стадію Податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_change_stage.py:0
+#, python-format
+msgid "Change stage available only for VAT Invoices and VAT Adjustment Invoices"
+msgstr "Змінювати стадію можна тільки для Податкових накладних та Розрахунків-коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "Check the box if the Company has the status of a VAT payer in Ukraine."
+msgstr "Відмітьте галочкою, якщо Компанія має статус платника ПДВ в Україні."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_account__first_event
+msgid "Check the box if the account should track the first VAT event."
+msgstr "Відмітьте галочкою, якщо рахунок має брати участь у відстеженні першої події з ПДВ."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_res_partner__vat_non_payer
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_res_users__vat_non_payer
+msgid "Check the box if the partner is non Ukrainian VAT payer. The TAX ID will be automatically fill in with the value 100000000000 for VAT invoices/adjustments."
+msgstr "Відмітьте галочкою, якщо Компанія не є платником ПДВ в Україні. Код ІПН автоматично буде заповнюватись значенням 100000000000 при генерації податкових накладних/розрахунках-коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_tax_group__is_vat
+msgid "Check the box if the selected tax is VAT tax"
+msgstr "Відмітьте галочкою, якщо обраний податок входить до складу ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid ""
+"Check the box if the tax invoice/tax invoice adjustment must be registered "
+"in the month following the month in which they were drawn up. If the tax "
+"invoice/tax invoice adjustment must be registered in the month in which they"
+" were drawn up (current month)"
+msgstr ""
+"Відмітьте галочкою, якщо податкова накладна/розрахунок коригування підлягає "
+"реєстрації в місяці, наступному за місяцем їх складання. У разі якщо "
+"податкову накладну/розрахунок коригування необхідно зареєструвати в місяці, "
+"в якому вони були складені (у поточному місяці), то залишіть поле не "
+"активованим."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_benefit_code__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_uom_uom__code
+msgid "Code"
+msgstr "Код"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_move_vat_line__dkpp_code_id
+msgid "Code for Ukrainian State classifier of products and services"
+msgstr "Код Українського державного класифікатора продукції та послуг"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_move_vat_line__uktzed_code_id
+msgid "Code of the ukrainian classification of products for foreign economic activity"
+msgstr "Код українського класифікатору товарів ЗЕД"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_res_company
+msgid "Companies"
+msgstr "Компанії"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__company_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__currency_id
+msgid "Company Currency"
+msgstr "Валюта компанії"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "Company not found by VAT '%(company_vat)s'!"
+msgstr "За ІПН '%(company_vat)s' компанію не знайдено!"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__composed_of_tax_exempt_transactions
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__composed_of_tax_exempt_transactions
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__composed_of_tax_exempt_transactions
+msgid "Composed of Tax-exempt Transactions"
+msgstr "Складена на операції, звільнені від оподаткування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_res_config_settings
+msgid "Config Settings"
+msgstr "Налаштування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_account_confirmed_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_account_confirmed_credit_id
+msgid "Confirmed VAT Credit"
+msgstr "Підтверджений податковий кредит"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_account_confirmed_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_account_confirmed_id
+msgid "Confirmed VAT Liabilities"
+msgstr "Підтверджені податкові зобов'язання"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__consolidated_tax_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__consolidated_tax_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__consolidated_tax_code
+msgid "Consolidated Tax Code"
+msgstr "Код ознаки"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Consolidated Tax Code is required"
+msgstr "Потрібно вказати Код ознаки"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__consolidated_vat_invoice
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__consolidated_vat_invoice
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__consolidated_vat_invoice
+msgid "Consolidated Tax Invoice"
+msgstr "Зведена податкова накладна"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_contract
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+#, python-format
+msgid "Contract"
+msgstr "Договір"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+#, python-format
+msgid "Contracts"
+msgstr "Договори"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+#, python-format
+msgid "Create VAT Adjustment Invoice"
+msgstr "Створити Розрахунок-коригування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_vat_calculations_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.line_template_vat_first_event
+#, python-format
+msgid "Create VAT Invoices"
+msgstr "Сформувати записи по ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "Created first event records"
+msgstr "Створені записи по першій події"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_first_event_credit
+msgid "Credit"
+msgstr "Кредит"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Customer"
+msgstr "Покупець"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__customer_branch_number
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__customer_branch_number
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__customer_branch_number
+msgid "Customer Branch Number"
+msgstr "Номер філії Отримувача (покупця)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__dkpp_code_id
+msgid "DKPP Code"
+msgstr "Код за ДКПП"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.product_dkpp_code_menu
+msgid "DKPP Codes"
+msgstr "Коди за ДКПП"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_calculations__period_begin_date
+msgid "Date begin"
+msgstr "Початок періоду"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_calculations__period_end_date
+msgid "Date end"
+msgstr "Кінець періоду"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__date_from
+msgid "Date from"
+msgstr "Дата від"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__date_to
+msgid "Date to"
+msgstr "Дата до"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_first_event_debit
+msgid "Debit"
+msgstr "Дебет"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_default_product_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_default_product_id
+msgid "Default Product"
+msgstr "Товар за замовчуванням"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.menu_accounting_vat_dictionaries
+msgid "Dictionaries"
+msgstr "Довідники"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__discount
+msgid "Discount (%)"
+msgstr "Знижка (%)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_benefit_code__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_invoice_change_stage__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_invoice_import__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_calculations__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__display_name
+msgid "Display Name"
+msgstr "Ім'я для відображення"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_benefit_code__document_name
+msgid "Document Name"
+msgstr "Назва документа"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__date_generate
+msgid "Document date"
+msgstr "Дата документу"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vendor_vat_invoice_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vendor_vat_invoice_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vendor_vat_invoice_type
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vendor_vat_invoice
+msgid "Document type"
+msgstr "Тип документу"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "Download PDF"
+msgstr "Завантажити PDF"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "Download XML"
+msgstr "Завантажити XML"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_invoice_stage__draft
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_invoice_change_stage__vat_invoice_stage__draft
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Draft Tax Invoice"
+msgstr "Чернетка податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Draft VAT Adjustment Invoice"
+msgstr "Чернетка Розрахунок-коригування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Draft VAT Invoice"
+msgstr "Чернетка податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Draft Vendor VAT Adjustment Invoice"
+msgstr "Чернетка Розрахунок-коригування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Draft Vendor VAT Invoice"
+msgstr "Чернетка податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Due Date"
+msgstr "Термін реєстрації"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "Edit Addition"
+msgstr "Редагувати Додаток"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "Edit Report"
+msgstr "Редагувати Декларацію"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_benefit_code__end_date
+msgid "End of the Benefit Code"
+msgstr "Кінець дії пільги"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.server,name:selferp_l10n_ua_vat.account_move_action_vat_export_xml
+msgid "Export XML"
+msgstr "Вивантаження в XML"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__external_number
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__external_number
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__external_number
+msgid "External number"
+msgstr "Зовнішній номер документу"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report,name:selferp_l10n_ua_vat.account_report_vat_first_event
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_first_event_amount
+#: model:ir.actions.client,name:selferp_l10n_ua_vat.account_report_vat_first_event_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_report_vat_first_event_menu
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "First Event"
+msgstr "Перша подія"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__amount_first_event
+msgid "First Event Amount"
+msgstr "Сума першої події"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__first_event_journal_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__first_event_journal_id
+msgid "First Event VAT Journal"
+msgstr "Журнал для першої події по ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "For VAT invoice/VAT invoice adjustment, created from 1 to 15 days of month (including)"
+msgstr "Для податкових накладних/розрахунків-коригування, складених з 1 по 15 календарний день (включно) календарного місяця"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "For VAT invoice/VAT invoice adjustment, created from 16 to last days of month (including)"
+msgstr "Для податкових накладних/розрахунків-коригування, складених з 16 по останній календарний день (включно) календарного місяця"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_reg_terms_1
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_reg_terms_1
+msgid "From 1 to 15 day"
+msgstr "З 1 по 15 день"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_reg_terms_2
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_reg_terms_2
+msgid "From 16 to end of month"
+msgstr "З 16 по кінець місяця"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_extra_options_vat_first_event
+msgid "Group by Contract"
+msgstr "Групування по договору"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_extra_options_vat_first_event
+msgid "Group by Purchase Order"
+msgstr "Групування по Замовленню на Купівлю"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_extra_options_vat_first_event
+msgid "Group by Sale Order"
+msgstr "Групування по Замовленню на Продаж"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_ir_http
+msgid "HTTP Routing"
+msgstr "Маршрутизація HTTP"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_invoice_import_view_form
+msgid "Import"
+msgstr "Імпортувати"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_product_product__is_import_product
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_product_template__is_import_product
+msgid "Import product"
+msgstr "Імпортований товар"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__res_partner__tracking_first_event__in_general
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__res_partner__tracking_first_event_vendor__in_general
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "In general by counterparty"
+msgstr "В цілому по контрагенту"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__res_partner__tracking_first_event__by_contract
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__res_partner__tracking_first_event_vendor__by_contract
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "In terms of contracts"
+msgstr "В розрізі договорів"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__res_partner__tracking_first_event__by_order
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__res_partner__tracking_first_event_vendor__by_order
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "In terms of orders"
+msgstr "В розрізі замовлень"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0200525
+msgid "Include J0200525"
+msgstr "Додати J0200525"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0200625
+msgid "Include J0200625"
+msgstr "Додати J0200625"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0215225
+msgid "Include J0215225"
+msgstr "Додати J0215225"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0215725
+msgid "Include J0215725"
+msgstr "Додати J0215725"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0215825
+msgid "Include J0215825"
+msgstr "Додати J0215825"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0299325
+msgid "Include J0299325"
+msgstr "Додати J0299325"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__include_J0299825
+msgid "Include J0299825"
+msgstr "Додати J0299825"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "Include in the declaration"
+msgstr "Додати до декларації"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "Початковий баланс"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/purchase_order.py:0
+#, python-format
+msgid "Invoice can be created for single purchase order only."
+msgstr "Рахунок можна створити лише для одного замовлення на купівлю."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__is_import
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__is_import
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__is_import
+msgid "Is Import"
+msgstr "Імпорт"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__issuance_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__issuance_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__issuance_date
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vendor_vat_invoice
+msgid "Issuance Date"
+msgstr "Дата виписки"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_first_event_journal_code
+msgid "JRNL"
+msgstr "Журнал"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_move
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__move_id
+msgid "Journal Entry"
+msgstr "Запис у журналі"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_move_line
+msgid "Journal Item"
+msgstr "Запис у журналі"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/linked_moves_mixin.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_linked_moves_mixin__move_line_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_purchase_order__move_line_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_sale_order__move_line_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.purchase_order_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_order_form
+#, python-format
+msgid "Journal Items"
+msgstr "Елементи журналу"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_linked_moves_mixin__move_line_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_purchase_order__move_line_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_sale_order__move_line_count
+msgid "Journal Items Count"
+msgstr "Кількість елементів журналу"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__name
+msgid "Label"
+msgstr "Мітка"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__adjustment_num_line_vat_invoice
+msgid "Line number to be adjusted"
+msgstr "Номер рядка, що коригується"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Lines"
+msgstr "Рядки документа"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__linked_purchase_order_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__linked_purchase_order_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_bank_rec_widget__linked_purchase_order_id
+msgid "Linked Purchase Order"
+msgstr "Замовлення на купівлю"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/views/fields/many2one_with_payments/many2one_with_payments.js:0
+#, python-format
+msgid "Loading..."
+msgstr "Завантаження..."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.menu_accounting_vat_mass_actions
+msgid "Mass Actions"
+msgstr "Масові дії"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "More than one company found by VAT '%(company_vat)s'!"
+msgstr "За ІПН '%(company_vat)s' знайдено більше ніж одну компанію!"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "More than one vendor found by VAT '%(partner_vat)s'!"
+msgstr "За ІПН '%(company_vat)s' знайдено більше одного виробника!"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "My Invoices"
+msgstr "Мої накладні"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_benefit_code__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#: code:addons/selferp_l10n_ua_vat/wizard/account_vat_calculations.py:0
+#, python-format
+msgid "No any VAT invoice created"
+msgstr "Жодної податкової накладної не сформовано"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/views/fields/many2one_with_payments/many2one_with_payments.js:0
+#, python-format
+msgid "No records"
+msgstr "Немає записів"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__not_issued_to_customer
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__not_issued_to_customer
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__not_issued_to_customer
+msgid "Not Issued to the Customer"
+msgstr "Не підлягає наданню отримувачу (покупцю)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__not_used_in_business_operations
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__not_used_in_business_operations
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__not_used_in_business_operations
+msgid "Not Used in Business Operations"
+msgstr " Які не призначаються для використання у госп. діяльності"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_vat_calculations.py:0
+#, python-format
+msgid "Not known VAT tracking variant: %s"
+msgstr "Невідомий варіант відстеження ПДВ: %s"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__branch_number
+msgid "Numerical number of the company's branch"
+msgstr "Числовий номер філії компанії"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_invoice_stage__on_registration
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_invoice_change_stage__vat_invoice_stage__on_registration
+msgid "On registration"
+msgstr "На реєстрації"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Only VAT invoice can be the basis for VAT adjustment invoice"
+msgstr "Тільки Податкова накладна може бути основою для Розрахунка-коригування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Only VAT invoices and VAT adjustment invoices can be exported to XML"
+msgstr "Лише податкові накладні та розрахунки-коригування можуть бути вивантажені в XML"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Only Vendor VAT Invoices/Vendor VAT Adjustment Invoices can be reconciled this way."
+msgstr "Лише Податкові накладні постачальника/Розрахунки-коригування постачальника можуть бути узгоджені таким чином."
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#, python-format
+msgid "Only cancelled VAT tax reports can be reset to draft"
+msgstr "Лише скасовані декларації можна зробити чернеткою"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#, python-format
+msgid "Only draft VAT  tax reports can be removed"
+msgstr "Лише чернетка декларації може бути видалена"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.line_template_vat_first_event
+msgid "Open"
+msgstr "Відкрити"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__tax_before_vat_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__tax_before_vat_ids
+#, python-format
+msgid "Other taxes"
+msgstr "Інші податки"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/components/tax_totals/tax_totals.xml:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_linked_moves_mixin__amount_outstanding_payment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_purchase_order__amount_outstanding_payment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_sale_order__amount_outstanding_payment
+#, python-format
+msgid "Outstanding Payment"
+msgstr "Залишок по оплаті"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/components/tax_totals/tax_totals.xml:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_linked_moves_mixin__amount_paid
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_purchase_order__amount_paid
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_sale_order__amount_paid
+#, python-format
+msgid "Paid"
+msgstr "Оплачено"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Parameters"
+msgstr "Параметри"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_partner_account_type
+msgid "Payable"
+msgstr "Кредитор"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_vat_calculations_view_form
+msgid "Pick end of period"
+msgstr "Оберіть закінчення періоду"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_vat_calculations_view_form
+msgid "Pick start of period"
+msgstr "Оберіть початок періоду"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Posted"
+msgstr "Опубліковано"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_invoice_stage__prepared
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_invoice_change_stage__vat_invoice_stage__prepared
+msgid "Prepared"
+msgstr "Підготовлено"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Price"
+msgstr "Ціна"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_cause_type_adjustment__price
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_cause_type__price
+msgid "Price Adjustment"
+msgstr "Коригування вартості"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__price_change_mode
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_debit_note__price_change_mode
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__price_change_mode
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_reversal__price_change_mode
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__price_change_mode
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Price Change"
+msgstr "Зміна ціни"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__price_without_vat
+msgid "Price without VAT"
+msgstr "Ціна без ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_vat_calculations_view_form
+msgid "Proceed"
+msgstr "Виконати"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_product_template
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__product_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_line_view_form
+msgid "Product"
+msgstr "Товар"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr "Одиниця вимірювання товару"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_purchase_order
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_account_move_line_search_bank_rec_widget
+msgid "Purchase Order"
+msgstr "Замовлення на купівлю"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Рядок замовлення на купівлю"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_default_tax_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_default_tax_credit_id
+msgid "Purchase Tax"
+msgstr "Податок на купівлю"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_move_line__linked_purchase_order_id
+msgid "Purchase order linked with this journal entry"
+msgstr "Замовлення на купівлю, пов'язана з цим елементом журналу"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__quantity
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_cause_type_adjustment__quantity
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_line__adjustment_cause_type__quantity
+msgid "Quantity Adjustment"
+msgstr "Коригування кількості"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_sale_order_line__vat_invoice_qty
+msgid "Quantity in VAT invoices"
+msgstr "Кількість у ПДВ накладних"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__adjustment_reason_type
+msgid "Reason Code"
+msgstr "Код причини"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__reason_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__reason_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__reason_type
+msgid "Reason type"
+msgstr "Тип причини"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Reason type code is required"
+msgstr "Треба вказати Тип причини"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_partner_account_type
+msgid "Receivable"
+msgstr "Дебітор"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Reconcile"
+msgstr "Узгодити"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Reconciled"
+msgstr "Узгоджено"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__refund
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_bank_rec_widget__refund
+msgid "Refund"
+msgstr "Повернення коштів"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_payment_register
+msgid "Register Payment"
+msgstr "Зареєструвати платіж"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vat_invoice_stage__registered
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move_vat_invoice_change_stage__vat_invoice_stage__registered
+msgid "Registered"
+msgstr "Зареєстровано"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__registration_type_adjustment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__registration_type_adjustment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__registration_type_adjustment
+msgid "Registration Type"
+msgstr "Тип реєстрації"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__registration_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__registration_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__registration_date
+msgid "Registration date"
+msgstr "Дата реєстрації"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__registration_due_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__registration_due_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__registration_due_date
+msgid "Registration due date"
+msgstr "Термін реєстрації"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/js/account_vat_tax_report_edit.js:0
+#, python-format
+msgid "Remove row"
+msgstr "Видалити рядок"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_tax_inspection__dpi_registry_code
+msgid "Registry Code"
+msgstr "Код ЄДРПОУ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0200125
+msgid "Rendered Html Part J0200125"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0200525
+msgid "Rendered Html Part J0200525"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0200625
+msgid "Rendered Html Part J0200625"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0215225
+msgid "Rendered Html Part J0215225"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0215725
+msgid "Rendered Html Part J0215725"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0215825
+msgid "Rendered Html Part J0215825"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0299325
+msgid "Rendered Html Part J0299325"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__rendered_html_part_J0299825
+msgid "Rendered Html Part J0299825"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.menu_accounting_vat_reports
+msgid "Reports"
+msgstr "Звіти"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "Required settings to keep VAT records in accordance with the legal regulations in Ukraine."
+msgstr "Блок налаштувань необхідних для ведення обліку ПДВ відповідно до законодавчих норм в Україні."
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "Reset to Draft"
+msgstr "Зробити чернеткою"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__responsible_person_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__responsible_person_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__responsible_person_id
+msgid "Responsible"
+msgstr "Посадова (уповноважена) особа"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__linked_sale_order_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__linked_sale_order_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_bank_rec_widget__linked_sale_order_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_account_move_line_search_bank_rec_widget
+#, python-format
+msgid "Sale Order"
+msgstr "Замовлення на продаж"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+#, python-format
+msgid "Sale Orders"
+msgstr "Замовлення"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_move_line__linked_sale_order_id
+msgid "Sale order linked with this journal entry"
+msgstr "Замовлення на продаж, пов'язане з цим елементом журналу"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_sale_order
+msgid "Sales Order"
+msgstr "Замовлення на продаж"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Рядок замовлення"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_default_tax_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_default_tax_id
+msgid "Sales Tax"
+msgstr "Податок на продаж"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/views/fields/many2one_with_payments/many2one_with_payments.js:0
+#, python-format
+msgid "Search More..."
+msgstr "Шукати ще..."
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "Select at least one file for import, please."
+msgstr "Оберіть хоча б один файл для імпорту, будь ласка."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_res_partner__tracking_first_event
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_res_users__tracking_first_event
+msgid "Select the option to track the first VAT event for customers (VAT liabilities)"
+msgstr "Оберіть варіант відстеження першої події по ПДВ для покуців (податкові зобов'язання)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_res_partner__tracking_first_event_vendor
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_res_users__tracking_first_event_vendor
+msgid "Select the option to track the first VAT event for suppliers (VAT credit)"
+msgstr "Оберіть варіант відстеження першої події по ПДВ для постачальників (податковий кредит)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__sequence
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__sequence_vat_adjustment_invoice_id
+msgid "Sequence of VAT Adjustment Invoices"
+msgstr "Послідовність Розрахунок-коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__sequence_vat_invoice_id
+msgid "Sequence of VAT Invoices"
+msgstr "Послідовність Податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__sequence_vat_tax_report_id
+msgid "Sequence of VAT Tax Report"
+msgstr "Послідовність Декларації з ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__sequence_vendor_vat_invoice_id
+msgid "Sequence of Vendor VAT Invoices"
+msgstr "Послідовність Податкової накладної Постачальника"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid ""
+"Set up the day of the month (deadline) in accordance with the requirements "
+"of the law by which (inclusive) the tax invoice/tax invoice adjustment must "
+"be registered"
+msgstr ""
+"Вкажіть календарний день місяця відповідно до вимог законодавства, до дня "
+"якого (включно) повинна бути зареєстрована податкова накладна/розрахунок "
+"коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__settlements_with_customs_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__settlements_with_customs_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__settlements_with_customs_account_id
+msgid "Settlements with customs"
+msgstr "Розрахунки з митницею"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_invoice_stage
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_invoice_stage
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_invoice_change_stage__vat_invoice_stage
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_invoice_stage
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Stage"
+msgstr "Стадія"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_benefit_code__start_date
+msgid "Start of the Benefit Code"
+msgstr "Початок дії пільги"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__state
+msgid "State"
+msgstr "Стан"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "Status"
+msgstr "Статус"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_line_subtotal
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_line_subtotal
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_line_subtotal
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+msgid "Subtotal"
+msgstr "Підсумок"
+
+#. module: selferp_l10n_ua_vat
+#: model:account.report.column,name:selferp_l10n_ua_vat.account_report_vat_tax_amount
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+msgid "Tax"
+msgstr "Податок"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/components/tax_totals/tax_totals.xml:0
+#, python-format
+msgid "Tax Amount"
+msgstr "Сума податку"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/components/tax_totals/tax_totals.xml:0
+#, python-format
+msgid "Tax Base"
+msgstr "База оподаткування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/static/src/components/tax_totals/tax_totals.xml:0
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_tax_group
+#, python-format
+msgid "Tax Group"
+msgstr "Група податків"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "Tax with code %s not found"
+msgstr "Податок з кодом %s не знайдено"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_vat_line_view_form
+msgid "Taxes"
+msgstr "Податки"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_account__first_event
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_account_search
+msgid "The first event"
+msgstr "Перша подія"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/res_company.py:0
+#: code:addons/selferp_l10n_ua_vat/models/res_company.py:0
+#, python-format
+msgid "The value of day of the month must be a number between 1 and 31 (including)"
+msgstr "Значення дня місяця має бути числом від 1 до 31 (включно)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,help:selferp_l10n_ua_vat.field_account_tax_group__vat_code
+msgid "The value of the tax code of invoices/adjustments for the export in XML purpose"
+msgstr "Значення коду податку для вивантаження податкових накладних/розрахунків- коригування у XML формат"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "There are nothing to create VAT invoices"
+msgstr "Немає нічого для формування податкових накладних"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "To Check"
+msgstr "Перевірити"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__to_consolidated_vat_invoice
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__to_consolidated_vat_invoice
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__to_consolidated_vat_invoice
+msgid "To the Consolidated VAT Invoice"
+msgstr "До зведеної податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__to_vat_invoice_exempt_from_taxation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__to_vat_invoice_exempt_from_taxation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__to_vat_invoice_exempt_from_taxation
+msgid "To the VAT Invoice Exempt from Taxation"
+msgstr "До податкової накладної, складеної на операції, звільнені від оподаткування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#: code:addons/selferp_l10n_ua_vat/static/src/components/tax_totals/tax_totals.xml:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__total
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+#, python-format
+msgid "Total"
+msgstr "Разом"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_contract__vat_invoice_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_partner__vat_invoice_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_users__vat_invoice_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_sale_order__vat_invoice_total
+msgid "Total VAT Invoice"
+msgstr "Разом ПН"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_contract__vendor_vat_invoice_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_partner__vendor_vat_invoice_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_users__vendor_vat_invoice_total
+msgid "Total Vendor VAT Invoice"
+msgstr "Разом з Податкових документів постачальника"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__total_manual
+msgid "Total edited"
+msgstr "Разом (відредаговано)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__total_without_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Total without VAT"
+msgstr "Разом без ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__vat_base
+msgid "VAT base"
+msgstr "База для ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_partner__tracking_first_event
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_users__tracking_first_event
+msgid "Tracking the First Event for Customer"
+msgstr "Відстеження першої події покупця"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_partner__tracking_first_event_vendor
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_users__tracking_first_event_vendor
+msgid "Tracking the First Event for Vendor"
+msgstr "Відстеження першої події постачальника"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "Tracking the first event in general by counterparty"
+msgstr "Розрахунок першої події в цілому по контрагенту"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "Tracking the first event in general by counterparty, in terms of contracts or orders"
+msgstr "Розрахунок першої події в цілому по контрагенту, у розрізі договорів або замовлень"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "Tracking the first event in terms of contracts"
+msgstr "Розрахунок першої події у розрізі договорів"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.search_template_tracking_first_event
+msgid "Tracking the first event in terms of orders"
+msgstr "Розрахунок першої події у розрізі замовлень"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__move_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__move_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__move_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__move_type
+msgid "Type"
+msgstr "Тип"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__uktzed_code_id
+msgid "UKTZED Code"
+msgstr "Код за УКТЗЕД"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.product_uktzed_code_menu
+msgid "UKTZED Codes"
+msgstr "Коди за УКТЗЕД"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_account_unconfirmed_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_account_unconfirmed_credit_id
+msgid "Unconfirmed VAT Credit"
+msgstr "Непідтверджений податковий кредит"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_account_unconfirmed_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_account_unconfirmed_id
+msgid "Unconfirmed VAT Liabilities"
+msgstr "Непідтверджені податкові зобов'язання"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "Undefined"
+msgstr "Невизначено"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__price_unit
+msgid "Unit Price"
+msgstr "Ціна одиниці"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__product_uom_id
+msgid "Unit of Measure"
+msgstr "Одиниця виміру"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#, python-format
+msgid "Untaxed Amount"
+msgstr "Сума без податків"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "UoM"
+msgstr "Од. Вим."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_invoice_no_obligation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_invoice_no_obligation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_invoice_no_obligation
+msgid "Use no obligation VAT account"
+msgstr "Використовувати рахунок Підтверджені податкові зобовʼязання"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__vat_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_tax_group__is_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.menu_accounting_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_group_view_search
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_partner_form
+msgid "VAT"
+msgstr "ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_account_id
+msgid "VAT Account"
+msgstr "Рахунок обліку ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__move_type__vat_adjustment_invoice
+#, python-format
+msgid "VAT Adjustment Invoice"
+msgstr "Розрахунок-коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_adjustment_invoice_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_adjustment_invoice_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_adjustment_invoice_count
+msgid "VAT Adjustment Invoice Count"
+msgstr "Кількість Розрахунків-коригування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_move_action_vat_adjustment_invoice
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_adjustment_invoice_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_adjustment_invoice_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_adjustment_invoice_ids
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_move_menu_vat_adjustment_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+#, python-format
+msgid "VAT Adjustment Invoices"
+msgstr "Розрахунок-коригування"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__amount_vat_tax
+msgid "VAT Amount"
+msgstr "Сума ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_vat_calculations
+msgid "VAT Calculations"
+msgstr "Обчислення ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_tax_group__vat_code
+msgid "VAT Code"
+msgstr "Код ставки податку"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_contract_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_contract_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_contract_count
+msgid "VAT Contract Count"
+msgstr "Кількість договорів"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_contract_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_contract_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_contract_ids
+msgid "VAT Contracts"
+msgstr "Договори"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_vat_calculations_action_create_invoices
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.accounting_vat_calculations_menu_create_invoices
+msgid "VAT Create invoices"
+msgstr "Сформувати записи по ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.menu_accounting_vat_credit
+msgid "VAT Credit"
+msgstr "Податковий кредит"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vendor_vat_journal_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vendor_vat_journal_id
+msgid "VAT Credit Journal"
+msgstr "Журнал для податкового кредиту"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_report_vat_first_event_handler
+msgid "VAT First Event Report Handler"
+msgstr "Перший обробник звітів про події ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__first_event_source_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__first_event_source_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__first_event_source_id
+msgid "VAT First Event Source"
+msgstr "Джерело першої події ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__move_type__vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vat_invoice
+msgid "VAT Invoice"
+msgstr "Податкова накладна"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "VAT Invoice Info"
+msgstr "Дані Податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_invoice_adjustment_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_invoice_adjustment_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_invoice_adjustment_id
+msgid "VAT Invoice for Adjustment"
+msgstr "Податкова накладна для коригування"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "VAT Invoice import error [%(file_name)s]: %(error_message)s"
+msgstr "Помилка імпорту ПН/РК [%(file_name)s]: %(error_message)s"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_contract.py:0
+#: code:addons/selferp_l10n_ua_vat/models/res_partner.py:0
+#: code:addons/selferp_l10n_ua_vat/models/sale_order.py:0
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_move_action_vat_invoice
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_move_menu_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_tree_vat_invoice
+#, python-format
+msgid "VAT Invoices"
+msgstr "Податкові накладні"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "VAT Items"
+msgstr "ПДВ елементи"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.menu_accounting_vat_liabilities
+msgid "VAT Liabilities"
+msgstr "Податкові зобовʼязання"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_journal_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_journal_id
+msgid "VAT Liabilities Journal"
+msgstr "Журнал для податкових зобов'язань"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_partner__vat_non_payer
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_users__vat_non_payer
+msgid "VAT Non-payer"
+msgstr "Неплатник ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_payer
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_payer
+msgid "VAT Payer"
+msgstr "Платник ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_sale_order_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_sale_order_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_sale_order_id
+msgid "VAT Sale Order"
+msgstr "Замовлення для ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_sale_order_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_sale_order_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_sale_order_count
+msgid "VAT Sale Order Count"
+msgstr "Кількість замовлень на продаж"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_sale_order_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_sale_order_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_sale_order_ids
+msgid "VAT Sale Orders"
+msgstr "Замовлення на продаж"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_line_tax
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_line_tax
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_line_tax
+msgid "VAT Tax"
+msgstr "Податок ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_line_total_vat_base
+msgid "VAT base"
+msgstr "База для ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_vat_tax_report
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_tax_vat_tax_report_view_form
+msgid "VAT Tax Report"
+msgstr "Декларація з ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200125
+msgid "VAT Tax Report (J0200125)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200525
+msgid "VAT Tax Report (J0200525)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0200625
+msgid "VAT Tax Report (J0200625)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215225
+msgid "VAT Tax Report (J0215225)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215725
+msgid "VAT Tax Report (J0215725)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0215825
+msgid "VAT Tax Report (J0215825)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0299325
+msgid "VAT Tax Report (J0299325)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.report,name:selferp_l10n_ua_vat.account_vat_tax_report_action_J0299825
+msgid "VAT Tax Report (J0299825)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_vat_tax_report_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_vat_tax_report_menu
+msgid "VAT Tax Reports"
+msgstr "Податкові декларації з ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_line_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_line_total
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_line_total
+msgid "VAT Total"
+msgstr "Разом ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_line_tax_totals
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_line_tax_totals
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_line_tax_totals
+msgid "VAT Totals"
+msgstr "ПДВ Разом"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__first_event_vat_invoice_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__first_event_vat_invoice_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__vat_invoice_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__first_event_vat_invoice_id
+msgid "VAT invoice"
+msgstr "Податкова накладна"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model,name:selferp_l10n_ua_vat.model_account_move_vat_line
+msgid "VAT invoice lines"
+msgstr "Рядки Податкової накладної"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_line_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_line_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_line_ids
+msgid "VAT lines"
+msgstr "ПДВ лінії"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_line__vat_tax_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move_vat_line__vat_tax_id
+msgid "VAT tax"
+msgstr "Податок ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_vat_tax_report__values
+msgid "Values"
+msgstr "Значення"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_reg_terms_1_next_month
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_reg_terms_1_next_month
+msgid "Vat Reg Terms 1 Next Month"
+msgstr "Умови ПДВ реєстрації 1 наступного місяця"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_company__vat_reg_terms_2_next_month
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_res_config_settings__vat_reg_terms_2_next_month
+msgid "Vat Reg Terms 2 Next Month"
+msgstr "Умови ПДВ реєстрації 2 наступного місяця"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_summary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_summary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_summary
+msgid "Vat Summary"
+msgstr "Всього ПДВ"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Vendor"
+msgstr "Постачальник"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__move_type__vendor_vat_adjustment_invoice
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vendor_vat_invoice_type__vendor_vat_adjustment_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vendor_vat_invoice
+msgid "Vendor VAT Adjustment Invoice"
+msgstr "Розрахунок-коригування Постачальника"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vendor_vat_invoice_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vendor_vat_invoice_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vendor_vat_invoice_id
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__move_type__vendor_vat_invoice
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__vendor_vat_invoice_type__vendor_vat_invoice
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.account_move_view_search_vendor_vat_invoice
+msgid "Vendor VAT Invoice"
+msgstr "Податкова накладна Постачальника"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.view_move_form
+msgid "Vendor VAT Invoice Info"
+msgstr "Дані Податкового документа постачальника"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_contract.py:0
+#: code:addons/selferp_l10n_ua_vat/models/res_partner.py:0
+#: model:ir.actions.act_window,name:selferp_l10n_ua_vat.account_move_action_vendor_vat_invoice
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_move_menu_vendor_vat_invoice
+#, python-format
+msgid "Vendor VAT Invoices"
+msgstr "Податкові документи постачальника"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_move.py:0
+#: model:ir.actions.server,name:selferp_l10n_ua_vat.account_move_action_vat_import_xml
+#: model:ir.ui.menu,name:selferp_l10n_ua_vat.account_move_menu_vendor_vat_invoice_import
+#, python-format
+msgid "Vendor VAT Invoices Import"
+msgstr "Імпорт податкового документу постачальника"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/wizard/account_move_vat_invoice_import.py:0
+#, python-format
+msgid "Vendor not found by VAT '%(partner_vat)s'!"
+msgstr "За ІПН '%(partner_vat)s' виробника не знайдено!"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "View First Event Journal Entry"
+msgstr "Переглянути запис по першій події"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "View Journal Entry"
+msgstr "Переглянути елементи журналу"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#, python-format
+msgid "View VAT Invoice"
+msgstr "Переглянути податкову накладну"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_report_vat_first_event.py:0
+#: code:addons/selferp_l10n_ua_vat/wizard/account_vat_calculations.py:0
+#, python-format
+msgid "Warning!"
+msgstr "Попередження!"
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/reconciliation_widget.py:0
+#, python-format
+msgid "Wrong account type, only receivable/payable accounts are acceptable in reconciliation of VAT documents."
+msgstr "Неправильний тип рахунку, лише дебіторські/кредиторські рахунки можуть використовуватись при узгодженні документів з ПДВ."
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__registration_type_adjustment__by_customer
+msgid "by Customer"
+msgstr "Отримувачем (покупцем)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__registration_type_adjustment__by_vendor
+msgid "by Vendor"
+msgstr "Постачальником (продавцем)"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__consolidated_tax_code__1
+msgid "in case of accrual of tax liabilities in accordance with clause 198.5 of the TCU"
+msgstr "у разі нарахування податкових зобов'язань відповідно до п.198.5 ПКУ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__consolidated_tax_code__2
+msgid "in case of accrual of tax liabilities in accordance with clause 199.1 of the TCU"
+msgstr "у разі нарахування податкових зобов'язань відповідно до п.199.1 ПКУ"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__consolidated_tax_code__3
+msgid "in case of preparation of consolidated tax invoices in accordance with clause 15 of Order 1307"
+msgstr "у разі складання зведених податкових накладних відповідно до п. 15 Порядку 1307"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_move__consolidated_tax_code__4
+msgid "in case of preparation of consolidated tax invoices in accordance with clause 19 of Order 1307"
+msgstr "у разі складання зведених податкових накладних відповідно до п. 19 Порядку 1307"
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.res_config_settings_view_form
+msgid "next month"
+msgstr "наступного місяця"
+
+
+#. module: selferp_l10n_ua_vat
+#: model:account.tax.group,name:selferp_l10n_ua_vat.account_tax_group_vat0_export
+msgid "ПДВ 0% при експорті товарів"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:account.tax.group,name:selferp_l10n_ua_vat.account_tax_group_vat0_delivered_on_customs
+msgid "ПДВ 0% при постачанні на митній території України"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#. odoo-python
+#: code:addons/selferp_l10n_ua_vat/models/account_vat_tax_report.py:0
+#, python-format
+msgid "ПОДАТКОВА ДЕКЛАРАЦІЯ З ПОДАТКУ НА ДОДАНУ ВАРТІСТЬ"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_tax_inspection__type__4
+msgid "Районна ДПI (для районів міста)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_tax_inspection__type__5
+msgid "Районна ДПI (для сільських районів)"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_tax_inspection__type__10
+msgid "Регіональні управління ДСАТ ДПСУ"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_tax_inspection__type__11
+msgid "СДПI по роботі з підприємствами ГМК"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_tax_inspection__type__8
+msgid "Спеціалізована ДПI"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_vat.selection__account_tax_inspection__type__12
+msgid "Управління ПМ"
+msgstr ""
+
+#. module: selferp_l10n_ua_vat
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_vat.line_template_vat_first_event
+msgid "⇒ Journal Items"
+msgstr "⇒ Елементи журналу"
+
+#. module: selferp_l10n_ua_vat
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_bank_statement_line__vat_invoice_not_standard_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_move__vat_invoice_not_standard_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_vat.field_account_payment__vat_invoice_not_standard_account_id
+msgid "Not standard account for operations with VAT"
+msgstr "Використовувати інший рахунок для записів по ПДВ"

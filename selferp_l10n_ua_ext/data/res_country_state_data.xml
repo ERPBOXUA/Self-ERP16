@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="res_country_state_ua_01" model="res.country.state">
+        <field name="name">Автономна Республіка Крим</field>
+        <field name="code">01</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_02" model="res.country.state">
+        <field name="name">Вінницька</field>
+        <field name="code">02</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_03" model="res.country.state">
+        <field name="name">Волинська</field>
+        <field name="code">03</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_04" model="res.country.state">
+        <field name="name">Дніпропетровська</field>
+        <field name="code">04</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_05" model="res.country.state">
+        <field name="name">Донецька</field>
+        <field name="code">05</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_06" model="res.country.state">
+        <field name="name">Житомирська</field>
+        <field name="code">06</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_07" model="res.country.state">
+        <field name="name">Закарпатська</field>
+        <field name="code">07</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_08" model="res.country.state">
+        <field name="name">Запорізька</field>
+        <field name="code">08</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_09" model="res.country.state">
+        <field name="name">Івано-Франківська</field>
+        <field name="code">09</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_10" model="res.country.state">
+        <field name="name">Київська</field>
+        <field name="code">10</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_11" model="res.country.state">
+        <field name="name">Кіровоградська</field>
+        <field name="code">11</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_12" model="res.country.state">
+        <field name="name">Луганська</field>
+        <field name="code">12</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_13" model="res.country.state">
+        <field name="name">Львівська</field>
+        <field name="code">13</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_14" model="res.country.state">
+        <field name="name">Миколаївська</field>
+        <field name="code">14</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_15" model="res.country.state">
+        <field name="name">Одеська</field>
+        <field name="code">15</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_16" model="res.country.state">
+        <field name="name">Полтавська</field>
+        <field name="code">16</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_17" model="res.country.state">
+        <field name="name">Рівненська</field>
+        <field name="code">17</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_18" model="res.country.state">
+        <field name="name">Сумська</field>
+        <field name="code">18</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_19" model="res.country.state">
+        <field name="name">Тернопільська</field>
+        <field name="code">19</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_20" model="res.country.state">
+        <field name="name">Харківська</field>
+        <field name="code">20</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_21" model="res.country.state">
+        <field name="name">Херсонська</field>
+        <field name="code">21</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_22" model="res.country.state">
+        <field name="name">Хмельницька</field>
+        <field name="code">22</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_23" model="res.country.state">
+        <field name="name">Черкаська</field>
+        <field name="code">23</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_24" model="res.country.state">
+        <field name="name">Чернівецька</field>
+        <field name="code">24</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_25" model="res.country.state">
+        <field name="name">Чернігівська</field>
+        <field name="code">25</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_26" model="res.country.state">
+        <field name="name">м. Київ</field>
+        <field name="code">26</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="res_country_state_ua_27" model="res.country.state">
+        <field name="name">м. Севастополь</field>
+        <field name="code">27</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+</odoo>

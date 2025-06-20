@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_move_line_tree" model="ir.ui.view">
+        <field name="name">account.move.line.tree.inherit.selferp_cashflow_analytic</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="analytic_distribution" position="before">
+                <field name="can_change_cash_flow_analytic_account" invisible="1"/>
+                <field name="cash_flow_analytic_account_id" widget="move2analytic_link"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_account_move_line_filter" model="ir.ui.view">
+        <field name="name">account.move.line.search.inherit.selferp_cashflow_analytic</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/filter[@name='journal']" position="after">
+                <filter name="group_cashflow" string="Cash Flow" domain="[]" context="{'group_by': 'cash_flow_analytic_account_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

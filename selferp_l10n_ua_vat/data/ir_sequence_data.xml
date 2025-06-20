@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+
+    <record id="seq_account_move_vat_invoice" model="ir.sequence">
+        <field name="name">VAT Invoice</field>
+        <field name="code">account.move.vat_invoice</field>
+        <field name="prefix">VAT</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+
+    <record id="seq_account_move_vat_adjustment_invoice" model="ir.sequence">
+        <field name="name">VAT Adjustment Invoice</field>
+        <field name="code">account.move.vat_adjustment_invoice</field>
+        <field name="prefix">ADJ</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+
+    <record id="seq_account_move_vendor_vat_invoice" model="ir.sequence">
+        <field name="name">Vendor VAT Invoice</field>
+        <field name="code">account.move.vendor_vat_invoice</field>
+        <field name="prefix">VEN</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+
+    <record id="seq_account_vat_tax_report" model="ir.sequence">
+        <field name="name">VAT Tax Report</field>
+        <field name="code">account.vat.tax_report</field>
+        <field name="prefix">ПДВ</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+
+</odoo>

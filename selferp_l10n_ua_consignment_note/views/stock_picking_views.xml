@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.selferp_l10n_ua_consignment_note</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <group name="other_infos" position="after">
+                <field name="picking_type_code" invisible="1"/>
+                <group name="infos_for_the_consignment_note"
+                       string="Information for the Consignment note"
+                       attrs="{'invisible': [('picking_type_code', 'not in', ['outgoing'])]}">
+                    <field name="vehicle"/>
+                    <field name="vehicle_carrier_id"/>
+                    <field name="driver_id"/>
+                    <field name="customer_id"/>
+
+                    <field name="loading_point_id"
+                           widget="res_partner_many2one"
+                           context="{'res_partner_search_mode': 'customer_id', 'show_address': 1}"
+                           options="{'always_reload': True}"
+                    />
+
+                    <field name="unloading_point_id"
+                           widget="res_partner_many2one"
+                           context="{'res_partner_search_mode': 'customer_id', 'show_address': 1}"
+                           options="{'always_reload': True}"
+                    />
+                    <button type="object"
+                            name="action_print_report"
+                            string="Consignment note"
+                            class="btn-primary text-nowrap"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+
+</odoo>

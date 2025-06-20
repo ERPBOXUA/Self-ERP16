@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_schedule_view_tree" model="ir.ui.view">
+        <field name="name">hr.schedule.view.tree</field>
+        <field name="model">hr.schedule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="number"/>
+                <field name="schedule_date"/>
+                <field name="basis"/>
+                <field name="document_date"/>
+                <field name="responsible_employee_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_schedule_view_form" model="ir.ui.view">
+        <field name="name">hr.schedule.view.form</field>
+        <field name="model">hr.schedule</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="number"/>
+                            <field name="basis"/>
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="schedule_date"/>
+                            <field name="document_date"/>
+                            <field name="responsible_employee_id" options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <separator string="Schedule Lines"/>
+                    <field name="line_ids">
+                        <tree>
+                            <field name="job_id"/>
+                            <field name="department_id"/>
+                            <field name="employee_qty"/>
+                            <field name="salary"/>
+                            <field name="surcharge"/>
+                            <field name="total_salary"/>
+                            <field name="company_currency_id" invisible="1"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="job_id" options="{'no_create': True}"/>
+                                        <field name="department_id" options="{'no_create': True}"/>
+                                        <field name="employee_qty"/>
+                                    </group>
+                                    <group>
+                                        <field name="salary"/>
+                                        <field name="surcharge"/>
+                                        <field name="total_salary"/>
+                                        <field name="company_currency_id" invisible="1"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_schedule_view_search" model="ir.ui.view">
+        <field name="name">hr.schedule.view.search</field>
+        <field name="model">hr.schedule</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number"/>
+                <field name="responsible_employee_id"/>
+                <field name="basis"/>
+                <field name="line_ids" string="Job Position" filter_domain="[('line_ids.job_id', 'ilike', self)]"/>
+                <field name="line_ids" string="Department" filter_domain="[('line_ids.department_id', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="hr_schedule_action" model="ir.actions.act_window">
+        <field name="name">Staff Schedule</field>
+        <field name="res_model">hr.schedule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="hr_schedule_menu"
+              name="Staff Schedule"
+              action="hr_schedule_action"
+              parent="hr.hr_menu_hr_reports"
+              sequence="10"/>
+
+
+</odoo>

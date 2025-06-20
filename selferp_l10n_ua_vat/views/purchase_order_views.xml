@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <button name="action_view_invoice" position="after">
+                <button name="action_view_journal_items"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-bars"
+                        groups="account.group_account_readonly"
+                        attrs="{'invisible': [('move_line_count', '=', 0)]}">
+                    <field name="move_line_count" widget="statinfo" string="Journal Items" />
+                </button>
+            </button>
+        </field>
+    </record>
+
+
+</odoo>

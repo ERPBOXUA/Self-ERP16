@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<DECLAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="J1201015.XSD">
+  <DECLARHEAD>
+    <TIN>11111111</TIN>
+    <C_DOC>J12</C_DOC>
+    <C_DOC_SUB>010</C_DOC_SUB>
+    <C_DOC_VER>15</C_DOC_VER>
+    <C_DOC_TYPE>0</C_DOC_TYPE>
+    <C_DOC_CNT>2</C_DOC_CNT>
+    <C_REG>13</C_REG>
+    <C_RAJ>1</C_RAJ>
+    <PERIOD_MONTH>4</PERIOD_MONTH>
+    <PERIOD_TYPE>1</PERIOD_TYPE>
+    <PERIOD_YEAR>2023</PERIOD_YEAR>
+    <C_STI_ORIG>1301</C_STI_ORIG>
+    <C_DOC_STAN>1</C_DOC_STAN>
+    <LINKED_DOCS xsi:nil="true" />
+    <D_FILL>02052023</D_FILL>
+    <SOFTWARE>MEDOC</SOFTWARE>
+  </DECLARHEAD>
+  <DECLARBODY>
+    <R01G1 xsi:nil="true" />
+    <R03G10S xsi:nil="true" />
+    <HORIG1 xsi:nil="true" />
+    <HTYPR xsi:nil="true" />
+    <HFILL>23042023</HFILL>
+    <HNUM>28</HNUM>
+    <HNUM1 xsi:nil="true" />
+    <HNAMESEL>ТОВ "Дзвіночок"</HNAMESEL>
+    <HNAMEBUY>ТОВ Мармеладка</HNAMEBUY>
+    <HKSEL>444444446677</HKSEL>
+    <HNUM2 xsi:nil="true" />
+    <HTINSEL>44667744</HTINSEL>
+    <HKS>1</HKS>
+    <HKBUY>111111111111</HKBUY>
+    <HFBUY xsi:nil="true" />
+    <HTINBUY>11111111</HTINBUY>
+    <HKB>1</HKB>
+    <R04G11>600.00</R04G11>
+    <R03G11>100.00</R03G11>
+    <R03G7>100.00</R03G7>
+    <R03G109 xsi:nil="true" />
+    <R03G14 xsi:nil="true" />
+    <R01G7>500.00</R01G7>
+    <R01G109 xsi:nil="true" />
+    <R01G14 xsi:nil="true" />
+    <R01G9 xsi:nil="true" />
+    <R01G8 xsi:nil="true" />
+    <R01G10 xsi:nil="true" />
+    <R02G11 xsi:nil="true" />
+    <RXXXXG3S ROWNUM="1">Розчинна кава</RXXXXG3S>
+    <RXXXXG4 ROWNUM="1">2101110010</RXXXXG4>
+    <RXXXXG32 ROWNUM="1" xsi:nil="true" />
+    <RXXXXG33 ROWNUM="1" xsi:nil="true" />
+    <RXXXXG4S ROWNUM="1">шт</RXXXXG4S>
+    <RXXXXG105_2S ROWNUM="1">2009</RXXXXG105_2S>
+    <RXXXXG5 ROWNUM="1">5</RXXXXG5>
+    <RXXXXG6 ROWNUM="1">100</RXXXXG6>
+    <RXXXXG008 ROWNUM="1">20</RXXXXG008>
+    <RXXXXG009 ROWNUM="1" xsi:nil="true" />
+    <RXXXXG010 ROWNUM="1">500.00</RXXXXG010>
+    <RXXXXG11_10 ROWNUM="1">100</RXXXXG11_10>
+    <HBOS>Вовчук Галина</HBOS>
+    <HKBOS>3337502145</HKBOS>
+    <R003G10S xsi:nil="true" />
+  </DECLARBODY>
+</DECLAR>

@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="hr_work_entry_report_template">
+        <t t-call="web.basic_layout" t-translation="off">
+            <style>
+                .work_entry_page {
+                    font-family: 'PT_font', serif;
+                }
+
+                .underlined_input {
+                    margin: 0 3px;
+                    height: 16px;
+                    border-bottom: 1px solid black;
+
+                    font-family: 'PT_font', serif;
+                    font-size: 16px;
+                    line-height: 16px;
+                }
+
+                .underlined_block_title {
+                    -webkit-box-flex: 0;
+                    flex: 0;
+                    margin-right: 10px;
+                    font-family: 'PT_font', serif;
+                    font-size: 15px;
+                    line-height: 1;
+                    white-space: nowrap;
+                }
+
+                .underlined_block_value_container {
+                    -webkit-box-flex: 1;
+                    flex: 1;
+                    margin-right: 10px;
+                }
+
+                .underlined_block_value_container .ub-value {
+                    width: 100%;
+                    padding: 0 10px;
+                    border-bottom: 1px solid black;
+                    font-family: 'PT_font', serif;
+                    font-size: 15px;
+                    line-height: 1;
+                    min-height: 20px;
+                }
+
+                .underlined_block_value_container .ub-help-info {
+                    width: 100%;
+                    font-size: 10px;
+                    text-align: center;
+                    line-height: 1;
+                }
+
+                .underlined_block_value_container_inline {
+                    position: relative;
+                    display: inline-block;
+                    height: 20px;
+                    padding: 0 2px;
+                    font-size: 15px;
+                }
+
+                .underlined_block_value_container_inline .ub_value {
+                    position: relative;
+                    top: -3px;
+                    display: inline-block;
+                    width: 100%;
+                    min-height: 20px;
+                    padding: 0 5px;
+                    border-bottom: 1px solid black;
+                    font-family: 'PT_font', serif;
+                    font-size: 15px;
+                    line-height: 1.2;
+                    vertical-align: bottom;
+                }
+
+                .underlined_block_inline_text {
+                    display: inline-block;
+                    margin-right: 2px;
+                    height: 17px;
+                    font-family: 'PT_font', serif;
+                    font-size: 15px;
+                    line-height: 1.2;
+                    white-space: nowrap;
+                }
+
+                .legend_table {
+                    border-color: transparent;
+                }
+
+                .legend_table td {
+                    width: 12%;
+                    min-height: 30px !important;
+                    border: 0;
+                    border-bottom: 1px solid black;
+                    text-align: center;
+                    vertical-align: bottom;
+                    padding: 3px;
+                    font-size: 12px !important;
+                    line-height: 1.1 !important;
+                }
+
+                .legend_table td:first-child {
+                    width: 76%;
+                    min-width: 74%;
+                    padding-left: 10px;
+                    text-align: left;
+                }
+
+                .simple_table {
+                    margin-bottom: 0;
+                    border: 1px solid black;
+                }
+
+                .simple_table th {
+                    padding: 1px 3px;
+                    font-size: 12px;
+                    line-height: 1.2;
+                }
+
+                .simple_table td {
+                    padding: 1px 3px;
+                    font-size: 12px;
+                    line-height: 1.2;
+                }
+
+                .main_doc_table {
+                    margin-bottom: 0;
+                    border-top: 1px solid black;
+                    border-left: 1px solid black;
+                }
+
+                .main_doc_table td {
+                    padding: 1px;
+                    border-bottom: 1px solid black;
+                    border-right: 1px solid black;
+                    font-size: 8px;
+                    line-height: 1.2;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                .main_doc_table tr.td_gray td {
+                    border-bottom: 1px solid rgb(128, 128, 128);
+                    border-right: 1px solid rgb(128, 128, 128);
+                }
+
+                .main_doc_table tr.td_gray td.bb_black {
+                    border-bottom: 1px solid black;
+                }
+
+                .main_doc_table tr.td_gray td.br_black {
+                    border-right: 1px solid black;
+                }
+
+                .main_doc_table td span.rotated_container {
+                    display: inline-block;
+                    position: relative;
+                    top: 2px;
+                    max-width: 10px;
+                    max-height: 10px;
+                    vertical-align: center;
+                }
+
+                .main_doc_table td span.rotated {
+                    display: inline-block;
+                    width: 200px;
+                    transform-origin: top right;
+                    -webkit-transform: translateX(-190px) rotate(-90deg) translateY(-12px);
+                    transform: translateX(-190px) rotate(-90deg) translateY(-12px);
+                    text-align: right;
+                    white-space: nowrap;
+                }
+            </style>
+
+            <div class="page work_entry_page mb-4">
+                <div class="row pt-4 mb-4">
+                    <div class="col-9">
+                        <div class="underlined_block_value_container mb-3">
+                            <div class="ub_value pt-2 pb-1 text-center"  style="font-size: 18px;" t-esc="company_name"/>
+                            <div class="ub_help_info">Найменування підприємства (установи, організації)</div>
+                        </div>
+                        <div class="underlined_block_value_container mb-3">
+                            <div class="ub_value text-center"  style="font-size: 16px;"><t t-esc="department_name" /></div>
+                            <div class="ub_help_info">назва структурного підрозділу</div>
+                        </div>
+                        <div class="d-flex mb-3" style="width: 60%;">
+                            <div class="underlined_block_title">Ідентифікаційний код ЄДРПОУ</div>
+                            <div class="underlined_block_value_container">
+                                <div class="ub_value d-flex text-center" style="font-size: 16px; white-space: nowrap"><t t-esc="company_registry"/></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3" style="padding-left: 20px;">
+                        <div class="w-100 mb-3 text-center" style="font-size: 14px; line-height: 1.1;">
+                            Типова форма № П-5<br/>
+                            ЗАТВЕРДЖЕНО<br/>
+                            Наказ Держкомстату України<br/>
+                            05.12.2008 № 489<br/>
+                        </div>
+                        <table style="width: 250px;" class="table table-bordered simple_table">
+                            <tr>
+                                <td class="text-center">Дата заповнення</td>
+                                <td class="text-center" colspan="2">Звітний період</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"></td>
+                                <td class="text-center">з</td>
+                                <td class="text-center">по</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><t t-esc="date_from" /></td>
+                                <td class="text-center"><t t-esc="date_to" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row pt-3 mb-5">
+                    <div class="col">
+                        <h2 class="text-center" style="font-size: 20px; line-height: 1;">ТАБЕЛЬ ОБЛІКУ ВИКОРИСТАННЯ РОБОЧОГО ЧАСУ</h2>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6 px-2">
+                        <table style="width: 100%;" class="table table-bordered simple_table">
+                            <tr>
+                                <td rowspan="2" style="width: 76%; text-align: center;">Умовні позначення</td>
+                                <td colspan="2" style="width: 24%; text-align: center;">Код</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">буквений</td>
+                                <td style="text-align: center;">цифровий</td>
+                            </tr>
+                        </table>
+                        <table style="width: 100%;" class="table table-bordered legend_table">
+                            <tr>
+                                <td>Години роботи, передбачені колдоговором</td>
+                                <td>Р</td>
+                                <td>01</td>
+                            </tr>
+                            <tr>
+                                <td>Години роботи працівників, яким встановлено неповний робочий день (тиждень) згідно з законодавством</td>
+                                <td>РС</td>
+                                <td>02</td>
+                            </tr>
+                            <tr>
+                                <td>Вечірні години роботи </td>
+                                <td>ВЧ</td>
+                                <td>03</td>
+                            </tr>
+                            <tr>
+                                <td>Нічні години роботи</td>
+                                <td>РН</td>
+                                <td>04</td>
+                            </tr>
+                            <tr>
+                                <td>Надурочні години роботи</td>
+                                <td>НУ</td>
+                                <td>05</td>
+                            </tr>
+                            <tr>
+                                <td>Години роботи у вихідні та святкові дні</td>
+                                <td>РВ</td>
+                                <td>06</td>
+                            </tr>
+                            <tr>
+                                <td>Відрядження</td>
+                                <td>ВД</td>
+                                <td>07</td>
+                            </tr>
+                            <tr>
+                                <td>Основна щорічна відпустка (ст.6 Закону України "Про відпустки")</td>
+                                <td>В</td>
+                                <td>08</td>
+                            </tr>
+                            <tr>
+                                <td>Щорічна додаткова відпустка (ст. 7, 8 Закону України "Про відпустки") </td>
+                                <td>Д</td>
+                                <td>09</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Додаткова відпустка, передбачена ст. 20, 21, 30 Закону України "Про статус і соціальний
+                                    захист громадян, які постраждали внаслідок Чорнобильської катастрофи"
+                                </td>
+                                <td>Ч</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Творча відпустка (ст.16 Закону України "Про відпустки")</td>
+                                <td>ТВ</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Додаткова відпустка у зв’язку з навчанням (ст.13, 14, 15, 15<sup>1</sup> Закону України "Про відпустки")
+                                </td>
+                                <td>Н</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Відпустка без збереження заробітної плати у зв’язку з навчанням (п.12, 13, 17 ст. 25 Закону України "Про відпустки")
+                                </td>
+                                <td>НБ</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Додаткова відпустка без збереження заробітної плати в обов’язковому порядку
+                                    (ст. 25 крім п. 3, 12, 13, 17 Закону України "Про відпустки" )
+                                </td>
+                                <td>ДБ</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Додаткова оплачувана відпустка працівникам, які мають дітей (ст. 19 Закону України "Про відпустки")
+                                </td>
+                                <td>ДО</td>
+                                <td>15</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-6 px-2">
+                        <table style="width: 100%;" class="table table-bordered simple_table">
+                            <tr>
+                                <td rowspan="2" style="width: 76%; text-align: center;">Умовні позначення</td>
+                                <td colspan="2" style="width: 24%; text-align: center;">Код</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">буквений</td>
+                                <td style="text-align: center;">цифровий</td>
+                            </tr>
+                        </table>
+                        <table class="table table-bordered legend_table">
+                            <tr>
+                                <td>
+                                    Відпустка у зв’язку з вагітністю і пологами (стаття 17 Закону України "Про відпустки")
+                                    та відпустка для догляду за дитиною до досягнення нею трирічного віку (ст. 18 Закону України «Про відпустки»)
+                                </td>
+                                <td>ВП</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Відпустка для догляду за дитиною до досягнення нею 6-ти річного віку (ст. 25 п.3 Закону України "Про відпустки")
+                                </td>
+                                <td>ДД</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Відпустка без збереження заробітної плати за згодою сторін (стаття 26 Закону України "Про відпустки")
+                                </td>
+                                <td>НА</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Інші відпустки без збереження заробітної плати (на період припинення виконання робіт)
+                                </td>
+                                <td>БЗ</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Неявки у зв’язку з переведенням за ініціативою роботодавця на неповний робочий день (тиждень)
+                                </td>
+                                <td>НД</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Неявки у зв’язку з тимчасовим переведенням на роботу на інше підприємство на підставі
+                                    договорів між суб’єктами господарювання
+                                </td>
+                                <td>НП</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Інший невідпрацьований час, передбачений законодавством (виконання державних і громадських обов’язків,
+                                    допризовна підготовка, військові збори, донорські, відгул і т.ін.)
+                                </td>
+                                <td>ІН</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>Простої</td>
+                                <td>П</td>
+                                <td>23</td>
+                            </tr>
+                            <tr>
+                                <td>Прогули</td>
+                                <td>ПР</td>
+                                <td>24</td>
+                            </tr>
+                            <tr>
+                                <td>Масові невиходи на роботу (страйки)</td>
+                                <td>С</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>Оплачувана тимчасова непрацездатність</td>
+                                <td>ТН</td>
+                                <td>26</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Неоплачувана тимчасова непрацездатність у випадках, передбачених законодавством
+                                    (у зв’язку з побутовою травмою та ін. підтверджена довідками лікувальних закладів)
+                                </td>
+                                <td>НН</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>Неявки з нез’ясованих причин</td>
+                                <td>НЗ</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>Інші види неявок, передбачених колективними договорами, угодами</td>
+                                <td>ІВ</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>Інші причини неявок</td>
+                                <td>І</td>
+                                <td>30</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="page work_entry_page" style="page-break-before: always">
+                <div class="row mb-4">
+                    <div class="col p-0">
+                        <h2 class="text-center pb-2" style="font-size: 20px; line-height: 1;">ТАБЕЛЬ ОБЛІКУ ВИКОРИСТАННЯ РОБОЧОГО ЧАСУ</h2>
+                        <table class="main_doc_table table table-bordered">
+                            <tr>
+                                <td rowspan="5" style="width: 20px;">
+                                    <span class="rotated_container">
+                                        <svg>
+                                            <g transform="translate(7, 0)">
+                                                <text text-anchor="end" transform="rotate(-90)">№ п/п</text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </td>
+                                <td rowspan="5" style="width: 20px;">
+                                    <span class="rotated_container">
+                                        <svg>
+                                            <g transform="translate(7, 0)">
+                                                <text text-anchor="end" transform="rotate(-90)">Табельний номер</text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </td>
+                                <td rowspan="5" style="width: 20px;">
+                                    <span class="rotated_container">
+                                        <svg>
+                                            <g transform="translate(7, 0)">
+                                                <text text-anchor="end" transform="rotate(-90)">Стать (ч/ж)</text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </td>
+                                <td rowspan="5">ПІБ, посада</td>
+                                <td colspan="16" style="width: 250px;">Відмітки про явки та неявки за числами місяця (годин)</td>
+                                <td colspan="6">Відпрацьовано за місяць</td>
+                                <td rowspan="3" style="width: 40px; vertical-align: top;">Всього неявок</td>
+                                <td colspan="12" style="width: 420px; vertical-align: top;">з причин за місяць</td>
+                                <td rowspan="5" style="width: 40px; vertical-align: top;">Оклад, тарифна ставка, грн.</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">01</td>
+                                <td rowspan="2">02</td>
+                                <td rowspan="2">03</td>
+                                <td rowspan="2">04</td>
+                                <td rowspan="2">05</td>
+                                <td rowspan="2">06</td>
+                                <td rowspan="2">07</td>
+                                <td rowspan="2">08</td>
+                                <td rowspan="2">09</td>
+                                <td rowspan="2">10</td>
+                                <td rowspan="2">11</td>
+                                <td rowspan="2">12</td>
+                                <td rowspan="2">13</td>
+                                <td rowspan="2">14</td>
+                                <td rowspan="2">15</td>
+                                <td rowspan="2">x</td>
+                                <td rowspan="4" style="width: 30px;">
+                                    <span class="rotated_container">
+                                        <svg>
+                                            <g transform="translate(7, 0)">
+                                                <text text-anchor="end" transform="rotate(-90)">днів</text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </td>
+                                <td colspan="5">годин</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">основна та додаткова відпустки</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">відпустки у зв’язку з навчанням, творчі, в обов. порядку та інші</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">відпустки без збереження заробітної плати за згодою сторін</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">відпустки без збереження з/п на період припинення виконання робіт</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">перевод на неповний робочий день (тиждень)</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">тимчасовий перевод на інше підприємство</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">простої</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">прогули</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">страйки</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">тимчасова непрацездатність</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;">інші</td>
+                                <td rowspan="2" style="width: 35px; vertical-align: top; word-break: break-word;"></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="width: 30px;">
+                                    <span class="rotated_container">
+                                        <svg>
+                                            <g transform="translate(7, 0)">
+                                                <text text-anchor="end" transform="rotate(-90)">всього</text>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </td>
+                                <td colspan="4" style="width: 180px;">з них:</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">16</td>
+                                <td rowspan="2">17</td>
+                                <td rowspan="2">18</td>
+                                <td rowspan="2">19</td>
+                                <td rowspan="2">20</td>
+                                <td rowspan="2">21</td>
+                                <td rowspan="2">22</td>
+                                <td rowspan="2">23</td>
+                                <td rowspan="2">24</td>
+                                <td rowspan="2">25</td>
+                                <td rowspan="2">26</td>
+                                <td rowspan="2">27</td>
+                                <td rowspan="2">28</td>
+                                <td rowspan="2">29</td>
+                                <td rowspan="2">30</td>
+                                <td rowspan="2">31</td>
+                                <td rowspan="2" style="width: 35px; word-break: break-word;">надурочно</td>
+                                <td rowspan="2" style="width: 35px; word-break: break-word;">нічних</td>
+                                <td rowspan="2" style="width: 35px; word-break: break-word;">вечірніх</td>
+                                <td rowspan="2" style="width: 35px; word-break: break-word;">вихідних, святкових</td>
+                                <td style="vertical-align: top;">години</td>
+                                <td style="vertical-align: top;">коди<br/> 8-10</td>
+                                <td style="vertical-align: top;">коди<br/> 11-15,<br/> 17,22</td>
+                                <td style="vertical-align: top;">коди<br/> 18</td>
+                                <td style="vertical-align: top;">коди<br/> 19</td>
+                                <td style="vertical-align: top;">коди<br/> 20</td>
+                                <td style="vertical-align: top;">коди<br/> 21</td>
+                                <td style="vertical-align: top;">коди<br/> 23</td>
+                                <td style="vertical-align: top;">коди<br/> 24</td>
+                                <td style="vertical-align: top;">коди<br/> 25</td>
+                                <td style="vertical-align: top;">коди<br/> 26-27</td>
+                                <td style="vertical-align: top;">коди<br/> 28-30</td>
+                                <td style="vertical-align: top;"></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;">дні</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                                <td style="vertical-align: top;">дні/год.</td>
+                            </tr>
+                            <t t-if="employees">
+                                <t t-foreach="employees" t-as="employee">
+
+                                    <tr class="td_gray">
+                                        <td class="bb_black" rowspan="4" t-esc="employee_index + 1"/>
+                                        <td class="bb_black" rowspan="4" t-esc="employee.get('registration_number')"/>
+                                        <td class="bb_black" rowspan="4">
+                                            <t t-if="employee.get('gender') == 'male'" t-esc="'Ч'"/>
+                                            <t t-if="employee.get('gender') == 'female'" t-esc="'Ж'"/>
+                                        </td>
+                                        <td class="bb_black" rowspan="4" t-esc="employee.get('name')"/>
+                                        <t t-set="days_list" t-value="employee.get('days')"/>
+                                        <t t-foreach="range(1,16)" t-as="day_num">
+                                            <td><t t-if="days_list.get(day_num)" t-esc="days_list.get(day_num).get('day_type')"/></td>
+                                        </t>
+                                        <td>x</td>
+                                        <td class="bb_black" rowspan="4"><t t-esc="employee.get('days_count')"/></td>
+                                        <td class="bb_black" rowspan="4"><t t-esc="employee.get('hours_count')"/></td>
+                                        <td class="bb_black" rowspan="4"><t t-esc="employee.get('hours_nu')"/></td>
+                                        <td class="bb_black" rowspan="4"><t t-esc="employee.get('hours_rn')"/></td>
+                                        <td class="bb_black" rowspan="4"><t t-esc="employee.get('hours_vch')"/></td>
+                                        <td class="bb_black" rowspan="4"><t t-esc="employee.get('hours_rv')"/></td>
+                                        <td rowspan="2"></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_8_10_hours')" t-esc="int(employee.get('code_8_10_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_11_22_hours')" t-esc="int(employee.get('code_11_22_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_18_hours')" t-esc="int(employee.get('code_18_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_19_hours')" t-esc="int(employee.get('code_19_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_20_hours')" t-esc="int(employee.get('code_20_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_21_hours')" t-esc="int(employee.get('code_21_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_23_hours')" t-esc="int(employee.get('code_23_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_24_hours')" t-esc="int(employee.get('code_24_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_25_hours')" t-esc="int(employee.get('code_25_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_26_27_hours')" t-esc="int(employee.get('code_26_27_hours')/8)"/></td>
+                                        <td rowspan="2"><t t-if="employee.get('code_28_30_hours')" t-esc="int(employee.get('code_28_30_hours')/8)"/></td>
+                                        <td rowspan="2"></td>
+                                        <td class="bb_black br_black" rowspan="4"><t t-esc="employee.get('contract_wage')"/></td>
+                                    </tr>
+                                    <tr class="td_gray">
+                                        <t t-foreach="range(1,16)" t-as="day_num">
+                                            <td><t t-if="days_list.get(day_num)" t-esc="days_list.get(day_num).get('duration')"/></td>
+                                        </t>
+                                        <td>x</td>
+                                    </tr>
+                                    <tr class="td_gray">
+                                        <t t-foreach="range(16,32)" t-as="day_num">
+                                            <td><t t-if="days_list.get(day_num)" t-esc="days_list.get(day_num).get('day_type')"/></td>
+                                        </t>
+                                        <td rowspan="2" class="bb_black"></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_8_10_hours')" t-esc="employee.get('code_8_10_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_11_22_hours')" t-esc="employee.get('code_11_22_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_18_hours')" t-esc="employee.get('code_18_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_19_hours')" t-esc="employee.get('code_19_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_20_hours')" t-esc="employee.get('code_20_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_21_hours')" t-esc="employee.get('code_21_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_23_hours')" t-esc="employee.get('code_23_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_24_hours')" t-esc="employee.get('code_24_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_25_hours')" t-esc="employee.get('code_25_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_26_27_hours')" t-esc="employee.get('code_26_27_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"><t t-if="employee.get('code_28_30_hours')" t-esc="employee.get('code_28_30_hours')"/></td>
+                                        <td rowspan="2" class="bb_black"></td>
+                                    </tr>
+                                    <tr class="td_gray">
+                                        <t t-foreach="range(16,32)" t-as="day_num">
+                                            <td class="bb_black"><t t-if="days_list.get(day_num)" t-esc="days_list.get(day_num).get('duration')"/></td>
+                                        </t>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td colspan="20" style="text-align: right;">Усього:</td>
+                                    <td><t t-if="days_count_all > 0" t-esc="days_count_all"/></td>
+                                    <td><t t-if="hours_count_all > 0" t-esc="hours_count_all"/></td>
+                                    <td><t t-if="hours_nu_all > 0" t-esc="hours_nu_all"/></td>
+                                    <td><t t-if="hours_rn_all > 0" t-esc="hours_rn_all"/></td>
+                                    <td><t t-if="hours_vch_all > 0" t-esc="hours_vch_all"/></td>
+                                    <td><t t-if="hours_rv_all > 0" t-esc="hours_rv_all"/></td>
+                                    <td/>
+                                    <td><t t-if="code_8_10_hours_all > 0" t-esc="code_8_10_hours_all"/></td>
+                                    <td><t t-if="code_11_22_hours_all > 0" t-esc="code_11_22_hours_all"/></td>
+                                    <td><t t-if="code_18_hours_all > 0" t-esc="code_18_hours_all"/></td>
+                                    <td><t t-if="code_19_hours_all > 0" t-esc="code_19_hours_all"/></td>
+                                    <td><t t-if="code_20_hours_all > 0" t-esc="code_20_hours_all"/></td>
+                                    <td><t t-if="code_20_hours_all > 0" t-esc="code_21_hours_all"/></td>
+                                    <td><t t-if="code_23_hours_all > 0" t-esc="code_23_hours_all"/></td>
+                                    <td><t t-if="code_24_hours_all > 0" t-esc="code_24_hours_all"/></td>
+                                    <td><t t-if="code_25_hours_all > 0" t-esc="code_25_hours_all"/></td>
+                                    <td><t t-if="code_26_27_hours_all > 0" t-esc="code_26_27_hours_all"/></td>
+                                    <td><t t-if="code_28_30_hours_all > 0" t-esc="code_28_30_hours_all"/></td>
+                                    <td/>
+                                    <td><t t-if="contract_wage_all > 0" t-esc="contract_wage_all"/></td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="d-flex mx-auto" style="width: 1300px;">
+                            <div style="width: 400px; margin-right: 50px; page-break-inside: avoid;">
+                                <div class="d-flex mb-2">
+                                    <div class="underlined_block_title text-center" style="font-weight: bold; font-size: 12px;">
+                                        Відповідальна особа
+                                    </div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"/>
+                                        <div class="ub_help_info">(посада)</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div style="white-space: nowrap; font-size: 11px; margin-right: 15px;">
+                                        <p>
+                                            <span class="underlined_block_value_container_inline" style="width: 140px;">
+                                                <span class="ub_value"></span>
+                                            </span>
+                                            <span class="underlined_block_inline_text">20</span>
+                                            <span class="underlined_block_value_container_inline" style="width: 42px; margin-right: 2px;">
+                                                <span class="ub_value"></span>
+                                            </span>
+                                            <span class="underlined_block_inline_text">p.</span>
+                                        </p>
+                                    </div>
+                                    <div class="underlined_block_value_container" style="margin-right: 15px;">
+                                        <div class="ub_value"/>
+                                        <div class="ub_help_info">(підпис)</div>
+                                    </div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"/>
+                                        <div class="ub_help_info">(ПІБ)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 400px; margin-right: 50px; page-break-inside: avoid;">
+                                <div class="d-flex mb-2">
+                                    <div class="underlined_block_title text-center" style="font-weight: bold; font-size: 12px;">
+                                        Керівник структурного<br/>підрозділу
+                                    </div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"/>
+                                        <div class="ub_help_info">(посада)</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div style="white-space: nowrap; font-size: 11px; margin-right: 15px;">
+                                        <p>
+                                            <span class="underlined_block_value_container_inline" style="width: 140px;">
+                                                <span class="ub_value"></span>
+                                            </span>
+                                            <span class="underlined_block_inline_text">20</span>
+                                            <span class="underlined_block_value_container_inline" style="width: 42px; margin-right: 2px;">
+                                                <span class="ub_value"></span>
+                                            </span>
+                                            <span class="underlined_block_inline_text">p.</span>
+                                        </p>
+                                    </div>
+                                    <div class="underlined_block_value_container" style="margin-right: 15px;">
+                                        <div class="ub_value"></div>
+                                        <div class="ub_help_info">(підпис)</div>
+                                    </div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"></div>
+                                        <div class="ub_help_info">(ПІБ)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 400px; page-break-inside: avoid;">
+                                <div class="d-flex mb-2">
+                                    <div class="underlined_block_title text-center" style="padding-top: 6px; font-weight: bold; font-size: 12px;">
+                                        Працівник кадрової<br/>служби
+                                    </div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"></div>
+                                        <div class="ub_help_info">(посада)</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div style="white-space: nowrap; font-size: 11px; margin-right: 15px;">
+                                       <p>
+                                            <span class="underlined_block_value_container_inline" style="width: 140px;">
+                                                <span class="ub_value"></span>
+                                            </span>
+                                            <span class="underlined_block_inline_text">20</span>
+                                            <span class="underlined_block_value_container_inline" style="width: 42px; margin-right: 2px;">
+                                                <span class="ub_value"></span>
+                                            </span>
+                                            <span class="underlined_block_inline_text">p.</span>
+                                        </p>
+                                    </div>
+                                    <div class="underlined_block_value_container" style="margin-right: 15px;">
+                                        <div class="ub_value"></div>
+                                        <div class="ub_help_info">(підпис)</div>
+                                    </div>
+                                    <div class="underlined_block_value_container">
+                                        <div class="ub_value"></div>
+                                        <div class="ub_help_info">(ПІБ)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="page-break-inside: avoid;">
+                    <div class="col">
+                        <p style="margin-bottom: 5px; font-size: 10px; font-weight: bold;">Примітка</p>
+                        <p style="margin-bottom: 5px; font-size: 10px;">1. На безперервно діючих підприємствах, в установах, організаціях, а також в окремих виробництвах, цехах, дільницях,
+                            відділеннях і на деяких видах робіт, де за умовами виробництва (роботи) не може бути додержана встановлена для даної категорії
+                            працівників щоденна або щотижнева тривалість робочого часу, допускається за погодженням з виборним органом первинної профспілкової
+                            організації (профспілковим представником) розрахунок підсумованого фонду робочого часу за місяць, по кожному
+                            працівнику. При цьому фонд робочого часу не повинен перевищувати нормальної його тривалості.
+                        </p>
+                        <p style="margin-bottom: 5px; font-size: 10px;">2. Форма носить рекомендаційний характер і складається із мінімальної кількості показників, необхідних для заповнення форм
+                            державних статистичних спостережень. При необхідності форма може бути доповнена іншими показниками, необхідними для
+                            обліку на підприємстві.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

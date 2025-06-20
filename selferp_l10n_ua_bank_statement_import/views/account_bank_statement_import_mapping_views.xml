@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<odoo>
+
+
+    <record id="account_bank_statement_import_mapping_view_tree" model="ir.ui.view">
+        <field name="name">account.bank.statement.import.mapping.tree</field>
+        <field name="model">account.bank.statement.import.mapping</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="not active">
+                <field name="name" />
+                <field name="file_type" optional="show" />
+                <field name="active" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="account_bank_statement_import_mapping_view_search" model="ir.ui.view">
+        <field name="name">account.bank.statement.import.mapping.search</field>
+        <field name="model">account.bank.statement.import.mapping</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name', 'ilike', self)]" string="Mapping" />
+
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+
+                <filter name="group_file_type" string="File Type"  domain="[]" context="{'group_by': 'file_type'}" />
+            </search>
+        </field>
+    </record>
+
+
+
+    <record id="account_bank_statement_import_mapping_view_form" model="ir.ui.view">
+        <field name="name">account.bank.statement.import.mapping.form</field>
+        <field name="model">account.bank.statement.import.mapping</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1" />
+                    <field name="active" invisible="1" />
+
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1><field name="name" /></h1>
+                    </div>
+
+
+                    <group>
+                        <group>
+                            <field name="file_type" />
+                        </group>
+                    </group>
+
+
+                    <notebook>
+                        <page name="line_ids" string="Mapping Lines">
+                            <field name="line_ids">
+                                <tree>
+                                    <field name="bank_statement_line_field" />
+                                    <field name="column_name" />
+                                    <field name="use_python" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="bank_statement_line_field" />
+                                        <field name="column_name"
+                                               attrs="{'required': [('use_python', '=', False)]}" />
+                                        <field name="value_format" attrs="{
+                                            'invisible': [('bank_statement_line_field', '!=', 'date')],
+                                            'required': [('bank_statement_line_field', '=', 'date')]
+                                        }" />
+                                        <field name="use_python" />
+                                        <field name="python_code" widget="ace" options="{'mode': 'python'}"
+                                               attrs="{'invisible': [('use_python', '=', False)], 'required': [('use_python', '=', True)]}" />
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page name="settings" string="Settings">
+                            <group>
+                                <group>
+                                    <field name="use_header" />
+                                    <field name="row_num_header"
+                                           attrs="{'invisible': [('use_header', '=', False)], 'required': [('use_header', '=', True)]}" />
+                                    <field name="row_num_data" />
+
+                                    <field name="sheet_name" attrs="{'invisible': [('file_type', '!=', 'xls')]}" />
+                                </group>
+                                <group>
+                                    <field name="decimal_separator" />
+
+                                    <field name="encoding" attrs="{'invisible': [('file_type', '!=', 'csv')], 'required': [('file_type', '=', 'csv')]}" />
+                                    <field name="separator" attrs="{'invisible': [('file_type', '!=', 'csv')], 'required': [('file_type', '=', 'csv')]}" />
+                                    <field name="text_delimiter" attrs="{'invisible': [('file_type', '!=', 'csv')]}" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="account_bank_statement_import_mapping_action" model="ir.actions.act_window">
+        <field name="name">Bank Statements Import Mapping</field>
+        <field name="res_model">account.bank.statement.import.mapping</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new mapping for bank statements import
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem id="bank_statement_import_mapping_menu"
+              name="Bank Statements Import Mapping"
+              action="account_bank_statement_import_mapping_action"
+              groups="account.group_account_manager"
+              parent="account.account_banks_menu"
+              sequence="20" />
+
+
+</odoo>

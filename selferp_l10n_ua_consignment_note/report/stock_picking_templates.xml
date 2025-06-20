@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="stock_picking_report_template_ttn">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-set="o" t-value="o.with_context(lang='uk_UA')" />
+                    <t t-set="currency" t-value="o.move_line_ids and o.move_line_ids[0].move_id and o.move_line_ids[0].move_id.sale_line_id and o.move_line_ids[0].move_id.sale_line_id.currency_id or o.company_id.currency_id" />
+                    <t t-set="qty_total" t-value="0"/>
+                    <t t-set="tax_total" t-value="0"/>
+                    <t t-set="sum_total" t-value="0"/>
+
+                    <t t-foreach="o.move_line_ids" t-as="move_line">
+                       <t t-if="move_line.move_id and move_line.move_id.sale_line_id">
+                            <t t-if="o.state == 'done'">
+                                <t t-set="qty_total" t-value="qty_total + move_line.move_id.quantity_done"/>
+                                <t t-set="tax_total" t-value="tax_total + move_line.move_id.sale_line_id.price_tax / move_line.move_id.sale_line_id.product_uom_qty * move_line.move_id.quantity_done"/>
+                                <t t-set="sum_total" t-value="sum_total + move_line.move_id.sale_line_id.price_total / move_line.move_id.sale_line_id.product_uom_qty * move_line.move_id.quantity_done"/>
+                            </t>
+                            <t t-else="">
+                                <t t-set="qty_total" t-value="qty_total + move_line.move_id.sale_line_id.product_uom_qty"/>
+                                <t t-set="tax_total" t-value="tax_total + move_line.move_id.sale_line_id.price_tax"/>
+                                <t t-set="sum_total" t-value="sum_total + move_line.move_id.sale_line_id.price_total"/>
+                            </t>
+                        </t>
+                    </t>
+
+                    <div class="page">
+                        <style>
+                            .underlined-input {
+                                height: 16px;
+                                margin: 0 3px;
+                                border-bottom: 1px solid black;
+
+                                font-size: 16px;
+                                line-height: 16px;
+                            }
+
+                            .underlined-block-title {
+                                -webkit-box-flex: 0;
+                                -webkit-flex: 0;
+                                flex: 0;
+                                margin-right: 10px;
+                                font-size: 15px;
+                                line-height: 1;
+                                white-space: nowrap;
+                            }
+
+                            .underlined-block-value-container {
+                                -webkit-box-flex: 1;
+                                -webkit-flex: 1;
+                                flex: 1;
+                                margin-right: 10px;
+                            }
+
+                            .underlined-block-value-container .ub-value {
+                                width: 100%;
+                                padding: 0 10px;
+                                border-bottom: 1px solid black;
+                                font-size: 15px;
+                                line-height: 1;
+                                min-height: 20px;
+                            }
+
+                            .underlined-block-value-container .ub-help-info {
+                                width: 100%;
+                                font-size: 10px;
+                                text-align: center;
+                                line-height: 1;
+                            }
+
+                            .ttn-table {
+                                margin-bottom: 0;
+                                border: 3px solid black;
+                            }
+
+                            .ttn-table th {
+                                padding: 1px 3px;
+                                font-size: 16px;
+                                line-height:1.2;
+                            }
+
+                            .ttn-table td {
+                                padding: 1px 3px;
+                                font-size: 16px;
+                                line-height:1.2;
+                            }
+                        </style>
+
+                        <div class="row mb-4">
+                            <div style="width: 100%; text-align: right; font-size: 20px; line-height: 1;">Форма N 1-ТН<br/>(допрацьована)</div>
+                        </div>
+                        <div class="row mb-2">
+                            <h2 class="text-center" style="font-size: 26px; line-height: 1; font-weight: bold;">ТОВАРНО-ТРАНСПОРТНА НАКЛАДНА</h2>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="w-100 text-center">
+                                <div style="display: inline-block; font-size: 20px; height: 20px; line-height: 18px; padding-top: 1px;">№</div>
+                                <div style="display: inline-block; font-size: 18px; padding: 0 20px; margin-right: 20px; border-bottom: 1px solid black; line-height: 1; height: 22px; white-space: nowrap;">
+                                    <t t-esc="o.name.split('/')[-1]"/>
+                                </div>
+                                <div style="display: inline-block; font-size: 18px; padding: 0 20px; border-bottom: 1px solid black; line-height: 1; height: 22px; white-space: nowrap;">
+                                    <t t-esc="babel_dates.format_date(o.scheduled_date, 'dd MMMM yyyy', locale='uk_UA')"/> р.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 30.3%;">
+                                <div class="underlined-block-title">Автомобіль</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><t t-esc="o.vehicle"/></div>
+                                    <div class="ub-help-info">(марка, модель, тип, реєстраційний номер)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 36.3%;">
+                                <div class="underlined-block-title">Причіп/напівпричіп</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"/>
+                                    <div class="ub-help-info">(марка, модель, тип, реєстраційний номер)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 33.3%;">
+                                <div class="underlined-block-title">Вид перевезень</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 43.3%;">
+                                <div class="underlined-block-title">Автомобільний перевізник</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><t t-esc="o.vehicle_carrier_id and o.vehicle_carrier_id.name or ''" /></div>
+                                    <div class="ub-help-info">(найменування / П. І. Б.)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 23.3%; padding: 0 20px 0 10px;">
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-esc="o.vehicle_carrier_id.company_registry if o.vehicle_carrier_id.company_type == 'company' else o.vehicle_carrier_id.vat" />
+                                    </div>
+                                    <div class="ub-help-info">(податковий номер)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 33.3%;">
+                                <div class="underlined-block-title">Водій</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><t t-esc="o.driver_id.name" /></div>
+                                    <div class="ub-help-info">(П. І. Б., номер посвідчення водія)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 100%;">
+                                <div class="underlined-block-title">Замовник</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><t t-esc="o.customer_id.name" /></div>
+                                    <div class="ub-help-info">(найменування / П. І. Б.)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 76.6%;">
+                                <div class="underlined-block-title">Вантажовідправник</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-esc="o.company_id.name"/>:
+                                        <t t-esc="o.company_id.country_id and o.company_id.country_id.display_name"/>
+                                        <t t-if="o.company_id.state_id">
+                                            , <t t-esc="o.company_id.state_id.display_name"/></t>
+                                        <t t-if="o.company_id.city">
+                                            , <t t-esc="o.company_id.city"/></t>
+                                        <t t-if="o.company_id.street">
+                                            , <t t-esc="o.company_id.street"/></t>
+                                    </div>
+                                    <div class="ub-help-info">(повне найменування, місцезнаходження / П. І. Б., місце проживання)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 23.3%; padding: 0 20px 0 10px;">
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-esc="o.company_id.company_registry" />
+                                    </div>
+                                    <div class="ub-help-info">(податковий номер)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 76.6%;">
+                                <div class="underlined-block-title">Вантажоодержувач</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-esc="o.partner_id.name"/>:
+                                        <t t-if="o.partner_id.country_id and o.partner_id.country_id.display_name"/>
+                                        <t t-if="o.partner_id.state_id">
+                                            , <t t-esc="o.partner_id.state_id.display_name"/></t>
+                                        <t t-if="o.partner_id.city">
+                                            , <t t-esc="o.partner_id.city"/></t>
+                                        <t t-if="o.partner_id.street">
+                                            , <t t-esc="o.partner_id.street"/></t><br/>
+                                    </div>
+                                    <div class="ub-help-info">(повне найменування, місцезнаходження / П. І. Б., місце проживання)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 23.3%; padding: 0 20px 0 10px;">
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-if="o.partner_id.company_type == 'company'" t-esc="o.partner_id.company_registry"/>
+                                        <t t-else="" t-esc="o.partner_id.parent_id.company_registry if o.partner_id.parent_id else o.partner_id.vat"/>
+                                    </div>
+                                    <div class="ub-help-info">(податковий номер)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 50%;">
+                                <div class="underlined-block-title">Пункт навантаження</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-if="o.loading_point_id">
+                                            <t t-if="o.loading_point_id.country_id" t-esc="o.loading_point_id.country_id.display_name"/>
+                                            <t t-if="o.loading_point_id.state_id">
+                                                , <t t-esc="o.loading_point_id.state_id.display_name"/></t>
+                                            <t t-if="o.loading_point_id.city">
+                                                , <t t-esc="o.loading_point_id.city"/></t>
+                                            <t t-if="o.loading_point_id.street">
+                                                , <t t-esc="o.loading_point_id.street"/></t>
+                                        </t>
+                                    </div>
+                                    <div class="ub-help-info">(місцезнаходження)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 50%;">
+                                <div class="underlined-block-title">Пункт розвантаження</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value">
+                                        <t t-if="o.unloading_point_id">
+                                            <t t-if="o.unloading_point_id.country_id" t-esc="o.unloading_point_id.country_id.display_name"/>
+                                            <t t-if="o.unloading_point_id.state_id">
+                                                , <t t-esc="o.unloading_point_id.state_id.display_name"/></t>
+                                            <t t-if="o.unloading_point_id.city">
+                                                , <t t-esc="o.unloading_point_id.city"/></t>
+                                            <t t-if="o.unloading_point_id.street">
+                                                , <t t-esc="o.unloading_point_id.street"/></t>
+                                        </t>
+                                    </div>
+                                    <div class="ub-help-info">(місцезнаходження)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 25%;">
+                                <div class="underlined-block-title">кількість місць</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><span t-esc="num2words(int(qty_total), lang='uk_UA')" /></div>
+                                    <div class="ub-help-info">(словами)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 25%;">
+                                <div class="underlined-block-title">, масою брутто, т</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"></div>
+                                    <div class="ub-help-info">(словами)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 50%;">
+                                <div class="underlined-block-title">, отримав водій/експедитор </div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><t t-esc="o.driver_id.name" /></div>
+                                    <div class="ub-help-info">(П. І. Б., посада, підпис)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="d-flex" style="width: 66.6%;">
+                                <div class="underlined-block-title">Усього відпущено на загальну суму</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><span t-esc="currency.amount_to_text(sum_total)" /></div>
+                                    <div class="ub-help-info">(словами, з урахуванням ПДВ)</div>
+                                </div>
+                            </div>
+                            <div class="d-flex" style="width: 33.3%;">
+                                <div class="underlined-block-title">, у т. ч. ПДВ</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"><span t-esc="currency.amount_to_text(tax_total)" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="d-flex" style="width: 100%;">
+                                <div class="underlined-block-title">Супровідні документи на вантаж</div>
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="d-flex" style="width: 100%;">
+                                <div class="underlined-block-value-container">
+                                    <div class="ub-value"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="page-break-after: always;"/>
+
+                        <div class="row mb-2">
+                            <p style="text-align: right">Зворотний бік</p>
+                        </div>
+                        <div class="row mb-3">
+                            <div style="text-align: center">ВІДОМОСТІ ПРО ВАНТАЖ</div>
+                        </div>
+                        <div class="row mb-4">
+                            <t t-set="current_subtotal" t-value="0"/>
+                            <table style="width: 100%;" class="table table-bordered ttn-table">
+                                <tr style="text-align: center">
+                                    <td style="width: 30px;">N<br/>з/п
+                                    </td>
+                                    <td style="width: 200px;">Найменування вантажу (номер контейнера),
+                                        у разі перевезення небезпечних вантажів: клас
+                                        небезпечних речовин, до якого віднесено вантаж
+                                    </td>
+                                    <td style="width: 50px;">Одиниця<br/>виміру</td>
+                                    <td style="width: 50px;">Кількість<br/>місць</td>
+                                    <td style="width: 50px;">Ціна без ПДВ за<br/>одиницю, грн</td>
+                                    <td style="width: 50px;">Загальна сума з<br/>ПДВ, грн</td>
+                                    <td style="width: 50px;">Вид<br/>пакування</td>
+                                    <td style="width: 100px;">Документи з вантажем</td>
+                                    <td style="width: 50px;">Маса<br/>брутто, т</td>
+                                </tr>
+                                <tr style="text-align: center; background-color: #ccc; font-weight: bold;">
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                </tr>
+
+                                <t t-foreach="range(min(3, len(o.move_line_ids)))" t-as="line_index">
+                                    <t t-set="move_line" t-value="o.move_line_ids[line_index]"/>
+                                    <t t-if="move_line.move_id.sale_line_id">
+                                        <tr>
+                                            <td style="text-align: center;"><t t-esc="line_index+1"/></td>
+                                            <td><t t-esc="move_line.product_id.name"/></td>
+                                            <td style="text-align: center">
+                                                <span t-esc="move_line.product_uom_id.name"/>
+                                            </td>
+                                            <td style="text-align: right">
+                                                <t t-if="o.state == 'done'">
+                                                    <span t-esc="move_line.move_id.quantity_done"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span t-esc="move_line.move_id.sale_line_id.product_uom_qty"/>
+                                                </t>
+                                            </td>
+                                            <td  style="text-align: right">
+                                                <span t-if="move_line.move_id.sale_line_id.product_uom_qty > 0"
+                                                      t-esc="babel_numbers.format_currency(move_line.move_id.sale_line_id.price_subtotal / move_line.move_id.sale_line_id.product_uom_qty, '')"/>
+                                            </td>
+                                            <td  style="text-align: right">
+                                                <t t-if="o.state == 'done'">
+                                                    <span t-if="move_line.move_id.sale_line_id.product_uom_qty > 0"
+                                                          t-esc="babel_numbers.format_currency(move_line.move_id.sale_line_id.price_total / move_line.move_id.sale_line_id.product_uom_qty * move_line.move_id.quantity_done, '')"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <span t-esc="babel_numbers.format_currency(move_line.move_id.sale_line_id.price_total, '')"/>
+                                                </t>
+                                            </td>
+                                            <td>&#160;</td>
+                                            <td>&#160;</td>
+                                            <td>&#160;</td>
+                                        </tr>
+                                    </t>
+                                </t>
+                                <t t-if="len(o.move_line_ids) > 3">
+                                    <tr>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td style="text-align: left" colspan="2">Всього:</td>
+                                    <td>&#160;</td>
+                                    <td style="text-align: right"><span t-esc="qty_total" /></td>
+                                    <td>&#160;</td>
+                                    <td style="text-align: right"><span t-esc="babel_numbers.format_currency(sum_total, '')" /></td>
+                                    <td>&#160;</td>
+                                    <td>&#160;</td>
+                                    <td>&#160;</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="row mb-4">
+                             <div class="col-5">
+                                <div style="width: 90%; padding-bottom: 10px; text-align: center;">
+                                    Здав (відповідальна особа<br/> вантажовідправника)
+                                </div>
+                                <div style="width: 90%;">
+                                    <div style="height: 20px; border-bottom: 1px solid black;"/>
+                                    <div class="text-center" style="font-size: 12px;"><i>(П. І. Б., посада, підпис)</i></div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div style="width: 90%; padding-bottom: 10px; text-align: center;">
+                                    Прийняв (відповідальна особа<br/> вантажоодержувача)
+                                </div>
+                                <div style="width: 90%;">
+                                    <div style="height: 20px; border-bottom: 1px solid black;"></div>
+                                    <div class="text-center" style="font-size: 12px;"><i>(П. І. Б., посада, підпис)</i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="page-break-inside: avoid;">
+                            <div class="row mb-3 mt-4">
+                                <div style="text-align: center">ВІДОМОСТІ ПРО ПАРАМЕТРИ ТРАНСПОРТНОГО ЗАСОБУ</div>
+                            </div>
+                            <div class="row mb-2">
+                                <table style="width: 100%;" class="table table-bordered ttn-table">
+                                    <tr style="text-align: center;">
+                                        <td rowspan="2">Він-код</td>
+                                        <td rowspan="2">Рік випуску</td>
+                                        <td colspan="3">Габарити автомобіля</td>
+                                        <td colspan="2">Вага автомобіля</td>
+                                        <td rowspan="2"  style="width: 15%">Підпис відповідальної сторони (перевізник або водій)</td>
+                                    </tr>
+                                    <tr style="text-align: center;">
+                                        <td>Довжина,<br/> мм</td>
+                                        <td>Ширина,<br/> мм</td>
+                                        <td>Висота,<br/> мм</td>
+                                        <td>без вантажу, т</td>
+                                        <td>з вантажем, т</td>
+                                    </tr>
+                                    <tr style="text-align: center; background-color: #ccc; font-weight: bold;">
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                        <td>17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div style="page-break-inside: avoid;">
+                            <div class="row mb-3 mt-4">
+                                <div style="text-align: center">ВАНТАЖНО-РОЗВАНТАЖУВАЛЬНІ ОПЕРАЦІЇ</div>
+                            </div>
+                            <div class="row mb-2">
+                                <table width="100%" class="table table-bordered ttn-table" style="page-break-inside: avoid;">
+                                    <tr style="text-align: center;">
+                                        <td rowspan="2">Операція</td>
+                                        <td rowspan="2">Маса брутто, т</td>
+                                        <td colspan="3">Час (год., хв.)</td>
+                                        <td rowspan="2" style="width: 15%;">Підпис відповідальної особи</td>
+                                    </tr>
+                                    <tr style="text-align: center;">
+                                        <td>прибуття</td>
+                                        <td>вибуття</td>
+                                        <td>простою</td>
+                                    </tr>
+                                    <tr style="text-align: center; background-color: #ccc; font-weight: bold;">
+                                        <td>18</td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Навантаження</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Розвантаження</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                        <td>&#160;</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

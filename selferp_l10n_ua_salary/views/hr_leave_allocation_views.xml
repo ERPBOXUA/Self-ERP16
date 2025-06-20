@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="hr_holidays.hr_leave_allocation_action_approve_department" model="ir.actions.act_window">
+        <field name="domain">[
+            '|',
+                ('employee_id.company_id', 'in', allowed_company_ids),
+                '&amp;', '&amp;',
+                    ('multi_employee', '=', True),
+                    ('state', 'in', ['draft', 'confirm', 'validate1']),
+                    ('employee_ids.company_id', 'in', allowed_company_ids)]
+        </field>
+    </record>
+
+</odoo>

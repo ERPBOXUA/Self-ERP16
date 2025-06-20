@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="account_report_column_assets_report_acquisition_date" model="account.report.column">
+        <field name="name">Acquisition Date</field>
+        <field name="sequence">0</field>
+        <field name="expression_label">acquisition_date_ua</field>
+        <field name="figure_type">none</field>
+        <field name="report_id" ref="account_asset.assets_report"/>
+    </record>
+
+    <record id="account_report_column_assets_report_commissioning_date" model="account.report.column">
+        <field name="name">Commissioning Date</field>
+        <field name="sequence">0</field>
+        <field name="expression_label">commissioning_date</field>
+        <field name="figure_type">none</field>
+        <field name="report_id" ref="account_asset.assets_report"/>
+    </record>
+
+    <record id="account_report_column_assets_report_asset_number" model="account.report.column">
+        <field name="name">Asset Number</field>
+        <field name="sequence">0</field>
+        <field name="expression_label">asset_number</field>
+        <field name="figure_type">none</field>
+        <field name="report_id" ref="account_asset.assets_report"/>
+    </record>
+
+    <record id="account_report_column_assets_report_original_value" model="account.report.column">
+        <field name="name">Original Value</field>
+        <field name="sequence">6</field>
+        <field name="expression_label">asset_original_value</field>
+        <field name="figure_type">none</field>
+        <field name="report_id" ref="account_asset.assets_report"/>
+    </record>
+
+</odoo>

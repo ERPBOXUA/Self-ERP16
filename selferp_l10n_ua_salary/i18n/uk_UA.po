@@ -1,0 +1,3262 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_l10n_ua_salary
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-22 10:37+0000\n"
+"PO-Revision-Date: 2023-09-22 10:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__is_labor_book
+msgid "Keep Labor Book"
+msgstr "Ознака трудової книжки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_pdfo_report
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "ESV PDFO Report"
+msgstr "Звіт з ЄСВ та ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_pdfo_report_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_pdfo_report_menu
+msgid "ESV PDFO Reports"
+msgstr "Звіт з ЄСВ та ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "PDFO Report"
+msgstr "Звіт"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__report_type
+msgid "Report type"
+msgstr "Тип звіту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_type__hzn
+msgid "New"
+msgstr "Звітний новий"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_type__hz
+msgid "Normal"
+msgstr "Звітний"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_type__hzu
+msgid "Clarifying"
+msgstr "Уточнюючий"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_type__hzd
+msgid "Reference"
+msgstr "Довідковий"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_rule__report_kind
+msgid "Report kind"
+msgstr "Тип звіту"
+
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon 2"
+msgstr "Додаток 2"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon 3"
+msgstr "Додаток 3"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon 5"
+msgstr "Додаток 5"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon 6"
+msgstr "Додаток 6"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon1 month 1"
+msgstr "Додаток 1 місяць 1"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon1 month 2"
+msgstr "Додаток 1 місяць 2"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon1 month 3"
+msgstr "Додаток 1 місяць 3"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon4 month 1"
+msgstr "Додаток 4 місяць 1"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon4 month 2"
+msgstr "Додаток 4 місяці 2"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Addon4 month 3"
+msgstr "Додаток 4 місяць 3"
+
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee_tax_social_benefit_code.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_benefit.py.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_salary_disability_group.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_salary_sick_leave_rate.py:0
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (копія)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_benefit.py.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_salary_disability_group.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_work_entry_type.py:0
+#, python-format
+msgid "%s.copy"
+msgstr "%s.копія"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0500109
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0510109
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0510209
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0510309
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0510409
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0510509
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_salary_esv_pdfo_report_action_J0510609
+msgid "'Salary - %s' % (object.name)"
+msgstr "'Заробітна плата - %s' % (object.name)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_payslip_create_payment.py:0
+#, python-format
+msgid "Salary payment %s"
+msgstr "Виплата заробітної плати %s"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_schedule_staff_list
+msgid "'Затвердження штатного розпису - %s' % (object.number)"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_order_report
+msgid "'Наказ - %s' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_employee_card
+msgid "'Особова картка працівника - %s' % (object.name)"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_salary.hr_schedule_staff_list_info
+msgid "'Штатний розпис - %s' % (object.number)"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Salary Advance Calculation</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"o_form_label\">Варіант розрахунку авансу</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Встановлені тут значення є залежними від компанії.\" aria-label=\"Встановлені тут значення є залежними від компанії.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Salary Indexation</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+"<span class=\"o_form_label\">Індексація ЗП</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Встановлені тут значення є залежними від компанії.\" aria-label=\"VВстановлені тут значення є залежними від компанії.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__dismissal_reason__absenteeism_and_other_violations
+msgid "Absenteeism and Other Violations"
+msgstr "за прогул та інші порушення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_contract__account_id
+msgid "Account"
+msgstr "Рахунок"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_contract_view_form
+msgid "Accounting"
+msgstr "Бухгалтерський облік"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_account_report
+msgid "Accounting Report"
+msgstr "Звіт бухобліку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__post_graduate_education__2_adjunct
+msgid "Adjunct"
+msgstr "Ад'юнктура"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Advance Salary"
+msgstr "Аванс зарплати"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Advance Salary - ESV"
+msgstr "Аванс заробітної плати - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Advance Salary - Gross"
+msgstr "Аванс зарплати - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Advance Salary - MT"
+msgstr "Аванс заробітної плати - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Advance Salary - Net"
+msgstr "Аванс заробітної плати - чистий"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Advance Salary - PDFO"
+msgstr "Аванс заробітної плати - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.ADV_ESV
+msgid "Advance Salary ESV"
+msgstr "Аванс заробітної плати - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_pdfo_report.py:0
+#, python-format
+msgid "All employee should have filled person field"
+msgstr "Поле картки особи має бути заповнене для усіх робітників"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_pdfo_report.py:0
+#, python-format
+msgid "All employee should have filled person field. Check employee: %s"
+msgstr "Поле картки особи має бути заповнене для усіх робітників. Перевірьте співробітника %s"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__display_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__display_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__display_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__amount
+msgid "Amount"
+msgstr "Сума"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_contract__analytic_account_id
+msgid "Analytic Account"
+msgstr "Аналітичний рахунок"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_work_entry_print_view_form
+msgid "Archived employees, employees without created work records or employees without contracts for the given period will be ignored!"
+msgstr "Неактивні (архівовані) працівники, працівники без створених робочих записів або працівники без контракту на даний період будуть проігноровані!"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__article_of_the_labor_code
+msgid "Article of the Labor Code"
+msgstr "Стаття КЗпП"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__average_daily_wage
+msgid "Average Daily Wage"
+msgstr "Середньоденна зарплата"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_bank_statement_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__bank_statement_id
+msgid "Bank Statement"
+msgstr "Банківська виписка"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Рядок банківської виписки"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/account_bank_statement_line.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_create_payment_view_form
+#, python-format
+msgid "Bank Statement Lines"
+msgstr "Рядки банківської виписки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_bank_rec_widget
+msgid "Bank reconciliation widget for a single statement line"
+msgstr "Віджет банківської звірки для одного рядка виписки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__education_type__1_basic_general_secondary
+msgid "Basic General Secondary"
+msgstr "базова загальна середня"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__education_type__5_basic_higher
+msgid "Basic Higher"
+msgstr "базова вища"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Basic Salary"
+msgstr "Оклад"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__basis
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__basis
+msgid "Basis"
+msgstr "Підстава"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__document_date
+msgid "Document date"
+msgstr "Дата наказу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__payslip_run_id
+msgid "Batch Name"
+msgstr "Назва групового розрахунку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__begin_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__begin_date
+msgid "Begin Date"
+msgstr "Дата початку дії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member_birth_date
+msgid "Birth date"
+msgstr "Дата народження"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_work_entry_print__mode__by_department
+msgid "By Department"
+msgstr "За підрозділом"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_create_payment_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_work_entry_print_view_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__category_unit
+msgid "Category unit"
+msgstr "Категорія обліку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_type__timesheet_ccode
+msgid "Character Code"
+msgstr "Буквений код"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__tax_social_benefit_code_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__benefit_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_disability_group__code
+msgid "Code"
+msgstr "Код"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_employee_tax_social_benefit_code_code_uniq
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_payroll_benefit_code_uniq
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_disability_group_code_uniq
+msgid "Code must be unique"
+msgstr "Код має бути унікальним"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__commissariat_at_home_address
+msgid "Commissariat at home address"
+msgstr "Райвійськкомат за місцем проживання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__commissariat_at_registration
+msgid "Commissariat at registration"
+msgstr "Райвійськкомат за місцем реєстрації"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_res_company
+msgid "Companies"
+msgstr "Компанії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__company_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__company_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__schedule_company_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_salary_indexation_period__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__education_type__2_complete_general_secondary
+msgid "Complete General Secondary"
+msgstr "повна загальна середня"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__education_type__6_complete_higher
+msgid "Complete Higher"
+msgstr "повна вища"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_res_config_settings
+msgid "Config Settings"
+msgstr "Налаштування"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_view_form
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_view_form
+msgid "Confirm and Create Moves"
+msgstr "Підтвердити і провести"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__contract_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_worked_days__contract_id
+msgid "Contract"
+msgstr "Контракт"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_salary_cost_of_living_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_salary_cost_of_living
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_salary_cost_of_living_menu
+msgid "Cost Of Living"
+msgstr "Прожитковий мінімум"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_create_payment_view_form
+msgid "Create"
+msgstr "Створити"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_payslip_create_payment.py:0
+#, python-format
+msgid "Create Payment"
+msgstr "Створити платіж"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_payslip_create_payment.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_run_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_form
+#, python-format
+msgid "Create Payments"
+msgstr "Створити платежі"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__account_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__account_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__account_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__account_credit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_line__account_credit_id
+msgid "Credit Account"
+msgstr "Кредит"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_currency_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__currency_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__company_currency_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__company_currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__issue_dkhp
+msgid "DKHP Issue"
+msgstr "Випуск ДКХП"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_disability_group__apply_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_sick_leave_rate__apply_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_cost_of_living__date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_inflation_index__date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_minimum_wage__date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__schedule_date
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_view_pivot
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_work_entry_print_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_filter
+msgid "Date"
+msgstr "Дата"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__date_from
+msgid "Date from"
+msgstr "Дата від"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_cost_of_living_date_uniq
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_inflation_index_date_uniq
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_minimum_wage_date_uniq
+msgid "Date must be unique"
+msgstr "Дата має бути унікальною"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__date_of_dismissal
+msgid "Date of dismissal"
+msgstr "Дата звільнення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__date_of_employment
+msgid "Date of employment"
+msgstr "Дата прийому"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__date_to
+msgid "Date to"
+msgstr "Дата до"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__work_experience_days
+msgid "Days"
+msgstr "Днів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__account_debit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__account_debit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__account_debit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__account_debit_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_line__account_debit_id
+msgid "Debit Account"
+msgstr "Дебет"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__default_bank_statement_id
+msgid "Default Bank Statement"
+msgstr "Банківська виписка за умовчанням"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__default_date
+msgid "Default Date"
+msgstr "Дата за умовчанням"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__default_journal_id
+msgid "Default Journal"
+msgstr "Журнал за умовчанням"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__department_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_print__department_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_schedule_view_search
+msgid "Department"
+msgstr "Підрозділ"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__description
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__diploma
+msgid "Diploma"
+msgstr "Диплом, серія, номер"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__diploma_num_state
+msgid "Diploma, number and date"
+msgstr "Диплом, номер, дата видачі"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_resume_line__diploma_num_state
+msgid "Diploma, number and date of issue"
+msgstr "Диплом, номер, дата видачі"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_resume_line__diploma
+msgid "Diploma, series, number"
+msgstr "Диплом (свідоцтво), серія, номер"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_disability_group__disability_group_id
+msgid "Disability Group"
+msgstr "Група інвалідності"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_salary_disability_group_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_salary_disability_group
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__disability_group_ids
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_salary_disability_group_menu
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Disability Groups"
+msgstr "Групи інвалідності"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__dismissal_reason__dismiss_at_will
+msgid "Dismiss at will"
+msgstr "за власним бажанням"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.order.type,name:selferp_l10n_ua_salary.hr_order_type_dismissal
+msgid "Dismissal"
+msgstr "Звільнення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__dismissal_reason
+msgid "Dismissal reason"
+msgstr "Причина звільнення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_disability_group__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_sick_leave_rate__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_cost_of_living__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_disability_group__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_inflation_index__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_minimum_wage__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_sick_leave_rate__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_print__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__post_graduate_education__3_doctoral_edu
+msgid "Doctoral Studies"
+msgstr "Докторантура"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__date_generate
+msgid "Document date"
+msgstr "Дата документу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_document
+msgid "Document name"
+msgstr "Назва документа"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_document
+msgid "Document name certifying professional education, by whom issued"
+msgstr "Назва документа, що посвідчує професійну освіту, ким виданий"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Download PDF"
+msgstr "Завантажити PDF"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Download XML"
+msgstr "Завантажити XML"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__esv_amount
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_salary_rule__report_kind__esv
+msgid "ESV"
+msgstr "ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__issue_etkd
+msgid "ETKD Issue"
+msgstr "Випуск ЄТКД"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_payslip_create_payment.py:0
+#, python-format
+msgid "Each bank statement line must have a journal reference"
+msgstr "Кожен рядок банківської виписка повинен мати посилання на журнал"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Edit Report"
+msgstr "Редагувати звіт"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__education_type
+msgid "Education Type"
+msgstr "Вид навчання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_period
+msgid "Education date"
+msgstr "Період навчання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_form
+msgid "Education form"
+msgstr "Форма навчання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_type
+msgid "Education type"
+msgstr "Вид навчання"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/account_report.py:0
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_disability_group__employee_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_sick_leave_rate__employee_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__employee_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__employee_id
+#, python-format
+msgid "Employee"
+msgstr "Співробітник"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_contract
+msgid "Employee Contract"
+msgstr "Трудовий контракт"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee_disability_group
+msgid "Employee Disability Groups"
+msgstr "Групи інвалідності працівника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee_family
+msgid "Employee Family"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__name
+msgid "Employee Name"
+msgstr "Ім'я співробітника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__order_ids
+msgid "Employee Orders"
+msgstr "Кадрові накази"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee_sick_leave_rate
+msgid "Employee Sick Leave Rates"
+msgstr "Процент лікарняних працівника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee_tax_social_benefit
+msgid "Employee Tax Social Benefits"
+msgstr "Податкові соціальні пільги працівника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee_tax_social_benefit_code
+msgid "Employee's Tax Social Benefit Codes"
+msgstr "Ознаки податкових соціальних пільг працівника"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/account_report.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_print__employee_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_work_entry_print_view_form
+#, python-format
+msgid "Employees"
+msgstr "Працівники"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__employment_main_place
+msgid "Employment main place"
+msgstr "Основне місце роботи"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__employment_type
+msgid "Employment type"
+msgstr "Вид зайнятості"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__end_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__end_date
+msgid "End Date"
+msgstr "Дата закінчення дії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__study_form__evening_form
+msgid "Evening form of study"
+msgstr "вечірня"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__study_form__external_form
+msgid "External form of education"
+msgstr "заочна"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__external_part_time
+msgid "External part-time"
+msgstr "Зовнішнє сумісництво"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__family_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_id
+msgid "Family"
+msgstr "Родина"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member
+msgid "Family member"
+msgstr "Ступінь родинного зв'язку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member_name
+msgid "Family member name"
+msgstr "ПІБ"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Family members"
+msgstr "Родинні зв'язки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip__salary_advance_calculation__first_15_days
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_run__salary_advance_calculation__first_15_days
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__res_company__salary_advance_calculation__first_15_days
+msgid "First 15 Days"
+msgstr "За перші 15 днів"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_1
+msgid "First Group"
+msgstr "Перша група"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__first_name
+msgid "First name"
+msgstr "Ім'я"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_quarter__1
+msgid "First quarter"
+msgstr "Перший квартал"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__fit_for_military_service
+msgid "Fit for military service"
+msgstr "Придатність до військової служби"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__study_form
+msgid "Form of Study"
+msgstr "Форма навчання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_quarter__4
+msgid "Fourth quarter"
+msgstr "Четвертий квартал"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_print__date_from
+msgid "From"
+msgstr "З дати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__date_from
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__date_from
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_salary_indexation_period__date_from
+msgid "From Date"
+msgstr "З дати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__study_form__full_time
+msgid "Full-time education"
+msgstr "денна"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_run_form
+msgid "Generate Payslips"
+msgstr "Згенерувати розрахункові листи"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_payslip_employees
+msgid "Generate payslips for all selected employees"
+msgstr "Створити розрахункові листи для всіх обраних співробітників"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.order.type,name:selferp_l10n_ua_salary.hr_order_type_granting_leave
+msgid "Granting leave"
+msgstr "Надання відпустки"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Gross"
+msgstr "Заробітна плата - брутто"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_work_entry
+msgid "HR Work Entry"
+msgstr "Робочий запис відділу кадрів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_work_entry_type
+msgid "HR Work Entry Type"
+msgstr "Тип робочого запису відділу кадрів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__hr_position_id
+msgid "HR position"
+msgstr "Кадровик (HR)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__hire_date
+msgid "Hire date"
+msgstr "Дата прийняття на роботу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__is_equal_to_registration_address
+msgid "Home address is equal to registration address"
+msgstr "Місце фактичної адреси співпадає з адресою реєстрації"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_minimum_wage_check_minimum_wage_hourly_positive
+msgid "Hourly minimum wage must be greater than zero"
+msgstr "Погодинна мінімальна заробітна плата має бути більше нуля"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid "How salary advance is computed in payslips"
+msgstr "Як розраховується аванс зарплати в розрахункових листах"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_pdfo_report_view_form
+msgid "Include in the report"
+msgstr "Додати до звіту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_employee_income_feature_code_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_employee_income_feature_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_rule__income_feature_code_id
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_employee_income_feature_code_menu
+msgid "Income Feature Codes"
+msgstr "Ознаки доходів фізичних осіб"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__dismissal_reason__incompetence
+msgid "Incompetence"
+msgstr "Невідповідність займаній посаді"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__education_type__4_incomplete_higher
+msgid "Incomplete Higher"
+msgstr "неповна вища"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_salary_inflation_index_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_salary_inflation_index
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_salary_inflation_index_menu
+msgid "Inflation Indices"
+msgstr "Індекси інфляції"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__information_on_receiving_pensions
+msgid "Information on receiving pensions"
+msgstr "Відомості про отримання пенсії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__internal_part_time
+msgid "Internal part-time"
+msgstr "Внутрішнє сумісництво"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__is_retiring
+msgid "Is retiring"
+msgstr "є пенсіонером(-кою)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__job_position
+msgid "Job  position"
+msgstr "Посада (професія)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job__job_class_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_job_class_search_view
+msgid "Job Class"
+msgstr "Класифікація професії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_job_class_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_job_class
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_job_class_menu
+msgid "Job Classificator"
+msgstr "Класифікатор професій"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_job
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__job_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_schedule_view_search
+msgid "Job Position"
+msgstr "Вакансія"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_contract__journal_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_journal_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__journal_id
+msgid "Journal"
+msgstr "Журнал"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_account_move
+msgid "Journal Entry"
+msgstr "Запис у журналі"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__last_name
+msgid "Last name"
+msgstr "Прізвище"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_count
+msgid "Line Count"
+msgstr "Кількість рядків"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_id
+msgid "Line First"
+msgstr "Перший рядок"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_ids
+msgid "Lines"
+msgstr "Рядки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__mt_amount
+msgid "MT"
+msgstr "ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Maternity Leaves Salary - ESV"
+msgstr "Вагітність і пологи - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Maternity Leaves Salary - Gross"
+msgstr "Вагітність і пологи - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Maternity Leaves Salary - MT"
+msgstr "Вагітність і пологи - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Maternity Leaves Salary - Net"
+msgstr "Вагітність і пологи - чисті"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Maternity Leaves Salary - PDFO"
+msgstr "Вагітність і пологи - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__military_rank
+msgid "Military rank"
+msgstr "Військове звання"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Military registration"
+msgstr "Відомості про військовий облік"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__military_registration_speciality_no
+msgid "Military registration speciality No."
+msgstr "Військово-облікова спеціальність №"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_salary_rule__report_kind__mt
+msgid "Military tax"
+msgstr "Військовий збір"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_salary_minimum_wage_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_salary_minimum_wage
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_salary_minimum_wage_menu
+msgid "Minimum Wage"
+msgstr "Мінімальна заробітна плата"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_minimum_wage__value_hourly
+msgid "Minimum Wage (Hourly)"
+msgstr "Значення (погодинні)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_minimum_wage__value_monthly
+msgid "Minimum Wage (Monthly)"
+msgstr "Значення (за місяць)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_minimum_wage_check_minimum_wage_monthly_positive
+msgid "Monthly minimum wage must be greater than zero"
+msgstr "Помісячна мінімальна заробітна плата має бути більше нуля"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__work_experience_months
+msgid "Months"
+msgstr "Місяців"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type_group__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__benefit_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line_type__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_disability_group__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_sick_leave_rate__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_payroll_benefit_name_uniq
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_disability_group_name_uniq
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_sick_leave_rate_name_uniq
+msgid "Name must be unique"
+msgstr "Назва має бути унікальною"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Net Salary"
+msgstr "Заробітна плата - чиста"
+
+#. module: selferp_l10n_ua_salary
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_payslip_create_payment.py.py:0
+msgid "No associated contact/partner has been established for employee %s"
+msgstr "Для співробітника %s не встановлено пов'язаного контакту/партнера"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_0
+msgid "None"
+msgstr "Немає"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__number
+msgid "Number"
+msgstr "Номер"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_type__timesheet_ncode
+msgid "Number Code"
+msgstr "Цифровий код"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__employee_qty
+msgid "Number Of Employees"
+msgstr "Кількість працівників"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__name
+msgid "Order Name"
+msgstr "Номер наказу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__type_id
+msgid "Order Type"
+msgstr "Тип наказу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_order
+msgid "Order block"
+msgstr "Кадровий наказ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_order.py:0
+#, python-format
+msgid "Order block is already exist with this Order Name"
+msgstr "Кадровий наказ з таким номером вже є в системі"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__order_date
+msgid "Order date"
+msgstr "Дата наказу"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_order_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_order_menu
+#, python-format
+msgid "Orders"
+msgstr "Кадрові накази"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__orders_count
+msgid "Orders count"
+msgstr "Накази"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__pdfo_amount
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_salary_rule__report_kind__pdfo
+msgid "PDFO"
+msgstr "ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__parent_id
+msgid "Parent"
+msgstr "Батьківський клас"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_partner_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__payslip_partner_id
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/account_report.py:0
+#, python-format
+msgid "Partners"
+msgstr "Партнери"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_issue_date
+msgid "Passport issue date"
+msgstr "Дата видачі паспорту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_issuing_authority
+msgid "Passport issuing authority"
+msgstr "Орган, що видав паспорт"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_series
+msgid "Passport series"
+msgstr "Серія паспорту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_validity_date
+msgid "Passport validity date"
+msgstr "Термін дії паспорту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__patronymic
+msgid "Patronymic"
+msgstr "По батькові"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Розрахунковий лист"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__payment_amount
+msgid "Payment Amount"
+msgstr "Сума оплати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__payment_count
+msgid "Payment Count"
+msgstr "Кількість оплат"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__payment_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_run__payment_type
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_filter
+msgid "Payment Type"
+msgstr "Тип виплат"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__payment_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_form
+msgid "Payments"
+msgstr "Оплати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_account_bank_statement_line__payslip_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_bank_rec_widget__payslip_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment__line_first_payslip_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_create_payment_line__payslip_id
+msgid "Payslip"
+msgstr "Розрахунковий лист"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "Групові розрахунки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_payslip_line
+msgid "Payslip Line"
+msgstr "Рядок розрахункового листа"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_payslip_worked_days
+msgid "Payslip Worked Days"
+msgstr "Відпрацьовано днів"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Payslip period for '%s' is overlapped with period(s) of another payslip(s):\n%s."
+msgstr "Період розрахункового листка '%s' перекривається з періодом інших розрахункових листків:\n%s."
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid "Payslips"
+msgstr "Розрахункові листи"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__percent
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__value
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__percent
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__percent
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_mixin__amount_base__percent
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit__amount_base__percent
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__amount_base__percent
+msgid "Percents"
+msgstr "Відсоток"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member_phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_work_entry_print.py:0
+#, python-format
+msgid "Please select the department or the employees you want to print timesheet for"
+msgstr "Будь ласка, виберіть відділ або співробітників, для яких ви хочете роздрукувати табелі"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_work_entry_print.py:0
+#, python-format
+msgid "Please set the date range which will be used to select employees you want to print timesheet for"
+msgstr "Будь ласка, встановіть діапазон дат, який використовуватиметься для вибору співробітників, для яких ви хочете роздрукувати табель"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Please setup sick leave rates on date %s for %s"
+msgstr "Будь ласка, встановіть відсоток лікарняних на %s для %s"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__post_graduate_education__1_post_higher_edu
+msgid "Post Higher Education"
+msgstr "Аспірантура"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.resume.line.type,name:selferp_l10n_ua_salary.hr_resume_line_type_post_graduate
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__post_graduate_education
+msgid "Post-graduate education"
+msgstr "Післядипломна освіта"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_salary/static/src/views/work_entry_calendar/work_entry_calendar.xml:0
+#: code:addons/selferp_l10n_ua_salary/static/src/xml/work_entry_templates.xml:0
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_work_entry_print_action
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_work_entry_print_view_form
+#, python-format
+msgid "Print Timesheet"
+msgstr "Друкувати табель"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_job_class_search_view
+msgid "Professions"
+msgstr "Професії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__diploma_qualification
+msgid "Qualification"
+msgstr "Кваліфікація за дипломом"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_resume_line__diploma_qualification
+msgid "Qualification by diploma"
+msgstr "Кваліфікація за дипломом (свідоцтвом)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_work_entry_print__mode__random
+msgid "Random Employee"
+msgstr "Довільний відбір"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__rank_group
+msgid "Rank group"
+msgstr "Склад"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_sick_leave_rate__sick_leave_rate_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__rate
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_sick_leave_rate__rate
+msgid "Rate"
+msgstr "Відсоток"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.order.type,name:selferp_l10n_ua_salary.hr_order_type_recruitment
+msgid "Recruitment"
+msgstr "Прийом на роботу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__dismissal_reason__redundancy
+msgid "Redundancy"
+msgstr "Скорочення штатів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__register_uit
+msgid "Register uit"
+msgstr "Група обліку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__registration_address
+msgid "Registration address"
+msgstr "Адреса реєстрації"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__related_job_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_job_class_view_form
+msgid "Related Job Positions"
+msgstr "Пов'язані посади"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__report_quarter
+msgid "Report quarter"
+msgstr "Квартал"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__report_year
+msgid "Report year"
+msgstr "Рік"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Робочий час ресурсу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__responsible_employee_id
+msgid "Responsible Person"
+msgstr "Відповідальний"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_resume_line
+msgid "Resume line of an employee"
+msgstr "Рядок резюме співробітника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip__payment_type__salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_run__payment_type__salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_filter
+msgid "Salary"
+msgstr "Заробітна плата"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__begin_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__begin_date
+msgid "Begin Date"
+msgstr "Дата початку дії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__end_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__end_date
+msgid "End Date"
+msgstr "Дата закінчення дії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__description
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit_code__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__short_description
+msgid "Short Description"
+msgstr "Короткий опис"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Salary Advance Calculation</span>\n"
+"                            <span class=\"fa fa-lg fa-calculator\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr "<span class=\"o_form_label\">Варіант розрахунку авансу</span>\n"
+"                            <span class=\"fa fa-lg fa-calculator\" title=\"Встановлені тут значення є залежними від компанії.\" aria-label=\"Встановлені тут значення є залежними від компанії.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid "How salary advance is computed in payslips"
+msgstr "Як розраховується аванс зарплати в розрахункових листах"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_view_form
+#: model:ir.actions.server,name:hr_payroll.action_hr_payroll_confirm_payroll
+msgid "Confirm and Create Moves"
+msgstr "Підтвердити і провести"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payslip_view_form
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_form
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_form
+msgid "<strong><span class=\"mr8 ml8\">Effective Value:</span></strong>"
+msgstr "<strong><span class=\"mr8 ml8\">Ефективне значення:</span></strong>"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_by_employees
+msgid "Set a specific payment type for new payslips."
+msgstr "Встановіть потрібний тип виплат для розрахункових листів."
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.ADV
+msgid "Salary - Advance"
+msgstr "Аванс заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.ESV
+#, python-format
+msgid "Salary - ESV"
+msgstr "Нараховано ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - ESV (Supplement to min. wage)"
+msgstr "Нараховано ЄСВ (Донарахування до мін. ЗП)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - ESV Base (When applying the supplement to the min. wage)"
+msgstr "Нараховано ЄСВ Базова (При застосуванні доплати до мін. ЗП)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - ESV Final"
+msgstr "До сплати ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.MT
+#, python-format
+msgid "Salary - MT"
+msgstr "Нараховано ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - MT Final"
+msgstr "До сплати ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.PDFO
+#, python-format
+msgid "Salary - PDFO"
+msgstr "Нараховано ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - PDFO Final"
+msgstr "До сплати ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip__payment_type__advance_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_run__payment_type__advance_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_filter
+msgid "Salary Advance"
+msgstr "Аванс заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__pdfo_amount
+msgid "PDFO"
+msgstr "ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__mt_amount
+msgid "MT"
+msgstr "ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__average_daily_wage
+msgid "Average Daily Wage"
+msgstr "Середньоденна зарплата"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__average_daily_wage_effective
+msgid "Effective Average Daily Wage"
+msgstr "Ефективна середньоденна зарплата"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__average_daily_wage_effective_visible
+msgid "Is Effective Average Daily Wage Visible"
+msgstr "Відображати ефективну середньоденну зарплату"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__journal_id
+msgid "Salary Journal"
+msgstr "Журнал зарплати"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Salary Slip"
+msgstr "Зарплатний листок"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__salary_advance_calculation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_run__salary_advance_calculation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_res_company__salary_advance_calculation
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_res_config_settings__company_salary_advance_calculation
+msgid "Salary Advance Calculation"
+msgstr "Варіант розрахунку авансу"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Salary Advance Slip"
+msgstr "Листок авансу ЗП"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_salary_dictionaries_menu
+msgid "Salary Dictionaries"
+msgstr "Довідники"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Salary Information"
+msgstr "Дані для заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_structure__journal_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__journal_id
+msgid "Salary Journal"
+msgstr "Журнал зарплати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_account_bank_statement_line__is_salary_payment
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_bank_rec_widget__is_salary_payment
+msgid "Salary Payment"
+msgstr "Виплата ЗП"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__salary_advance_percents
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_run__salary_advance_percents
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_res_company__salary_advance_percents
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_res_config_settings__company_salary_advance_percents
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip__salary_advance_calculation__percentage
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_run__salary_advance_calculation__percentage
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__res_company__salary_advance_calculation__percentage
+msgid "Salary Percentage"
+msgstr "Відсоток заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Правило зарплатні"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_structure__rule_ids
+msgid "Salary Rules"
+msgstr "Правила розрахунку"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Salary Slip"
+msgstr "Зарплатний листок"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_payroll_structure
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_rule__struct_id
+msgid "Salary Structure"
+msgstr "Структура зарплати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule__line_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_schedule_view_form
+msgid "Schedule Lines"
+msgstr "Рядки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__scientific_degree
+msgid "Scientific Degree"
+msgstr "Науковий ступінь, учене звання"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_2
+msgid "Second Group"
+msgstr "Друга група"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_quarter__2
+msgid "Second quarter"
+msgstr "Другий квартал"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_print__mode
+msgid "Selection Mode"
+msgstr "Спосіб відбору"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_income_feature_code__short_description
+msgid "Short Description"
+msgstr "Короткий опис"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_salary_sick_leave_rate_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_salary_sick_leave_rate
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__sick_leave_rate_ids
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_salary_sick_leave_rate_menu
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Sick Leave Rates"
+msgstr "Процент лікарняних"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip__payment_type__sick_leaves
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_run__payment_type__sick_leaves
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_filter
+msgid "Sick Leaves"
+msgstr "Лікарняні"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_leave__in_calendar_days
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_leave_type__in_calendar_days
+msgid "In Calendar Days"
+msgstr "В календарних днях"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_leave_view_form
+msgid "<span attrs=\"{'invisible': [('in_calendar_days', '=', False)]}\">Calendar Day(s)</span>"
+msgstr "<span attrs=\"{'invisible': [('in_calendar_days', '=', False)]}\">Календарних дні(в)</span>"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_leave_view_form
+msgid "<span attrs=\"{'invisible': [('in_calendar_days', '=', True)]}\">Working Day(s)</span>"
+msgstr "<span attrs=\"{'invisible': [('in_calendar_days', '=', True)]}\">Робочих дні(в)</span>"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_salary/static/src/leave_stats/leave_stats.xml:0
+#: code:addons/selferp_l10n_ua_salary/static/src/leave_stats/leave_stats.xml:0
+#, python-format
+msgid "calendar day(s)"
+msgstr "календарних дні(в)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_salary/static/src/leave_stats/leave_stats.xml:0
+#: code:addons/selferp_l10n_ua_salary/static/src/leave_stats/leave_stats.xml:0
+#, python-format
+msgid "working day(s)"
+msgstr "робочих дні(в)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (CIF) - ESV"
+msgstr "Лікарняні (ФСС) - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (CIF) - Gross"
+msgstr "Лікарняні (ФСС) - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (CIF) - MT"
+msgstr "Лікарняні (ФСС) - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (CIF) - Net"
+msgstr "Лікарняні (ФСС) - чисті"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (CIF) - PDFO"
+msgstr "Лікарняні (ФСС) - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (Employer) - ESV"
+msgstr "Лікарняні (роботодавець) - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (Employer) - Gross"
+msgstr "Лікарняні (роботодавець) - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (Employer) - MT"
+msgstr "Лікарняні (роботодавець) - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (Employer) - Net"
+msgstr "Лікарняні (роботодавець) - чисті"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Sick Leaves Salary (Employer) - PDFO"
+msgstr "Лікарняні (роботодавець) - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Sick Leaves Slip"
+msgstr "Листок лікарняних"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Some work entries could not be validated."
+msgstr "Деякі робочі записи не можливо підтвердити."
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Time intervals to look for:%s"
+msgstr "Часові інтервали для пошуку:%s"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "There are no work entries of sick leave of employee %(employee)s for the period from %(df)s to %(dt)s"
+msgstr "Немає робочих записів з типом лікарняний для працівника %(employee)s за період з %(df)s по %(dt)s"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "There are no work entries of vacations of employee %(employee)s for the period from %(df)s to %(dt)s"
+msgstr "Немає робочих записів з типом відпустка для працівника %(employee)s за період з %(df)s по %(dt)s"
+
+#. module: hr_payroll
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "The following employees have a contract outside of the payslip period:\n%s"
+msgstr "Перелічені нижче працівники мають контракт за межами періоду заробітної плати:\n%s"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "The following payslips have lines with credit account set but no debit account:\n"
+"%s\n"
+"To properly confirm that payslips you need to set up an account on employee's contract page (Salary Information -> Accounting)"
+msgstr "Наступні розрахункові листи мають рядки з встановленим рахунком кредиту, але не мають рахунку дебету:\n"
+"%s\n"
+"Щоб коректно підтвердити такі розрахункові листи, вам потрібно встановити рахунок в картці контракту працівника (Інформація про заробітну плату -> Бухгалтерський облік)"
+
+#. module: hr_payroll
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "You cannot validate a payslip on which the contract is cancelled"
+msgstr "Ви не можете підтвердити платіжну відомість, у якій договір розірвано"
+
+#. module: hr_payroll
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "You can't validate a cancelled payslip."
+msgstr "Ви не можете підтвердити скасований розрахунковий лист."
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.ADV
+#, python-format
+msgid "Salary - Advance"
+msgstr "Аванс заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Basic Salary"
+msgstr "Оклад"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary Indexation"
+msgstr "Індексація ЗП"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Supplement To Minimum Wage"
+msgstr "Донарахування до мінімальної заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Charity - MT"
+msgstr "Нецільова благодійна допомога - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Charity - NET"
+msgstr "Нецільова благодійна допомога - чиста"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Charity - PDFO"
+msgstr "Нецільова благодійна допомога - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Charity Gross"
+msgstr "Нецільова благодійна допомога - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Gross"
+msgstr "Заробітна плата - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.ESV
+#, python-format
+msgid "Salary - ESV"
+msgstr "Нараховано ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - ESV Final"
+msgstr "До сплати ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.MT
+#, python-format
+msgid "Salary - MT"
+msgstr "Нараховано ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - MT Final"
+msgstr "До сплати ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.salary.rule.category,name:selferp_l10n_ua_salary.PDFO
+#, python-format
+msgid "Salary - PDFO"
+msgstr "Нараховано ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salary - PDFO Final"
+msgstr "До сплати ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Net Salary"
+msgstr "Заробітна плата - чиста"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Vacation Pay"
+msgstr "Відпускні"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_0
+msgid "None"
+msgstr "Немає"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_1
+msgid "First Group"
+msgstr "Перша група"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_2
+msgid "Second Group"
+msgstr "Друга група"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_3
+msgid "Third Group"
+msgstr "Третя група"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_rule__use_employee_expense_account
+msgid "Use Employee Contract's Expense Account"
+msgstr "Використовувати рахунок витрат з контракту співробітника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__first_name
+msgid "First name"
+msgstr "Ім'я"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__last_name
+msgid "Last name"
+msgstr "Прізвище"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__patronymic
+msgid "Patronymic"
+msgstr "По батькові"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__employment_type
+msgid "Employment type"
+msgstr "Вид зайнятості"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__employment_main_place
+msgid "Employment main place"
+msgstr "Основне місце роботи"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__civil_law_contract
+msgid "Civil law contract"
+msgstr "Договір ЦПХ"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__external_part_time
+msgid "External part-time"
+msgstr "Зовнішнє сумісництво"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_employee__employment_type__internal_part_time
+msgid "Internal part-time"
+msgstr "Внутрішнє сумісництво"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__hire_date
+msgid "Hire date"
+msgstr "Дата прийняття на роботу"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Work experience as of hire date"
+msgstr "Стаж роботи на дату прийому"
+
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__work_experience_months
+msgid "Months"
+msgstr "Місяців"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__work_experience_years
+msgid "Years"
+msgstr "Років"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member
+msgid "Family member"
+msgstr "Ступінь родинного зв'язку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member_name
+msgid "Family member name"
+msgstr "ПІБ"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member_birth_date
+msgid "Birth date"
+msgstr "Дата народження"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_family__family_member_phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__register_uit
+msgid "Register uit"
+msgstr "Група обліку"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Family members"
+msgstr "Родинні зв'язки"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Military registration"
+msgstr "Відомості про військовий облік"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__fit_for_military_service
+msgid "Fit for military service"
+msgstr "Придатність до військової служби"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__category_unit
+msgid "Category unit"
+msgstr "Категорія обліку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__commissariat_at_registration
+msgid "Commissariat at registration"
+msgstr "Райвійськкомат за місцем реєстрації"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__rank_group
+msgid "Rank group"
+msgstr "Склад"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__commissariat_at_home_address
+msgid "Commissariat at home address"
+msgstr "Райвійськкомат за місцем проживання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_employee__commissariat_at_home_address
+msgid "Commissariat at home address"
+msgstr "Назва райвійськкомату за місцем фактичного проживання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__military_rank
+msgid "Military rank"
+msgstr "Військове звання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__military_registration_speciality_no
+msgid "Military registration speciality No."
+msgstr "Військово-облікова спеціальність №"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__staying_on_a_special_register
+msgid "Staying on a special register"
+msgstr "Перебування на спеціальному обліку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_series
+msgid "Passport series"
+msgstr "Серія паспорту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_issuing_authority
+msgid "Passport issuing authority"
+msgstr "Орган, що видав паспорт"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_issue_date
+msgid "Passport issue date"
+msgstr "Дата видачі паспорту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__passport_validity_date
+msgid "Passport validity date"
+msgstr "Термін дії паспорту"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__is_retiring
+msgid "Is retiring"
+msgstr "є пенсіонером(-кою)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__information_on_receiving_pensions
+msgid "Information on receiving pensions"
+msgstr "Відомості про отримання пенсії"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__is_equal_to_registration_address
+msgid "Home address is equal to registration address"
+msgstr "Місце фактичної адреси співпадає з адресою реєстрації"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__registration_address
+msgid "Registration address"
+msgstr "Адреса реєстрації"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__hr_position_id
+msgid "HR position"
+msgstr "Кадровик (HR)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__diploma
+msgid "Diploma"
+msgstr "Диплом, серія, номер"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_resume_line__diploma
+msgid "Diploma, series, number"
+msgstr "Диплом (свідоцтво), серія, номер"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__diploma_speciality
+msgid "Speciality/profession"
+msgstr "Спеціальність за дипломом"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_resume_line__diploma_speciality
+msgid "Speciality/profession by diploma"
+msgstr "Спеціальність (професія) за дипломом (свідоцтвом)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_schedule_action
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_schedule
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__schedule_id
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_schedule_menu
+msgid "Staff Schedule"
+msgstr "Штатний розклад"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_schedule_line
+msgid "Staff Schedule Line"
+msgstr "Рядок штатного розкладу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__state
+msgid "State"
+msgstr "Стан"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__staying_on_a_special_register
+msgid "Staying on a special register"
+msgstr "Перебування на спеціальному обліку"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__child_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_job_class_view_form
+msgid "Subclasses"
+msgstr "Підкласи"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Supplement To Minimum Wage"
+msgstr "Донарахування до мінімальної заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__surcharge
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_type__surcharge_percents
+msgid "Surcharge"
+msgstr "Надбавка"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Tax Social Benefit"
+msgstr "Податкова соціальна пільга"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__tax_social_benefit_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Tax Social Benefits"
+msgstr "Податкові соціальні пільги"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_employee_tax_social_benefit_code_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_employee_tax_social_benefit_code_menu
+msgid "Tax Social Benefits Codes"
+msgstr "Ознаки податкових соціальних пільг"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_payslip_worked_days__contract_id
+msgid "The contract this worked days should be applied to"
+msgstr "До договору слід застосовувати ці відпрацьовані дні"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_job_class.py:0
+#, python-format
+msgid "The job class code must contain the parent code as part of it"
+msgstr "Код класу роботи має містити як свою частину батьківський код"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_resume_line__company_expense_education_name
+msgid "The name of the structural division"
+msgstr "Назва структурного підрозділу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_sick_leave_rate_check_rate_greater_than_zero
+msgid "The rate must be greater than zero"
+msgstr "Відсоток має бути більше нуля"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee_tax_social_benefit.py:0
+#, python-format
+msgid "The tax social benefit date range must be set"
+msgstr "Має бути встановлено діапазон дат податкові соціальні пільги"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee_tax_social_benefit.py:0
+#, python-format
+msgid "The tax social benefit start date must be before end date"
+msgstr ""
+"Початкова дата податкові соціальні пільги має бути раніше, ніж кінцева дата"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee_tax_social_benefit_code.py:0
+#, python-format
+msgid "The tax social benefit value must be greater than zero"
+msgstr "Значення відсотка податкові соціальні пільги має бути більше нуля"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_cost_of_living_check_value_greater_than_zero
+#: model:ir.model.constraint,message:selferp_l10n_ua_salary.constraint_hr_salary_inflation_index_check_value_greater_than_zero
+msgid "The value must be greater than zero"
+msgstr "Значення має бути більше нуля"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/controllers/hr_work_entry_report.py:0
+#: code:addons/selferp_l10n_ua_salary/wizard/hr_work_entry_print.py:0
+#, python-format
+msgid "There are no work entries for given employees and date range"
+msgstr "Немає записів у табелі для вказаних працівників і діапазону дат"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.salary.disability_group,name:selferp_l10n_ua_salary.hr_salary_disability_group_3
+msgid "Third Group"
+msgstr "Третя група"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_pdfo_report__report_quarter__3
+msgid "Third quarter"
+msgstr "Третій квартал"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_leave
+msgid "Time Off"
+msgstr "Відпустка"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Time intervals to look for:%s"
+msgstr "Часові інтервали для пошуку:%s"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_work_entry_type_view_form
+msgid "Timesheet"
+msgstr "Табель"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_work_entry_print__date_to
+msgid "To"
+msgstr "По дату"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__date_to
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__date_to
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_salary_indexation_period__date_to
+msgid "To Date"
+msgstr "По дату"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__on_children
+msgid "On Children"
+msgstr "На дітей"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee_tax_social_benefit__children_qty
+msgid "Children Qty"
+msgstr "Кількість дітей"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee_tax_social_benefit.py:0
+#, python-format
+msgid "The children quantity of the tax social benefit record is missing"
+msgstr "Не вказано кількість дітей в рядку податкової соціальної пільги"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_employee_tax_social_benefit.py:0
+#, python-format
+msgid "The code of the tax social benefit on children must be '02' or '04'"
+msgstr "Код податкової соціальної пільги на дітей може набувати значення '02' чи '04'"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_schedule_line__total_salary
+msgid "Total Salary"
+msgstr "Загальна сума"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_resume_line_type
+msgid "Type of a resume line"
+msgstr "Тип рядку резюме"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__type_of_vacation
+msgid "Type of vacation"
+msgstr "Тип відпустки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_rule__use_employee_expense_account
+msgid "Use Employee Contract's Expense Account"
+msgstr "Використовувати рахунок витрат з контракту співробітника"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__vacation_date_from
+msgid "Vacation date from"
+msgstr "Дата початку відпустки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__vacation_date_to
+msgid "Vacation date to"
+msgstr "Дата завершення відпустки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip__payment_type__vacations
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_run__payment_type__vacations
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_filter
+msgid "Vacations"
+msgstr "Відпускні"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Vacations Salary - ESV"
+msgstr "Відпускні - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Vacations Salary - Gross"
+msgstr "Відпускні - брутто"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Vacations Salary - MT"
+msgstr "Відпускні - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Vacations Salary - Net"
+msgstr "Відпускні - чисті"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Vacations Salary - PDFO"
+msgstr "Відпускні - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Salaries"
+msgstr "Заробітна плата"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Vacations Slip"
+msgstr "Листок відпускних"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "%.2f %s / (%d calendar day(s) - %d holiday(s))"
+msgstr "%.2f %s / (%d кал.дн. - %d вих.дн.)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "%.2f %s / (%d calendar day(s) - %d holiday(s) - %d unpaid day(s))"
+msgstr "%.2f %s / (%d кал.дн. - %d вих.дн. - %d неопл.дн.)"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "1st month: %.2f %s / %d day(s)."
+msgstr "1-й місяць: %.2f %s / %d дн."
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "1st day: %.2f %s / %.2f day(s)"
+msgstr "1-й день: %.2f %s / %.2f дн."
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Maternity (less then min. wage): %.2f %s / %.2f day(s)"
+msgstr "Декретні менше мін. ЗП: %.2f %s / %.2f дн."
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Maternity (less then 6 months): 2 x %.2f %s / %.2f day(s)"
+msgstr "Декретні менше 6 міс.: 2 x %.2f %s / %.2f дн."
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_cost_of_living__value
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_inflation_index__value
+msgid "Value"
+msgstr "Значення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_cost_of_living__value_children_from_6_to_18
+msgid "Value For Children From 6 To 18 y.o."
+msgstr "Значення для дітей віком від 6 до 18 років"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_salary_cost_of_living__value_children_under_6
+msgid "Value For Children Under 6 y.o."
+msgstr "Значення для дітей віком до 6 років"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_pdfo_report__values
+msgid "Values"
+msgstr "Значення"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_resume_line__education_type__3_vocational
+msgid "Vocational"
+msgstr "професійно-технічна"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__work_date_from
+msgid "Work date from"
+msgstr "Період роботи (початок)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__work_date_to
+msgid "Work date to"
+msgstr "Період роботи (завершення)"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_employee_form
+msgid "Work experience as of hire date"
+msgstr "Стаж роботи на дату прийому"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_employee__work_experience_years
+msgid "Years"
+msgstr "Років"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_job.py:0
+#, python-format
+msgid "You must select a single profession (lowest level of hierarchy)"
+msgstr "Ви маєте вибрати професію (найнижчий рівень ієрархії)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_job_class__code_zkpptr
+msgid "ZKPPTR Code"
+msgstr "Код ЗКППТР"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,name:selferp_l10n_ua_salary.hr_order_report
+msgid "Друкувати наказ"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,name:selferp_l10n_ua_salary.hr_schedule_staff_list
+msgid "Затвердження штатного розпису"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,name:selferp_l10n_ua_salary.hr_employee_card
+msgid "Особова картка працівника"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.report,name:selferp_l10n_ua_salary.hr_schedule_staff_list_info
+msgid "Штатний розпис"
+msgstr ""
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_order_type_action
+msgid "Order Types"
+msgstr "Типи кадрових наказів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_order_type_menu
+msgid "Order types"
+msgstr "Типи кадрових наказів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_order_type
+msgid "Type of order"
+msgstr "Тип наказу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order__notes
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_order_view_form
+msgid "Notes"
+msgstr "Нотатки"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type_group__property_sequence_id
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type_group__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type_group__letter
+msgid "Letter"
+msgstr "Літера"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type_group__sequence
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_order_type_group_action
+msgid "Order Type groups"
+msgstr "Групи типів кадрових наказів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_order_type_group_menu
+msgid "Order type groups"
+msgstr "Групи типів кадрових наказів"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type__type_group_id
+msgid "Order Type Group"
+msgstr "Група типу наказу"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_order_type_group_property_sequence_id
+msgid "This type orders sequence"
+msgstr "Послідовність наказів з цим типом"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_hr_order_type_group
+msgid "Type of order group"
+msgstr "Група типу наказу"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.order.type.group,name:selferp_l10n_ua_salary.hr_order_type_group_personnel_orders
+msgid "Personnel orders"
+msgstr "Кадрові накази"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.order.type.group,name:selferp_l10n_ua_salary.hr_order_type_group_leave_orders
+msgid "Orders for leave"
+msgstr "Накази на відпустку"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.leave.type,name:selferp_l10n_ua_salary.hr_leave_type_business_trip
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_business_trip
+#, python-format
+msgid "Business Trip"
+msgstr "Відрядження"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_annual_additional_leave
+msgid "Annual Additional Leave (acc. to art. 7, 8 of Ukraine Law of Leaves)"
+msgstr "Щорічна додаткова відпустка (ст. 7, 8 Закону України \"Про відпустки\")"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_creative_leave
+msgid "Creative Leave (acc. to art. 16 of Ukraine Law of Leaves)"
+msgstr "Творча відпустка (ст.16 Закону України \"Про відпустки\")"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.leave.type,name:selferp_l10n_ua_salary.hr_leave_type_maternity_leave
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_maternity_leave
+msgid "Maternity Leave"
+msgstr "Декретна відпустка"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_leave_legal
+msgid "Other unworked time provided for by law (state and public duties, pre-conscription training, military training, donor, time off, etc.)"
+msgstr "Інший невідпрацьований час, передбачений законодавством (виконання державних і громадських обов’язків, допризовна підготовка, військові збори, донорські, відгул і т.ін.)"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_contract__non_fixed_working_hours
+msgid "Non-fixed working hours"
+msgstr "Нефіксовані робочі години"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.leave.type,name:selferp_l10n_ua_salary.hr_leave_type_annual_additional_leave
+msgid "Annual Additional Leave"
+msgstr "Щорічна додаткова відпустка"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.leave.type,name:selferp_l10n_ua_salary.hr_leave_type_creative_leave
+msgid "Creative Leave"
+msgstr "Творча відпустка"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.leave.type,name:selferp_l10n_ua_salary.hr_leave_type_additional_leave_for_education
+msgid "Addition Leave For Education"
+msgstr "Додаткова відпустка у зв'язку з навчанням"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.leave.type,name:selferp_l10n_ua_salary.hr_leave_type_leave_legal
+msgid "Other unworked time provided for by law"
+msgstr "Інший невідпрацьований час, передбачений законодавством"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_work_on_day_off
+#, python-format
+msgid "Work On Day Off"
+msgstr "Робота у вихідні та свята"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_absense_from_work
+msgid "Absence From Work"
+msgstr "Прогул"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_work_in_the_evening
+#, python-format
+msgid "Work In The Evening"
+msgstr "Робота у вечірні години"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.work.entry.type,name:selferp_l10n_ua_salary.hr_work_entry_type_work_at_night
+#, python-format
+msgid "Work At Night"
+msgstr "Робота у нічні години"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.hr_payroll_benefit_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_salary.hr_payroll_benefit_menu
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_contract_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_form
+msgid "Accruals and Deductions"
+msgstr "Доплати і відрахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_line__benefit_line_id
+msgid "Benefit"
+msgstr "Доплати і відрахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip__benefit_line_ids
+msgid "Benefit Lines"
+msgstr "Доплати і відрахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__benefit_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__type
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payroll_benefit_view_search
+msgid "Type"
+msgstr "Тип"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__schedule_pay
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__schedule_pay
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__schedule_pay
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__schedule_pay
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payroll_benefit_view_search
+msgid "Scheduled Pay"
+msgstr "Розклад"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__display_details
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__display_details
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__display_details
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__display_details
+msgid "Details"
+msgstr "Подробиці"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__active
+msgid "Active"
+msgstr "Активно"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__type__accrual
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__type__accrual
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__type__accrual
+msgid "Accrual"
+msgstr "Доплата"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Accruals"
+msgstr "Доплати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__type__deduction
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__type__deduction
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__type__deduction
+msgid "Deduction"
+msgstr "Відрахування"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#, python-format
+msgid "Deductions"
+msgstr "Відрахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__schedule_pay__monthly
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__schedule_pay__monthly
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__schedule_pay__monthly
+msgid "Monthly"
+msgstr "Щомісячно"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__schedule_pay__quarterly
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__schedule_pay__quarterly
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__schedule_pay__quarterly
+msgid "Quarterly"
+msgstr "Щоквартально"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__schedule_pay__semi-annually
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__schedule_pay__semi-annually
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__schedule_pay__semi-annually
+msgid "Semi-annually"
+msgstr "Щопівріччя"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__schedule_pay__annually
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__schedule_pay__annually
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__schedule_pay__annually
+msgid "Annually"
+msgstr "Щорічно"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payroll_benefit_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_payroll_benefit_view_search
+msgid "Archived"
+msgstr "Архівовано"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_benefit_type_mixin.py:0
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:hr.payroll.benefit,name:selferp_l10n_ua_salary.hr_payroll_benefit_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__display_is_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__display_is_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__display_is_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__display_is_alimony
+#, python-format
+msgid "Alimony"
+msgstr "Аліменти"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__is_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__is_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__is_alimony
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__is_alimony
+msgid "Is Alimony"
+msgstr "Аліменти"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_contract_benefit.py:0
+#, python-format
+msgid "Alimony records must contain information about the children and their ages"
+msgstr "Записи про аліменти мають містити інформацію про дітей та їх вік"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "Alimony: %s"
+msgstr "Аліменти: %s"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_structure.py:0
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__charge_type__bonus
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__charge_type__bonus
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__charge_type__bonus
+#, python-format
+msgid "Bonus"
+msgstr "Премія"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_type_mixin__charge_type__charity
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_benefit__charge_type__charity
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit__charge_type__charity
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__charge_type__charity
+msgid "General Charity"
+msgstr "Нецільова благодійна допомога"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__payroll_benefit_id
+msgid "Accruals / Deductions"
+msgstr "Доплата / утримання"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__display_receiver
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__display_receiver
+msgid "Receiver"
+msgstr "Отримувач"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__receiver_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__receiver_id
+msgid "Receiver Partner"
+msgstr "Отримувач"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__amount_base
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__amount_base
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__amount_base
+msgid "Amount Base"
+msgstr "База нарахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__display_base_rule_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__display_base_rule_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__display_base_rule_code
+msgid "Amount Base Rule"
+msgstr "Правило бази нарахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__base_rule_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__base_rule_code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__base_rule_code
+msgid "Amount Base Rule Code"
+msgstr "Код правила бази нарахування"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__fixed_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__fixed_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__fixed_amount
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_mixin__amount_base__fixed
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit__amount_base__fixed
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__amount_base__fixed
+msgid "Fixed Amount"
+msgstr "Фіксована сума"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_benefit_mixin__amount_base__percent_in_wages
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit__amount_base__percent_in_wages
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line__amount_base__percent_in_wages
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__percent_in_wages
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__percent_in_wages
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__percent_in_wages
+msgid "Percents In Wages"
+msgstr "Відсоток у сумі ЗП"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_benefit_mixin.py:0
+#, python-format
+msgid "Fixed amount must be set for the accruals or deductions record '%s'"
+msgstr "Для запису доплати чи відрахування '%s' має бути задана фіксована сума"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_benefit_mixin.py:0
+#, python-format
+msgid "Percent value must be set for the accruals or deductions record '%s'"
+msgstr "Для запису доплати чи відрахування '%s' має бути задано відсоток"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_benefit_mixin.py:0
+#, python-format
+msgid "Percent in wages must be set for the accruals or deductions record '%s'"
+msgstr "Для запису доплати чи відрахування '%s' має бути задано відсоток у сумі ЗП"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__children_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__children_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.hr_contract_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.view_hr_payslip_form
+msgid "Children"
+msgstr "Діти"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit_alimony_children__children_age
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line_alimony_children__children_age
+msgid "Age Of Children"
+msgstr "Вік дітей"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit_alimony_children__children_number
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line_alimony_children__children_number
+msgid "Number Of Children"
+msgstr "Кількість дітей"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit_alimony_children__children_age__under_6
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line_alimony_children__children_age__under_6
+msgid "Under 6 y.o."
+msgstr "До 6 років"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit_alimony_children__children_age__from_6_to_18
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line_alimony_children__children_age__from_6_to_18
+msgid "From 6 to 18 y.o."
+msgstr "З 6 до 18 років"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payroll_contract_benefit_alimony_children__children_age__from_18_to_23
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_salary.selection__hr_payslip_benefit_line_alimony_children__children_age__from_18_to_23
+msgid "From 18 to 23 y.o."
+msgstr "З 18 до 23 років"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_type_mixin__charge_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_benefit__charge_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__charge_type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__charge_type
+msgid "Charge Type"
+msgstr "Тип надбавки"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.payroll.benefit,name:selferp_l10n_ua_salary.hr_payroll_benefit_quarterly_bonus
+msgid "Quarterly Bonus"
+msgstr "Квартальна премія"
+
+#. module: selferp_l10n_ua_salary
+#: model:hr.payroll.benefit,name:selferp_l10n_ua_salary.hr_payroll_benefit_annual_bonus
+msgid "Annual Bonus"
+msgstr "Річна премія"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_benefit_mixin__account_in_next_period
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__account_in_next_period
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__account_in_next_period
+msgid "Take Into Account In Next Period"
+msgstr "Врахувати в наступному періоді"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payroll_contract_benefit.py:0
+#, python-format
+msgid "Periods for benefits of the same type should not overlap"
+msgstr "Періоди нарахувань / відрахувань однакового типу не мають перекриватись"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_benefit_mixin__base_rule_code
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_payroll_contract_benefit__base_rule_code
+#: model:ir.model.fields,help:selferp_l10n_ua_salary.field_hr_payslip_benefit_line__base_rule_code
+msgid "\nBy default, the value of the rule coded NET_TECHNICAL for deductions and the rule coded BASIC for accruals are used as input values for percent computation.\n"
+"If you need to use the value of another rule, enter its code here.\n"
+msgstr "\nЗа замовчуванням, вихідним значенням для обчислення відсотків є значення правил з кодом NET_TECHNICAL для відрахувань і BASIC для нарахувань.\n"
+"Якщо вам потрібно використати значення іншого правила, введіть тут його код.\n"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_hr_contract__timesheet_based_salary
+msgid "Timesheet-based Salary"
+msgstr "Рахувати за табелем"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "%s - ESV"
+msgstr "%s - ЄСВ"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "%s - PDFO"
+msgstr "%s - ПДФО"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/hr_payslip.py:0
+#, python-format
+msgid "%s - MT"
+msgstr "%s - ВЗ"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid "Periods for which salary indexation is applied"
+msgstr "Періоди, в яких проводиться індексація заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.model,name:selferp_l10n_ua_salary.model_salary_indexation_period
+msgid "Salary Indexation Period"
+msgstr "Період індексації заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model:ir.actions.act_window,name:selferp_l10n_ua_salary.salary_indexation_period_action
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_res_company__salary_indexation_period_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_salary.field_res_config_settings__company_salary_indexation_period_ids
+msgid "Salary Indexation Periods"
+msgstr "Періоди індексації заробітної плати"
+
+#. module: selferp_l10n_ua_salary
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_salary.res_config_settings_view_form
+msgid "Indexation Periods"
+msgstr "Періоди індексації"
+
+#. module: selferp_l10n_ua_salary
+#. odoo-python
+#: code:addons/selferp_l10n_ua_salary/models/salary_indexation_period.py:0
+#: code:addons/selferp_l10n_ua_salary/models/salary_indexation_period.py:0
+#, python-format
+msgid ""
+"Indexation period for %s is overlapped with another period(s):\n"
+"%s."
+msgstr "Період індексації %s перекривається з іншими періодами:\n"
+"%s."

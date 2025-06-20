@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_export_xml_J0500109">
+        <t t-call="selferp_l10n_ua_ext.export_xml_template_account_base" t-translation="off">
+            <!-- HEAD -->
+            <t t-if="data['HZ'] == 'HZU'">
+                <HZU>1</HZU>
+                <HTIN1 t-att="['xsi:nil', 'true' if data['HTIN1'] is None else None]"><t t-out="data['HTIN1']"/></HTIN1>
+                <HFIL t-att="['xsi:nil', 'true' if data['HFIL'] is None else None]"><t t-out="data['HFIL']"/></HFIL>
+            </t>
+            <HZN t-elif="data['HZ'] == 'HZN'">1</HZN>
+            <t t-else="">
+                <HZ>1</HZ>
+                <HZD t-att="['xsi:nil', 'true' if data['HZD'] is None else None]"><t t-out="data['HZD']"/></HZD>
+            </t>
+            <HZY><t t-out="data['HZY']"/></HZY>
+            <HZKV><t t-out="data['HZKV']"/></HZKV>
+            <HNUM><t t-out="data['HNUM']"/></HNUM>
+            <HNAME><t t-out="data['HNAME']"/></HNAME>
+            <HDDGV t-att="['xsi:nil', 'true' if data['HDDGV'] is None else None]"><t t-out="data['HDDGV']"/></HDDGV>
+            <HNDGV t-att="['xsi:nil', 'true' if data['HNDGV'] is None else None]"><t t-out="data['HNDGV']"/></HNDGV>
+            <HTIN><t t-out="data['HTIN']"/></HTIN>
+            <HKATOTTG><t t-out="data['HKATOTTG']"/></HKATOTTG>
+            <HNAME1 t-att="['xsi:nil', 'true' if data['HNAME1'] is None else None]"><t t-out="data['HNAME1']"/></HNAME1>
+            <HLOC><t t-out="data['HLOC']"/></HLOC>
+            <HZIP><t t-out="data['HZIP']"/></HZIP>
+            <HTEL t-att="['xsi:nil', 'true' if data['HTEL'] is None else None]"><t t-out="data['HTEL']"/></HTEL>
+            <HFAX t-att="['xsi:nil', 'true' if data['HFAX'] is None else None]"><t t-out="data['HFAX']"/></HFAX>
+            <HEMAIL t-att="['xsi:nil', 'true' if data['HEMAIL'] is None else None]"><t t-out="data['HEMAIL']"/></HEMAIL>
+            <HSTI><t t-out="data['HSTI']"/></HSTI>
+
+            <R061G3 t-att="['xsi:nil', 'true' if data['R061G3'] is None else None]"><t t-out="data['R061G3']"/></R061G3>
+            <R061G4 t-att="['xsi:nil', 'true' if data['R061G4'] is None else None]"><t t-out="data['R061G4']"/></R061G4>
+            <R062G3 t-att="['xsi:nil', 'true' if data['R062G3'] is None else None]"><t t-out="data['R062G3']"/></R062G3>
+            <R062G4 t-att="['xsi:nil', 'true' if data['R062G4'] is None else None]"><t t-out="data['R062G4']"/></R062G4>
+            <R063G3 t-att="['xsi:nil', 'true' if data['R063G3'] is None else None]"><t t-out="data['R063G3']"/></R063G3>
+            <R063G4 t-att="['xsi:nil', 'true' if data['R063G4'] is None else None]"><t t-out="data['R063G4']"/></R063G4>
+            <R064G3 t-att="['xsi:nil', 'true' if data['R064G3'] is None else None]"><t t-out="data['R064G3']"/></R064G3>
+            <R064G4 t-att="['xsi:nil', 'true' if data['R064G4'] is None else None]"><t t-out="data['R064G4']"/></R064G4>
+            <R065G3 t-att="['xsi:nil', 'true' if data['R065G3'] is None else None]"><t t-out="data['R065G3']"/></R065G3>
+            <R065G4 t-att="['xsi:nil', 'true' if data['R065G4'] is None else None]"><t t-out="data['R065G4']"/></R065G4>
+            <R066G3 t-att="['xsi:nil', 'true' if data['R066G3'] is None else None]"><t t-out="data['R066G3']"/></R066G3>
+            <R066G4 t-att="['xsi:nil', 'true' if data['R066G4'] is None else None]"><t t-out="data['R066G4']"/></R066G4>
+            <HKVED t-att="['xsi:nil', 'true' if data['HKVED'] is None else None]"><t t-out="data['HKVED']"/></HKVED>
+            <R08G3 t-att="['xsi:nil', 'true' if data['R08G3'] is None else None]"><t t-out="data['R08G3']"/></R08G3>
+
+            <R091G3 t-if="data['R091G3']">1</R091G3>
+            <R092G3 t-elif="data['R092G3']">1</R092G3>
+            <R093G3 t-elif="data['R093G3']">1</R093G3>
+            <R094G3 t-elif="data['R094G3']">1</R094G3>
+			<R095G3 t-elif="data['R095G3']">1</R095G3>
+
+            <!--HFR101G3AX t-att="['xsi:nil', 'true' if data['R101G3'] is None else None]"><t t-out="data['R101G3']"/></HFR101G3AX-->
+			<R101G3 t-att="['xsi:nil', 'true' if data['R101G3'] is None else None]"><t t-out="data['R101G3']"/></R101G3>
+            <R101G4 t-att="['xsi:nil', 'true' if data['R101G4'] is None else None]"><t t-out="data['R101G4']"/></R101G4>
+            <R101G5 t-att="['xsi:nil', 'true' if data['R101G5'] is None else None]"><t t-out="data['R101G5']"/></R101G5>
+            <R102G3 t-att="['xsi:nil', 'true' if data['R102G3'] is None else None]"><t t-out="data['R102G3']"/></R102G3>
+            <R102G4 t-att="['xsi:nil', 'true' if data['R102G4'] is None else None]"><t t-out="data['R102G4']"/></R102G4>
+            <R102G5 t-att="['xsi:nil', 'true' if data['R102G5'] is None else None]"><t t-out="data['R102G5']"/></R102G5>
+            <R103G3 t-att="['xsi:nil', 'true' if data['R103G3'] is None else None]"><t t-out="data['R103G3']"/></R103G3>
+            <R103G4 t-att="['xsi:nil', 'true' if data['R103G4'] is None else None]"><t t-out="data['R103G4']"/></R103G4>
+            <R103G5 t-att="['xsi:nil', 'true' if data['R103G5'] is None else None]"><t t-out="data['R103G5']"/></R103G5>
+            <R104G3 t-att="['xsi:nil', 'true' if data['R104G3'] is None else None]"><t t-out="data['R104G3']"/></R104G3>
+            <R104G4 t-att="['xsi:nil', 'true' if data['R104G4'] is None else None]"><t t-out="data['R104G4']"/></R104G4>
+            <R104G5 t-att="['xsi:nil', 'true' if data['R104G5'] is None else None]"><t t-out="data['R104G5']"/></R104G5>
+            <R105G3 t-att="['xsi:nil', 'true' if data['R105G3'] is None else None]"><t t-out="data['R105G3']"/></R105G3>
+            <R105G4 t-att="['xsi:nil', 'true' if data['R105G4'] is None else None]"><t t-out="data['R105G4']"/></R105G4>
+            <R105G5 t-att="['xsi:nil', 'true' if data['R105G5'] is None else None]"><t t-out="data['R105G5']"/></R105G5>
+            <R106G3 t-att="['xsi:nil', 'true' if data['R106G3'] is None else None]"><t t-out="data['R106G3']"/></R106G3>
+            <R106G4 t-att="['xsi:nil', 'true' if data['R106G4'] is None else None]"><t t-out="data['R106G4']"/></R106G4>
+            <R106G5 t-att="['xsi:nil', 'true' if data['R106G5'] is None else None]"><t t-out="data['R106G5']"/></R106G5>
+            <R107G3 t-att="['xsi:nil', 'true' if data['R107G3'] is None else None]"><t t-out="data['R107G3']"/></R107G3>
+            <R107G4 t-att="['xsi:nil', 'true' if data['R107G4'] is None else None]"><t t-out="data['R107G4']"/></R107G4>
+            <R107G5 t-att="['xsi:nil', 'true' if data['R107G5'] is None else None]"><t t-out="data['R107G5']"/></R107G5>
+            <R108G3 t-att="['xsi:nil', 'true' if data['R108G3'] is None else None]"><t t-out="data['R108G3']"/></R108G3>
+            <R108G4 t-att="['xsi:nil', 'true' if data['R108G4'] is None else None]"><t t-out="data['R108G4']"/></R108G4>
+            <R108G5 t-att="['xsi:nil', 'true' if data['R108G5'] is None else None]"><t t-out="data['R108G5']"/></R108G5>
+            <R109G3 t-att="['xsi:nil', 'true' if data['R109G3'] is None else None]"><t t-out="data['R109G3']"/></R109G3>
+            <R109G4 t-att="['xsi:nil', 'true' if data['R109G4'] is None else None]"><t t-out="data['R109G4']"/></R109G4>
+            <R109G5 t-att="['xsi:nil', 'true' if data['R109G5'] is None else None]"><t t-out="data['R109G5']"/></R109G5>
+            <R110G3 t-att="['xsi:nil', 'true' if data['R110G3'] is None else None]"><t t-out="data['R110G3']"/></R110G3>
+            <R110G4 t-att="['xsi:nil', 'true' if data['R110G4'] is None else None]"><t t-out="data['R110G4']"/></R110G4>
+            <R110G5 t-att="['xsi:nil', 'true' if data['R110G5'] is None else None]"><t t-out="data['R110G5']"/></R110G5>
+
+            <!-- BODY -->
+            <R0101G3 t-att="['xsi:nil', 'true' if data['R0101G3'] is None else None]"><t t-out="data['R0101G3']"/></R0101G3>
+            <R0101G4 t-att="['xsi:nil', 'true' if data['R0101G4'] is None else None]"><t t-out="data['R0101G4']"/></R0101G4>
+            <R0101G5 t-att="['xsi:nil', 'true' if data['R0101G5'] is None else None]"><t t-out="data['R0101G5']"/></R0101G5>
+            <R01011G3 t-att="['xsi:nil', 'true' if data['R01011G3'] is None else None]"><t t-out="data['R01011G3']"/></R01011G3>
+            <R01011G4 t-att="['xsi:nil', 'true' if data['R01011G4'] is None else None]"><t t-out="data['R01011G4']"/></R01011G4>
+            <R01011G5 t-att="['xsi:nil', 'true' if data['R01011G5'] is None else None]"><t t-out="data['R01011G5']"/></R01011G5>
+            <R01012G3 t-att="['xsi:nil', 'true' if data['R01012G3'] is None else None]"><t t-out="data['R01012G3']"/></R01012G3>
+            <R01012G4 t-att="['xsi:nil', 'true' if data['R01012G4'] is None else None]"><t t-out="data['R01012G4']"/></R01012G4>
+            <R01012G5 t-att="['xsi:nil', 'true' if data['R01012G5'] is None else None]"><t t-out="data['R01012G5']"/></R01012G5>
+            <R01013G3 t-att="['xsi:nil', 'true' if data['R01013G3'] is None else None]"><t t-out="data['R01013G3']"/></R01013G3>
+            <R01013G4 t-att="['xsi:nil', 'true' if data['R01013G4'] is None else None]"><t t-out="data['R01013G4']"/></R01013G4>
+            <R01013G5 t-att="['xsi:nil', 'true' if data['R01013G5'] is None else None]"><t t-out="data['R01013G5']"/></R01013G5>
+            <R01014G3 t-att="['xsi:nil', 'true' if data['R01014G3'] is None else None]"><t t-out="data['R01014G3']"/></R01014G3>
+            <R01014G4 t-att="['xsi:nil', 'true' if data['R01014G4'] is None else None]"><t t-out="data['R01014G4']"/></R01014G4>
+            <R01014G5 t-att="['xsi:nil', 'true' if data['R01014G5'] is None else None]"><t t-out="data['R01014G5']"/></R01014G5>
+            <R01015G3 t-att="['xsi:nil', 'true' if data['R01015G3'] is None else None]"><t t-out="data['R01015G3']"/></R01015G3>
+            <R01015G4 t-att="['xsi:nil', 'true' if data['R01015G4'] is None else None]"><t t-out="data['R01015G4']"/></R01015G4>
+            <R01015G5 t-att="['xsi:nil', 'true' if data['R01015G5'] is None else None]"><t t-out="data['R01015G5']"/></R01015G5>
+            <R01016G3 t-att="['xsi:nil', 'true' if data['R01016G3'] is None else None]"><t t-out="data['R01016G3']"/></R01016G3>
+            <R01016G4 t-att="['xsi:nil', 'true' if data['R01016G4'] is None else None]"><t t-out="data['R01016G4']"/></R01016G4>
+            <R01016G5 t-att="['xsi:nil', 'true' if data['R01016G5'] is None else None]"><t t-out="data['R01016G5']"/></R01016G5>
+            <R010161G3 t-att="['xsi:nil', 'true' if data['R010161G3'] is None else None]"><t t-out="data['R010161G3']"/></R010161G3>
+            <R010161G4 t-att="['xsi:nil', 'true' if data['R010161G4'] is None else None]"><t t-out="data['R010161G4']"/></R010161G4>
+            <R010161G5 t-att="['xsi:nil', 'true' if data['R010161G5'] is None else None]"><t t-out="data['R010161G5']"/></R010161G5>
+            <R010162G3 t-att="['xsi:nil', 'true' if data['R010162G3'] is None else None]"><t t-out="data['R010162G3']"/></R010162G3>
+            <R010162G4 t-att="['xsi:nil', 'true' if data['R010162G4'] is None else None]"><t t-out="data['R010162G4']"/></R010162G4>
+            <R010162G5 t-att="['xsi:nil', 'true' if data['R010162G5'] is None else None]"><t t-out="data['R010162G5']"/></R010162G5>
+            <R010163G3 t-att="['xsi:nil', 'true' if data['R010163G3'] is None else None]"><t t-out="data['R010163G3']"/></R010163G3>
+            <R010163G4 t-att="['xsi:nil', 'true' if data['R010163G4'] is None else None]"><t t-out="data['R010163G4']"/></R010163G4>
+            <R010163G5 t-att="['xsi:nil', 'true' if data['R010163G5'] is None else None]"><t t-out="data['R010163G5']"/></R010163G5>
+            <R0102G3 t-att="['xsi:nil', 'true' if data['R0102G3'] is None else None]"><t t-out="data['R0102G3']"/></R0102G3>
+            <R0102G4 t-att="['xsi:nil', 'true' if data['R0102G4'] is None else None]"><t t-out="data['R0102G4']"/></R0102G4>
+            <R0102G5 t-att="['xsi:nil', 'true' if data['R0102G5'] is None else None]"><t t-out="data['R0102G5']"/></R0102G5>
+            <R01021G3 t-att="['xsi:nil', 'true' if data['R01021G3'] is None else None]"><t t-out="data['R01021G3']"/></R01021G3>
+            <R01021G4 t-att="['xsi:nil', 'true' if data['R01021G4'] is None else None]"><t t-out="data['R01021G4']"/></R01021G4>
+            <R01021G5 t-att="['xsi:nil', 'true' if data['R01021G5'] is None else None]"><t t-out="data['R01021G5']"/></R01021G5>
+            <R01022G3 t-att="['xsi:nil', 'true' if data['R01022G3'] is None else None]"><t t-out="data['R01022G3']"/></R01022G3>
+            <R01022G4 t-att="['xsi:nil', 'true' if data['R01022G4'] is None else None]"><t t-out="data['R01022G4']"/></R01022G4>
+            <R01022G5 t-att="['xsi:nil', 'true' if data['R01022G5'] is None else None]"><t t-out="data['R01022G5']"/></R01022G5>
+            <R01023G3 t-att="['xsi:nil', 'true' if data['R01023G3'] is None else None]"><t t-out="data['R01023G3']"/></R01023G3>
+            <R01023G4 t-att="['xsi:nil', 'true' if data['R01023G4'] is None else None]"><t t-out="data['R01023G4']"/></R01023G4>
+            <R01023G5 t-att="['xsi:nil', 'true' if data['R01023G5'] is None else None]"><t t-out="data['R01023G5']"/></R01023G5>
+            <R01024G3 t-att="['xsi:nil', 'true' if data['R01024G3'] is None else None]"><t t-out="data['R01024G3']"/></R01024G3>
+            <R01024G4 t-att="['xsi:nil', 'true' if data['R01024G4'] is None else None]"><t t-out="data['R01024G4']"/></R01024G4>
+            <R01024G5 t-att="['xsi:nil', 'true' if data['R01024G5'] is None else None]"><t t-out="data['R01024G5']"/></R01024G5>
+            <R01025G3 t-att="['xsi:nil', 'true' if data['R01025G3'] is None else None]"><t t-out="data['R01025G3']"/></R01025G3>
+            <R01025G4 t-att="['xsi:nil', 'true' if data['R01025G4'] is None else None]"><t t-out="data['R01025G4']"/></R01025G4>
+            <R01025G5 t-att="['xsi:nil', 'true' if data['R01025G5'] is None else None]"><t t-out="data['R01025G5']"/></R01025G5>
+            <R01026G3 t-att="['xsi:nil', 'true' if data['R01026G3'] is None else None]"><t t-out="data['R01026G3']"/></R01026G3>
+            <R01026G4 t-att="['xsi:nil', 'true' if data['R01026G4'] is None else None]"><t t-out="data['R01026G4']"/></R01026G4>
+            <R01026G5 t-att="['xsi:nil', 'true' if data['R01026G5'] is None else None]"><t t-out="data['R01026G5']"/></R01026G5>
+            <R010261G3 t-att="['xsi:nil', 'true' if data['R010261G3'] is None else None]"><t t-out="data['R010261G3']"/></R010261G3>
+            <R010261G4 t-att="['xsi:nil', 'true' if data['R010261G4'] is None else None]"><t t-out="data['R010261G4']"/></R010261G4>
+            <R010261G5 t-att="['xsi:nil', 'true' if data['R010261G5'] is None else None]"><t t-out="data['R010261G5']"/></R010261G5>
+            <R010262G3 t-att="['xsi:nil', 'true' if data['R010262G3'] is None else None]"><t t-out="data['R010262G3']"/></R010262G3>
+            <R010262G4 t-att="['xsi:nil', 'true' if data['R010262G4'] is None else None]"><t t-out="data['R010262G4']"/></R010262G4>
+			<R010262G5 t-att="['xsi:nil', 'true' if data['R010262G5'] is None else None]"><t t-out="data['R010262G5']"/></R010262G5>
+			<R010263G3 t-att="['xsi:nil', 'true' if data['R010263G3'] is None else None]"><t t-out="data['R010263G3']"/></R010263G3>
+			<R010263G4 t-att="['xsi:nil', 'true' if data['R010263G4'] is None else None]"><t t-out="data['R010263G4']"/></R010263G4>
+			<R010263G5 t-att="['xsi:nil', 'true' if data['R010263G5'] is None else None]"><t t-out="data['R010263G5']"/></R010263G5>
+			<R0103G3 t-att="['xsi:nil', 'true' if data['R0103G3'] is None else None]"><t t-out="data['R0103G3']"/></R0103G3>
+			<R0103G4 t-att="['xsi:nil', 'true' if data['R0103G4'] is None else None]"><t t-out="data['R0103G4']"/></R0103G4>
+			<R0103G5 t-att="['xsi:nil', 'true' if data['R0103G5'] is None else None]"><t t-out="data['R0103G5']"/></R0103G5>
+			<R01031G3 t-att="['xsi:nil', 'true' if data['R01031G3'] is None else None]"><t t-out="data['R01031G3']"/></R01031G3>
+			<R01031G4 t-att="['xsi:nil', 'true' if data['R01031G4'] is None else None]"><t t-out="data['R01031G4']"/></R01031G4>
+			<R01031G5 t-att="['xsi:nil', 'true' if data['R01031G5'] is None else None]"><t t-out="data['R01031G5']"/></R01031G5>
+			<R01032G3 t-att="['xsi:nil', 'true' if data['R01032G3'] is None else None]"><t t-out="data['R01032G3']"/></R01032G3>
+			<R01032G4 t-att="['xsi:nil', 'true' if data['R01032G4'] is None else None]"><t t-out="data['R01032G4']"/></R01032G4>
+			<R01032G5 t-att="['xsi:nil', 'true' if data['R01032G5'] is None else None]"><t t-out="data['R01032G5']"/></R01032G5>
+			<R010321G3 t-att="['xsi:nil', 'true' if data['R010321G3'] is None else None]"><t t-out="data['R010321G3']"/></R010321G3>
+			<R010321G4 t-att="['xsi:nil', 'true' if data['R010321G4'] is None else None]"><t t-out="data['R010321G4']"/></R010321G4>
+			<R010321G5 t-att="['xsi:nil', 'true' if data['R010321G5'] is None else None]"><t t-out="data['R010321G5']"/></R010321G5>
+			<R01033G3 t-att="['xsi:nil', 'true' if data['R01033G3'] is None else None]"><t t-out="data['R01033G3']"/></R01033G3>
+			<R01033G4 t-att="['xsi:nil', 'true' if data['R01033G4'] is None else None]"><t t-out="data['R01033G4']"/></R01033G4>
+			<R01033G5 t-att="['xsi:nil', 'true' if data['R01033G5'] is None else None]"><t t-out="data['R01033G5']"/></R01033G5>
+			<R010331G3 t-att="['xsi:nil', 'true' if data['R010331G3'] is None else None]"><t t-out="data['R010331G3']"/></R010331G3>
+			<R010331G4 t-att="['xsi:nil', 'true' if data['R010331G4'] is None else None]"><t t-out="data['R010331G4']"/></R010331G4>
+			<R010331G5 t-att="['xsi:nil', 'true' if data['R010331G5'] is None else None]"><t t-out="data['R010331G5']"/></R010331G5>
+			<R01034G3 t-att="['xsi:nil', 'true' if data['R01034G3'] is None else None]"><t t-out="data['R01034G3']"/></R01034G3>
+			<R01034G4 t-att="['xsi:nil', 'true' if data['R01034G4'] is None else None]"><t t-out="data['R01034G4']"/></R01034G4>
+			<R01034G5 t-att="['xsi:nil', 'true' if data['R01034G5'] is None else None]"><t t-out="data['R01034G5']"/></R01034G5>
+			<R010341G3 t-att="['xsi:nil', 'true' if data['R010341G3'] is None else None]"><t t-out="data['R010341G3']"/></R010341G3>
+			<R010341G4 t-att="['xsi:nil', 'true' if data['R010341G4'] is None else None]"><t t-out="data['R010341G4']"/></R010341G4>
+			<R010341G5 t-att="['xsi:nil', 'true' if data['R010341G5'] is None else None]"><t t-out="data['R010341G5']"/></R010341G5>
+			<R01035G3 t-att="['xsi:nil', 'true' if data['R01035G3'] is None else None]"><t t-out="data['R01035G3']"/></R01035G3>
+			<R01035G4 t-att="['xsi:nil', 'true' if data['R01035G4'] is None else None]"><t t-out="data['R01035G4']"/></R01035G4>
+			<R01035G5 t-att="['xsi:nil', 'true' if data['R01035G5'] is None else None]"><t t-out="data['R01035G5']"/></R01035G5>
+			<R01036G3 t-att="['xsi:nil', 'true' if data['R01036G3'] is None else None]"><t t-out="data['R01036G3']"/></R01036G3>
+			<R01036G4 t-att="['xsi:nil', 'true' if data['R01036G4'] is None else None]"><t t-out="data['R01036G4']"/></R01036G4>
+			<R01036G5 t-att="['xsi:nil', 'true' if data['R01036G5'] is None else None]"><t t-out="data['R01036G5']"/></R01036G5>
+			<R01037G3 t-att="['xsi:nil', 'true' if data['R01037G3'] is None else None]"><t t-out="data['R01037G3']"/></R01037G3>
+			<R01037G4 t-att="['xsi:nil', 'true' if data['R01037G4'] is None else None]"><t t-out="data['R01037G4']"/></R01037G4>
+			<R01037G5 t-att="['xsi:nil', 'true' if data['R01037G5'] is None else None]"><t t-out="data['R01037G5']"/></R01037G5>
+			<R010371G3 t-att="['xsi:nil', 'true' if data['R010371G3'] is None else None]"><t t-out="data['R010371G3']"/></R010371G3>
+			<R010371G4 t-att="['xsi:nil', 'true' if data['R010371G4'] is None else None]"><t t-out="data['R010371G4']"/></R010371G4>
+			<R010371G5 t-att="['xsi:nil', 'true' if data['R010371G5'] is None else None]"><t t-out="data['R010371G5']"/></R010371G5>
+			<R010372G3 t-att="['xsi:nil', 'true' if data['R010372G3'] is None else None]"><t t-out="data['R010372G3']"/></R010372G3>
+			<R010372G4 t-att="['xsi:nil', 'true' if data['R010372G4'] is None else None]"><t t-out="data['R010372G4']"/></R010372G4>
+			<R010372G5 t-att="['xsi:nil', 'true' if data['R010372G5'] is None else None]"><t t-out="data['R010372G5']"/></R010372G5>
+			<R010373G3 t-att="['xsi:nil', 'true' if data['R010373G3'] is None else None]"><t t-out="data['R010373G3']"/></R010373G3>
+			<R010373G4 t-att="['xsi:nil', 'true' if data['R010373G4'] is None else None]"><t t-out="data['R010373G4']"/></R010373G4>
+			<R010373G5 t-att="['xsi:nil', 'true' if data['R010373G5'] is None else None]"><t t-out="data['R010373G5']"/></R010373G5>
+			<R0104G3 t-att="['xsi:nil', 'true' if data['R0104G3'] is None else None]"><t t-out="data['R0104G3']"/></R0104G3>
+			<R0104G4 t-att="['xsi:nil', 'true' if data['R0104G4'] is None else None]"><t t-out="data['R0104G4']"/></R0104G4>
+			<R0104G5 t-att="['xsi:nil', 'true' if data['R0104G5'] is None else None]"><t t-out="data['R0104G5']"/></R0104G5>
+			<R01041G3 t-att="['xsi:nil', 'true' if data['R01041G3'] is None else None]"><t t-out="data['R01041G3']"/></R01041G3>
+			<R01041G4 t-att="['xsi:nil', 'true' if data['R01041G4'] is None else None]"><t t-out="data['R01041G4']"/></R01041G4>
+			<R01041G5 t-att="['xsi:nil', 'true' if data['R01041G5'] is None else None]"><t t-out="data['R01041G5']"/></R01041G5>
+			<R010411G3 t-att="['xsi:nil', 'true' if data['R010411G3'] is None else None]"><t t-out="data['R010411G3']"/></R010411G3>
+			<R010411G4 t-att="['xsi:nil', 'true' if data['R010411G4'] is None else None]"><t t-out="data['R010411G4']"/></R010411G4>
+			<R010411G5 t-att="['xsi:nil', 'true' if data['R010411G5'] is None else None]"><t t-out="data['R010411G5']"/></R010411G5>
+			<R010412G3 t-att="['xsi:nil', 'true' if data['R010412G3'] is None else None]"><t t-out="data['R010412G3']"/></R010412G3>
+			<R010412G4 t-att="['xsi:nil', 'true' if data['R010412G4'] is None else None]"><t t-out="data['R010412G4']"/></R010412G4>
+			<R010412G5 t-att="['xsi:nil', 'true' if data['R010412G5'] is None else None]"><t t-out="data['R010412G5']"/></R010412G5>
+			<R010413G3 t-att="['xsi:nil', 'true' if data['R010413G3'] is None else None]"><t t-out="data['R010413G3']"/></R010413G3>
+			<R010413G4 t-att="['xsi:nil', 'true' if data['R010413G4'] is None else None]"><t t-out="data['R010413G4']"/></R010413G4>
+			<R010413G5 t-att="['xsi:nil', 'true' if data['R010413G5'] is None else None]"><t t-out="data['R010413G5']"/></R010413G5>
+			<R01042G3 t-att="['xsi:nil', 'true' if data['R01042G3'] is None else None]"><t t-out="data['R01042G3']"/></R01042G3>
+			<R01042G4 t-att="['xsi:nil', 'true' if data['R01042G4'] is None else None]"><t t-out="data['R01042G4']"/></R01042G4>
+			<R01042G5 t-att="['xsi:nil', 'true' if data['R01042G5'] is None else None]"><t t-out="data['R01042G5']"/></R01042G5>
+			<R01043G3 t-att="['xsi:nil', 'true' if data['R01043G3'] is None else None]"><t t-out="data['R01043G3']"/></R01043G3>
+			<R01043G4 t-att="['xsi:nil', 'true' if data['R01043G4'] is None else None]"><t t-out="data['R01043G4']"/></R01043G4>
+			<R01043G5 t-att="['xsi:nil', 'true' if data['R01043G5'] is None else None]"><t t-out="data['R01043G5']"/></R01043G5>
+			<R01044G3 t-att="['xsi:nil', 'true' if data['R01044G3'] is None else None]"><t t-out="data['R01044G3']"/></R01044G3>
+			<R01044G4 t-att="['xsi:nil', 'true' if data['R01044G4'] is None else None]"><t t-out="data['R01044G4']"/></R01044G4>
+			<R01044G5 t-att="['xsi:nil', 'true' if data['R01044G5'] is None else None]"><t t-out="data['R01044G5']"/></R01044G5>
+			<R010441G3 t-att="['xsi:nil', 'true' if data['R010441G3'] is None else None]"><t t-out="data['R010441G3']"/></R010441G3>
+			<R010441G4 t-att="['xsi:nil', 'true' if data['R010441G4'] is None else None]"><t t-out="data['R010441G4']"/></R010441G4>
+			<R010441G5 t-att="['xsi:nil', 'true' if data['R010441G5'] is None else None]"><t t-out="data['R010441G5']"/></R010441G5>
+			<R010442G3 t-att="['xsi:nil', 'true' if data['R010442G3'] is None else None]"><t t-out="data['R010442G3']"/></R010442G3>
+			<R010442G4 t-att="['xsi:nil', 'true' if data['R010442G4'] is None else None]"><t t-out="data['R010442G4']"/></R010442G4>
+			<R010442G5 t-att="['xsi:nil', 'true' if data['R010442G5'] is None else None]"><t t-out="data['R010442G5']"/></R010442G5>
+			<R010443G3 t-att="['xsi:nil', 'true' if data['R010443G3'] is None else None]"><t t-out="data['R010443G3']"/></R010443G3>
+			<R010443G4 t-att="['xsi:nil', 'true' if data['R010443G4'] is None else None]"><t t-out="data['R010443G4']"/></R010443G4>
+			<R010443G5 t-att="['xsi:nil', 'true' if data['R010443G5'] is None else None]"><t t-out="data['R010443G5']"/></R010443G5>
+			<R0105G3 t-att="['xsi:nil', 'true' if data['R0105G3'] is None else None]"><t t-out="data['R0105G3']"/></R0105G3>
+			<R01051G3 t-att="['xsi:nil', 'true' if data['R01051G3'] is None else None]"><t t-out="data['R01051G3']"/></R01051G3>
+			<R01051G4 t-att="['xsi:nil', 'true' if data['R01051G4'] is None else None]"><t t-out="data['R01051G4']"/></R01051G4>
+			<R01051G5 t-att="['xsi:nil', 'true' if data['R01051G5'] is None else None]"><t t-out="data['R01051G5']"/></R01051G5>
+			<R0106G3 t-att="['xsi:nil', 'true' if data['R0106G3'] is None else None]"><t t-out="data['R0106G3']"/></R0106G3>
+			<R0106G4 t-att="['xsi:nil', 'true' if data['R0106G4'] is None else None]"><t t-out="data['R0106G4']"/></R0106G4>
+			<R0106G5 t-att="['xsi:nil', 'true' if data['R0106G5'] is None else None]"><t t-out="data['R0106G5']"/></R0106G5>
+			<R01061G3 t-att="['xsi:nil', 'true' if data['R01061G3'] is None else None]"><t t-out="data['R01061G3']"/></R01061G3>
+			<R01061G4 t-att="['xsi:nil', 'true' if data['R01061G4'] is None else None]"><t t-out="data['R01061G4']"/></R01061G4>
+			<R01061G5 t-att="['xsi:nil', 'true' if data['R01061G5'] is None else None]"><t t-out="data['R01061G5']"/></R01061G5>
+			<R010611G3 t-att="['xsi:nil', 'true' if data['R010611G3'] is None else None]"><t t-out="data['R010611G3']"/></R010611G3>
+			<R010611G4 t-att="['xsi:nil', 'true' if data['R010611G4'] is None else None]"><t t-out="data['R010611G4']"/></R010611G4>
+			<R010611G5 t-att="['xsi:nil', 'true' if data['R010611G5'] is None else None]"><t t-out="data['R010611G5']"/></R010611G5>
+			<R010612G3 t-att="['xsi:nil', 'true' if data['R010612G3'] is None else None]"><t t-out="data['R010612G3']"/></R010612G3>
+			<R010612G4 t-att="['xsi:nil', 'true' if data['R010612G4'] is None else None]"><t t-out="data['R010612G4']"/></R010612G4>
+			<R010612G5 t-att="['xsi:nil', 'true' if data['R010612G5'] is None else None]"><t t-out="data['R010612G5']"/></R010612G5>
+			<R010613G3 t-att="['xsi:nil', 'true' if data['R010613G3'] is None else None]"><t t-out="data['R010613G3']"/></R010613G3>
+			<R010613G4 t-att="['xsi:nil', 'true' if data['R010613G4'] is None else None]"><t t-out="data['R010613G4']"/></R010613G4>
+			<R010613G5 t-att="['xsi:nil', 'true' if data['R010613G5'] is None else None]"><t t-out="data['R010613G5']"/></R010613G5>
+			<R01062G3 t-att="['xsi:nil', 'true' if data['R01062G3'] is None else None]"><t t-out="data['R01062G3']"/></R01062G3>
+			<R01062G4 t-att="['xsi:nil', 'true' if data['R01062G4'] is None else None]"><t t-out="data['R01062G4']"/></R01062G4>
+			<R01062G5 t-att="['xsi:nil', 'true' if data['R01062G5'] is None else None]"><t t-out="data['R01062G5']"/></R01062G5>
+			<R01063G3 t-att="['xsi:nil', 'true' if data['R01063G3'] is None else None]"><t t-out="data['R01063G3']"/></R01063G3>
+			<R01063G4 t-att="['xsi:nil', 'true' if data['R01063G4'] is None else None]"><t t-out="data['R01063G4']"/></R01063G4>
+			<R01063G5 t-att="['xsi:nil', 'true' if data['R01063G5'] is None else None]"><t t-out="data['R01063G5']"/></R01063G5>
+			<R01064G3 t-att="['xsi:nil', 'true' if data['R01064G3'] is None else None]"><t t-out="data['R01064G3']"/></R01064G3>
+			<R01064G4 t-att="['xsi:nil', 'true' if data['R01064G4'] is None else None]"><t t-out="data['R01064G4']"/></R01064G4>
+			<R01064G5 t-att="['xsi:nil', 'true' if data['R01064G5'] is None else None]"><t t-out="data['R01064G5']"/></R01064G5>
+			<R010641G3 t-att="['xsi:nil', 'true' if data['R010641G3'] is None else None]"><t t-out="data['R010641G3']"/></R010641G3>
+			<R010641G4 t-att="['xsi:nil', 'true' if data['R010641G4'] is None else None]"><t t-out="data['R010641G4']"/></R010641G4>
+			<R010641G5 t-att="['xsi:nil', 'true' if data['R010641G5'] is None else None]"><t t-out="data['R010641G5']"/></R010641G5>
+			<R010642G3 t-att="['xsi:nil', 'true' if data['R010642G3'] is None else None]"><t t-out="data['R010642G3']"/></R010642G3>
+			<R010642G4 t-att="['xsi:nil', 'true' if data['R010642G4'] is None else None]"><t t-out="data['R010642G4']"/></R010642G4>
+			<R010642G5 t-att="['xsi:nil', 'true' if data['R010642G5'] is None else None]"><t t-out="data['R010642G5']"/></R010642G5>
+			<R010643G3 t-att="['xsi:nil', 'true' if data['R010643G3'] is None else None]"><t t-out="data['R010643G3']"/></R010643G3>
+			<R010643G4 t-att="['xsi:nil', 'true' if data['R010643G4'] is None else None]"><t t-out="data['R010643G4']"/></R010643G4>
+			<R010643G5 t-att="['xsi:nil', 'true' if data['R010643G5'] is None else None]"><t t-out="data['R010643G5']"/></R010643G5>
+			<R0107G3 t-att="['xsi:nil', 'true' if data['R0107G3'] is None else None]"><t t-out="data['R0107G3']"/></R0107G3>
+			<R0107G4 t-att="['xsi:nil', 'true' if data['R0107G4'] is None else None]"><t t-out="data['R0107G4']"/></R0107G4>
+			<R0107G5 t-att="['xsi:nil', 'true' if data['R0107G5'] is None else None]"><t t-out="data['R0107G5']"/></R0107G5>
+			<R0108G3 t-att="['xsi:nil', 'true' if data['R0108G3'] is None else None]"><t t-out="data['R0108G3']"/></R0108G3>
+			<R0201G3 t-att="['xsi:nil', 'true' if data['R0201G3'] is None else None]"><t t-out="data['R0201G3']"/></R0201G3>
+			<R0201G4 t-att="['xsi:nil', 'true' if data['R0201G4'] is None else None]"><t t-out="data['R0201G4']"/></R0201G4>
+			<R0201G5 t-att="['xsi:nil', 'true' if data['R0201G5'] is None else None]"><t t-out="data['R0201G5']"/></R0201G5>
+			<R0202G3 t-att="['xsi:nil', 'true' if data['R0202G3'] is None else None]"><t t-out="data['R0202G3']"/></R0202G3>
+			<R0202G4 t-att="['xsi:nil', 'true' if data['R0202G4'] is None else None]"><t t-out="data['R0202G4']"/></R0202G4>
+			<R0202G5 t-att="['xsi:nil', 'true' if data['R0202G5'] is None else None]"><t t-out="data['R0202G5']"/></R0202G5>
+			<R02021G3 t-att="['xsi:nil', 'true' if data['R02021G3'] is None else None]"><t t-out="data['R02021G3']"/></R02021G3>
+			<R02021G4 t-att="['xsi:nil', 'true' if data['R02021G4'] is None else None]"><t t-out="data['R02021G4']"/></R02021G4>
+			<R02021G5 t-att="['xsi:nil', 'true' if data['R02021G5'] is None else None]"><t t-out="data['R02021G5']"/></R02021G5>
+			<R02022G3 t-att="['xsi:nil', 'true' if data['R02022G3'] is None else None]"><t t-out="data['R02022G3']"/></R02022G3>
+			<R02022G4 t-att="['xsi:nil', 'true' if data['R02022G4'] is None else None]"><t t-out="data['R02022G4']"/></R02022G4>
+			<R02022G5 t-att="['xsi:nil', 'true' if data['R02022G5'] is None else None]"><t t-out="data['R02022G5']"/></R02022G5>
+			<R0203G3 t-att="['xsi:nil', 'true' if data['R0203G3'] is None else None]"><t t-out="data['R0203G3']"/></R0203G3>
+			<R0203G4 t-att="['xsi:nil', 'true' if data['R0203G4'] is None else None]"><t t-out="data['R0203G4']"/></R0203G4>
+			<R0203G5 t-att="['xsi:nil', 'true' if data['R0203G5'] is None else None]"><t t-out="data['R0203G5']"/></R0203G5>
+			<R0204G3 t-att="['xsi:nil', 'true' if data['R0204G3'] is None else None]"><t t-out="data['R0204G3']"/></R0204G3>
+			<R0204G4 t-att="['xsi:nil', 'true' if data['R0204G4'] is None else None]"><t t-out="data['R0204G4']"/></R0204G4>
+			<R0204G5 t-att="['xsi:nil', 'true' if data['R0204G5'] is None else None]"><t t-out="data['R0204G5']"/></R0204G5>
+			<R02041G3 t-att="['xsi:nil', 'true' if data['R02041G3'] is None else None]"><t t-out="data['R02041G3']"/></R02041G3>
+			<R02041G4 t-att="['xsi:nil', 'true' if data['R02041G4'] is None else None]"><t t-out="data['R02041G4']"/></R02041G4>
+			<R02041G5 t-att="['xsi:nil', 'true' if data['R02041G5'] is None else None]"><t t-out="data['R02041G5']"/></R02041G5>
+			<R02042G3 t-att="['xsi:nil', 'true' if data['R02042G3'] is None else None]"><t t-out="data['R02042G3']"/></R02042G3>
+			<R02042G4 t-att="['xsi:nil', 'true' if data['R02042G4'] is None else None]"><t t-out="data['R02042G4']"/></R02042G4>
+			<R02042G5 t-att="['xsi:nil', 'true' if data['R02042G5'] is None else None]"><t t-out="data['R02042G5']"/></R02042G5>
+			<R0205G3 t-att="['xsi:nil', 'true' if data['R0205G3'] is None else None]"><t t-out="data['R0205G3']"/></R0205G3>
+			<R0205G4 t-att="['xsi:nil', 'true' if data['R0205G4'] is None else None]"><t t-out="data['R0205G4']"/></R0205G4>
+			<R0205G5 t-att="['xsi:nil', 'true' if data['R0205G5'] is None else None]"><t t-out="data['R0205G5']"/></R0205G5>
+			<R02051G3 t-att="['xsi:nil', 'true' if data['R02051G3'] is None else None]"><t t-out="data['R02051G3']"/></R02051G3>
+			<R02051G4 t-att="['xsi:nil', 'true' if data['R02051G4'] is None else None]"><t t-out="data['R02051G4']"/></R02051G4>
+			<R02051G5 t-att="['xsi:nil', 'true' if data['R02051G5'] is None else None]"><t t-out="data['R02051G5']"/></R02051G5>
+			<R02052G3 t-att="['xsi:nil', 'true' if data['R02052G3'] is None else None]"><t t-out="data['R02052G3']"/></R02052G3>
+			<R02052G4 t-att="['xsi:nil', 'true' if data['R02052G4'] is None else None]"><t t-out="data['R02052G4']"/></R02052G4>
+			<R02052G5 t-att="['xsi:nil', 'true' if data['R02052G5'] is None else None]"><t t-out="data['R02052G5']"/></R02052G5>
+			<R0206G3 t-att="['xsi:nil', 'true' if data['R0206G3'] is None else None]"><t t-out="data['R0206G3']"/></R0206G3>
+			<R0206G4 t-att="['xsi:nil', 'true' if data['R0206G4'] is None else None]"><t t-out="data['R0206G4']"/></R0206G4>
+			<R0206G5 t-att="['xsi:nil', 'true' if data['R0206G5'] is None else None]"><t t-out="data['R0206G5']"/></R0206G5>
+			<R02061G3 t-att="['xsi:nil', 'true' if data['R02061G3'] is None else None]"><t t-out="data['R02061G3']"/></R02061G3>
+			<R02061G4 t-att="['xsi:nil', 'true' if data['R02061G4'] is None else None]"><t t-out="data['R02061G4']"/></R02061G4>
+			<R02061G5 t-att="['xsi:nil', 'true' if data['R02061G5'] is None else None]"><t t-out="data['R02061G5']"/></R02061G5>
+			<R02062G3 t-att="['xsi:nil', 'true' if data['R02062G3'] is None else None]"><t t-out="data['R02062G3']"/></R02062G3>
+			<R02062G4 t-att="['xsi:nil', 'true' if data['R02062G4'] is None else None]"><t t-out="data['R02062G4']"/></R02062G4>
+			<R02062G5 t-att="['xsi:nil', 'true' if data['R02062G5'] is None else None]"><t t-out="data['R02062G5']"/></R02062G5>
+			<R0207G3 t-att="['xsi:nil', 'true' if data['R0207G3'] is None else None]"><t t-out="data['R0207G3']"/></R0207G3>
+			<R02071G3 t-att="['xsi:nil', 'true' if data['R02071G3'] is None else None]"><t t-out="data['R02071G3']"/></R02071G3>
+			<R02071G4 t-att="['xsi:nil', 'true' if data['R02071G4'] is None else None]"><t t-out="data['R02071G4']"/></R02071G4>
+			<R02071G5 t-att="['xsi:nil', 'true' if data['R02071G5'] is None else None]"><t t-out="data['R02071G5']"/></R02071G5>
+			<R0208G3 t-att="['xsi:nil', 'true' if data['R0208G3'] is None else None]"><t t-out="data['R0208G3']"/></R0208G3>
+			<R0208G4 t-att="['xsi:nil', 'true' if data['R0208G4'] is None else None]"><t t-out="data['R0208G4']"/></R0208G4>
+			<R0208G5 t-att="['xsi:nil', 'true' if data['R0208G5'] is None else None]"><t t-out="data['R0208G5']"/></R0208G5>
+			<R02081G3 t-att="['xsi:nil', 'true' if data['R02081G3'] is None else None]"><t t-out="data['R02081G3']"/></R02081G3>
+			<R02081G4 t-att="['xsi:nil', 'true' if data['R02081G4'] is None else None]"><t t-out="data['R02081G4']"/></R02081G4>
+			<R02081G5 t-att="['xsi:nil', 'true' if data['R02081G5'] is None else None]"><t t-out="data['R02081G5']"/></R02081G5>
+			<R02082G3 t-att="['xsi:nil', 'true' if data['R02082G3'] is None else None]"><t t-out="data['R02082G3']"/></R02082G3>
+			<R02082G4 t-att="['xsi:nil', 'true' if data['R02082G4'] is None else None]"><t t-out="data['R02082G4']"/></R02082G4>
+			<R02082G5 t-att="['xsi:nil', 'true' if data['R02082G5'] is None else None]"><t t-out="data['R02082G5']"/></R02082G5>
+			<R0209G3 t-att="['xsi:nil', 'true' if data['R0209G3'] is None else None]"><t t-out="data['R0209G3']"/></R0209G3>
+			<R0209G4 t-att="['xsi:nil', 'true' if data['R0209G4'] is None else None]"><t t-out="data['R0209G4']"/></R0209G4>
+			<R0209G5 t-att="['xsi:nil', 'true' if data['R0209G5'] is None else None]"><t t-out="data['R0209G5']"/></R0209G5>
+			<R02091G3 t-att="['xsi:nil', 'true' if data['R02091G3'] is None else None]"><t t-out="data['R02091G3']"/></R02091G3>
+			<R02091G4 t-att="['xsi:nil', 'true' if data['R02091G4'] is None else None]"><t t-out="data['R02091G4']"/></R02091G4>
+			<R02091G5 t-att="['xsi:nil', 'true' if data['R02091G5'] is None else None]"><t t-out="data['R02091G5']"/></R02091G5>
+			<R02092G3 t-att="['xsi:nil', 'true' if data['R02092G3'] is None else None]"><t t-out="data['R02092G3']"/></R02092G3>
+			<R02092G4 t-att="['xsi:nil', 'true' if data['R02092G4'] is None else None]"><t t-out="data['R02092G4']"/></R02092G4>
+			<R02092G5 t-att="['xsi:nil', 'true' if data['R02092G5'] is None else None]"><t t-out="data['R02092G5']"/></R02092G5>
+			<R02010G3 t-att="['xsi:nil', 'true' if data['R02010G3'] is None else None]"><t t-out="data['R02010G3']"/></R02010G3>
+			<R02010G4 t-att="['xsi:nil', 'true' if data['R02010G4'] is None else None]"><t t-out="data['R02010G4']"/></R02010G4>
+			<R02010G5 t-att="['xsi:nil', 'true' if data['R02010G5'] is None else None]"><t t-out="data['R02010G5']"/></R02010G5>
+			<R020101G3 t-att="['xsi:nil', 'true' if data['R020101G3'] is None else None]"><t t-out="data['R020101G3']"/></R020101G3>
+			<R020101G4 t-att="['xsi:nil', 'true' if data['R020101G4'] is None else None]"><t t-out="data['R020101G4']"/></R020101G4>
+			<R020101G5 t-att="['xsi:nil', 'true' if data['R020101G5'] is None else None]"><t t-out="data['R020101G5']"/></R020101G5>
+			<R020102G3 t-att="['xsi:nil', 'true' if data['R020102G3'] is None else None]"><t t-out="data['R020102G3']"/></R020102G3>
+			<R020102G4 t-att="['xsi:nil', 'true' if data['R020102G4'] is None else None]"><t t-out="data['R020102G4']"/></R020102G4>
+			<R020102G5 t-att="['xsi:nil', 'true' if data['R020102G5'] is None else None]"><t t-out="data['R020102G5']"/></R020102G5>
+			<R02011G3 t-att="['xsi:nil', 'true' if data['R02011G3'] is None else None]"><t t-out="data['R02011G3']"/></R02011G3>
+			<R020111G3 t-att="['xsi:nil', 'true' if data['R020111G3'] is None else None]"><t t-out="data['R020111G3']"/></R020111G3>
+			<R020111G4 t-att="['xsi:nil', 'true' if data['R020111G4'] is None else None]"><t t-out="data['R020111G4']"/></R020111G4>
+			<R020111G5 t-att="['xsi:nil', 'true' if data['R020111G5'] is None else None]"><t t-out="data['R020111G5']"/></R020111G5>
+			<R02012G3 t-att="['xsi:nil', 'true' if data['R02012G3'] is None else None]"><t t-out="data['R02012G3']"/></R02012G3>
+			<R02012G4 t-att="['xsi:nil', 'true' if data['R02012G4'] is None else None]"><t t-out="data['R02012G4']"/></R02012G4>
+			<R02012G5 t-att="['xsi:nil', 'true' if data['R02012G5'] is None else None]"><t t-out="data['R02012G5']"/></R02012G5>
+			<R020121G3 t-att="['xsi:nil', 'true' if data['R020121G3'] is None else None]"><t t-out="data['R020121G3']"/></R020121G3>
+			<R020121G4 t-att="['xsi:nil', 'true' if data['R020121G4'] is None else None]"><t t-out="data['R020121G4']"/></R020121G4>
+			<R020121G5 t-att="['xsi:nil', 'true' if data['R020121G5'] is None else None]"><t t-out="data['R020121G5']"/></R020121G5>
+			<R020122G3 t-att="['xsi:nil', 'true' if data['R020122G3'] is None else None]"><t t-out="data['R020122G3']"/></R020122G3>
+			<R020122G4 t-att="['xsi:nil', 'true' if data['R020122G4'] is None else None]"><t t-out="data['R020122G4']"/></R020122G4>
+			<R020122G5 t-att="['xsi:nil', 'true' if data['R020122G5'] is None else None]"><t t-out="data['R020122G5']"/></R020122G5>
+			<R02013G3 t-att="['xsi:nil', 'true' if data['R02013G3'] is None else None]"><t t-out="data['R02013G3']"/></R02013G3>
+			<R02013G4 t-att="['xsi:nil', 'true' if data['R02013G4'] is None else None]"><t t-out="data['R02013G4']"/></R02013G4>
+			<R02013G5 t-att="['xsi:nil', 'true' if data['R02013G5'] is None else None]"><t t-out="data['R02013G5']"/></R02013G5>
+			<R02014G3 t-att="['xsi:nil', 'true' if data['R02014G3'] is None else None]"><t t-out="data['R02014G3']"/></R02014G3>
+			<R02015G3 t-att="['xsi:nil', 'true' if data['R02015G3'] is None else None]"><t t-out="data['R02015G3']"/></R02015G3>
+			<R02015G4 t-att="['xsi:nil', 'true' if data['R02015G4'] is None else None]"><t t-out="data['R02015G4']"/></R02015G4>
+			<R02015G5 t-att="['xsi:nil', 'true' if data['R02015G5'] is None else None]"><t t-out="data['R02015G5']"/></R02015G5>
+			<R02016G3 t-att="['xsi:nil', 'true' if data['R02016G3'] is None else None]"><t t-out="data['R02016G3']"/></R02016G3>
+			<R0301G3 t-att="['xsi:nil', 'true' if data['R0301G3'] is None else None]"><t t-out="data['R0301G3']"/></R0301G3>
+			<R0301G4 t-att="['xsi:nil', 'true' if data['R0301G4'] is None else None]"><t t-out="data['R0301G4']"/></R0301G4>
+			<R0301G5 t-att="['xsi:nil', 'true' if data['R0301G5'] is None else None]"><t t-out="data['R0301G5']"/></R0301G5>
+			<R0302G3 t-att="['xsi:nil', 'true' if data['R0302G3'] is None else None]"><t t-out="data['R0302G3']"/></R0302G3>
+			<R0302G4 t-att="['xsi:nil', 'true' if data['R0302G4'] is None else None]"><t t-out="data['R0302G4']"/></R0302G4>
+			<R0302G5 t-att="['xsi:nil', 'true' if data['R0302G5'] is None else None]"><t t-out="data['R0302G5']"/></R0302G5>
+			<R0303G3 t-att="['xsi:nil', 'true' if data['R0303G3'] is None else None]"><t t-out="data['R0303G3']"/></R0303G3>
+			<R0303G4 t-att="['xsi:nil', 'true' if data['R0303G4'] is None else None]"><t t-out="data['R0303G4']"/></R0303G4>
+			<R0303G5 t-att="['xsi:nil', 'true' if data['R0303G5'] is None else None]"><t t-out="data['R0303G5']"/></R0303G5>
+			<R0304G3 t-att="['xsi:nil', 'true' if data['R0304G3'] is None else None]"><t t-out="data['R0304G3']"/></R0304G3>
+			<R0304G4 t-att="['xsi:nil', 'true' if data['R0304G4'] is None else None]"><t t-out="data['R0304G4']"/></R0304G4>
+			<R0304G5 t-att="['xsi:nil', 'true' if data['R0304G5'] is None else None]"><t t-out="data['R0304G5']"/></R0304G5>
+			<R0305G3 t-att="['xsi:nil', 'true' if data['R0305G3'] is None else None]"><t t-out="data['R0305G3']"/></R0305G3>
+			<R03051G3 t-att="['xsi:nil', 'true' if data['R03051G3'] is None else None]"><t t-out="data['R03051G3']"/></R03051G3>
+			<R03051G4 t-att="['xsi:nil', 'true' if data['R03051G4'] is None else None]"><t t-out="data['R03051G4']"/></R03051G4>
+			<R03051G5 t-att="['xsi:nil', 'true' if data['R03051G5'] is None else None]"><t t-out="data['R03051G5']"/></R03051G5>
+			<R0306G3 t-att="['xsi:nil', 'true' if data['R0306G3'] is None else None]"><t t-out="data['R0306G3']"/></R0306G3>
+			<R0306G4 t-att="['xsi:nil', 'true' if data['R0306G4'] is None else None]"><t t-out="data['R0306G4']"/></R0306G4>
+			<R0306G5 t-att="['xsi:nil', 'true' if data['R0306G5'] is None else None]"><t t-out="data['R0306G5']"/></R0306G5>
+			<R0307G3 t-att="['xsi:nil', 'true' if data['R0307G3'] is None else None]"><t t-out="data['R0307G3']"/></R0307G3>
+            <HJAR t-att="['xsi:nil', 'true' if data['HJAR'] is None else None]"><t t-out="data['HJAR']"/></HJAR>
+
+            <!-- TABLE №1 -->
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG2S t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG2S'] is None else None}"><t t-out="r['T1RXXXXG2S']"/></T1RXXXXG2S>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

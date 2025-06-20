@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_account_payment_search" model="ir.ui.view">
+        <field name="name">account.payment.search.inherit.selferp_l10n_ua_currency</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_search"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <filter name="transfers_filter" position="after">
+                <filter name="filter_currency_transactions" string="Currency Transactions" domain="[('currency_transactions', '=', True)]"/>
+            </filter>
+        </field>
+    </record>
+
+
+    <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.form.inherit.selferp_l10n_ua_currency</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group1']" position="attributes">
+                <attribute name="attrs">{'invisible': [('currency_transactions', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='group1']/field[@name='is_internal_transfer']" position="after">
+                <field name="currency_transactions"
+                       attrs="{'invisible': [('is_internal_transfer', '=', True)]}"/>
+            </xpath>
+
+            <xpath expr="//group[@name='group1']" position="after">
+                <group name="group3"
+                       attrs="{'invisible': [('currency_transactions', '=', False)]}">
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="currency_transactions"/>
+                    <field name="payment_type"
+                           widget="radio"
+                           options="{'horizontal': True}"
+                           attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <label for="amount"/>
+                    <div name="amount_div"
+                         class="o_row">
+                        <field name="amount"
+                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="currency_id"
+                               domain="[('id', '!=', company_currency_id)]"
+                               options="{'no_create': True, 'no_open': True}"
+                               required="1"
+                               attrs="{'readonly': [('state', '!=', 'draft')]}"
+                               groups="base.group_multi_currency"/>
+                    </div>
+                    <field name="date"
+                           attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="ref" string="Memo"/>
+                    <field name="interbank_currency_exchange_rate"/>
+                    <field name="bank_commission"/>
+                    <field name="nbu_currency_exchange_rate"/>
+                    <field name="interbank_and_nbu_difference"/>
+                    <field name="currency_sell_date"
+                           attrs="{'invisible': [('payment_type', '!=', 'outbound')]}"/>
+                    <field name="currency_sell_date_rate"
+                           attrs="{'invisible': [('payment_type', '!=', 'outbound')]}"/>
+                    <field name="currency_sell_date_difference"
+                           attrs="{'invisible': [('payment_type', '!=', 'outbound')]}"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//group[@name='group2']" position="attributes">
+                <attribute name="attrs">{'invisible': [('currency_transactions', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='group2']" position="after">
+                <group name="group4"
+                       attrs="{'invisible': [('currency_transactions', '=', False)]}">
+                    <field name="journal_id"
+                           domain="[('id', 'in', available_journal_ids)]"
+                           attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+    <record id="account_payment_action_currency_purchase" model="ir.actions.act_window">
+        <field name="name">Currency Purchase</field>
+        <field name="res_model">account.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[
+            ('currency_transactions', '=', True),
+            ('payment_type', '=', 'inbound'),
+        ]</field>
+        <field name="context">{
+            'default_currency_transactions': True,
+            'default_payment_type': 'inbound',
+        }</field>
+    </record>
+
+
+    <record id="account_payment_action_currency_sale" model="ir.actions.act_window">
+        <field name="name">Currency Sale</field>
+        <field name="res_model">account.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[
+            ('currency_transactions', '=', True),
+            ('payment_type', '=', 'outbound'),
+        ]</field>
+        <field name="context">{
+            'default_currency_transactions': True,
+            'default_payment_type': 'outbound',
+        }</field>
+    </record>
+
+
+
+
+    <menuitem id="account_payment_menu_currency_purchase"
+              parent="account.menu_finance_entries_management"
+              action="account_payment_action_currency_purchase"
+              name="Currency Purchase"
+              sequence="200"/>
+
+    <menuitem id="account_payment_menu_currency_sale"
+              parent="account.menu_finance_entries_management"
+              action="account_payment_action_currency_sale"
+              name="Currency Sale"
+              sequence="201"/>
+
+
+</odoo>

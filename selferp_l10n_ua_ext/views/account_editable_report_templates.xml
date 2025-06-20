@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <!--
+        Editable Report page main layout
+    -->
+
+    <template id="account_editable_report_page_layout" name="Editable Report Page Layout" inherit_id="web.layout" primary="True">
+        <xpath expr="//head/meta[last()]" position="after">
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        </xpath>
+        <xpath expr="//head/link[last()]" position="after">
+            <link rel="preload" href="/web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" crossorigin=""/>
+            <t t-call-assets="web.assets_frontend" t-js="false"/>
+        </xpath>
+        <xpath expr="//head/script[@id='web.layout.odooscript']" position="after">
+            <script t-nocache="Session information should always be up to date." type="text/javascript">
+                odoo.__session_info__ = <t t-out="json.dumps(request.env['ir.http'].get_frontend_session_info())"/>;
+                if (!/(^|;\s)tz=/.test(document.cookie)) {
+                const userTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                document.cookie = `tz=${userTZ}; path=/`;
+                }
+            </script>
+            <t t-call-assets="web.assets_frontend_minimal" t-css="false" defer_load="True"/>
+            <t t-call="web.conditional_assets_tests"/>
+            <t t-call-assets="web.assets_frontend_lazy" t-css="false" lazy_load="True"/>
+        </xpath>
+        <xpath expr="//t[@t-out='0']" position="replace">
+            <t t-set="values" t-value="values or {}"/>
+
+            <form class="account_editable_report_form" method="POST">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input type="hidden" name="saved" t-att-value="report_saved and '1' or ''"/>
+
+                <div class="selferp_reports_o_control_panel">
+                    <h3 class="control_panel_title" t-translation="off">
+                        <t t-out="page_title or title or ''"/>
+                    </h3>
+                    <div class="control_panel_buttons_line">
+                        <button type="submit" class="btn btn-primary" title="Save">Save</button>
+                    </div>
+                </div>
+
+                <div class="selferp_reports_o_content">
+                    <t t-out="0"/>
+                </div>
+            </form>
+        </xpath>
+    </template>
+
+
+
+
+    <template id="editable_report_page_template" name="Editable Report Page">
+        <t t-set="title" t-value="report_part_title"/>
+
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_page_layout">
+            <t t-call="{{report_part_template}}"/>
+        </t>
+    </template>
+
+
+
+
+    <!--
+        Editable Report page elements
+    -->
+
+    <template id="account_editable_report_template_element" name="Editable Report page element">
+        <t t-if="not cell_prefix and not cell_suffix and not cell_name.startswith(report_part)">
+            <t t-set="cell_name_with_doc_key" t-value="report_part + '_' + cell_name"/>
+            <t t-if="cell_name_with_doc_key in values or cell_name not in values">
+                <t t-set="cell_name" t-value="cell_name_with_doc_key"/>
+            </t>
+        </t>
+        <t t-set="cell_name_full" t-value="(('%s_' % cell_prefix) if cell_prefix is not None else '') + cell_name + (('_%s' % cell_suffix) if cell_suffix is not None else '')" />
+        <t t-set="value" t-value="values and values.get(cell_name)"/>
+        <t t-if="not values or value is None">
+            <t t-set="value" t-value="default_value or ''"/>
+        </t>
+
+        <t t-if="input_type == 'radio'">
+            <t t-if="edit_mode and not readonly">
+                <label class="radio_container" t-att-data-id="cell_name_full">
+                    <input type="radio" t-att-name="cell_name_full" t-att-value="radio_value" t-att-checked="radio_value == value"/>
+                    <span class="checkmark"><i class="fa fa-check"/></span>
+                </label>
+            </t>
+            <t t-else="">
+                <div class="radio_container">
+                    <span class="report_data_elem custom_radio_data_elem active" t-att-data-id="cell_name_full"><t t-if="radio_value == value">X</t></span>
+                </div>
+            </t>
+        </t>
+        <t t-elif="input_type == 'checkbox'">
+            <t t-if="edit_mode and not readonly">
+                <label class="checkbox_container" t-att-data-id="cell_name_full">
+                    <input type="checkbox" t-att-name="cell_name_full" t-att-checked="value and True or False"/>
+                    <span class="checkmark"><i class="fa fa-check"/></span>
+                </label>
+            </t>
+            <t t-else="">
+                <div class="checkbox_container">
+                    <span t-attf-class="report_data_elem custom_checkbox_data_elem {{value and 'active' or ''}}" t-att-data-id="cell_name_full"><t t-if="value">X</t></span>
+                </div>
+            </t>
+        </t>
+        <t t-elif="input_type == 'textarea'">
+            <div t-attf-class="report_custom_data_textarea_container #{classes or ''}">
+                <t t-if="not rows">
+                    <t t-set="rows" t-value="3"/>
+                </t>
+                <t t-foreach="range(rows)" t-as="line_index">
+                    <div class="textarea_row"/>
+                </t>
+                <div class="report_custom_data_textarea_content">
+                    <t t-if="edit_mode and not readonly">
+                        <textarea t-att-name="cell_name_full" t-att-rows="rows"><t t-out="value"/></textarea>
+                    </t>
+                    <t t-else="">
+                        <span class="custom_textarea_data_elem" t-att-data-id="cell_name_full"><t t-out="value"/></span>
+                    </t>
+                </div>
+            </div>
+        </t>
+        <t t-else="">
+            <t t-if="edit_mode and not readonly">
+                <input t-att-name="cell_name_full" t-att-value="str(value)"/>
+            </t>
+            <t t-else="">
+                <span class="report_data_elem" t-att-data-id="cell_name_full"><t t-out="value"/></span>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="account_editable_report_template_element_text" name="Editable Report page elements - Text">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element">
+            <t t-set="input_type" t-value="'text'"/>
+        </t>
+    </template>
+
+
+    <template id="account_editable_report_template_element_radio" name="Editable Report page elements - Radio">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element">
+            <t t-set="input_type" t-value="'radio'"/>
+        </t>
+    </template>
+
+
+    <template id="account_editable_report_template_element_checkbox" name="Editable Report page elements - Checkbox">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element">
+            <t t-set="input_type" t-value="'checkbox'"/>
+        </t>
+    </template>
+
+
+    <template id="account_editable_report_template_element_textarea" name="Editable Report page elements - Textarea">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element">
+            <t t-set="input_type" t-value="'textarea'"/>
+        </t>
+    </template>
+
+
+    <template id="account_editable_report_template_element_table_cell" name="Editable Report page elements - Table cell">
+        <td t-attf-class="{{edit_mode and not readonly and 'report_data_elem_container' or ''}}" t-att-style="cell_style or ''">
+            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element" />
+        </td>
+    </template>
+
+
+    <template id="account_editable_report_template_element_table" name="Editable Report page elements - Table">
+        <t t-set="table_template" t-value="table_template or (report_part_template + '_' + table_name)"/>
+        <t t-if="not table_name.startswith(report_part)">
+            <t t-set="table_name" t-value="report_part + '_' + table_name"/>
+        </t>
+        <input type="hidden" t-att-name="table_name" value="[]"/>
+
+        <t t-set="table_value" t-value="values and values.get(table_name) or []" />
+        <t t-set="table_min_row_count" t-value="min_row_count if min_row_count is not None else 2" />
+        <t t-set="table_rows_count" t-value="max(len(table_value), table_min_row_count)" />
+        <t t-set="cell_prefix" t-value="table_name.split('_')[0] if '_' in table_name else ''"/>
+
+        <t t-foreach="range(table_rows_count)" t-as="row_index">
+            <tbody t-att-data-key="table_name"
+                   t-att-data-min-row-count="table_min_row_count"
+                   class="selferp_table_row_editable">
+                <t t-call="{{table_template}}">
+                    <t t-set="cell_suffix" t-value="row_index"/>
+                    <t t-set="values" t-value="table_value[row_index] if row_index &lt; len(table_value) else {}" />
+                </t>
+            </tbody>
+        </t>
+    </template>
+
+
+</odoo>

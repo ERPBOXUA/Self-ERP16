@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+
+    <!--
+        VAT Tax Report paper format
+    -->
+
+    <record id="account_vat_tax_report_paperformat" model="report.paperformat">
+        <field name="name">VAT Tax Report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">6</field>
+        <field name="margin_bottom">6</field>
+        <field name="margin_left">6</field>
+        <field name="margin_right">6</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+
+
+    <!--
+        VAT Tax Report actions
+    -->
+
+    <record id="account_vat_tax_report_action_J0200125" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0200125)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0200125</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0200125</field>
+        <field name="print_report_name">'%s - Декларація' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0200525" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0200525)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0200525</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0200525</field>
+        <field name="print_report_name">'%s - Додаток 1' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0215225" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0215225)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0215225</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0215225</field>
+        <field name="print_report_name">'%s - Додаток 2' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0200625" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0200625)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0200625</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0200625</field>
+        <field name="print_report_name">'%s - Додаток 3' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0299825" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0299825)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0299825</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0299825</field>
+        <field name="print_report_name">'%s - Додаток 4' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0299325" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0299325)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0299325</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0299325</field>
+        <field name="print_report_name">'%s - Додаток 5' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0215725" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0215725)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0215725</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0215725</field>
+        <field name="print_report_name">'%s - Додаток 6' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+    <record id="account_vat_tax_report_action_J0215825" model="ir.actions.report">
+        <field name="name">VAT Tax Report (J0215825)</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_vat.account_vat_tax_report_template_J0215825</field>
+        <field name="report_file">selferp_l10n_ua_vat.account_vat_tax_report_template_J0215825</field>
+        <field name="print_report_name">'%s - Додаток 7' % (object.name)</field>
+        <field name="paperformat_id" ref="selferp_l10n_ua_vat.account_vat_tax_report_paperformat"/>
+    </record>
+
+
+</odoo>

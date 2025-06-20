@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_report_l10n_ua_financial_results_2m" model="account.report">
+        <field name="name">Звіт про фінансові результати</field>
+        <field name="filter_date_range" eval="True"/>
+        <field name="filter_unfold_all" eval="False"/>
+        <field name="default_opening_date_filter">last_month</field>
+
+        <field name="column_ids">
+            <record id="account_report_column_financial_results_2m_code_line" model="account.report.column">
+                <field name="name">Код рядка</field>
+                <field name="expression_label">code_line</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_financial_results_2m_balance" model="account.report.column">
+                <field name="name">Баланс</field>
+                <field name="expression_label">balance</field>
+            </record>
+        </field>
+
+        <field name="line_ids">
+            <record id="account_report_line_2m_net_income" model="account.report.line">
+                <field name="name">Чистий дохід від реалізації продукції (товарів, робіт, послуг)</field>
+                <field name="code">C2000</field>
+                <field name="aggregation_formula">C2000.cr_701 + C2000.cr_702 + C2000.cr_703 - C2000.dr_704</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_net_income_cr_701" model="account.report.expression">
+                        <field name="label">cr_701</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=like', '701%'), ('credit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum</field>
+                    </record>
+                    <record id="account_report_expression_2m_net_income_cr_702" model="account.report.expression">
+                        <field name="label">cr_702</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=like', '702%'), ('credit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum</field>
+                    </record>
+                    <record id="account_report_expression_2m_net_income_cr_703" model="account.report.expression">
+                        <field name="label">cr_703</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=like', '703%'), ('credit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum</field>
+                    </record>
+                    <record id="account_report_expression_2m_net_income_dr_704" model="account.report.expression">
+                        <field name="label">dr_704</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=like', '704%'), ('debit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum</field>
+                    </record>
+                    <record id="account_report_expression_2m_net_income_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2000</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_other_income" model="account.report.line">
+                <field name="name">Інші доходи</field>
+                <field name="code">C2160</field>
+                <field name="aggregation_formula">C2160.fr2m_bn714 + C2160.fr2m_b714n + C2160.fr2m_b945n</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_fr2m_c2160_b714" model="account.report.expression">
+                        <field name="label">fr2m_b714n</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=', '714000'), ('credit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum_if_neg</field>
+                    </record>
+                    <record id="account_report_expression_fr2m_c2160_bn714" model="account.report.expression">
+                        <field name="label">fr2m_bn714</field>
+                        <field name="engine">domain</field>
+                        <field name="formula"
+                               eval="[('account_id.code', '!=', '714000'), ('credit', '!=', 0.0), '|', '|', '|', '|', '|', ('account_id.code', '=like', '71%'), ('account_id.code', '=like', '72%'), ('account_id.code', '=like', '73%'), ('account_id.code', '=like', '74%'), ('account_id.code', '=like', '75%'), ('account_id.code', '=like', '76%')]"/>
+                        <field name="subformula">-sum</field>
+                    </record>
+                    <record id="account_report_expression_fr2m_c2160_b945n" model="account.report.expression">
+                        <field name="label">fr2m_b945n</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=', '945000'), ('debit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum_if_neg</field>
+                    </record>
+                    <record id="account_report_expression_2m_other_income_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2160</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_total_income" model="account.report.line">
+                <field name="name">Разом доходи</field>
+                <field name="code">C2280</field>
+                <field name="aggregation_formula">C2000.balance + C2160.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_total_income_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2280</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_cost_sold_goods" model="account.report.line">
+                <field name="name">Собівартість реалізованої продукції (товарів, робіт, послуг)</field>
+                <field name="code">C2050</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_cost_sold_goods_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=like', '90%'), ('debit', '!=', 0.0)]"/>
+                        <field name="subformula">sum</field>
+                    </record>
+                    <record id="account_report_expression_2m_cost_sold_goods_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2050</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_other_expenses" model="account.report.line">
+                <field name="name">Інші витрати</field>
+                <field name="code">C2165</field>
+                <field name="aggregation_formula">C2165.fr2m_b94p + C2165.fr2m_bn94n + C2165.fr2m_b714p</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_fr2m_c2165_b714" model="account.report.expression">
+                        <field name="label">fr2m_b714p</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=', '714000'), ('credit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum_if_pos</field>
+                    </record>
+                    <record id="account_report_expression_fr2m_c2165_b94p" model="account.report.expression">
+                        <field name="label">fr2m_b94p</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=', '945000'), ('debit', '!=', 0.0)]"/>
+                        <field name="subformula">-sum_if_pos</field>
+                    </record>
+                    <record id="account_report_expression_fr2m_c2165_bn94n" model="account.report.expression">
+                        <field name="label">fr2m_bn94n</field>
+                        <field name="engine">domain</field>
+                        <field name="formula"
+                               eval="[('account_id.code', '!=', '945000'), ('debit', '!=', 0.0), '|', '|', '|', '|', '|', '|', ('account_id.code', '=like', '92%'), ('account_id.code', '=like', '93%'), ('account_id.code', '=like', '94%'), ('account_id.code', '=like', '95%'), ('account_id.code', '=like', '96%'), ('account_id.code', '=like', '97%'), ('account_id.code', '=like', '99%')]"/>
+                        <field name="subformula">-sum_if_neg</field>
+                    </record>
+                    <record id="account_report_expression_2m_other_expenses_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2165</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_total_expenses" model="account.report.line">
+                <field name="name">Разом витрати</field>
+                <field name="code">C2285</field>
+                <field name="aggregation_formula">C2050.balance + C2165.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_total_expenses_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2285</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_financial_result_before_taxation" model="account.report.line">
+                <field name="name">Фінансовий результат до оподаткування</field>
+                <field name="code">C2290</field>
+                <field name="aggregation_formula">C2280.balance - C2285.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_financial_result_before_taxation_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2290</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_income_tax_2m" model="account.report.line">
+                <field name="name">Податок на прибуток</field>
+                <field name="code">C2300</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_income_tax_2m_balance" model="account.report.expression">
+                        <field name="label">balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula" eval="[('account_id.code', '=like', '98%'), ('debit', '!=', 0.0)]"/>
+                        <field name="subformula">sum</field>
+                    </record>
+                    <record id="account_report_expression_2m_income_tax_2m_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2300</field>
+                    </record>
+                </field>
+            </record>
+            <record id="account_report_line_2m_net_profit_loss" model="account.report.line">
+                <field name="name">Чистий прибуток (збиток)</field>
+                <field name="code">C2350</field>
+                <field name="aggregation_formula">C2290.balance - C2300.balance</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_2m_net_profit_loss_code_line" model="account.report.expression">
+                        <field name="label">code_line</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_get_code_line</field>
+                        <field name="subformula">C2350</field>
+                    </record>
+                </field>
+            </record>
+        </field>
+    </record>
+
+
+    <record id="account_report_action_financial_results_2m" model="ir.actions.client">
+        <field name="name">Звіт про фінансові результати</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('selferp_l10n_ua_finance_report.account_report_l10n_ua_financial_results_2m')}"/>
+    </record>
+
+</odoo>

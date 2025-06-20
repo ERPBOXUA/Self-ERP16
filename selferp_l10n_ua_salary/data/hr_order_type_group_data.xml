@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="hr_order_type_group_personnel_orders" model="hr.order.type.group">
+        <field name="name">Personnel orders</field>
+        <field name="letter">К</field>
+    </record>
+
+    <record id="hr_order_type_group_leave_orders" model="hr.order.type.group">
+        <field name="name">Orders for leave</field>
+        <field name="letter">В</field>
+    </record>
+
+</odoo>

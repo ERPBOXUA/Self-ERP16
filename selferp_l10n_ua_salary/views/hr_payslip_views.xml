@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_hr_payslip_form" model="ir.ui.view">
+        <field name="name">view.hr.payslip.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="priority" eval="90"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button name="action_create_payments"
+                        type="object"
+                        attrs="{'invisible': [('state', '!=', 'done')]}"
+                        class="btn-primary"
+                        string="Create Payments"/>
+            </header>
+
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="payment_count" invisible="1"/>
+                <button name="action_show_payments"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-money"
+                        attrs="{'invisible': [('payment_count', '=', 0)]}">
+                    <field name="payment_amount" widget="statinfo" string="Payments"/>
+                </button>
+            </xpath>
+
+            <field name="struct_id" position="after">
+                <field name="payment_type"/>
+                <field name="salary_advance_calculation_editable" invisible="1"/>
+                <field name="salary_advance_calculation" attrs="{'required': [('payment_type', '=', 'advance_salary')], 'invisible': [('payment_type', '!=', 'advance_salary')], 'readonly': [('salary_advance_calculation_editable', '=', False)]}"/>
+                <field name="salary_advance_percents" widget="percentage" class="w-50" attrs="{'required': [('payment_type', '=', 'advance_salary'), ('salary_advance_calculation', '=', 'percentage')], 'invisible': ['|', ('payment_type', '!=', 'advance_salary'), ('salary_advance_calculation', '!=', 'percentage')]}"/>
+                <label for="average_daily_wage" attrs="{'invisible': [('payment_type', 'not in', ('vacations', 'sick_leaves'))]}"/>
+                <div attrs="{'invisible': [('payment_type', 'not in', ('vacations', 'sick_leaves'))]}">
+                    <div>
+                        <field name="average_daily_wage" class="oe_inline"/>
+                        <field name="average_daily_wage_effective_visible" invisible="1"/>
+                        <div style="display: inline-block;" attrs="{'invisible': [('average_daily_wage_effective_visible', '=', False)]}">
+                            <strong><span class="mr8 ml8">Effective Value:</span></strong>
+                            <field name="average_daily_wage_effective" class="oe_inline"/>
+                        </div>
+                    </div>
+                    <div>
+                        <field name="average_daily_wage_effective_explanation_visible" invisible="1"/>
+                        <field name="average_daily_wage_effective_explanation" attrs="{'invisible': [('average_daily_wage_effective_explanation_visible', '=', False)]}"/>
+                    </div>
+                </div>
+            </field>
+
+            <xpath expr="//page[@name='salary_computation']" position="before">
+                <page name="benefits" string="Accruals and Deductions" attrs="{'invisible': [('payment_type', '!=', 'salary')]}">
+                    <field name="benefit_line_ids" context="{'default_payslip_id': id}">
+                        <tree>
+                            <field name="name"/>
+                            <field name="code" optional="hide"/>
+                            <field name="type"/>
+                            <field name="display_details"/>
+                            <field name="is_alimony" invisible="1"/>
+                            <field name="charge_type" invisible="1"/>
+                            <field name="display_receiver"/>
+                            <field name="receiver_id" invisible="1"/>
+                            <field name="amount_base"/>
+                            <field name="display_amount"/>
+                            <field name="display_base_rule_code" optional="hide"/>
+                            <field name="account_debit_id"/>
+                            <field name="account_credit_id"/>
+                            <field name="mode" invisible="1"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="mode" invisible="1"/>
+                                        <field name="code" attrs="{'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="type" attrs="{'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="is_alimony" attrs="{'readonly': [('mode', '=', 'auto')], 'invisible': [('type', '!=', 'deduction')]}"/>
+                                        <field name="charge_type" attrs="{'readonly': [('mode', '=', 'auto')], 'invisible': [('type', '!=', 'accrual')]}"/>
+                                        <field name="receiver_id" attrs="{'readonly': [('mode', '=', 'auto')], 'invisible': ['|', ('type', '!=', 'deduction'), ('is_alimony', '!=', True)]}"/>
+                                        <field name="display_receiver" invisible="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="amount_base" attrs="{'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="fixed_amount" attrs="{'invisible': [('amount_base', '!=', 'fixed')], 'required': [('amount_base', '=', 'fixed')], 'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="percent" widget="percentage" attrs="{'invisible': [('amount_base', '!=', 'percent')], 'required': [('amount_base', '=', 'percent')], 'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="percent_in_wages" widget="percentage" attrs="{'invisible': [('amount_base', '!=', 'percent_in_wages')], 'required': [('amount_base', '=', 'percent_in_wages')], 'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="base_rule_code" attrs="{'invisible': [('amount_base', 'not in', ['percent', 'percent_in_wages'])], 'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="display_base_rule_code" invisible="1"/>
+                                        <field name="account_in_next_period" attrs="{'invisible': ['|', ('charge_type', '!=', 'bonus'), ('type', '!=', 'accrual')], 'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="account_debit_id" attrs="{'readonly': [('mode', '=', 'auto')]}"/>
+                                        <field name="account_credit_id" attrs="{'readonly': [('mode', '=', 'auto')]}"/>
+                                    </group>
+                                </group>
+                                <group string="Children" attrs="{'invisible': ['|', ('type', '!=', 'deduction'), ('is_alimony', '!=', True)]}">
+                                    <field name="children_ids" nolabel="1" colspan="2" context="{'default_hr_payslip_benefit_line_id': id}">
+                                        <tree editable="bottom">
+                                            <field name="children_age"/>
+                                            <field name="children_number"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='salary_rule_id']" position="after">
+                <field name="account_debit_id" attrs="{'column_invisible': [('parent.payment_type', '=', 'advance_salary')]}"/>
+                <field name="account_credit_id" attrs="{'column_invisible': [('parent.payment_type', '=', 'advance_salary')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='category_id']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='quantity']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='rate']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='salary_rule_id']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/tree/field[@name='amount']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']/form/group/field[@name='salary_rule_id']" position="after">
+                <field name="account_debit_id" attrs="{'invisible': [('parent.payment_type', '=', 'advance_salary')]}"/>
+                <field name="account_credit_id" attrs="{'invisible': [('parent.payment_type', '=', 'advance_salary')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hr_payslip_view_form" model="ir.ui.view">
+        <field name="name">hr.payslip.view.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll_account.hr_payslip_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_payslip_done']" position="attributes">
+                <attribute name="string">Confirm and Create Moves</attribute>
+                <attribute name="attrs">{'invisible': ['|', ('payment_type', '=', 'advance_salary'), ('state', '!=', 'verify')]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_payslip_done']" position="after">
+                <button name="action_payslip_done" type="object" string="Confirm" class="btn btn-primary" attrs="{'invisible': ['|', ('payment_type', '!=', 'advance_salary'), ('state', '!=', 'verify')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_hr_payslip_tree" model="ir.ui.view">
+        <field name="name">view.hr.payslip.tree.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+        <field name="priority" eval="90"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="after">
+                <field name="payment_type"/>
+            </field>
+            <field name="basic_wage" position="after">
+                <field name="pdfo_amount"/>
+                <field name="mt_amount"/>
+            </field>
+            <field name="net_wage" position="after">
+                <field name="esv_amount"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="hr_payslip_view_pivot" model="ir.ui.view">
+        <field name="name">hr.payslip.view.pivot</field>
+        <field name="model">hr.payslip</field>
+        <field name="arch" type="xml">
+            <pivot sample="1">
+                <field name="date_from" string="Date" interval="month" type="row"/>
+                <field name="pdfo_amount" type="measure" widget="monetary"/>
+                <field name="mt_amount" type="measure" widget="monetary"/>
+                <field name="esv_amount" type="measure" widget="monetary"/>
+                <field name="salary_advance_percents" invisible="1"/>
+            </pivot>
+        </field>
+    </record>
+
+
+    <record id="view_hr_payslip_filter" model="ir.ui.view">
+        <field name="name">view.hr.payslip.search.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_filter"/>
+        <field name="priority" eval="90"/>
+        <field name="arch" type="xml">
+            <filter name="done" position="after">
+                <separator/>
+                <filter name="filter_salary" string="Salary" domain="[('payment_type', '=', 'salary')]"/>
+                <filter name="filter_advance_salary" string="Salary Advance" domain="[('payment_type', '=', 'advance_salary')]"/>
+                <filter name="filter_vacations" string="Vacations" domain="[('payment_type', '=', 'vacations')]"/>
+                <filter name="filter_sick_leaves" string="Sick Leaves" domain="[('payment_type', '=', 'sick_leaves')]"/>
+            </filter>
+            <xpath expr="//group/filter[@name='group_by_batch']" position="after">
+                <filter name="group_by_payment_type" string="Payment Type" context="{'group_by': 'payment_type'}"/>
+                <filter name="group_by_date" string="Date" context="{'group_by': 'date_from'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="hr_payroll.action_view_hr_payslip_month_form" model="ir.actions.act_window">
+        <field name="view_mode">tree,kanban,form,pivot,activity</field>
+    </record>
+
+
+    <record id="hr_payroll.action_hr_payroll_confirm_payroll" model="ir.actions.server">
+        <field name="name">Confirm and Create Moves</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="account_tax_group_vat0_export" model="account.tax.group">
+        <field name="name">ПДВ 0% при експорті товарів</field>
+        <field name="country_id" ref="base.ua"/>
+        <field name="is_vat">1</field>
+        <field name="vat_code">901</field>
+    </record>
+
+    <record id="account_tax_group_vat0_delivered_on_customs" model="account.tax.group">
+        <field name="name">ПДВ 0% при постачанні на митній території України</field>
+        <field name="country_id" ref="base.ua"/>
+        <field name="is_vat">1</field>
+        <field name="vat_code">902</field>
+    </record>
+
+</odoo>

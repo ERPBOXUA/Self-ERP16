@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <menuitem id="account_report_menu_action_inventory_report"
+              sequence="10"
+              name="Inventory Report"
+              parent="account_reports.account_reports_audit_reports_menu"
+              action="account_report_action_inventory_report"/>
+
+
+    <menuitem id="account_report_menu_finance_reports" name="Finance Reports" parent="account.menu_finance_reports">
+        <menuitem id="account_report_menu_action_balance_sheet_1"
+                  sequence="9"
+                  name="Баланс Форма 1"
+                  action="account_report_action_balance_sheet_1"/>
+        <menuitem id="account_report_menu_action_balance_sheet_1m"
+                  sequence="10"
+                  name="Баланс Форма 1-м"
+                  action="account_report_action_balance_sheet_1m"/>
+        <menuitem id="account_report_menu_action_financial_results_2m"
+                  sequence="20"
+                  name="Звіт про фінансові результати"
+                  action="account_report_action_financial_results_2m"/>
+        <menuitem id="account_report_menu_action_financial_results_2"
+                  sequence="30"
+                  name="Звіт про фінансові результати Ф2"
+                  action="account_report_action_financial_results_fr2"/>
+    </menuitem>
+
+
+</odoo>

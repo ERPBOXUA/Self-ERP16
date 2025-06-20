@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="search_template_inventory_report" inherit_id="account_reports.search_template">
+        <xpath expr="//div[hasclass('o_account_reports_filter_partner')]" position="before">
+            <div t-if="options.get('product')" class="btn-group dropdown o_account_reports_filter_product">
+                <t t-call="selferp_l10n_ua_finance_report.search_template_product"/>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="search_template_product">
+        <button t-if="options.get('product')"
+                type="button"
+                class="o-no-caret btn btn-secondary dropdown-toggle account_product_filter"
+                data-bs-toggle="dropdown">
+            <span class="fa fa-folder-open"/>
+            Products
+        </button>
+        <ul class="dropdown-menu o_filter_menu" role="menu">
+            <li class="o_account_report_search js_account_product_m2m"/>
+        </ul>
+    </template>
+
+    <template id="main_template_inventory_report" inherit_id="account_reports.main_template" primary="True">
+        <xpath expr="//table[hasclass('o_account_reports_table')]" position="inside">
+            <colgroup>
+                <col span="2"/>
+                <col class="o_account_report_inventory_report_column_contrast"/>
+                <col/>
+                <col class="o_account_report_inventory_report_column_contrast"/>
+                <col/>
+                <col class="o_account_report_inventory_report_column_contrast"/>
+                <col/>
+                <col class="o_account_report_inventory_report_column_contrast"/>
+                <col/>
+            </colgroup>
+        </xpath>
+    </template>
+
+    <template id="main_table_header_inventory_report" inherit_id="account_reports.main_table_header" primary="True">
+        <xpath expr="//tr[contains(@t-if, 'column_headers_render_data')]" position="attributes">
+            <attribute name="class">o_account_report_inventory_report_top_header_row</attribute>
+        </xpath>
+    </template>
+
+    <record id="account_report_inventory_report" model="account.report">
+        <field name="name">Inventory Report</field>
+        <field name="filter_multi_company">selector</field>
+        <field name="filter_date_range">1</field>
+        <field name="default_opening_date_filter">this_month</field>
+        <field name="filter_accounts">1</field>
+        <field name="filter_product">1</field>
+        <field name="filter_partner">0</field>
+        <field name="filter_show_draft">0</field>
+        <field name="filter_period_comparison">0</field>
+        <field name="filter_growth_comparison">0</field>
+        <field name="main_template">selferp_l10n_ua_finance_report.main_template_inventory_report</field>
+        <field name="main_table_header_template">selferp_l10n_ua_finance_report.main_table_header_inventory_report</field>
+        <field name="search_template">selferp_l10n_ua_finance_report.search_template_inventory_report</field>
+        <field name="custom_handler_model_id" ref="model_account_report_inventory_report_handler"/>
+        <field name="column_ids">
+            <record id="account_report_column_inventory_report_uom" model="account.report.column">
+                <field name="name">UoM</field>
+                <field name="expression_label">product_uom</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_inventory_report_opening_qty" model="account.report.column">
+                <field name="name">Opening qty</field>
+                <field name="expression_label">opening_qty</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_inventory_report_debit_qty" model="account.report.column">
+                <field name="name">Debit</field>
+                <field name="expression_label">debit_qty</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_inventory_report_credit_qty" model="account.report.column">
+                <field name="name">Credit</field>
+                <field name="expression_label">credit_qty</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_inventory_report_closing_qty" model="account.report.column">
+                <field name="name">Closing qty</field>
+                <field name="expression_label">closing_qty</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_column_inventory_report_opening_balance" model="account.report.column">
+                <field name="name">Opening balance</field>
+                <field name="expression_label">opening_balance</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="account_report_column_inventory_report_debit_balance" model="account.report.column">
+                <field name="name">Debit</field>
+                <field name="expression_label">debit_balance</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="account_report_column_inventory_report_credit_balance" model="account.report.column">
+                <field name="name">Credit</field>
+                <field name="expression_label">credit_balance</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="account_report_column_inventory_report_closing_balance" model="account.report.column">
+                <field name="name">Closing balance</field>
+                <field name="expression_label">closing_balance</field>
+                <field name="figure_type">monetary</field>
+            </record>
+        </field>
+        <field name="line_ids">
+            <record id="account_report_line_inventory_report_current_asset" model="account.report.line">
+                <field name="name">Current Asset</field>
+                <field name="groupby">account_id, product_id</field>
+                <field name="expression_ids">
+                    <record id="account_report_expression_inventory_report_uom" model="account.report.expression">
+                        <field name="label">product_uom</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_grouped_by_product</field>
+                        <field name="subformula">product_uom</field>
+                        <field name="date_scope">from_beginning</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_opening_qty" model="account.report.expression">
+                        <field name="label">opening_qty</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_grouped_by_product</field>
+                        <field name="subformula">qty</field>
+                        <field name="date_scope">to_beginning_of_period</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_debit_qty" model="account.report.expression">
+                        <field name="label">debit_qty</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_grouped_by_product</field>
+                        <field name="subformula">qty_if_pos</field>
+                        <field name="date_scope">strict_range</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_credit_qty" model="account.report.expression">
+                        <field name="label">credit_qty</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_grouped_by_product</field>
+                        <field name="subformula">qty_if_neg</field>
+                        <field name="date_scope">strict_range</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_closing_qty" model="account.report.expression">
+                        <field name="label">closing_qty</field>
+                        <field name="engine">custom</field>
+                        <field name="formula">_report_custom_engine_grouped_by_product</field>
+                        <field name="subformula">qty</field>
+                        <field name="date_scope">from_beginning</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_opening_balance" model="account.report.expression">
+                        <field name="label">opening_balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_type', '=', 'asset_current')]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">to_beginning_of_period</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_debit_balance" model="account.report.expression">
+                        <field name="label">debit_balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_type', '=', 'asset_current'), ('balance', '&gt;', 0)]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">strict_range</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_credit_balance" model="account.report.expression">
+                        <field name="label">credit_balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_type', '=', 'asset_current'), ('balance', '&lt;', 0)]</field>
+                        <field name="subformula">-sum</field>
+                        <field name="date_scope">strict_range</field>
+                    </record>
+                    <record id="account_report_expression_inventory_report_closing_balance" model="account.report.expression">
+                        <field name="label">closing_balance</field>
+                        <field name="engine">domain</field>
+                        <field name="formula">[('account_type', '=', 'asset_current')]</field>
+                        <field name="subformula">sum</field>
+                        <field name="date_scope">from_beginning</field>
+                    </record>
+                </field>
+            </record>
+        </field>
+    </record>
+
+
+    <record id="account_report_action_inventory_report" model="ir.actions.client">
+        <field name="name">Inventory Report</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('selferp_l10n_ua_finance_report.account_report_inventory_report')}"/>
+    </record>
+
+
+</odoo>

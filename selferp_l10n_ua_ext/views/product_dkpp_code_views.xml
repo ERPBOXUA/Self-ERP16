@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="product_dkpp_code_view_form" model="ir.ui.view">
+        <field name="name">product.dkpp_code.form</field>
+        <field name="model">product.dkpp_code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title" style="max-width: 100%;">
+                        <label for="name"/>
+                        <h1>
+                            <div class="d-flex">
+                                <field class="text-break" name="name"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="mb16">
+                        <field class="text-break" name="full_code"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="code"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group>
+                            <field name="selectable"/>
+                            <field name="uktzed"/>
+                        </group>
+                        <separator string="Children"/>
+                        <field name="child_ids" nolabel="1" context="{'default_parent_id': id}">
+                            <tree>
+                                <field name="parent_id" invisible="1"/>
+                                <field name="code"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="product_dkpp_code_view_tree" model="ir.ui.view">
+        <field name="name">product.dkpp_code.tree</field>
+        <field name="model">product.dkpp_code</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="not active">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="product_dkpp_code_view_search" model="ir.ui.view">
+        <field name="name">product.dkpp_code.search</field>
+        <field name="model">product.dkpp_code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="code" filter_domain="[('code', 'ilike', self)]"/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                <searchpanel>
+                    <field name="parent_id" string="Parent" hierarchize="1" limit="0"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+
+
+
+    <record id="product_dkpp_code_action" model="ir.actions.act_window">
+        <field name="name">DKPP Codes</field>
+        <field name="res_model">product.dkpp_code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

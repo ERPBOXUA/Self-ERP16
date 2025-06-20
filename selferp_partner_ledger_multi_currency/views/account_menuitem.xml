@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_report_partner_ledger_multi_currency_action" model="ir.actions.client">
+        <field name="name">Partner Ledger Multi Currency</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('selferp_partner_ledger_multi_currency.account_report_partner_ledger_multi_currency')}"/>
+    </record>
+
+
+    <menuitem id="account_report_partner_ledger_multi_currency_menu"
+              action="account_report_partner_ledger_multi_currency_action"
+              parent="account_reports.account_reports_partners_reports_menu"
+              sequence="10"
+              name="Partner Ledger Multi Currency"
+    />
+
+
+</odoo>

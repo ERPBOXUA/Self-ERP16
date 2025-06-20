@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_vat_invoices"
+                        class="oe_stat_button"
+                        type="object"
+                        icon="fa-pencil-square-o"
+                        groups="account.group_account_readonly,account.group_account_invoice"
+                        attrs="{'invisible': [('vat_invoice_total', '=', 0)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="vat_invoice_total" widget="monetary"/>
+                        </span>
+                        <span class="o_stat_text">VAT Invoices</span>
+                    </div>
+                </button>
+
+                <button name="action_view_vendor_vat_invoices"
+                        class="oe_stat_button"
+                        type="object"
+                        icon="fa-pencil-square-o"
+                        groups="account.group_account_readonly,account.group_account_invoice"
+                        attrs="{'invisible': [('vendor_vat_invoice_total', '=', 0)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="vendor_vat_invoice_total" widget="monetary"/>
+                        </span>
+                        <span class="o_stat_text">Vendor VAT Invoices</span>
+                    </div>
+                </button>
+            </div>
+
+            <button id="partner_ledger_button" position="attributes">
+                <attribute name="string"/>
+            </button>
+            <button id="partner_ledger_button" position="inside">
+                <div class="o_stat_info">
+                    <span class="o_stat_text">Partner Ledger</span>
+                </div>
+            </button>
+
+            <xpath expr="//page[@name='accounting']//group[@name='banks']/.." position="inside">
+                <group name="vat" string="VAT">
+                    <field name="tracking_first_event"/>
+                    <field name="tracking_first_event_vendor"/>
+                    <field name="vat_non_payer"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,76 @@
+html body {
+    overflow: auto;
+}
+
+.selferp_reports_o_control_panel {
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #C9CCD2;
+    background-color: #f7f7f7;
+    padding: 0.5rem 16px 0.5rem 16px;
+    box-shadow: 0 0 15px 0 rgba(136, 136, 136, 0.6);
+    z-index: 11;
+
+    .control_panel_title {
+        color: #4A4F59;
+
+        .control_panel_buttons_line {
+            display: flex;
+            flex-wrap: wrap;
+
+            button {
+                border-color: #017e84;
+                box-shadow: none;
+                background-color: #017e84;
+                color: #FFF;
+            }
+        }
+    }
+
+    & + .selferp_reports_o_content {
+        padding-top: 120px;
+    }
+}
+
+
+.selferp_table_editable {
+    .selferp_table_row_editable {
+        .selferp_table_row_remove_container {
+            position: relative;
+
+            .selferp_table_row_remove {
+                display: inline;
+                position: absolute;
+                right: -22px;
+                top: 0px;
+                z-index: 10;
+                font-size: 1.2em;
+                color: orangered;
+                cursor: pointer;
+            }
+        }
+
+        .selferp_table_row_add_container {
+            position: relative;
+
+            .selferp_table_row_add {
+                display: inline;
+                position: absolute;
+                right: -22px;
+                top: 18px;
+                z-index: 10;
+                font-size: 1.2em;
+                color: green;
+                cursor: pointer;
+            }
+        }
+
+        .report_data_elem_container {
+
+            .selferp_table_row_remove,
+            .selferp_table_row_add {
+                right: -18px;
+            }
+        }
+    }
+}

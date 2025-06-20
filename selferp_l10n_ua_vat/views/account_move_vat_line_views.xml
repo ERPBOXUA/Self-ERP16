@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_move_vat_line_view_form" model="ir.ui.view">
+        <field name="name">account.move.vat.line.view.form</field>
+        <field name="model">account.move.vat.line</field>
+        <field name="arch" type="xml">
+            <form create="0" duplicate="0" delete="0">
+                <sheet>
+                    <field name="move_type" invisible="1"/>
+                    <div>
+                        <label for="move_id"/>
+                        <field name="move_id"/>
+                    </div>
+                    <group>
+                        <group string="Product" attrs="{'invisible': [('product_id', '=', False)]}">
+                            <field name="name"/>
+                            <field name="product_id" options="{'no_create': True}"/>
+                            <field name="uktzed_code_id"/>
+                            <field name="dkpp_code_id"/>
+                            <field name="product_uom_category_id"/>
+                            <field name="product_uom_id" options="{'no_create': True}"/>
+                        </group>
+                        <group string="Amount">
+                            <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_currency"/>
+                            <field name="quantity"/>
+                            <field name="price_unit"/>
+                            <field name="price_without_vat"/>
+                            <field name="discount"/>
+                            <field name="total_manual"/>
+                            <field name="vat_amount"/>
+                            <field name="total"/>
+                            <field name="total_without_vat"/>
+                        </group>
+                        <group string="Taxes">
+                            <field name="benefit_code_id" options="{'no_create': True}"/>
+                            <field name="tax_before_vat_ids" options="{'no_create': True}" widget="many2many_tags"/>
+                            <field name="vat_tax_id" options="{'no_create': True}"/>
+                        </group>
+                        <group string="Adjustment" attrs="{'invisible': [('move_type', '!=', 'vat_adjustment_invoice')]}">
+                            <field name="adjustment_cause_type"/>
+                            <field name="adjustment_reason_type"/>
+                            <field name="adjustment_group"/>
+                            <field name="adjustment_num_line_vat_invoice"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

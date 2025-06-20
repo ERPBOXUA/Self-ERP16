@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+
+
+    <t t-name="selferp_l10n_ua_vat.TaxTableTotalsComponent" owl="1">
+        <div t-if="totals" class="oe_tax_table_totals_field d-flex flex-column-reverse flex-md-row">
+            <div class="tax_groups_container">
+                <table t-if="totals.groups_by_subtotal">
+                    <thead>
+                        <tr>
+                            <th>Tax Group</th>
+                            <th>Tax Base</th>
+                            <th>Tax Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="totals.subtotals" t-as="subtotal" t-key="subtotal['name']">
+                            <t t-foreach="totals.groups_by_subtotal[subtotal['name']]" t-as="taxGroup" t-key="taxGroup.group_key">
+                                <tr t-if="taxGroup.tax_group_is_vat">
+                                    <td class="o_td_label">
+                                        <label class="o_tax_total_label" t-esc="taxGroup.tax_group_name"/>
+                                    </td>
+                                    <td class="o_td_amount">
+                                        <span>
+                                            <t t-out="taxGroup.formatted_tax_group_base_amount" />
+                                        </span>
+                                    </td>
+                                    <td class="o_td_amount">
+                                        <span>
+                                            <t t-out="taxGroup.formatted_tax_group_amount" />
+                                        </span>
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                        <tr style="border: none; font-weight: bold;">
+                            <td class="o_td_label" style="border: none;">
+                                <label class="o_tax_total_label">Total</label>
+                            </td>
+                            <td class="o_td_amount" style="border: none;">
+                                <span>
+                                    <t t-out="totals.formatted_vat_base_total" />
+                                </span>
+                            </td>
+                            <td class="o_td_amount" style="border: none;">
+                                <span style="font-size: 1.3em;">
+                                    <t t-out="totals.formatted_vat_total" />
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="total_container">
+                <t t-call="account.TaxTotalsField" />
+            </div>
+        </div>
+    </t>
+
+
+    <t t-inherit="account.TaxTotalsField" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tbody" position="inside">
+            <tr t-if="totals.formatted_amount_paid">
+                <td class="o_td_label">
+                    <label class="o_form_label o_tax_total_label">Paid</label>
+                </td>
+                <td>
+                    <span name="amount_paid"
+                          class="oe_subtotal_footer_separator"
+                          style="font-size: 1.3em; font-weight: bold; white-space: nowrap;"
+                          t-out="totals.formatted_amount_paid"
+                    />
+                </td>
+            </tr>
+            <tr t-if="totals.formatted_amount_outstanding_payment">
+                <td class="o_td_label">
+                    <label class="o_form_label o_tax_total_label">Outstanding Payment</label>
+                </td>
+                <td>
+                    <span name="amount_paid"
+                          t-att-class="totals.amount_outstanding_payment &lt; 0 ? 'text-danger' : ''"
+                          style="font-size: 1.3em; font-weight: bold; white-space: nowrap;"
+                          t-out="totals.formatted_amount_outstanding_payment"
+                    />
+                </td>
+            </tr>
+        </xpath>
+    </t>
+
+
+</templates>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="salary_indexation_period_rule_multicompany" model="ir.rule">
+        <field name="name">Salary Indexation Period: multi company global rule</field>
+        <field name="model_id" ref="model_salary_indexation_period"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_order_type_group_view_tree" model="ir.ui.view">
+        <field name="name">hr.order.type.group.view.tree</field>
+        <field name="model">hr.order.type.group</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="letter"/>
+                <field name="property_sequence_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_order_type_group_view_form" model="ir.ui.view">
+        <field name="name">hr.order.type.group.view.form</field>
+        <field name="model">hr.order.type.group</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="letter"/>
+                            <field name="property_sequence_id" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_order_type_group_action" model="ir.actions.act_window">
+        <field name="name">Order Type Groups</field>
+        <field name="res_model">hr.order.type.group</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="hr_order_type_group_menu"
+              name="Order type groups"
+              action="hr_order_type_group_action"
+              parent="hr.menu_config_employee"
+              groups="base.group_no_one"
+              sequence="8"/>
+
+
+</odoo>

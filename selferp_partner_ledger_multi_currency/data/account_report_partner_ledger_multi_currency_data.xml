@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="line_template_partner_ledger_report" inherit_id="account_reports.line_template" primary="True">
+        <xpath expr="//span[hasclass('account_report_line_name')]" position="inside">
+            <t t-set="_line_id_model_info" t-value="report._get_model_info_from_id(line.get('id'))" />
+            <t t-if="_line_id_model_info[0] == 'res.partner' and line.get('unfoldable')">
+                <t t-if="_line_id_model_info[1] is not None">
+                    &amp;nbsp;<a t-att-data-id="line.get('id')" action="action_open_partner" class="no_print oe_link_reports">Open</a>
+                </t>
+                &amp;nbsp;<a t-att-data-line_id="line.get('id')"
+                         t-att-data-name="line.get('name')"
+                         t-att-data-view_ref="'account.view_move_line_tree_grouped_partner'"
+                         action="open_journal_items"
+                         class="no_print oe_link_reports">
+                            ⇒ Journal Items
+                        </a>
+                &amp;nbsp;<a t-att-data-line_id="line.get('id')" action="action_partner_reconcile" class="no_print oe_link_reports">Reconcile</a>
+            </t>
+            <t t-elif="_line_id_model_info[0] == 'account.contract' and _line_id_model_info[1]">
+                &amp;nbsp;<a t-att-data-id="line.get('id')" action="action_open_contract" class="no_print oe_link_reports">Open</a>
+            </t>
+        </xpath>
+        <xpath expr="//td[contains(@t-att-class, 'o_account_report_name_ellipsis')]" position="attributes">
+            <attribute name="t-att-class" add="'o_account_report_name_ellipsis_partner_ledger'" separator=" + "/>
+        </xpath>
+    </template>
+
+
+    <record id="account_report_partner_ledger_multi_currency" model="account.report">
+        <field name="name">Partner Ledger Multi Currency</field>
+        <field name="filter_multi_company">selector</field>
+        <field name="filter_date_range" eval="True" />
+        <field name="default_opening_date_filter">last_month</field>
+        <field name="filter_show_draft" eval="False"/>
+        <field name="filter_unreconciled" eval="False"/>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="filter_period_comparison" eval="False"/>
+        <field name="filter_growth_comparison" eval="False" />
+        <field name="filter_hierarchy">never</field>
+        <field name="filter_account_type" eval="True" />
+        <field name="filter_accounts" eval="True"/>
+        <field name="filter_journals" eval="True"/>
+        <field name="filter_analytic" eval="True" />
+        <field name="filter_partner" eval="True"/>
+        <field name="filter_fiscal_position" eval="False" />
+        <field name="search_bar" eval="True"/>
+        <field name="load_more_limit" eval="80"/>
+        <field name="custom_handler_model_id" ref="model_account_report_partner_ledger_multi_currency_handler"/>
+        <field name="search_template">selferp_l10n_ua_ext.partner_ledger_search_template</field>
+        <field name="line_template">selferp_partner_ledger_multi_currency.line_template_partner_ledger_report</field>
+        <field name="column_ids">
+            <record id="account_report_partner_ledger_multi_currency_journal_code" model="account.report.column">
+                <field name="name">JRNL</field>
+                <field name="expression_label">journal_code</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_partner_ledger_multi_currency_account_code" model="account.report.column">
+                <field name="name">Account</field>
+                <field name="expression_label">account_code</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_partner_ledger_multi_currency_ref" model="account.report.column">
+                <field name="name">Ref</field>
+                <field name="expression_label">ref</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_partner_ledger_multi_currency_matching_number" model="account.report.column">
+                <field name="name">Matching Number</field>
+                <field name="expression_label">matching_number</field>
+                <field name="figure_type">none</field>
+            </record>
+            <record id="account_report_partner_ledger_multi_currency_debit" model="account.report.column">
+                <field name="name">Debit</field>
+                <field name="expression_label">debit</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+            <record id="account_report_partner_ledger_multi_currency_credit" model="account.report.column">
+                <field name="name">Credit</field>
+                <field name="expression_label">credit</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="True"/>
+            </record>
+            <record id="account_report_partner_ledger_multi_currency_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="False"/>
+            </record>
+        </field>
+    </record>
+
+
+</odoo>

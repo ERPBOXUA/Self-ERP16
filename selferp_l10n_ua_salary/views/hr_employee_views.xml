@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="attrs">{'readonly': [('tests_enabled', '=', False)]}</attribute>
+                <attribute name="no_label">1</attribute>
+                <attribute name="required">0</attribute>
+                <attribute name="style">color: #777;</attribute>
+            </xpath>
+
+            <xpath expr="//h1//field[@name='name']/.." position="after">
+                <group>
+                    <field name="last_name" attrs="{'required': [('tests_enabled', '=', False), ('first_name', '=', False)]}"/>
+                    <field name="first_name" attrs="{'required': [('tests_enabled', '=', False), ('last_name', '=', False)]}"/>
+                    <field name="patronymic"/>
+                    <field name="tests_enabled" invisible="1"/>
+                </group>
+            </xpath>
+
+            <page name="hr_settings" position="inside">
+                <group name="salary_data">
+                    <div colspan="4" class="mt24">
+                        <h4 class="mb0">Salary Information</h4>
+                        <hr class="mt0 mb0"/>
+                    </div>
+                    <group string="Sick Leave Rates">
+                        <field name="sick_leave_rate_ids" nolabel="1" colspan="2">
+                            <tree editable="top">
+                                <field name="apply_date"/>
+                                <field name="sick_leave_rate_id" options="{'no_create': True}"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                    <group string="Disability Groups">
+                        <field name="disability_group_ids" nolabel="1" colspan="2">
+                            <tree editable="top">
+                                <field name="apply_date"/>
+                                <field name="disability_group_id" options="{'no_create': True}"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                    <group colspan="4" string="Tax Social Benefits">
+                        <field name="tax_social_benefit_ids" nolabel="1" colspan="2">
+                            <tree editable="top">
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="on_children"/>
+                                <field name="children_qty" attrs="{'required': [('on_children', '=', True)], 'readonly': [('on_children', '=', False)]}"/>
+                                <field name="tax_social_benefit_code_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="value" widget="percentage"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </page>
+
+            <group name="active_group" position="inside">
+                <field name="employment_type"/>
+                <field name="is_labor_book"/>
+                <field name="is_retiring"/>
+                <field name="information_on_receiving_pensions" attrs="{'invisible': [('is_retiring', '=', False)]}"/>
+            </group>
+
+            <group name="payroll_group" position="after">
+                <group name="work_experience" string="Work experience as of hire date">
+                    <field name="hire_date"/>
+                    <field name="work_experience_days"/>
+                    <field name="work_experience_months"/>
+                    <field name="work_experience_years"/>
+                </group>
+            </group>
+
+            <page name="hr_settings" position="after">
+                <page name="military_reg" string="Military registration" groups="hr.group_hr_user">
+                    <group string="Military registration">
+                        <group>
+                            <field name="register_uit"/>
+                            <field name="category_unit"/>
+                            <field name="rank_group"/>
+                            <field name="military_rank"/>
+                            <field name="military_registration_speciality_no"/>
+                        </group>
+                        <group>
+                            <field name="fit_for_military_service"/>
+                            <field name="commissariat_at_registration"/>
+                            <field name="commissariat_at_home_address"/>
+                            <field name="staying_on_a_special_register"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+
+            <field name="passport_id" position="before">
+                <field name="passport_series" />
+            </field>
+
+            <field name="passport_id" position="after">
+                <field name="passport_issuing_authority" />
+                <field name="passport_issue_date" />
+                <field name="passport_validity_date" />
+            </field>
+
+            <field name="address_home_id" position="after">
+                <field name="is_equal_to_registration_address" />
+                <field name="registration_address" attrs="{'invisible': [('is_equal_to_registration_address', '=', True)]}"/>
+            </field>
+
+            <xpath expr="//group/field[@name='coach_id']" position="after">
+                <field name="hr_position_id"/>
+            </xpath>
+
+            <xpath expr="//page[@name='personal_information']/group/group[2]" position="after">
+                <group string="Family members" colspan="2">
+                    <field name="family_ids" nolabel="1" colspan="2">
+                        <tree editable="top">
+                            <field name="family_member"/>
+                            <field name="family_member_name"/>
+                            <field name="family_member_birth_date" style="min-width: 200px;"/>
+                            <field name="family_member_phone"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <field name="family_member"/>
+                                    <field name="family_member_name"/>
+                                    <field name="family_member_birth_date"/>
+                                    <field name="family_member_phone"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </group>
+            </xpath>
+
+            <div name="button_box" position="inside">
+                <button name="action_open_employee_orders"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-book">
+                    <field name="orders_count" widget="statinfo" />
+                </button>
+            </div>
+        </field>
+    </record>
+
+
+</odoo>

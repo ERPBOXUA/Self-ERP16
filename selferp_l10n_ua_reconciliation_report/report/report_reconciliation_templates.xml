@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="reconciliation_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-esc="body_html"/>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="reconciliation_report_body_template">
+        <div class="page">
+            <style>
+                table.o_main_table {
+                    margin-top: 20px;
+                    border-left: 1px solid #eee !important;
+                    border-top: 1px solid #eee !important;
+                }
+
+                .o_main_table tr th,
+                .o_main_table tr td {
+                    border-right: 1px solid #eee !important;
+                    border-bottom: 1px solid #eee !important;
+                    padding: 7px 8px !important;
+                    font-size: 13px !important;
+                }
+            </style>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="text-center">Акт звіряння</h2>
+                    <p class="text-center mb-4">взаємних розрахунків за період з <t t-esc="options['date_from_converted']"/> по <t t-esc="options['date_to_converted']"/><br/>
+                    між <t t-esc="options.get('company_name')"/> та <t t-esc="options.get('selected_partner_ids')[0]"/></p>
+                </div>
+            </div>
+
+            <div class="row pb-4">
+                <div class="col">
+                    <p>Ми, що підписалися нижче, представник <t t-esc="options.get('company_name')"/>, та представник <t t-esc="options.get('selected_partner_ids')[0]"/>, склали цей Акт Звіряння про наступне:<br/>
+                        Стан взаємних розрахунків за період з <t t-esc="options['date_from_converted']"/> по <t t-esc="options['date_to_converted']"/> згідно з даними обліку наступний:</p>
+                </div>
+            </div>
+
+            <t t-set="period_debit" t-value="0"/>
+            <t t-set="period_credit" t-value="0"/>
+            <t t-set="all_debit" t-value="0"/>
+            <t t-set="all_credit" t-value="0"/>
+
+            <t t-if="options">
+                <table class="table table-sm o_main_table" name="compare_table">
+                    <thead>
+                        <tr>
+                            <th colspan="5">За даними  <t t-esc="options.get('company_name')"/></th>
+                            <th colspan="3">За даними <t t-esc="options.get('selected_partner_ids')[0]"/></th>
+                        </tr>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Документ-підстава</th>
+                            <th>Опис</th>
+                            <th>Дебет</th>
+                            <th>Кредит</th>
+                            <th>Дата</th>
+                            <th>Дебет</th>
+                            <th>Кредит</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="initial_balance_line_present" t-value="False"/>
+                        <t t-if="lines">
+                            <t t-foreach="lines" t-as="line">
+
+                                <t t-set="line_id" t-value="line.get('id')"/>
+                                <t t-set="company_debit" t-value="line.get('company_debit')"/>
+                                <t t-set="company_credit" t-value="line.get('company_credit')"/>
+                                <t t-set="partner_debit" t-value="line.get('partner_debit')"/>
+                                <t t-set="partner_credit" t-value="line.get('partner_credit')"/>
+
+                                <tr t-if="'initial' in line_id">
+                                    <t t-set="initial_balance_line_present" t-value="True"/>
+
+                                    <td colspan="3">Початкове сальдо</td>
+                                    <td style="text-align: right; white-space: nowrap">
+                                        <t t-if="company_debit != 0" t-esc="babel_numbers.format_currency(company_debit, '', locale='uk_UA')"/>
+                                    </td>
+                                    <td style="text-align: right; white-space: nowrap">
+                                        <t t-if="company_credit != 0" t-esc="babel_numbers.format_currency(company_credit, '', locale='uk_UA')"/>
+                                    </td>
+                                    <td>Початкове сальдо</td>
+                                    <td style="text-align: right; white-space: nowrap">
+                                        <t t-if="partner_debit != 0" t-esc="babel_numbers.format_currency(partner_debit, '', locale='uk_UA')"/>
+                                    </td>
+                                    <td style="text-align: right; white-space: nowrap">
+                                        <t t-if="partner_credit != 0" t-esc="babel_numbers.format_currency(partner_credit, '', locale='uk_UA')"/>
+                                    </td>
+
+                                    <t t-set="all_debit" t-value="all_debit + company_debit"/>
+                                    <t t-set="all_credit" t-value="all_credit + company_credit"/>
+                                </tr>
+                                <t t-elif="'account.move.line' in line_id">
+                                    <t t-if="not initial_balance_line_present">
+                                        <tr>
+                                            <t t-set="initial_balance_line_present" t-value="True"/>
+
+                                            <td colspan="3">Початкове сальдо</td>
+                                            <td style="text-align: right; white-space: nowrap"></td>
+                                            <td style="text-align: right; white-space: nowrap"></td>
+                                            <td>Початкове сальдо</td>
+                                            <td style="text-align: right; white-space: nowrap"></td>
+                                            <td style="text-align: right; white-space: nowrap"></td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        <td><t t-esc="line.get('name')"/></td>
+                                        <td><t t-esc="line.get('document')"/></td>
+                                        <td><t t-esc="line.get('record_type')"/></td>
+                                        <td style="text-align: right; white-space: nowrap">
+                                            <t t-if="company_debit != 0"  t-esc="babel_numbers.format_currency(company_debit, '', locale='uk_UA')"/>
+                                        </td>
+                                        <td style="text-align: right; white-space: nowrap">
+                                            <t t-if="company_credit != 0"  t-esc="babel_numbers.format_currency(company_credit, '', locale='uk_UA')"/>
+                                        </td>
+                                        <td><t t-esc="line.get('name')"/></td>
+                                        <td style="text-align: right; white-space: nowrap">
+                                            <t t-if="partner_debit != 0"  t-esc="babel_numbers.format_currency(partner_debit, '', locale='uk_UA')"/>
+                                        </td>
+                                        <td style="text-align: right; white-space: nowrap">
+                                            <t t-if="partner_credit != 0"  t-esc="babel_numbers.format_currency(partner_credit, '', locale='uk_UA')"/>
+                                        </td>
+                                    </tr>
+
+                                    <t t-set="period_debit" t-value="period_debit + company_debit"/>
+                                    <t t-set="period_credit" t-value="period_credit + company_credit"/>
+                                </t>
+                            </t>
+
+                            <t t-set="all_debit" t-value="all_debit + period_debit"/>
+                            <t t-set="all_credit" t-value="all_credit + period_credit"/>
+
+                            <tr>
+                                <td colspan="3">Обороти за період</td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="period_debit != 0" t-esc="babel_numbers.format_currency(period_debit, '', locale='uk_UA')"/>
+                                </td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="period_credit != 0" t-esc="babel_numbers.format_currency(period_credit, '', locale='uk_UA')"/>
+                                </td>
+                                <td>Обороти за період</td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="period_credit != 0" t-esc="babel_numbers.format_currency(period_credit, '', locale='uk_UA')"/>
+                                </td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="period_debit != 0" t-esc="babel_numbers.format_currency(period_debit, '', locale='uk_UA')"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">Кінцеве сальдо</td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="all_debit > all_credit" t-esc="babel_numbers.format_currency(all_debit - all_credit, '', locale='uk_UA')"/>
+                                </td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="all_credit > all_debit" t-esc="babel_numbers.format_currency(all_credit - all_debit, '', locale='uk_UA')"/>
+                                </td>
+                                <td>Кінцеве сальдо</td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="all_credit > all_debit" t-esc="babel_numbers.format_currency(all_credit - all_debit, '', locale='uk_UA')"/>
+                                </td>
+                                <td style="text-align: right; white-space: nowrap">
+                                    <t t-if="all_debit > all_credit" t-esc="babel_numbers.format_currency(all_debit - all_credit, '', locale='uk_UA')"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <div style="page-break-inside: avoid;">
+                    <t t-if="all_debit > all_credit">
+                        <p>За результатами Акту звіряння встановлено, що сторона <t t-esc="options.get('selected_partner_ids')[0]"/>
+                            має заборгованість перед <t t-esc="options.get('company_name')"/> у розмірі
+                            <t t-esc="babel_numbers.format_currency(all_debit - all_credit, 'грн.', locale='uk_UA')"/></p>
+                    </t>
+                    <t t-elif="all_credit > all_debit">
+                        <p>За результатами Акту звіряння встановлено, що сторона <t t-esc="options.get('company_name')"/>
+                            має заборгованість перед <t t-esc="options.get('selected_partner_ids')[0]"/> у розмірі
+                            <t t-esc="babel_numbers.format_currency(all_credit - all_debit, 'грн.', locale='uk_UA')"/></p>
+                    </t>
+                    <t t-else="">
+                        <p>За результатами Акту звірки встановлено, що станом на <t t-esc="options['date_to_converted']"/> відсутня будь-яка заборгованість між сторонами</p>
+                    </t>
+                    <div class="report-custom-template-signatures mb-5">
+                        <div class="signature-block type-2">
+                            <div class="title">Від <t t-esc="options.get('company_name')"/>:</div>
+                            <div class="signature-field">
+                                <div class="signature-line"></div>
+                                <div class="sub-text"><i>М.П.</i></div>
+                            </div>
+                        </div>
+                        <div class="signature-block type-2">
+                            <div class="title">Від <t t-esc="options.get('selected_partner_ids')[0]"/>:</div>
+                            <div class="signature-field">
+                                <div class="signature-line"></div>
+                                <div class="sub-text"><i>М.П.</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </template>
+
+
+</odoo>

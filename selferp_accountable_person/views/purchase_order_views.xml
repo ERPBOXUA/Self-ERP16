@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.selferp_accountable_person</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_ref" position="after">
+                <field name="is_advance_report" invisible="1"/>
+            </field>
+
+            <field name="partner_id" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_advance_report', '=', True)]}</attribute>
+            </field>
+
+            <field name="partner_id" position="after">
+                <field name="partner_id"
+                       required="True"
+                       placeholder="Name, TIN, Email, or Reference"
+                       attrs="{'invisible': [('is_advance_report', '!=', True)]}"
+                       options="{'no_create': True, 'no_create_edit': True}"
+                       context="{'res_partner_search_mode': 'supplier', 'show_vat': True}"
+                       domain="[
+                            ('company_id', 'in', (company_id, False)),
+                            ('is_company', '=', False),
+                            ('employee_ids', '!=', False)
+                        ] if is_advance_report else [
+                            ('company_id', 'in', (company_id, False))
+                        ]"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="purchase_order_action_purchase_from_accountable_persons" model="ir.actions.act_window">
+        <field name="name">Purchases from accountable persons</field>
+        <field name="res_model">purchase.order</field>
+        <field name="domain">[('is_advance_report', '=', True)]</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+        <field name="search_view_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="context">{'default_is_advance_report': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No purchase orders from accountable persons found. Let's create one!</p>
+            <p>These documents are used in mutual settlements with accountable persons</p>
+        </field>
+    </record>
+
+
+    <record id="purchase_order_action_purchase_from_accountable_persons_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="purchase.purchase_order_view_tree"/>
+        <field name="act_window_id" ref="purchase_order_action_purchase_from_accountable_persons"/>
+    </record>
+
+
+    <record id="purchase_order_action_purchase_from_accountable_persons_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2" />
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="purchase.purchase_order_view_kanban_without_dashboard"/>
+        <field name="act_window_id" ref="purchase_order_action_purchase_from_accountable_persons"/>
+    </record>
+
+
+    <menuitem id="purchase_order_menu_purchase_from_accountable_persons"
+              action="purchase_order_action_purchase_from_accountable_persons"
+              parent="purchase.menu_procurement_management"
+              sequence="10"/>
+
+
+</odoo>

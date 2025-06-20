@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="product_uom_tree_view" model="ir.ui.view">
+        <field name="name">uom.uom.tree.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_tree_view" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="uom_type" position="after">
+                <field name="code" />
+            </field>
+        </field>
+    </record>
+
+
+    <record id="product_uom_form_view" model="ir.ui.view">
+        <field name="name">uom.uom.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_form_view" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="uom_type" position="after">
+                <field name="code" />
+            </field>
+        </field>
+    </record>
+
+
+    <record id="uom_uom_view_search" model="ir.ui.view">
+        <field name="name">uom.uom.view.search.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.uom_uom_view_search" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="code" />
+            </field>
+        </field>
+    </record>
+
+
+
+
+    <record id="product_uom_categ_form_view" model="ir.ui.view">
+        <field name="name">uom.category.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">uom.category</field>
+        <field name="inherit_id" ref="uom.product_uom_categ_form_view" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_ids']/tree/field[@name='uom_type']" position="after">
+                <field name="code" decoration-bf="uom_type == 'reference'"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

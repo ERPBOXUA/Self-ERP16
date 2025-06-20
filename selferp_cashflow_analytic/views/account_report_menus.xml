@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="account_report_action_cash_flow_analytic" model="ir.actions.client">
+        <field name="name">Cash Flow Analytic</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('selferp_cashflow_analytic.account_report_cash_flow_analytic')}"/>
+    </record>
+
+
+    <menuitem id="account_report_menu_cash_flow_analytic"
+              name="Cash Flow Analytic"
+              parent="account.account_reports_legal_statements_menu"
+              sequence="200"
+              action="account_report_action_cash_flow_analytic"
+              groups="account.group_account_readonly"/>
+
+
+</odoo>

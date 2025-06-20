@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="hr_payroll_structure_type_civil_law_contract" model="hr.payroll.structure.type">
+        <field name="name">UA Civil Law Contract</field>
+        <field name="country_id" eval="False"/>
+    </record>
+
+    <record id="hr_payroll_structure_type_hourly_wages" model="hr.payroll.structure.type">
+        <field name="name">UA Hourly Wages</field>
+        <field name="wage_type">hourly</field>
+        <field name="country_id" eval="False"/>
+    </record>
+
+</odoo>

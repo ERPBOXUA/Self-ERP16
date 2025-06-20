@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_payroll_benefit_view_tree" model="ir.ui.view">
+        <field name="name">hr.payroll.benefit.view.tree</field>
+        <field name="model">hr.payroll.benefit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="code"/>
+                <field name="schedule_pay"/>
+                <field name="display_details"/>
+                <field name="account_debit_id"/>
+                <field name="account_credit_id"/>
+                <field name="active" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_payroll_benefit_view_form" model="ir.ui.view">
+        <field name="name">hr.payroll.benefit.view.form</field>
+        <field name="model">hr.payroll.benefit</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_title" colspan="4">
+                        <label for="name"/>
+                        <h2>
+                            <field name="name"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="type"/>
+                            <field name="schedule_pay"/>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="is_alimony" attrs="{'invisible': [('type', '!=', 'deduction')]}"/>
+                            <field name="charge_type" attrs="{'invisible': [('type', '!=', 'accrual')]}"/>
+                            <field name="account_debit_id"/>
+                            <field name="account_credit_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_payroll_benefit_view_search" model="ir.ui.view">
+        <field name="name">hr.payroll.benefit.view.search</field>
+        <field name="model">hr.payroll.benefit</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="Archived" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_type" string="Type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter name="group_schedule_pay" string="Scheduled Pay" domain="[]" context="{'group_by':'schedule_pay'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="hr_payroll_benefit_action" model="ir.actions.act_window">
+        <field name="name">Accruals and Deductions</field>
+        <field name="res_model">hr.payroll.benefit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="hr_payroll_benefit_menu"
+              name="Accruals and Deductions"
+              action="hr_payroll_benefit_action"
+              parent="hr_payroll.menu_hr_salary_configuration"
+              sequence="60"/>
+
+
+</odoo>

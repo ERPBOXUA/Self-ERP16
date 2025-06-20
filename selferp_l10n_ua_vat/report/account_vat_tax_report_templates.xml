@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!--
+        Report rendering templates
+    -->
+
+    <template id="account_vat_tax_report_template_J0200125">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0200125'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0200525">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0200525'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0215225">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0215225'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0200625">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0200625'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0299825">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0299825'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0299325">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0299325'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0215725">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0215725'"/>
+        </t>
+    </template>
+
+
+    <template id="account_vat_tax_report_template_J0215825">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0215825'"/>
+        </t>
+    </template>
+
+
+</odoo>

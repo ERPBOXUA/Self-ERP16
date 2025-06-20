@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.selferp_l10n_ua_currency</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="is_import" invisible="1"/>
+                <field name="vendor_bill_id" invisible="1"/>
+            </field>
+
+            <button name="do_print_picking" position="before">
+                <button name="action_create_landed_cost"
+                        type="object"
+                        groups="stock.group_stock_manager"
+                        attrs="{'invisible': ['|', ('is_import', '=', False), ('state', '!=', 'done')]}"
+                        string="Create Landed Cost"
+                        class="btn-primary"/>
+            </button>
+
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_show_vendor_bill"
+                        type="object"
+                        groups="account.group_account_invoice"
+                        attrs="{'invisible': [('vendor_bill_id', '=', False)]}"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        string="Vendor Bill"/>
+                <button name="action_show_landed_costs"
+                        type="object"
+                        groups="stock.group_stock_manager"
+                        attrs="{'invisible': [('landed_cost_count', '=', 0)]}"
+                        class="oe_stat_button"
+                        icon="fa-plus-square">
+                    <field name="landed_cost_count" widget="statinfo" string="Landed Costs"/>
+                </button>
+            </xpath>
+
+            <page name="extra" position="before">
+                <page name="customs_declaration"
+                      attrs="{'invisible': [('is_import', '!=', True)]}"
+                      string="Customs Declaration">
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="is_company_currency" invisible="1"/>
+
+                    <group>
+                        <group>
+                            <field name="customs_declaration_date"
+                                   attrs="{'required': [('is_import', '=', True)]}"
+                                   string="Date"/>
+                            <field name="customs_declaration_currency_rate"
+                                   attrs="{'invisible': [('is_company_currency', '=', True)], 'required': [('is_import', '=', True)]}"
+                                   string="Currency Rate"/>
+                            <field name="cargo_customs_number"/>
+                            <field name="customs_fee"/>
+                        </group>
+                    </group>
+
+                    <separator string="Advance Payments" attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}"/>
+                    <field name="cd_can_be_advance_ids" invisible="1"/>
+                    <field name="advance_line_ids"
+                           nolabel="1"
+                           attrs="{'invisible': [('state', 'in', ('done', 'cancel'))]}"
+                           options="{'no_create': True}"
+                           context="{'tree_view_ref': 'selferp_l10n_ua_currency.account_move_line_view_tree_prepay'}"/>
+
+                    <separator string="Parts of Custom Declaration"/>
+                    <group>
+                        <group>
+                            <field name="customs_cost"/>
+                            <field name="customs_duty_UKTZED"/>
+                            <field name="customs_duty_rate" attrs="{'invisible': [('customs_duty_UKTZED', '=', True)]}"/>
+                            <field name="customs_duty_amount" attrs="{'invisible': [('customs_duty_UKTZED', '=', True)]}"/>
+                            <field name="excise_duty_rate"/>
+                            <field name="excise_duty_amount"/>
+                        </group>
+                        <group>
+                            <field name="vat_rate"/>
+                            <field name="vat_amount" attrs="{'invisible': [('customs_duty_UKTZED', '=', True)]}"/>
+                            <field name="include_vat_to_cost"/>
+                        </group>
+                    </group>
+                    <separator string="Products from Custom Declaration"/>
+                    <button name="allocate_customs_amount" type="object" string="Allocate" class="btn-primary"/>
+                    <field name="move_ids">
+                        <tree edit="false" create="false" delete="false">
+                            <field name="product_id" readonly="1"/>
+                            <field name="quantity_done"/>
+                            <field name="customs_declaration_cost" sum="Total"/>
+                            <field name="customs_cost" sum="Total"/>
+                            <field name="customs_duty_amount" sum="Total"/>
+                            <field name="excise_duty_amount" sum="Total"/>
+                            <field name="vat_amount" sum="Total"/>
+                            <field name="customs_fee" sum="Total"/>
+                        </tree>
+                    </field>
+                    <separator string="Customs Declaration"/>
+                    <field name="customs_declaration_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="product_id" options="{'no_create': True}"/>
+                            <field name="description"/>
+                            <field name="amount"/>
+                            <field name="company_currency_id" invisible="1"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <group>
+                                    <field name="product_id" options="{'no_create': True}"/>
+                                </group>
+                                <group>
+                                    <field name="amount"/>
+                                    <field name="company_currency_id" invisible="1"/>
+                                </group>
+                            </group>
+
+                            <field name="description" nolabel="1" placeholder="Description"/>
+                        </form>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+
+</odoo>

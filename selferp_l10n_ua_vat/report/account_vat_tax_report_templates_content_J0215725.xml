@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="account_vat_tax_report_template_content_J0215725" name="VAT Tax Report template J0215725">
+        <div t-translation="off" t-att-class="'selferp_editable_report_container selferp_edit_container container' if edit_mode else 'selferp_editable_report_container container-fluid'">
+            <div class="row mb-2">
+                <div class="col-4 offset-8 report_head_text">
+                    Додаток 6<br/>
+                    до податкової декларації з податку на додану вартість
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <table class="report_custom_table w-100">
+                        <tr>
+                            <td rowspan="3" style="width: 80px; vertical-align: middle; text-align: center;">01</td>
+                            <td rowspan="3" style="text-align: center;">
+                                <h5 class="report-main-title">
+                                    Довідка про суму від'ємного значення звітного (податкового) періоду, яка
+                                    зараховується до складу податкового кредиту наступного звітного (податкового) періоду (Д2)
+                                </h5>
+                            </td>
+                            <td>011</td>
+                            <td class="report_data_elem_container" style="width: 30px;">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_radio">
+                                    <t t-set="cell_name" t-value="'HZ'"/>
+                                    <t t-set="radio_value" t-value="'HZ'"/>
+                                    <t t-set="default_value" t-value="'HZ'"/>
+                                </t>
+                            </td>
+                            <td>Звітний</td>
+                        </tr>
+                        <tr>
+                            <td>012</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_radio">
+                                    <t t-set="cell_name" t-value="'HZ'"/>
+                                    <t t-set="radio_value" t-value="'HZN'"/>
+                                    <t t-set="default_value" t-value="'HZ'"/>
+                                </t>
+                            </td>
+                            <td>Звітний новий</td>
+                        </tr>
+                        <tr>
+                            <td>013</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_radio">
+                                    <t t-set="cell_name" t-value="'HZ'"/>
+                                    <t t-set="radio_value" t-value="'HZU'"/>
+                                    <t t-set="default_value" t-value="'HZ'"/>
+                                </t>
+                            </td>
+                            <td>Уточнюючий</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex align-items-start">
+                    <table class="report_custom_table" style="width: 40%;">
+                        <tr>
+                            <td style="width: 80px; vertical-align: middle; text-align: center;">02</td>
+                            <td style="padding-right: 30px; text-align: center;">Звітний (податковий) період</td>
+                        </tr>
+                    </table>
+                    <div class="full_bordered_block_value_container mx-5">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZY'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(рік)</div>
+                    </div>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZM'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(місяць)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex align-items-start">
+                    <table class="report_custom_table" style="width: 40%;">
+                        <tr>
+                            <td style="width: 80px; vertical-align: middle; text-align: center;">03</td>
+                            <td style="padding-right: 30px; text-align: center;">Звітний (податковий) період, що уточнюється</td>
+                        </tr>
+                    </table>
+                    <div class="full_bordered_block_value_container mx-5">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZYP'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(рік)</div>
+                    </div>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZKVP'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(квартал)</div>
+                    </div>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_value report_data_elem_container text-center" style="width: 80px;">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HZMP'"/>
+                            </t>
+                        </div>
+                        <div class="ub_help_info">(місяць)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <table class="report_custom_table mb-1 w-100">
+                        <tr>
+                            <td style="width: 80px; vertical-align: middle; text-align: center;">ЧВ</td>
+                            <td class="report_data_elem_container" style="width: 100px; vertical-align: middle; text-align: center;">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'HCHV'"/>
+                                </t>
+                            </td>
+                            <td class="px-4 py-1 text-center">
+                                Частка використання сплаченого (нарахованого) податку за придбаними (ввезеними) товарами (послугами),
+                                необоротними активами між оподатковуваними та неоподатковуваними операціями
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <table class="report_custom_table mb-1 w-100">
+                        <tr>
+                            <td rowspan="2" style="width: 80px; vertical-align: middle; text-align: center;">04</td>
+                            <td rowspan="2" style="width: 100px; vertical-align: middle; text-align: center;">Платник</td>
+                            <td class="report_data_elem_container px-4 py-1 text-center" style="border-bottom: 1px solid transparent;">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_textarea">
+                                    <t t-set="cell_name" t-value="'HNAME'"/>
+                                    <t t-set="rows" t-value="3"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="report_data_elem_container px-4 py-1 text-center">
+                                <div class="date_num_block">
+                                    <div class="underlined_block_value_container d-flex mx-auto" style="width: 300px;">
+                                        <div class="label_text" style="width: 30px;">від</div>
+                                        <div class="ub_value" style="margin-right: 10px; width: 100px;">
+                                            <div class="report_data_elem_container date_field">
+                                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                                    <t t-set="cell_name" t-value="'HDDGV'"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="label_text" style="width: 20px;">№</div>
+                                        <div class="ub_value" style="width: 150px;">
+                                            <div class="report_data_elem_container num_field">
+                                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                                    <t t-set="cell_name" t-value="'HNDGV'"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="full_bordered_block_value_container">
+                        <div class="ub_help_info">
+                            (повне найменування (прізвище, ім’я, по батькові (за наявності)) платника податків згідно з реєстраційними документами, дата та номер договору (угоди))
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col d-flex">
+                    <div style="margin-right: 5%; width: 80%;">
+                        <table class="report_custom_table w-100">
+                            <tr>
+                                <td style="width: 80px; vertical-align: middle; text-align: center;">041</td>
+                                <td style="padding-right: 30px;">
+                                    Податковий номер платника податку<sup>1</sup> або серія (за наявності) та номер паспорта<sup>2</sup>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="full_bordered_block_value_container m-0" style="width: 15%;">
+                        <div class="ub_value report_data_elem_container text-center">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HTIN'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col d-flex">
+                    <div style="margin-right: 5%; width: 80%;">
+                        <table class="report_custom_table w-100">
+                            <tr>
+                                <td style="width: 80px; vertical-align: middle; text-align: center;">05</td>
+                                <td style="padding-right: 30px; text-align: center;">Індивідуальний податковий номер платника податку на додану вартість</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="full_bordered_block_value_container m-0" style="width: 15%;">
+                        <div class="ub_value report_data_elem_container text-center">
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                <t t-set="cell_name" t-value="'HNPDV'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <p class="report_subtitle_text mb-2">Таблиця 1. Розрахунок частки використання товарів/послуг та необоротних активів в оподатковуваних/неоподатковуваних операціях</p>
+            <div class="row mb-4">
+                <div class="col">
+                    <table class="report_custom_table table table-bordered w-100">
+                        <tr style="text-align: center">
+                            <td rowspan="2">
+                                № з/п
+                            </td>
+                            <td rowspan="2">Платник</td>
+                            <td rowspan="2">Податковий період, за який здійснюється розрахунок</td>
+                            <td colspan="2">Обсяги постачання (без податку на додану вартість)</td>
+                            <td colspan="2">Частка* використання товарів/послуг, необоротних активів в:</td>
+                        </tr>
+                        <tr>
+                            <td>загальний обсяг постачання (сума значень рядків 1.1, 1.2, 1.3, 2.1, 2.2, 3, 5 та 7 колонки А декларації та всіх уточнюючих розрахунків), грн**</td>
+                            <td>оподатковувані операції (сума значень рядків 1.1, 1.2, 1.3, 2.1, 3 та 7 колонки А декларації та всіх уточнюючих розрахунків), грн**</td>
+                            <td>оподатковуваних операціях (колонка 5 х 100 % / колонка 4)</td>
+                            <td>неоподатковуваних операціях (100 - (колонка 5 х 100 % / колонка 4))</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Який здійснює розрахунок відповідно до пункту 199.2 статті 199 розділу V Кодексу</td>
+                            <td>Попередній календарний рік</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R011G4'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R011G5'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R011G6'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R011G7'"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Який здійснює розрахунок відповідно до пункту 199.3 статті 199 розділу V Кодексу</td>
+                            <td>Перший звітний податковий період, у якому задекларовані такі операції</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R012G4'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R012G5'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R012G6'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R012G7'"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.1</td>
+                            <td rowspan="3">Який здійснює розрахунок відповідно до пункту 199.4 статті 199 розділу V Кодексу</td>
+                            <td>Один календарний рік (поточний)</td>
+
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0131G4'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0131G5'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0131G6'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0131G7'"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.2</td>
+                            <td>Два календарних роки (поточний та попередній)</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0132G4'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0132G5'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0132G6'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0132G7'"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.3</td>
+                            <td>Три календарних роки (поточний та два попередніх)</td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0133G4'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0133G5'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0133G6'"/>
+                                </t>
+                            </td>
+                            <td class="report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'R0133G7'"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mb-1" style="width: 100px; border-bottom: 1px solid black; padding-top: 10px;"/>
+                    <div class="report_text mb-2">
+                        * Для р. 1: застосовується протягом поточного календарного року для визначення податкового зобов’язання при заповненні рядків 4.1, 4.2 та 4.3 декларації (товари/послуги, необоротні активи); розраховується у декларації за січень (I квартал).<br/>
+                        Для р. 2: застосовується протягом поточного календарного року для визначення податкового зобов’язання при заповненні рядків 4.1, 4.2 та 4.3 декларації (товари/послуги, необоротні активи); розраховується у декларації звітного періоду, у якому вперше декларуються неоподатковувані операції.
+                    </div>
+                    <div class="report_text mb-2">Для р. 3.1: застосовується для перерахунку за підсумками календарного року (товари/послуги, необоротні активи); розраховується у декларації за грудень (IV квартал) (у разі анулювання реєстрації платника податку – у декларації останнього податкового періоду, коли відбулося таке анулювання).</div>
+                    <div class="report_text mb-2">
+                        Для рядків 3.1 – 3.3: застосовується для перерахунку за підсумками одного, двох і трьох календарних років, що настають за роком, у якому необоротні активи, придбані до 01 липня 2015 року, почали
+                        використовуватися (введені в експлуатацію); розраховується у декларації за грудень (IV квартал) (у разі анулювання реєстрації платника податку – у декларації останнього податкового періоду, коли відбулося таке
+                        анулювання).
+                    </div>
+                    <div class="report_text mb-3">
+                        ** Для перерахунку частки використання необоротних активів, придбаних до 01 липня 2015 року, в оподатковуваних операціях за підсумками двох і трьох календарних років використовуються значення рядків
+                        декларацій та розрахунків коригування, зазначених у назвах граф 4 і 5 цього додатка, у редакції, чинній на кінець другого та третього років використання відповідно (у разі анулювання реєстрації платника податку – на
+                        кінець податкового періоду, коли відбулося таке анулювання).
+                    </div>
+                </div>
+            </div>
+
+            <p class="report_subtitle_text mb-0">Таблиця 2. Перерахунок* частки використання товарів/послуг та необоротних активів в оподатковуваних операціях</p>
+            <div class="row mb-4" style="page-break-inside: avoid;">
+                <div class="col">
+                    <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                    <table class="report_custom_table table table-bordered w-100">
+                        <tr style="text-align: center">
+                            <td rowspan="2">
+                                № з/п
+                            </td>
+                            <td colspan="2" style="width: 25%;">Податкова накладна, складена відповідно до пункту 199.1 статті 199 розділу V Кодексу</td>
+                            <td colspan="2" style="width: 25%;">Розрахунок коригування до податкової накладної, складеної відповідно до пункту 199.1 статті 199 розділу V Кодексу</td>
+                            <td colspan="3" style="width: 25%;">Обсяги постачання, що підлягають коригуванню</td>
+                            <td colspan="3" style="width: 25%;">Сума податку, яка збільшує або зменшує (зі знаком "-") суму податкових зобов’язань</td>
+                        </tr>
+                        <tr>
+                            <td>дата</td>
+                            <td>номер</td>
+                            <td>дата</td>
+                            <td>номер</td>
+                            <td>за основною ставкою</td>
+                            <td>за ставкою 7%</td>
+                            <td>за ставкою 14%</td>
+                            <td>за основною ставкою</td>
+                            <td>за ставкою 7%</td>
+                            <td>за ставкою 14%</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                        </tr>
+                        <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table">
+                            <t t-set="table_name">T2RXXXX</t>
+                            <t t-set="min_row_count" t-value="3"/>
+                        </t>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">Усього</td>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R02G6'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R02G7'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R02G8'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R02G9'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R02G10'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                            <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_table_cell">
+                                <t t-set="cell_name" t-value="'R02G11'"/>
+                                <t t-set="readonly" t-value="True"/>
+                            </t>
+                        </tr>
+                    </table>
+                    <div class="mb-1" style="width: 100px; border-bottom: 1px solid black; padding-top: 10px;"/>
+                    <div class="report_text mb-3">
+                        * Здійснюється за підсумками поточного календарного року і результати відображаються у рядках 4.1 (4.1.1), 4.2 (4.2.1) та/або 4.3 (4.3.1) декларації за останній податковий період року (у разі анулювання реєстрації
+                        платника податку – у декларації за останній податковий період, коли відбулося таке анулювання).
+                    </div>
+                </div>
+            </div>
+
+            <div style="page-break-inside: avoid;">
+                <p class="report_subtitle_text mb-0">Таблиця 3. Перерахунок* частки використання необоротних активів, придбаних до 01 липня 2015 року, в оподатковуваних операціях</p>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                        <table class="report_custom_table table table-bordered w-100">
+                            <tr style="text-align: center">
+                                <td rowspan="2">
+                                    № з/п
+                                </td>
+                                <td rowspan="2">Кількість календарних років, що настали за роком, в якому необоротні активи почали використовуватись (введені в експлуатацію)</td>
+                                <td colspan="2">Вартість придбання необоротних активів (з урахуванням розрахунків коригування у разі їх наявності)</td>
+                                <td rowspan="2">Фактично включено до податкового кредиту з урахуванням визначеної частки використання</td>
+                                <td rowspan="2">Підлягає включенню до податкового кредиту з урахуванням перерахованої частки** за результатом одного/двох/трьох календарних років</td>
+                                <td rowspan="2" style="width: 22%;">
+                                    Коригування податкового кредиту у зв’язку з перерахунком частки використання необоротних активів в оподатковуваних операціях (колонка 6 - колонка 5) -
+                                    значення цього рядка (+/-) переноситься до рядка 15 декларації за грудень (IV квартал) того року, що настає за роком, в якому вони почали використовуватись (у
+                                    разі анулювання реєстрації платника податку – у декларації останнього податкового періоду, коли відбулося таке анулювання)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R031G3'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R031G4'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R031G5'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R031G6'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R031G7'"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R032G3'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R032G4'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R032G5'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R032G6'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R032G7'"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>3</td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R033G3'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R033G4'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R033G5'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R033G6'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R033G7'"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="mb-1" style="width: 100px; border-bottom: 1px solid black; padding-top: 10px;"/>
+                        <div class="report_text mb-2">
+                            * Заповнюється при перерахунку частки використання необоротних активів, придбаних до 01 липня 2015 року, в оподатковуваних операціях за результатами одного, двох і трьох календарних років, що настають за
+                            роком, в якому вони почали використовуватися (введені в експлуатацію).
+                        </div>
+                        <div class="report_text mb-2">** Визначається згідно зі значенням колонки 6 рядків 3.1 – 3.3 таблиці 1.</div>
+                    </div>
+                </div>
+
+                <p class="report_subtitle_text mb-0">Таблиця 4. Розрахунок розподілу сум податку на додану вартість, нарахованого (сплаченого) у зв’язку з отриманням товарів/послуг, при постачанні яких застосовуються
+                    одночасно касовий метод визначення податкових зобов’язань і податкового кредиту та загальні правила визначення податкових зобов’язань і податкового кредиту</p>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="report_text" style="margin-bottom: 2px; text-align: right;">(грн)</div>
+                        <table class="report_custom_table table table-bordered w-100">
+                            <tr style="text-align: center">
+                                <td rowspan="3" colspan="2">Залишок з попереднього(іх) періоду(ів) неоплачених товарів/послуг для касового методу</td>
+                                <td colspan="8">Придбання товарів/послуг</td>
+                                <td rowspan="3" colspan="2">Оплата із залишку з попереднього(іх) періоду(ів) неоплачених товарів/послуг для касового методу (з колонок 1 та 2 відповідно)</td>
+                                <td rowspan="3" colspan="2">
+                                    Залишок неоплачених товарів/послуг для застосування касового методу, що переноситься до колонок 1 та 2 відповідно
+                                    таблиці 4 розрахунку за наступний звітний (податковий) період
+                                </td>
+                            </tr>
+                            <tr style="text-align: center">
+                                <td colspan="2" rowspan="2">оплачені</td>
+                                <td colspan="2" rowspan="2">неоплачені</td>
+                                <td colspan="4">з них</td>
+                            </tr>
+                            <tr style="text-align: center">
+                                <td colspan="2">для касового методу</td>
+                                <td colspan="2">не для касового методу</td>
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість</td>
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість*</td>
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість</td>
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість</td>
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість*</td>
+                                <td>обсяг (без податку на додану вартість)</td>
+                                <td>податок на додану вартість*</td>
+                                <td>обсяг (без податку на додану вартість)**</td>
+                                <td>податок на додану вартість***</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G1'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G2'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G3'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G4'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G5'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G6'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G7'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G8'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G9'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G10'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G11'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G12'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G13'"/>
+                                    </t>
+                                </td>
+                                <td class="report_data_elem_container">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'R041G14'"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="mb-1" style="width: 100px; border-bottom: 1px solid black; padding-top: 10px;"/>
+                        <div class="report_text mb-2">* Включається до податкового кредиту за наявності податкової накладної.</div>
+                        <div class="report_text mb-2">** Розраховується за формулою (значення колонки 1 - значення колонки 11 + значення колонки 7).</div>
+                        <div class="report_text mb-2">*** Розраховується за формулою (значення колонки 2 - значення колонки 12 + значення колонки 8).</div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col d-flex">
+                        <table class="report_custom_table table table-bordered">
+                            <tr>
+                                <td style="width: 160px;">Дата подання</td>
+                                <td class="report_data_elem_container" style="width: 160px;">
+                                    <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                        <t t-set="cell_name" t-value="'HFILL'"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="report_text" style="padding-left: 80px; margin-bottom: 0;">Наведена інформація є повною і достовірною.</p>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col d-flex">
+                        <p class="report_text" style="width: 33%">Керівник (уповноважена особа) / фізична<br/> особа (законний представник)</p>
+                        <div class="full_bordered_block_value_container m-0" style="width: 40%;">
+                            <div class="ub_value report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'HBOS'"/>
+                                </t>
+                            </div>
+                            <div class="ub_help_info">(Власне ім’я ПРІЗВИЩЕ)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col d-flex">
+                        <p class="report_text" style="width: 33%">Реєстраційний номер облікової картки платника<br/> податків або серія (за наявності) та номер паспорта<sup>2</sup></p>
+                        <div class="full_bordered_block_value_container m-0" style="width: 30%;">
+                            <div class="ub_value report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'HKBOS'"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col d-flex">
+                        <p class="report_text" style="width: 33%">Головний бухгалтер (особа, відповідальна за<br/> ведення бухгалтерського обліку)</p>
+                        <div class="full_bordered_block_value_container m-0" style="width: 40%;">
+                            <div class="ub_value report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'HBUH'"/>
+                                </t>
+                            </div>
+                            <div class="ub_help_info">(Власне ім’я ПРІЗВИЩЕ)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col d-flex">
+                        <p class="report_text" style="width: 33%">Реєстраційний номер облікової картки платника<br/> податків або серія (за наявності)
+                            та номер паспорта<sup>2</sup></p>
+                        <div class="full_bordered_block_value_container m-0" style="width: 30%;">
+                            <div class="ub_value report_data_elem_container">
+                                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                                    <t t-set="cell_name" t-value="'HKBUH'"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col">
+                        <div style="width: 100px; height: 2px; border-bottom: 1px solid black;"/>
+                        <p class="report_text mb-2">
+                            <sup>1</sup> Зазначається код за ЄДРПОУ платника податку або реєстраційний (обліковий) номер
+                            платника податків, який присвоюється контролюючими органами, або реєстраційний номер облікової картки платника податків –
+                            фізичної особи.
+                        </p>
+                        <p class="report_text">
+                            <sup>2</sup> Серію (за наявності) та номер паспорта зазначають фізичні особи, які через свої релігійні
+                            переконання відмовляються від прийняття реєстраційного номера облікової картки платника податків та офіційно повідомили
+                            про це відповідний контролюючий орган і мають відмітку у паспорті.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+
+
+    <template id="account_vat_tax_report_template_content_J0215725_T2RXXXX" name="VAT Tax Report template J0215725 (table T2RXXXX)">
+        <tr t-translation="off">
+            <td class="selferp_table_row_number"><t t-out="row_index + 1"/></td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG2D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG3S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG4D</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG5S</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG6</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG7</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG8</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG9</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG10</t>
+                </t>
+            </td>
+            <td class="report_data_elem_container">
+                <t t-call="selferp_l10n_ua_ext.account_editable_report_template_element_text">
+                    <t t-set="cell_name">T2RXXXXG11</t>
+                </t>
+            </td>
+        </tr>
+    </template>
+
+
+</odoo>

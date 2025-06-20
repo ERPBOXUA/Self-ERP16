@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="hr_salary_dictionaries_menu"
+              name="Salary Dictionaries"
+              parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+              sequence="90"
+              groups="hr_payroll.group_hr_payroll_manager">
+
+        <menuitem id="hr_salary_minimum_wage_menu"
+                  action="hr_salary_minimum_wage_action"
+                  name="Minimum Wage"
+                  sequence="10"/>
+
+        <menuitem id="hr_salary_cost_of_living_menu"
+                  action="hr_salary_cost_of_living_action"
+                  name="Cost Of Living"
+                  sequence="20"/>
+
+        <menuitem id="hr_salary_inflation_index_menu"
+                  action="hr_salary_inflation_index_action"
+                  name="Inflation Indices"
+                  sequence="30"/>
+
+        <menuitem id="hr_salary_sick_leave_rate_menu"
+                  action="hr_salary_sick_leave_rate_action"
+                  name="Sick Leave Rates"
+                  sequence="40"/>
+
+        <menuitem id="hr_salary_disability_group_menu"
+                  action="hr_salary_disability_group_action"
+                  name="Disability Groups"
+                  sequence="50"/>
+
+        <menuitem id="hr_employee_tax_social_benefit_code_menu"
+                  action="hr_employee_tax_social_benefit_code_action"
+                  name="Tax Social Benefits Codes"
+                  sequence="60"/>
+
+        <menuitem id="hr_employee_income_feature_code_menu"
+                  action="hr_employee_income_feature_code_action"
+                  name="Income Feature Codes"
+                  sequence="70"/>
+
+    </menuitem>
+
+</odoo>

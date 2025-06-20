@@ -1,0 +1,267 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_contract_settlement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-22 10:29+0000\n"
+"PO-Revision-Date: 2023-09-22 10:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_contract_settlement
+#. odoo-python
+#: code:addons/selferp_contract_settlement/models/account_contract.py:0
+#, python-format
+msgid " of %s"
+msgstr " від %s"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__active
+msgid "Active"
+msgstr "Діючий"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields.selection,name:selferp_contract_settlement.selection__account_contract__subtype__additional
+msgid "Additional"
+msgstr "Додаткова угода"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.view_account_contract_filter
+msgid "Archived"
+msgstr "Архівований"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__date_start
+msgid "Begin date"
+msgstr "Дата початку"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: selferp_contract_settlement
+#: model:ir.model,name:selferp_contract_settlement.model_account_contract
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_bank_statement_line__contract_id
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_move__contract_id
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_move_line__contract_id
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_payment__contract_id
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_bank_rec_widget__contract_id
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.view_account_move_line_search_bank_rec_widget
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_tree
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_purchase_order__contract_id
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_sale_order__contract_id
+msgid "Contract"
+msgstr "Договір"
+
+#. module: selferp_contract_settlement
+#: model:ir.actions.act_window,name:selferp_contract_settlement.account_contract_action
+#: model:ir.ui.menu,name:selferp_contract_settlement.account_contract_menu_contacts
+msgid "Contracts"
+msgstr "Договори"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.res_partner_view_form
+msgid "<span class=\"o_stat_text\">Contracts</span>"
+msgstr "<span class=\"o_stat_text\">Договори</span>"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+msgid "Contract info"
+msgstr "Інформація про договір"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.actions.act_window,help:selferp_contract_settlement.account_contract_action
+msgid "Create new contract"
+msgstr "Створити новий договір"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.actions.act_window,help:selferp_contract_settlement.account_contract_action_customer
+msgid "Create new customer contract"
+msgstr "Створити новий договір з покупцем"
+
+#. module: selferp_contract_settlement
+#: model:ir.actions.act_window,name:selferp_contract_settlement.account_contract_action_customer
+#: model:ir.ui.menu,name:selferp_contract_settlement.account_contract_menu_customer
+#: model:ir.ui.menu,name:selferp_contract_settlement.account_contract_menu_sale
+msgid "Customer contracts"
+msgstr "Договори з покупцями"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.view_account_contract_filter
+msgid "Date"
+msgstr "Дата"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__display_name
+msgid "Display Name"
+msgstr "Назва"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__external_name
+msgid "External name"
+msgstr "Зовнішній номер"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+msgid "Validity of the contract"
+msgstr "Тривалість договору"
+
+#. module: selferp_contract_settlement
+#: model:ir.actions.act_window,name:selferp_contract_settlement.account_contract_action_vendor
+#: model:ir.ui.menu,name:selferp_contract_settlement.account_contract_menu_vendor
+#: model:ir.ui.menu,name:selferp_contract_settlement.account_contract_menu_purchase
+msgid "Vendor contracts"
+msgstr "Договори з постачальниками"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.actions.act_window,help:selferp_contract_settlement.account_contract_action_vendor
+msgid "Create new vendor contract"
+msgstr "Створити новий договір з постачальником"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__date_end
+msgid "End date"
+msgstr "Дата завершеня"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__invoice_count
+msgid "Invoice Count"
+msgstr "Кількість рахунків"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+msgid "Invoices"
+msgstr "Рахунки"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+msgid "Bills"
+msgstr "Рахунки"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields.selection,name:selferp_contract_settlement.selection__account_contract__subtype__main
+msgid "Main"
+msgstr "Основний"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__contract_id
+msgid "Main contract"
+msgstr "Основний договір"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__operation_type
+msgid "Operation type"
+msgstr "Тип операції"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__partner_id
+msgid "Partner"
+msgstr "Контрагент"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__payment_term_id
+msgid "Payment term"
+msgstr "Умови оплати"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__is_perpetual
+msgid "Perpetual"
+msgstr "Безстроковий"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields.selection,name:selferp_contract_settlement.selection__account_contract__operation_type__purchase
+msgid "Purchase"
+msgstr "Купівля"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields.selection,name:selferp_contract_settlement.selection__account_contract__operation_type__sale
+msgid "Sale"
+msgstr "Продаж"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.view_account_contract_filter
+msgid "Search Contract"
+msgstr "Пошук договору"
+
+#. module: selferp_contract_settlement
+#: model:ir.model.fields,field_description:selferp_contract_settlement.field_account_contract__subtype
+msgid "Subtype"
+msgstr "Підтип договору"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.view_bank_statement_line_kanban_bank_rec_widget
+msgid "Edit"
+msgstr "Редагувати"
+
+#. module: selferp_contract_settlement
+#. odoo-python
+#: code:addons/selferp_contract_settlement/models/account_bank_statement_line.py:0
+#, python-format
+msgid "Edit transaction"
+msgstr "Редагування транзакції"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.view_account_bank_statement_line_form_edit
+msgid "Save"
+msgstr "Зберегти"
+
+#. module: selferp_contract_settlement
+#. odoo-python
+#: code:addons/selferp_contract_settlement/models/account_partner_ledger.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "Початковий баланс"
+
+#. module: selferp_contract_settlement
+#. odoo-python
+#: code:addons/selferp_contract_settlement/models/account_partner_ledger.py:0
+#, python-format
+msgid "Undefined"
+msgstr "Невизначено"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.line_template_partner_ledger_report
+msgid "Open"
+msgstr "Відкрити"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.partner_ledger_search_template_extra_options_group_by_contract
+msgid "Group by Contract"
+msgstr "Групування по договору"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+msgid "Purchase Orders"
+msgstr "Замовлення на купівлю"
+
+#. module: selferp_contract_settlement
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+msgid "Sale Orders"
+msgstr "Замовлення на продаж"
+
+#. module: selferp_contract_settlement
+#. odoo-python
+#: code:addons/selferp_contract_settlement/models/account_contract.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_contract_settlement.account_contract_view_form
+#, python-format
+msgid "Journal Items"
+msgstr "Елементи журналу"

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="asset_modify_form" model="ir.ui.view">
+        <field name="name">asset.modify.form.inherit.selferp_l10n_ua_fixed_asset</field>
+        <field name="model">asset.modify</field>
+        <field name="inherit_id" ref="account_asset.asset_modify_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <group name="gaap_group" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}">
+                    <field name="asset_state" invisible="1"/>
+                    <field name="asset_type" invisible="1"/>
+                    <field name="product_id" invisible="1"/>
+                    <field name="gaap" readonly="1"/>
+                </group>
+            </field>
+
+            <field name="date" position="attributes">
+                <attribute name="attrs">{'readonly': [('modify_action', '=', 'sell'), ('asset_state', '=', 'on_hold')]}</attribute>
+            </field>
+
+            <field name="invoice_ids" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('modify_action', '!=', 'sell'), ('asset_type', '=', 'purchase')],
+                    'required': [('modify_action', '=', 'sell')],
+                }</attribute>
+            </field>
+            <field name="invoice_line_ids" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [
+                        '|',
+                        ('asset_type', '=', 'purchase'),
+                        '&amp;', ('modify_action', '!=', 'sell'), ('select_invoice_line_id', '=', False),
+                    ],
+                    'required': [('select_invoice_line_id', '=', True)],
+                }</attribute>
+            </field>
+            <field name="loss_account_id" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [
+                        '|',
+                        ('gain_or_loss', '!=', 'loss'),
+                        '&amp;', ('asset_type', '=', 'purchase'), ('modify_action', '!=', 'dispose'),
+                    ],
+                    'required': [('gain_or_loss', '=', 'loss')],
+                }</attribute>
+            </field>
+
+            <field name="informational_text" position="after">
+                <field name="sell_date"
+                       attrs="{'invisible': [
+                            '|', '|',
+                            ('asset_type', '!=', 'purchase'),
+                            ('modify_action', '!=', 'sell'),
+                            ('asset_state', '!=', 'on_hold'),
+                       ]}"/>
+                <field name="invoice_ids"
+                       options="{'no_quick_create': True}"
+                       context="{'default_move_type': 'out_invoice', 'input_full_display_name': True}"
+                       attrs="{'invisible': [
+                            '|', '|',
+                            ('asset_type', '!=', 'purchase'),
+                            ('modify_action', '!=', 'sell'),
+                            ('asset_state', '!=', 'on_hold'),
+                       ]}"
+                       domain="[('move_type', '=', 'out_invoice'), ('line_ids.product_id', '=', product_id)]"
+                       widget="many2many_tags"/>
+                <field name="loss_account_id"
+                       options="{'no_create': True}"
+                       attrs="{
+                            'invisible': [
+                                '|', '|', '|',
+                                ('asset_type', '!=', 'purchase'),
+                                ('gain_or_loss', '!=', 'loss'),
+                                ('modify_action', '!=', 'sell'),
+                                ('asset_state', '!=', 'on_hold'),
+                            ],
+                            'required': [('asset_type', '=', 'purchase'), ('gain_or_loss', '=', 'loss'), ('modify_action', '!=', 'sell')],
+                       }"
+                       domain="[('account_type', '=', 'expense')]"/>
+            </field>
+
+            <field name="value_residual" position="before">
+                <field name="value_re_evaluate" attrs="{'invisible': [('asset_type', '!=', 'purchase'), ('modify_action', 'not in', ('modify', 'resume'))]}"/>
+            </field>
+
+            <field name="account_asset_counterpart_id" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [
+                        '|',
+                        '&amp;', ('asset_type', '!=', 'purchase'), ('modify_action', '!=', 'modify'),
+                        '&amp;', '&amp;', ('asset_type', '=', 'purchase'), ('modify_action', 'not in', ('modify', 'sell')), ('gain_value', '=', False),
+                    ],
+                    'required': [
+                        '|',
+                        '&amp;', ('asset_type', '!=', 'purchase'), ('gain_value', '!=', False),
+                        '&amp;', ('asset_type', '=', 'purchase'), ('modify_action', '=', 'sell'),
+                    ],
+                    'readonly': [('asset_type', '=', 'purchase'), ('modify_action', '=', 'sell'), ('asset_state', '=', 'on_hold')],
+                }</attribute>
+            </field>
+
+            <button name="sell_dispose" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [
+                        '|',
+                        '&amp;', ('asset_type', '!=', 'purchase'), ('modify_action', '!=', 'sell'),
+                        '&amp;', '&amp;', ('asset_type', '=', 'purchase'), ('asset_state', '=', 'open'), ('gaap', '=', True)],
+                }</attribute>
+            </button>
+            <xpath expr="//button[@special='cancel']" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('asset_type', '=', 'purchase'), ('asset_state', '=', 'on_hold')],
+                }</attribute>
+            </xpath>
+            <button name="sell_dispose" position="before">
+                <button name="action_held_for_sell"
+                        type="object"
+                        string="Held on Sell"
+                        attrs="{'invisible': [
+                            '|', '|', '|',
+                            ('asset_type', '!=', 'purchase'),
+                            ('modify_action', '!=', 'sell'),
+                            ('asset_state', '=', 'on_hold'),
+                            ('gaap', '=', False),
+                        ]}"/>
+                <button name="action_sell_later"
+                        type="object"
+                        string="Sell Later"
+                        attrs="{'invisible': [
+                            '|', '|',
+                            ('asset_type', '!=', 'purchase'),
+                            ('modify_action', '!=', 'sell'),
+                            ('asset_state', '!=', 'on_hold'),
+                        ]}"/>
+            </button>
+            <button name="sell_dispose" position="after">
+                <button name="action_cancel_held_for_sell"
+                        type="object"
+                        string="Cancel"
+                        attrs="{'invisible': [
+                            '|', '|',
+                            ('asset_type', '!=', 'purchase'),
+                            ('modify_action', '!=', 'sell'),
+                            ('asset_state', '!=', 'on_hold'),
+                        ]}"/>
+            </button>
+        </field>
+    </record>
+
+
+</odoo>

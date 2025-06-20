@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.selferp_contract_settlement</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+           <field name="partner_id" position="after">
+               <field name="contract_id"
+                      context="{'default_partner_id': partner_id, 'default_operation_type': 'sale'}"
+                      attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+           </field>
+        </field>
+    </record>
+
+
+    <record id="view_order_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.selferp_contract_settlement</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+               <field name="contract_id" optional="hide"/>
+           </field>
+        </field>
+    </record>
+
+
+    <record id="view_quotation_tree" model="ir.ui.view">
+        <field name="name">sale.quotation.tree.inherit.selferp_contract_settlement</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+               <field name="contract_id" optional="hide"/>
+           </field>
+        </field>
+    </record>
+
+
+
+    <menuitem id="account_contract_menu_sale"
+              name="Customer contracts"
+              action="selferp_contract_settlement.account_contract_action_customer"
+              groups="account.group_account_manager"
+              parent="sale.sale_order_menu"
+              sequence="9999" />
+
+
+</odoo>

@@ -1,0 +1,14 @@
+.o_account_reports_page {
+
+    .o_account_report_line {
+
+        &.o_selferp_contract_settlement_line_name {
+            font-style: italic;
+            font-weight: normal !important;
+
+            .no_print oe_link_reports {
+                font-style: normal;
+            }
+        }
+    }
+}

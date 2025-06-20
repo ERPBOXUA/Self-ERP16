@@ -1,0 +1,61 @@
+.oe_tax_table_totals_field {
+    margin: 0 -16px;
+
+    .o_form_label {
+        margin-right: 0;
+        min-width: 0;
+        padding-right: 20px;
+        white-space: nowrap;
+        font-weight: 400;
+
+        &:after {
+            content: ":";
+        }
+    }
+
+    .oe_subtotal_footer_separator {
+        border-top: 1px solid #C9CCD2;
+    }
+
+
+    .tax_groups_container {
+        flex: 1;
+        padding: 4px 16px;
+
+        table {
+            tr {
+                border-bottom-width: 1px;
+                border-color: #E0E2E6;
+
+                th {
+                    font-weight: 500;
+                    color: black;
+                }
+
+                th, td {
+                    padding: 0.5rem 20px;
+                    border-bottom-width: 1px;
+                    white-space: nowrap;
+
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    &:last-child {
+                        padding-right: 0;
+                    }
+
+                    &.o_td_amount {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+
+    .total_container {
+        margin-left: 64px;
+        padding: 4px 16px;
+        border-top: 1px solid #C9CCD2;
+        text-align: right;
+    }
+}

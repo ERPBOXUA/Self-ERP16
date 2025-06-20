@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_cashflow_analytic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-24 08:08+0000\n"
+"PO-Revision-Date: 2024-01-24 08:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_cashflow_analytic
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_analytic_line__account_code
+#: model_terms:ir.ui.view,arch_db:selferp_cashflow_analytic.view_account_analytic_line_filter
+msgid "Account Code"
+msgstr "Код аналітичного рахунку"
+
+#. module: selferp_cashflow_analytic
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_move_line__can_change_cash_flow_analytic_account
+msgid "Can Change Cash Flow Analytic Account"
+msgstr "Можна змінити Статтю руху грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model_terms:ir.ui.view,arch_db:selferp_cashflow_analytic.view_account_analytic_line_filter
+#: model_terms:ir.ui.view,arch_db:selferp_cashflow_analytic.view_account_move_line_filter
+msgid "Cash Flow"
+msgstr "Рух грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report,name:selferp_cashflow_analytic.account_report_cash_flow_analytic
+#: model:ir.actions.client,name:selferp_cashflow_analytic.account_report_action_cash_flow_analytic
+#: model:ir.ui.menu,name:selferp_cashflow_analytic.account_report_menu_cash_flow_analytic
+msgid "Cash Flow Analytic"
+msgstr "Аналітичний звіт про рух грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_bank_statement_line__cash_flow_analytic_account_id
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_move_line__cash_flow_analytic_account_id
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_move_line_analytic_link__cash_flow_analytic_account_id
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_bank_rec_widget__cash_flow_analytic_account_id
+msgid "Cash Flow Analytic Account"
+msgstr "Стаття руху грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_analytic_account__cash_flow_article
+msgid "Cash Flow Article"
+msgstr "Стаття руху грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_analytic_plan__cash_flow_article
+#: model:ir.model.fields,field_description:selferp_cashflow_analytic.field_account_analytic_plan_template__cash_flow_article
+msgid "Cash Flow Item"
+msgstr "Стаття руху грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.line,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_line_cash_begin
+msgid "Cash and cash equivalents at the beginning of the period"
+msgstr "Залишок грошових коштів на початок"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.line,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_line_cash_end
+msgid "Cash and cash equivalents at the end of the period"
+msgstr "Залишок грошових коштів на кінець"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.line,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_line_cash_inflow
+msgid "Cash inflow"
+msgstr "Надходження грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.line,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_line_cash_outflow
+msgid "Cash outflow"
+msgstr "Вибуття грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.line,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_line_cash_net
+msgid "Net cash flow"
+msgstr "Чистий рух грошових коштів"
+
+#. module: selferp_cashflow_analytic
+#. odoo-python
+#: code:addons/selferp_cashflow_analytic/models/account_analytic_line.py:0
+#, python-format
+msgid "No code"
+msgstr "Без коду"
+
+#. module: selferp_cashflow_analytic
+#. odoo-javascript
+#: code:addons/selferp_cashflow_analytic/static/src/js/move_line_analytic_link_widget.js:0
+#: code:addons/selferp_cashflow_analytic/static/src/xml/move_line_analytic_link_widget_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:selferp_cashflow_analytic.account_move_line_analytic_link_view_form
+#, python-format
+msgid "Select"
+msgstr "Обрати"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.line,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_line_cash_end
+msgid "Cash and cash equivalents at the end of the period"
+msgstr "Залишок грошових коштів на кінець"
+
+#. module: selferp_cashflow_analytic
+#: model:account.report.column,name:selferp_cashflow_analytic.account_report_cash_flow_analytic_column_balance
+msgid "Balance"
+msgstr "Баланс"
+
+#. module: selferp_cashflow_analytic
+#: model:ir.model,name:selferp_cashflow_analytic.model_account_move_line_analytic_link
+msgid "Select Cash Flow Analytic Account"
+msgstr "Обирає статтю руху грошових коштів"

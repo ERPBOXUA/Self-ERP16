@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="hr_salary_disability_group_0" model="hr.salary.disability_group">
+        <field name="name">None</field>
+        <field name="code">0</field>
+    </record>
+
+    <record id="hr_salary_disability_group_1" model="hr.salary.disability_group">
+        <field name="name">First Group</field>
+        <field name="code">I</field>
+    </record>
+
+    <record id="hr_salary_disability_group_2" model="hr.salary.disability_group">
+        <field name="name">Second Group</field>
+        <field name="code">II</field>
+    </record>
+
+    <record id="hr_salary_disability_group_3" model="hr.salary.disability_group">
+        <field name="name">Third Group</field>
+        <field name="code">III</field>
+    </record>
+
+</odoo>

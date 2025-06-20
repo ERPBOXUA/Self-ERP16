@@ -1,0 +1,285 @@
+<?xml version="1.0" ?>
+<odoo noupdate="1">
+
+
+    <record id="account_bank_statement_import_xls_privat" model="account.bank.statement.import.mapping">
+        <field name="name">XLS Privat</field>
+        <field name="file_type">xls</field>
+
+        <field name="use_header" eval="True" />
+        <field name="row_num_header">4</field>
+        <field name="row_num_data">6</field>
+
+        <field name="sheet_name">1</field>
+
+        <field name="line_ids" eval="[(5, 0, 0),
+            (0, 0, {
+                'bank_statement_line_field': 'date',
+                'column_name': 'Дата проводки',
+                'value_format': '%d.%m.%Y',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_id',
+                'column_name': 'ЄДРПОУ',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_name',
+                'column_name': 'Назва контрагента',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'account_number',
+                'column_name': 'Рахунок контрагента',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'amount',
+                'column_name': 'Сума',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'payment_ref',
+                'column_name': 'Призначення платежу',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'ref',
+                'column_name': 'Референс',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'unique_import_id',
+                'column_name': 'Референс',
+            }),
+        ]" />
+    </record>
+
+
+    <record id="account_bank_statement_import_csv_pumb" model="account.bank.statement.import.mapping">
+        <field name="name">CSV PUMB</field>
+        <field name="file_type">csv</field>
+
+        <field name="use_header" eval="True" />
+        <field name="row_num_header">1</field>
+        <field name="row_num_data">2</field>
+
+        <field name="encoding">cp1251</field>
+        <field name="separator">semicolon</field>
+        <field name="text_delimiter">"</field>
+
+        <field name="line_ids" eval="[(5, 0, 0),
+            (0, 0, {
+                'bank_statement_line_field': 'date',
+                'column_name': 'ST_DATE',
+                'value_format': '%Y.%m.%d',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_id',
+                'column_name': 'KOR_OKPO',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_name',
+                'column_name': 'KOR_NAME',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'account_number',
+                'column_name': 'KOR_ACC',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'amount',
+                'use_python': True,
+                'python_code': '''(float(data_row.get('UDB') or 0.00) * -1.00) or float(data_row.get('UCR') or 0.00) or 0.00''',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'payment_ref',
+                'column_name': 'DESCRIPT',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'ref',
+                'column_name': 'DOC_NO',
+            }),
+        ]" />
+    </record>
+
+
+    <record id="account_bank_statement_import_csv_aval" model="account.bank.statement.import.mapping">
+        <field name="name">CSV Aval</field>
+        <field name="file_type">csv</field>
+
+        <field name="use_header" eval="True" />
+        <field name="row_num_header">1</field>
+        <field name="row_num_data">2</field>
+
+        <field name="encoding">cp1251</field>
+        <field name="separator">semicolon</field>
+        <field name="text_delimiter">"</field>
+
+        <field name="line_ids" eval="[(5, 0, 0),
+            (0, 0, {
+                'bank_statement_line_field': 'date',
+                'column_name': 'Дата документа',
+                'value_format': '%d.%m.%Y',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_id',
+                'column_name': 'ЄДРПОУ кореспондента',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_name',
+                'column_name': 'Кореспондент',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'account_number',
+                'column_name': 'Рахунок кореспондента',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'amount',
+                'use_python': True,
+                'python_code': '''(float(data_row.get('Дебет') or 0.00) * -1.00) or float(data_row.get('Кредит') or 0.00) or 0.00''',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'payment_ref',
+                'column_name': 'Призначення платежу',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'ref',
+                'column_name': 'Документ',
+            }),
+        ]" />
+    </record>
+
+
+    <record id="account_bank_statement_import_xls_ukrsib" model="account.bank.statement.import.mapping">
+        <field name="name">XLS Ukrsib</field>
+        <field name="file_type">xls</field>
+
+        <field name="use_header" eval="True" />
+        <field name="row_num_header">1</field>
+        <field name="row_num_data">2</field>
+
+        <field name="sheet_name">1</field>
+
+        <field name="line_ids" eval="[(5, 0, 0),
+            (0, 0, {
+                'bank_statement_line_field': 'date',
+                'column_name': 'Дата операцiї',
+                'value_format': '%d.%m.%Y %H:%M',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_id',
+                'column_name': 'ЄДРПОУ кореспондента',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_name',
+                'column_name': 'Кореспондент',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'account_number',
+                'column_name': 'Рахунок кореспондента',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'amount',
+                'use_python': True,
+                'python_code': '''(float(data_row.get('Дебет') or 0.00) * -1.00) or float(data_row.get('Кредит') or 0.00) or 0.00''',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'payment_ref',
+                'column_name': 'Призначення платежу',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'ref',
+                'column_name': 'Номер документа',
+            }),
+        ]" />
+    </record>
+
+
+    <record id="account_bank_statement_import_csv_credit_agricole" model="account.bank.statement.import.mapping">
+        <field name="name">CSV Credit Agricole</field>
+        <field name="file_type">csv</field>
+
+        <field name="use_header" eval="False" />
+        <field name="row_num_data">2</field>
+
+        <field name="encoding">cp1251</field>
+        <field name="separator">semicolon</field>
+        <field name="text_delimiter">"</field>
+
+        <field name="line_ids" eval="[(5, 0, 0),
+            (0, 0, {
+                'bank_statement_line_field': 'date',
+                'column_name': '2',
+                'value_format': '%Y%m%d',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_id',
+                'column_name': '34',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_name',
+                'column_name': '27',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'account_number',
+                'column_name': '26',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'amount',
+                'use_python': True,
+                'python_code': '''float(data_row.get('10') or 0.00) / 100.0 * (-1.00 if data_row.get('11') == 'D' else 1.00)''',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'payment_ref',
+                'column_name': '15',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'ref',
+                'column_name': '25',
+            }),
+        ]" />
+    </record>
+
+
+    <record id="account_bank_statement_import_xls_kredobank" model="account.bank.statement.import.mapping">
+        <field name="name">XLS KredoBank</field>
+        <field name="file_type">xls</field>
+
+        <field name="use_header" eval="True" />
+        <field name="row_num_header">1</field>
+        <field name="row_num_data">2</field>
+        <field name="decimal_separator">comma</field>
+
+        <field name="sheet_name">1</field>
+
+        <field name="line_ids" eval="[(5, 0, 0),
+            (0, 0, {
+                'bank_statement_line_field': 'date',
+                'column_name': 'Дата проводки',
+                'value_format': '%d.%m.%Y',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_id',
+                'column_name': 'Код контр.',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'partner_name',
+                'column_name': 'Наименование контр.',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'account_number',
+                'column_name': 'IBAN',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'amount',
+                'column_name': 'Сумма',
+                'use_python': True,
+                'python_code': '''float(value or 0.00) * (-1.00 if data_row.get('Операция') == 'Дебет' else 1.00)''',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'payment_ref',
+                'column_name': 'Назначение платежа',
+            }),
+            (0, 0, {
+                'bank_statement_line_field': 'ref',
+                'column_name': 'Номер документа',
+            }),
+        ]" />
+    </record>
+
+
+</odoo>

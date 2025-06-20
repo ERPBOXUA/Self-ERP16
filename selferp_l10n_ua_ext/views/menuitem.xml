@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <menuitem id="account_tax_inspection_menu"
+              parent="account.menu_finance_configuration"
+              sequence="30"
+              name="Tax Inspections"
+              action="account_tax_inspection_action"/>
+
+
+    <menuitem id="product_uktzed_code_menu"
+              parent="account.account_management_menu"
+              sequence="4"
+              name="UKTZED Codes"
+              action="product_uktzed_code_action"/>
+
+
+    <menuitem id="product_dkpp_code_menu"
+              parent="account.account_management_menu"
+              sequence="4"
+              name="DKPP Codes"
+              action="product_uktzed_code_action"/>
+
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_payslip_run_form" model="ir.ui.view">
+        <field name="name">hr.payslip.run.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button name="action_create_payments"
+                        type="object"
+                        attrs="{'invisible': [('state', '!=', 'close')]}"
+                        class="btn-primary"
+                        string="Create Payments"/>
+            </header>
+
+            <xpath expr="//group/group[1]" position="inside">
+                <field name="payment_type" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="salary_advance_calculation" attrs="{'required': [('payment_type', '=', 'advance_salary')], 'invisible': [('payment_type', '!=', 'advance_salary')], 'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="salary_advance_percents" widget="percentage" class="w-50" attrs="{'required': [('payment_type', '=', 'advance_salary'), ('salary_advance_calculation', '=', 'percentage')], 'invisible': ['|', ('payment_type', '!=', 'advance_salary'), ('salary_advance_calculation', '!=', 'percentage')], 'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+            <xpath expr="//button[@name='%(hr_payroll.action_hr_payslip_by_employees)d']" position="replace">
+                <button name="action_generate_payslips" type="object" states="draft" string="Generate Payslips" class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

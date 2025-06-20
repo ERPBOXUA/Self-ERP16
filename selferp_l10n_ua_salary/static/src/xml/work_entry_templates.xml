@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="selferp_l10n_ua_salary.work_entry_button">
+        <button t-attf-class="btn btn-secondary btn-work-entry btn-print-timesheet" type="button">Print Timesheet</button>
+    </t>
+
+</templates>

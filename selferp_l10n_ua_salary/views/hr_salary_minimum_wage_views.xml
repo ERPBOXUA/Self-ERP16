@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_salary_minimum_wage_view_tree" model="ir.ui.view">
+        <field name="name">hr.salary.minimum_wage.view.tree</field>
+        <field name="model">hr.salary.minimum_wage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="value_hourly"/>
+                <field name="value_monthly"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_minimum_wage_view_form" model="ir.ui.view">
+        <field name="name">hr.salary.minimum_wage.view.form</field>
+        <field name="model">hr.salary.minimum_wage</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="value_hourly"/>
+                            <field name="value_monthly"/>
+                        </group>    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_minimum_wage_action" model="ir.actions.act_window">
+        <field name="name">Minimum Wage</field>
+        <field name="res_model">hr.salary.minimum_wage</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

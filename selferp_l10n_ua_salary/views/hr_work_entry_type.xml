@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+     <record id="hr_work_entry_type_view_tree" model="ir.ui.view">
+         <field name="name">hr.work.entry.type.view.tree.inherit.selferp_l10n_ua_salary</field>
+         <field name="model">hr.work.entry.type</field>
+         <field name="inherit_id" ref="hr_work_entry.hr_work_entry_type_view_tree"/>
+         <field name="priority" eval="90"/>
+         <field name="arch" type="xml">
+             <field name="code" position="after">
+                 <field name="timesheet_ccode"/>
+                 <field name="timesheet_ncode"/>
+             </field>
+         </field>
+    </record>
+
+
+    <record id="hr_work_entry_type_view_form" model="ir.ui.view">
+        <field name="name">hr.work.entry.type.view.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.work.entry.type</field>
+        <field name="inherit_id" ref="hr_work_entry.hr_work_entry_type_view_form"/>
+        <field name="priority" eval="90"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='identification']" position="after">
+                <group name="timesheet_data" string="Timesheet" class="o_form_fw_labels">
+                    <field name="timesheet_ccode"/>
+                    <field name="timesheet_ncode"/>
+                    <field name="overtime"/>
+                    <field name="surcharge_percents" attrs="{'invisible': [('overtime', '=', False)]}" widget="percentage"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

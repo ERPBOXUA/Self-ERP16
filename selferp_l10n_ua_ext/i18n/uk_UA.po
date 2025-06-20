@@ -1,0 +1,665 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_l10n_ua_ext
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-14 08:33+0000\n"
+"PO-Revision-Date: 2024-03-14 08:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Шаблон плану рахунків"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__account_template_ids
+msgid "Account Templates"
+msgstr "Шаблони рахунків"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_analytic_plan_template
+msgid "Account analytic plan template"
+msgstr "Шаблон аналітичного плану облікового запису"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.search_template_account_type
+msgid "Account:"
+msgstr "Рахунок:"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_stock_picking__accounting_date
+msgid "Accounting Date"
+msgstr "Дата в бухобліку"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_report
+msgid "Accounting Report"
+msgstr "Звіт бухобліку"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_ext/static/src/js/account_reports.js:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_report__filter_accounts
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.search_template_account_type
+#, python-format
+msgid "Accounts"
+msgstr "Рахунки"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_ir_actions_act_multi__type
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_ir_actions_act_view_reload__type
+msgid "Action Type"
+msgstr "Тип дії"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan__active
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__active
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__active
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__active
+msgid "Active"
+msgstr "Активно"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_ext/static/src/js/account_editable_report.js:0
+#, python-format
+msgid "Add new row"
+msgstr "Додати новий рядок"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__additional_uom_name
+msgid "Additional UoM"
+msgstr "Додаткова одиниця виміру"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__address
+msgid "Address"
+msgstr "Адреса"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_tax_inspection_view_search
+msgid "Administrative Area"
+msgstr "Область"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__area_code
+msgid "Administrative Area Code"
+msgstr "Код області"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__district_name
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_tax_inspection_view_search
+msgid "Administrative District"
+msgstr "Адміністративний район"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__district_code
+msgid "Administrative District Code"
+msgstr "Код адміністративного району"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_analytic_account
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_account_template__name
+msgid "Analytic Account"
+msgstr "Аналітичний рахунок"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_analytic_plan
+msgid "Analytic Plans"
+msgstr "Аналітичні плани"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_analytic_account_template
+msgid "Analytic account template"
+msgstr "Шаблон аналітичного рахунку"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_analytic_plan_view_search
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_tax_inspection_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_tax_inspection_view_search
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_dkpp_code_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_dkpp_code_view_search
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_uktzed_code_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_uktzed_code_view_search
+msgid "Archived"
+msgstr "Заархівовано"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_res_company__general_bank_account_id
+msgid "Bank Account Number to which the invoice will be paid. A Company bank account if this is a Customer Invoice or Vendor Credit Note, otherwise a Partner bank account number."
+msgstr "Основний банківський рахунок для розрахунків за надані товари/послуги. Цей номер банківського рахунку буде використаний для друкованих форм документів реалізації."
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_editable_report__state__cancelled
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_vat_tax_report__state__cancelled
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__hr_pdfo_report__state__cancelled
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__chief_accountant_id
+msgid "Chief Accountant"
+msgstr "Головний бухгалтер"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__children_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__child_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__child_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_dkpp_code_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_uktzed_code_view_form
+msgid "Children"
+msgstr "Підлеглі"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__code
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__code
+msgid "Code"
+msgstr "Код"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_product_dkpp_code
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_product__dkpp_code_id
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_template__dkpp_code_id
+msgid "Code for Ukrainian State classifier of products and services"
+msgstr "Код Українського державного класифікатора продукції та послуг"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_product_uktzed_code
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_product__uktzed_code_id
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_template__uktzed_code_id
+msgid "Code of the ukrainian classification of products for foreign economic activity"
+msgstr "Код українського класифікатору товарів ЗЕД"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__compact_code
+msgid "Compact Code"
+msgstr "Компактний код"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_res_company
+msgid "Companies"
+msgstr "Компанії"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__company_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Company"
+msgstr "Компанія"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#: code:addons/selferp_l10n_ua_ext/utils/export_xml.py:0
+#, python-format
+msgid "Company ID not defined"
+msgstr "Заповніть будь ласка ID компанії"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__company_legal_form
+msgid "Company legal form"
+msgstr "Організаційно-правова форма"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.view_order_form
+msgid "Create an Implementation Document"
+msgstr "Створити документ з реалізації"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_address_custom_mixin
+msgid "Creates an address string that starts with the country and is separated by commas"
+msgstr "Створює рядок адреси, який починається з країни та розділяється комами"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_res_currency
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_product__dkpp_code_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_template__dkpp_code_id
+msgid "DKPP Code"
+msgstr "Код за ДКПП"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.actions.act_window,name:selferp_l10n_ua_ext.product_dkpp_code_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_ext.product_dkpp_code_menu
+msgid "DKPP Codes"
+msgstr "Коди за ДКПП"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Data migration is not allowed"
+msgstr "Перенесення даних заборонено"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__date_from
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Date from"
+msgstr "Дата від"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__date_to
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Date to"
+msgstr "Дата до"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__default_applicability
+msgid "Default Applicability"
+msgstr "Застосовність за замовчуванням"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_account__description
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_account_template__description
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__description
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.view_account_analytic_account_form
+msgid "Description"
+msgstr "Опис"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__director_id
+msgid "Director"
+msgstr "Директор"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_account_template__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_ir_actions_act_multi__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_ir_actions_act_view_reload__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__display_name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__display_name
+msgid "Display Name"
+msgstr "Ім'я для відображення"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__date_generate
+msgid "Document date"
+msgstr "Дата документу"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+msgid "Download PDF"
+msgstr "Завантажити PDF"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+msgid "Download XML"
+msgstr "Завантажити XML"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_editable_report__state__draft
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_vat_tax_report__state__draft
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__hr_pdfo_report__state__draft
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Edit %s"
+msgstr "Редагувати %s"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__full_code
+msgid "Full Code"
+msgstr "Повний код"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__full_name
+msgid "Full Name"
+msgstr "Повна назва"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__import_duty_rate_full
+msgid "Full import duty"
+msgstr "Повна ставка"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_uktzed_code__import_duty_rate_full
+msgid "Full import duty rate (%)"
+msgstr "Повна митна ставка (%)"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+msgid "Generate"
+msgstr "Генерувати"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_editable_report__state__generated
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_vat_tax_report__state__generated
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__hr_pdfo_report__state__generated
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Generated"
+msgstr "Згенеровано"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_ir_http
+msgid "HTTP Routing"
+msgstr "Маршрутизація HTTP"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__selectable
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__selectable
+msgid "Is Selectable"
+msgstr "Можна вибирати"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__visible
+msgid "Is Visible"
+msgstr "Видимий"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__code_kotauu
+msgid "KOTAUU"
+msgstr "КОТАУУ"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__code_kprv
+msgid "KPRV"
+msgstr "КПРВ"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__code_kved
+msgid "KVED"
+msgstr "КВЕД"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__res_company__company_legal_form__legal
+msgid "Legal entity"
+msgstr "Юридична особа"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.report_layout_template_light_custom
+msgid "Logo"
+msgstr "Логотип"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__general_bank_account_id
+msgid "Main bank account"
+msgstr "Основний банківський рахунок"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_analytic_plan_template__default_applicability__mandatory
+msgid "Mandatory"
+msgstr "Обов'язковий"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__name
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__name
+msgid "Name"
+msgstr "Назва"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Only cancelled reports can be reset to draft"
+msgstr "Лише скасовані звіти можна зробити чернеткою"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Only draft reports can be removed"
+msgstr "Видалити можна лише чернетку"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_analytic_plan_template__default_applicability__optional
+msgid "Optional"
+msgstr "Необов'язково"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_ir_actions_act_multi__help
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_ir_actions_act_view_reload__help
+msgid "Optional help text for the users with a description of the target view, such as its usage and purpose."
+msgstr "Додатковий текст довідки для користувачів із описом цільового перегляду, наприклад його використання та призначення."
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__parent_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__parent_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__parent_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_analytic_plan_view_search
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_dkpp_code_view_search
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.product_uktzed_code_view_search
+msgid "Parent"
+msgstr "Батьківський рівень"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan_template__parent_path
+msgid "Parent Path"
+msgstr "Шлях Батьківського рівня"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__phone
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_account_template__plan_template_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_analytic_plan__plan_template_id
+msgid "Plan Template"
+msgstr "Шаблон плана"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__import_duty_rate_pref
+msgid "Preferential import duty"
+msgstr "Пільгова ставка"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_uktzed_code__import_duty_rate_pref
+msgid "Preferential import duty rate (%)"
+msgstr "Пільгова митна ставка (%)"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__res_company__company_legal_form__private
+msgid "Private entrepreneur"
+msgstr "Фізична особа"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_product_template
+msgid "Product"
+msgstr "Товар"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Переміщення товару (Рядок складського переміщення)"
+
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__dpi_registry_code
+msgid "Registry Code"
+msgstr "Код ЄДРПОУ"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_ext/static/src/js/account_editable_report.js:0
+#, python-format
+msgid "Remove row"
+msgstr "Видалити рядок"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_search
+msgid "Report"
+msgstr "Звіт"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Report part name undefined"
+msgstr "Назва частини звіту не вказана"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_view_form
+msgid "Reset to Draft"
+msgstr "Зробити чернеткою"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.view_company_form
+msgid "Responsible Persons"
+msgstr "Відповідальні особи"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_sale_order
+msgid "Sales Order"
+msgstr "Замовлення на продаж"
+
+#. module: selferp_l10n_ua_ext
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_editable_report_page_layout
+msgid "Save"
+msgstr "Зберегти"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_ext/static/src/js/account_editable_report.js:0
+#, python-format
+msgid "Saved"
+msgstr "Збережено"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/utils/export_xml.py:0
+#, python-format
+msgid "Schema not found for document %s"
+msgstr "Схему для документу %s не знайдено"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__sequence
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_ir_actions_act_multi__binding_model_id
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_ir_actions_act_view_reload__binding_model_id
+msgid "Setting a value makes this action available in the sidebar for the given model."
+msgstr "Установлення значення робить цю дію доступною на бічній панелі для даної моделі."
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_uktzed_code__import_duty_rate_special
+msgid "Special import duty"
+msgstr "Спеціальна ставка"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,help:selferp_l10n_ua_ext.field_product_uktzed_code__import_duty_rate_special
+msgid "Special import duty rate (%)"
+msgstr "Спеціальна митна ставка (%)"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__state
+msgid "State"
+msgstr "Стан"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_stock_move
+msgid "Stock Move"
+msgstr "Складське переміщення"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_ext/static/src/js/account_editable_report.js:0
+#, python-format
+msgid "Successfully saved"
+msgstr "Успішно збережено"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__code
+msgid "Tax Code"
+msgstr "Податковий код"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_account_tax_inspection
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_res_company__tax_inspection_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_tax_inspection_view_search
+msgid "Tax Inspection"
+msgstr "Податкова інспекція"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.actions.act_window,name:selferp_l10n_ua_ext.account_tax_inspection_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_ext.account_tax_inspection_menu
+msgid "Tax Inspections"
+msgstr "Податкові інспекції"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Tax inspection for company not defined"
+msgstr "Не задано податкову інспекцію для компанії"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model,name:selferp_l10n_ua_ext.model_stock_picking
+msgid "Transfer"
+msgstr "Переміщення"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_tax_inspection__type
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_ext.account_tax_inspection_view_search
+msgid "Type"
+msgstr "Тип"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_dkpp_code__uktzed
+msgid "UKTZED"
+msgstr "Код за УКТЗЕД"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_product__uktzed_code_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_product_template__uktzed_code_id
+msgid "UKTZED Code"
+msgstr "Код за УКТЗЕД"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.actions.act_window,name:selferp_l10n_ua_ext.product_uktzed_code_action
+#: model:ir.ui.menu,name:selferp_l10n_ua_ext.product_uktzed_code_menu
+msgid "UKTZED Codes"
+msgstr "Коди за УКТЗЕД"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_ext.selection__account_analytic_plan_template__default_applicability__unavailable
+msgid "Unavailable"
+msgstr "Недоступний"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/account_editable_report.py:0
+#, python-format
+msgid "Unexpected document state"
+msgstr "Несподіваний стан документу"
+
+#. module: selferp_l10n_ua_ext
+#: model:ir.model.fields,field_description:selferp_l10n_ua_ext.field_account_editable_report__values
+msgid "Values"
+msgstr "Значення"
+
+#. module: selferp_l10n_ua_ext
+#. odoo-python
+#: code:addons/selferp_l10n_ua_ext/models/product_product.py:0
+#, python-format
+msgid "You cannot set the cost of a product if it is 0 and the quantity on stock is not 0. Product: %s."
+msgstr "Ви не можете встановити вартість продукту, якщо вона дорівнює 0, а кількість на складі не дорівнює 0. Товар: %s."

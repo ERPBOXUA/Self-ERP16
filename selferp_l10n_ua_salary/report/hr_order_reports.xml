@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_order_paperformat_portrait" model="report.paperformat">
+        <field name="name">Orders Portrait PaperFormat</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">15</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+
+
+
+    <record id="hr_order_report" model="ir.actions.report">
+        <field name="name">Друкувати наказ</field>
+        <field name="model">hr.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_salary.hr_order_report_template</field>
+        <field name="report_file">selferp_l10n_ua_salary.hr_order_report_template</field>
+        <field name="print_report_name">'Наказ - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="selferp_l10n_ua_salary.model_hr_order"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="hr_order_paperformat_portrait"/>
+    </record>
+
+
+</odoo>

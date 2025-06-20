@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_bank_statement_line_form_bank_rec_widget" model="ir.ui.view">
+        <field name="name">account.bank.statement.line.form.bank_rec_widget.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="inherit_id" ref="account_accountant.view_bank_statement_line_form_bank_rec_widget"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="is_salary_payment"/>
+                <field name="payslip_id"
+                       force_save="1"
+                        options="{'no_create': True, 'no_edit': True}"
+                       attrs="{'invisible': [('is_salary_payment', '!=', True)], 'required': [('is_salary_payment', '=', True)]}"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

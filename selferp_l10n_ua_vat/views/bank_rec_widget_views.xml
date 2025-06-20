@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_bank_rec_widget_form" model="ir.ui.view">
+        <field name="name">bank.rec.widget.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">bank.rec.widget</field>
+        <field name="inherit_id" ref="account_accountant.view_bank_rec_widget_form"/>
+        <field name="priority">200</field>
+        <field name="arch" type="xml">
+            <field name="contract_id" position="attributes">
+                <attribute name="domain">(linked_sale_order_visible and [('partner_id', '=', partner_id), ('operation_type', '=', 'sale')]) or (linked_purchase_order_visible and [('partner_id', '=', partner_id), ('operation_type', '=', 'purchase')]) or [('partner_id', '=', partner_id)]</attribute>
+            </field>
+
+            <xpath expr="//field[@name='contract_id']/.." position="after">
+                <group attrs="{'invisible': [('linked_sale_order_visible', '!=', True)]}">
+                    <field name="linked_sale_order_visible" invisible="1" />
+                    <field name="linked_sale_order_id"
+                           domain="contract_id and [('contract_id', '=', contract_id), ('partner_id', '=', partner_id)] or [('partner_id', '=', partner_id)]"
+                           widget="many2one_with_payments"
+                           options="{'no_create': True, 'no_edit': True, 'no_quick_create': True, 'no_create_edit': True}"
+                           attrs="{'readonly': [('state', '=', 'reconciled')]}"/>
+                </group>
+                <group attrs="{'invisible': [('linked_purchase_order_visible', '!=', True)]}">
+                    <field name="linked_purchase_order_visible" invisible="1" />
+                    <field name="linked_purchase_order_id"
+                           domain="contract_id and [('contract_id', '=', contract_id), ('partner_id', '=', partner_id)] or [('partner_id', '=', partner_id)]"
+                           widget="many2one_with_payments"
+                           options="{'no_create': True, 'no_edit': True, 'no_quick_create': True, 'no_create_edit': True}"
+                           attrs="{'readonly': [('state', '=', 'reconciled')]}"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='form_balance']/.." position="after">
+                <field name="refund"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

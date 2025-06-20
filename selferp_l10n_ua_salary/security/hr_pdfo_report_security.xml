@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_vat_tax_report_rule_multi_company" model="ir.rule">
+        <field name="name">VAT Tax Report multi-company</field>
+        <field name="model_id" ref="model_hr_pdfo_report"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+
+</odoo>

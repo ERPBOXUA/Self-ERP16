@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    
+    <record id="account_analytic_plan_template_cash_flow" model="account.analytic.plan.template">
+        <field name="name">Статті руху грошових коштів</field>
+        <field name="cash_flow_article" eval="True"/>
+        <field name="default_applicability">optional</field>
+        <field name="parent_id" eval="False"/>
+        <field name="children_ids">
+            <record id="account_analytic_plan_template_cash_flow_incoming" model="account.analytic.plan.template">
+                <field name="name">Надходження</field>
+                <field name="cash_flow_article" eval="True"/>
+                <field name="default_applicability">optional</field>
+                <field name="children_ids">
+                    <record id="account_analytic_plan_template_cash_flow_incoming_revenue_from_sales" model="account.analytic.plan.template">
+                        <field name="name">Надходження від продажів</field>
+                        <field name="cash_flow_article" eval="True"/>
+                        <field name="default_applicability">optional</field>
+                        <field name="account_template_ids">
+                            <record id="account_analytic_account_template_selling_products" model="account.analytic.account.template">
+                                <field name="name">Продаж товарів</field>
+                                <field name="code">110100</field>
+                                <field name="description">Надходження коштів від продажу товарів, придбаних у сторонніх постачальників.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_selling_services" model="account.analytic.account.template">
+                                <field name="name">Продаж робіт та послуг</field>
+                                <field name="code">110200</field>
+                                <field name="description">Надходження коштів від продажу робіт та послуг.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_selling_manufactured_products" model="account.analytic.account.template">
+                                <field name="name">Продаж готової продукції</field>
+                                <field name="code">110300</field>
+                                <field name="description">Надходження коштів від продажу продукції власного виробництва.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_selling_royalty" model="account.analytic.account.template">
+                                <field name="name">Роялті</field>
+                                <field name="code">110400</field>
+                                <field name="description">Надходження коштів у вигляді роялті.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_selling_other" model="account.analytic.account.template">
+                                <field name="name">Інша реалізація</field>
+                                <field name="code">110500</field>
+                                <field name="description">Надходження коштів від іншої реалізації.</field>
+                            </record>
+                        </field>
+                    </record>
+
+                    <record id="account_analytic_plan_template_cash_flow_incoming_investment_and_financial_funds" model="account.analytic.plan.template">
+                        <field name="name">Інвестиційно-фінансові</field>
+                        <field name="cash_flow_article" eval="True"/>
+                        <field name="default_applicability">optional</field>
+                        <field name="account_template_ids">
+                            <record id="account_analytic_account_template_investment_and_financial_capital_assets" model="account.analytic.account.template">
+                                <field name="name">Капітальні активи</field>
+                                <field name="code">160100</field>
+                                <field name="description">Надходження коштів від продажу основних засобів, нематеріальних активів та капітальних інвестицій.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_and_financial_dividends" model="account.analytic.account.template">
+                                <field name="name">Дивіденди</field>
+                                <field name="code">160200</field>
+                                <field name="description">Надходження коштів, нарахованих (отриманих) за участь у капіталі чи спільній діяльності.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_and_financial_percents" model="account.analytic.account.template">
+                                <field name="name">Проценти</field>
+                                <field name="code">160300</field>
+                                <field name="description">Доходи (надходження) від належних (нарахованих) відсотків за надання фінансування та права користування грошима. Включаються доходи від депозитів, фінансового лізингу, облігацій, відсотки залишків на рахунках тощо.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_and_financial_loans" model="account.analytic.account.template">
+                                <field name="name">Позикові кошти</field>
+                                <field name="code">160400</field>
+                                <field name="description">Надходження (або повернення раніше наданих позичальникам) позикових коштів у вигляді кредитів, овердрафтів, позик, фінансової допомоги, векселів, облігацій, капітальної суми фінансового лізингу і т.д.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_and_financial_deposits" model="account.analytic.account.template">
+                                <field name="name">Депозити</field>
+                                <field name="code">160500</field>
+                                <field name="description">Надходження коштів у вигляді будь-яких депозитних інструментів. Відображаються як повернення раніше розміщених депозитів, так і залучення депозитів від третіх осіб. До цієї статті також включаються кошти, отримані довірче управління.</field>
+                            </record>
+                        </field>
+                    </record>
+
+                    <record id="account_analytic_plan_template_cash_flow_incoming_other" model="account.analytic.plan.template">
+                        <field name="name">Інші надходження</field>
+                        <field name="cash_flow_article" eval="True"/>
+                        <field name="default_applicability">optional</field>
+                        <field name="account_template_ids">
+                            <record id="account_analytic_account_template_incoming_other_transit_payments" model="account.analytic.account.template">
+                                <field name="name">Транзитні платежі</field>
+                                <field name="code">180100</field>
+                                <field name="description">Платежі з одного розрахункового рахунку на інший усередині Групи компаній, платежі з каси на розрахунковий рахунок, зняття з розрахункового рахунку до каси, грошові транзакції між касами, перерахування та повернення з карткових рахунків. До цієї статті також включаються кошти, якщо сума знаходиться "в дорозі", тобто не надійшла на підприємство (не доступна для використання).</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_incoming_other_currency_exchange" model="account.analytic.account.template">
+                                <field name="name">Валюто-обмінні операції</field>
+                                <field name="code">180200</field>
+                                <field name="description">Дохід (надходження коштів) від реалізації іноземної валюти, а також будь-які курсові та сумові різниці (як реалізовані, так і нереалізовані), що виникають внаслідок присутності в операціях різних валют. До цієї статті не включаються різниці від переведення звітності з функціональної у валюту подання.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_incoming_other_refunds" model="account.analytic.account.template">
+                                <field name="name">Повернення коштів</field>
+                                <field name="code">180300</field>
+                                <field name="description">Відображаються повернені кошти, як помилково перераховані спочатку, і повернуті за домовленостями з контрагентами (включаючи повернення коштів від персоналу, які є відшкодуванням втрат).</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_analytic_plan_template_cash_flow_other_incoming" model="account.analytic.plan.template">
+                <field name="name">Інші надходження</field>
+                <field name="cash_flow_article" eval="True"/>
+                <field name="default_applicability">optional</field>
+                <field name="children_ids">
+                    <record id="account_analytic_plan_template_cash_flow_other_incoming_others" model="account.analytic.plan.template">
+                        <field name="name">Інші надходження</field>
+                        <field name="cash_flow_article" eval="True"/>
+                        <field name="default_applicability">optional</field>
+                        <field name="account_template_ids">
+                            <record id="account_analytic_account_template_other_incoming_others" model="account.analytic.account.template">
+                                <field name="name">Інші надходження</field>
+                                <field name="code">190900</field>
+                                <field name="description">Інші доходи (надходження коштів), які неможливо прямо віднести до інших статей.</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+
+            <record id="account_analytic_plan_template_cash_flow_outgoing" model="account.analytic.plan.template">
+                <field name="name">Вибуття</field>
+                <field name="cash_flow_article" eval="True"/>
+                <field name="default_applicability">optional</field>
+                <field name="children_ids">
+                    <record id="account_analytic_plan_template_cash_flow_outgoing_operations" model="account.analytic.plan.template">
+                        <field name="name">Операційна діяльність</field>
+                        <field name="cash_flow_article" eval="True"/>
+                        <field name="default_applicability">optional</field>
+                        <field name="children_ids">
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_products_and_services" model="account.analytic.plan.template">
+                                <field name="name">Оплата за ТМЦ, роботи та послуги</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_outgoing_products" model="account.analytic.account.template">
+                                        <field name="name">Оплата за товари</field>
+                                        <field name="code">210100</field>
+                                        <field name="description">Оплата за товари придбані у постачальників.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_services" model="account.analytic.account.template">
+                                        <field name="name">Оплата за роботи послуги</field>
+                                        <field name="code">210200</field>
+                                        <field name="description">Оплата за послуги придбані у постачальників.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_other" model="account.analytic.account.template">
+                                        <field name="name">Оплата за інші запаси</field>
+                                        <field name="code">210300</field>
+                                        <field name="description">Оплата за інші запаси (не товари) придбані у постачальників.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_employee" model="account.analytic.plan.template">
+                                <field name="name">Персонал</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_outgoing_employee_salary" model="account.analytic.account.template">
+                                        <field name="name">Виплата заробітної плати</field>
+                                        <field name="code">220100</field>
+                                        <field name="description">Витрати на виплату основної заробітної плати у вигляді окладів, оплат і за годинниковими або відрядними розцінками/тарифними ставками. До цієї статті включаються виплати незалежно від юридичного оформлення трудових відносин: штатні співробітники, договори цивільно-правового характеру, оплати на ФОП.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_employee_other_charges" model="account.analytic.account.template">
+                                        <field name="name">Виплата інших нарахувань</field>
+                                        <field name="code">220200</field>
+                                        <field name="description">Витрати на виплату інших нарахувань по заробітній платі</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_employee_taxes" model="account.analytic.account.template">
+                                        <field name="name">Податки на заробітну плату</field>
+                                        <field name="code">220300</field>
+                                        <field name="description">Витрати на оплату податків та зборів, пов'язані з виплатою доходу фізичним особам. Не включаються податки, що сплачуються фізичним особам, які не є, за своєю суттю, співробітниками Компанії (нотаріуси, продавці майна, комітенти тощо). До цієї групи також не включаються податки та збори при виплаті дивідендів.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_employee_education" model="account.analytic.account.template">
+                                        <field name="name">Навчання</field>
+                                        <field name="code">220400</field>
+                                        <field name="description">Витрати на оплату семінарів, курсів, тренінгів професійно-технічного навчання фізичних осіб.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_employee_accountable" model="account.analytic.account.template">
+                                        <field name="name">Підзвітні суми та відрядження</field>
+                                        <field name="code">220500</field>
+                                        <field name="description">Виплата підзвітних сум та витрати на відрядження у вигляді вартості проживання, харчування, переміщення, добових витрат. До цієї статті також включається ПММ, витрачені в процесі відрядження, оскільки вони, за своєю суттю, є вартістю переміщення співробітників. У цю статтю не включається вартість ремонту та обслуговування транспорту в процесі відрядження, а також вартість матеріальних цінностей та послуг, які будуть споживати Компанією поза строком дії такого відрядження або за її межами. До цієї статті також не включається відокремлена вартість послуг навчання, семінарів, участі у виставках та симпозіумах, витрати на які мають бути віднесені до інших статей.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_employee_hiring" model="account.analytic.account.template">
+                                        <field name="name">Пошук персоналу</field>
+                                        <field name="code">220600</field>
+                                        <field name="description">Будь-які витрати, пов'язані з пошуком персоналу, включаючи оплату послуг рекрутингових та кадрових агенцій, спеціалізованих видань та сайтів, ярмарків вакансій, організацію презентацій для ВНЗ та спеціальних навчальних закладів.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_outgoing_employee_other" model="account.analytic.account.template">
+                                        <field name="name">Інші витрати на персонал</field>
+                                        <field name="code">220700</field>
+                                        <field name="description">Інші витрати на персонал, які неможливо прямо віднести до інших статей. Зокрема, витрати на організацію командотворчих заходів (тимбілдінги, корпоративи, свята), витрати на організацію профілактичних медичних оглядів, придбання медичних препаратів, організацію дозвілля та харчування (чай, кава, цукерки, обіди тощо).</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_services" model="account.analytic.plan.template">
+                                <field name="name">Оплата за послуги та роботи</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_services_transportation" model="account.analytic.account.template">
+                                        <field name="name">Транспортні послуги</field>
+                                        <field name="code">230050</field>
+                                        <field name="description">Витрати (оплати) на переміщення вантажів незалежно від виду транспорту та призначення. У цій статті також відображається вартість послуг експедиторів та інших посередників, які безпосередньо пов'язані з транспортуванням вантажів.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_mediation" model="account.analytic.account.template">
+                                        <field name="name">Посередницькі послуги</field>
+                                        <field name="code">230100</field>
+                                        <field name="description">Витрати на сплату страхових премій за всіма видами страхування, за винятком ДМС та страхування життя для співробітників. Витрати на виплату комісій, агентських платежів, винагород брокерам, біржам чи іншим посередникам допомогу в організації продажу чи покупок. До цієї статті також включаються платежі, які утримуються маркет-плейсами, іншими інтернет-платформами та сервісами за проведені за допомогою таких сервісів продажі.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_consulting" model="account.analytic.account.template">
+                                        <field name="name">Консалтингові послуги</field>
+                                        <field name="code">230200</field>
+                                        <field name="description">Вартість юридичних, фінансових, податкових консультацій та обслуговування, отримання юридичних довідок, витягів, послуги адвокатів, інші послуги, пов'язані із судовим чи виконавчим провадженням. Включається також вартість проведення сторонніми організаціями фінансових та податкових аудитів, абонентське обслуговування. У цій статті також відображається вартість передплатних інформаційних видань, придбання спеціальної літератури та довідників. Відображаються витрати на оформлення, посвідчення документів (включаючи послуги перекладача).</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_ensurance" model="account.analytic.account.template">
+                                        <field name="name">Страхування</field>
+                                        <field name="code">230300</field>
+                                        <field name="description">Витрати на сплату страхових премій за всіма видами страхування, за винятком ДМС та страхування життя для співробітників.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_business" model="account.analytic.account.template">
+                                        <field name="name">Розвиток бізнесу</field>
+                                        <field name="code">230400</field>
+                                        <field name="description">Вартість членських внесків у громадські та галузеві організації, вартість участі у тренінгах, семінарах, конференціях, послуги з розробки бізнес-планів та стратегій, послуги з впровадження нових технологій виробництва та господарювання, придбання статистичних та прогнозних планів розвитку галузі.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_security" model="account.analytic.account.template">
+                                        <field name="name">Охорона</field>
+                                        <field name="code">230500</field>
+                                        <field name="description">Відображаються періодичні та разові платежі за організацію охорони, контролю та супроводу, що здійснюються підрядними організаціями. Зокрема, до цієї групи включаються послуги нагляду з витрачання пального пересувними механізмами, GPS-контроль, відеоспостереження, послуги дронів тощо.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_other" model="account.analytic.account.template">
+                                        <field name="name">Інші роботи та послуги</field>
+                                        <field name="code">230950</field>
+                                        <field name="description">Відображається вартість послуг сторонніх організацій, які неможливо прямо зарахувати до інших статей.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_services_pos" model="account.analytic.account.template">
+                                        <field name="name">РКО</field>
+                                        <field name="code">230600</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_rent" model="account.analytic.plan.template">
+                                <field name="name">Оренда</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_rent_land" model="account.analytic.account.template">
+                                        <field name="name">Оренда землі</field>
+                                        <field name="code">240100</field>
+                                        <field name="description">Включаються витрати на оренду земель незалежно від їхнього цільового призначення.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_rent_real_estate" model="account.analytic.account.template">
+                                        <field name="name">Оренда нерухомості</field>
+                                        <field name="code">240200</field>
+                                        <field name="description">Включаються витрати на оренду нерухомості. Не включається оренда житла для працівників</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_rent_equipment" model="account.analytic.account.template">
+                                        <field name="name">Оренда машин та обладнання</field>
+                                        <field name="code">240300</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_rent_vehicles" model="account.analytic.account.template">
+                                        <field name="name">Оренда транспортних засобів</field>
+                                        <field name="code">240400</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_rent_operational" model="account.analytic.account.template">
+                                        <field name="name">Експлуатаційні платежі</field>
+                                        <field name="code">240500</field>
+                                        <field name="description">Експлуатаційні платежі (відшкодування електроенергії, опалення, водопостачання та відведення, охорони, прибирання тощо), пов'язані з орендованою нерухомістю. Витрати належать до цієї статті, якщо є відокремленими від витрат на оренду основного активу.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_rent_other" model="account.analytic.account.template">
+                                        <field name="name">Оренда інших активів</field>
+                                        <field name="code">240900</field>
+                                        <field name="description">Оренда інших активів, витрати на яку неможливо прямо віднести до інших статей.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_communication" model="account.analytic.plan.template">
+                                <field name="name">Зв'язок</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_communication_phone" model="account.analytic.account.template">
+                                        <field name="name">Мобільний та стаціонарний зв'язок</field>
+                                        <field name="code">245100</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_communication_internet" model="account.analytic.account.template">
+                                        <field name="name">Інтернет</field>
+                                        <field name="code">245200</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_communication_post" model="account.analytic.account.template">
+                                        <field name="name">Кур'єрські та поштові витрати</field>
+                                        <field name="code">245300</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_communication_other" model="account.analytic.account.template">
+                                        <field name="name">Інші витрати на зв'язок</field>
+                                        <field name="code">245400</field>
+                                        <field name="description">Включаються інші витрати на забезпечення зв'язку, які неможливо прямо віднести до інших статей.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_business" model="account.analytic.plan.template">
+                                <field name="name">Господарські витрати</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_business_support_stationary" model="account.analytic.account.template">
+                                        <field name="name">Канцелярські витрати</field>
+                                        <field name="code">250100</field>
+                                        <field name="description">Включаються витрати на папір, бланки, книги, візитки, брошури, корпоративні бланки, конверти, придбання ручок, олівців, калькуляторів, скріпок, степлерів, скотчів, папок, швидкозшивачів та іншого канцелярського приладдя.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_business_support_household_chemicals" model="account.analytic.account.template">
+                                        <field name="name">Побутова хімія</field>
+                                        <field name="code">250200</field>
+                                        <field name="description">Включаються однойменні витрати, призначені для загальногосподарських потреб. Не включаються витрати, призначені для споживання в основному виробничому процесі та відображених у групі "матеріальні витрати".</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_business_support_other" model="account.analytic.account.template">
+                                        <field name="name">Інші господарські витрати</field>
+                                        <field name="code">250900</field>
+                                        <field name="description">Інші витрати на господарські та канцелярські потреби, які неможливо прямо віднести до інших статей.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_marketing" model="account.analytic.plan.template">
+                                <field name="name">Маркетинг</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_marketing_publication_ads" model="account.analytic.account.template">
+                                        <field name="name">Реклама в друкованих виданнях</field>
+                                        <field name="code">255100</field>
+                                        <field name="description">Витрати на будь-які цілі рекламного характеру у друкованих виданнях (статті, прес-релізи, оголошення). До цієї статті також відносяться витрати на створення статей, інтерв'ю, прес-кіту, навіть якщо ці продукти будуть використані одночасно і для друкованих, і для електронних ЗМІ.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_marketing_audio_video_ads" model="account.analytic.account.template">
+                                        <field name="name">Аудіо та відео реклама</field>
+                                        <field name="code">255200</field>
+                                        <field name="description">Витрати на будь-які цілі рекламного характеру та оголошення на радіо, телебаченні.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_marketing_charity" model="account.analytic.account.template">
+                                        <field name="name">Благодійна допомога</field>
+                                        <field name="code">255400</field>
+                                        <field name="description">Безкоштовні ресурси (кошти, валютні цінності, роботи та послуги), що надаються без вимоги (зобов'язання) вчинити будь-яку дію або утриматися від дії.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_marketing_internet_ads" model="account.analytic.account.template">
+                                        <field name="name">Інтернет реклама</field>
+                                        <field name="code">255500</field>
+                                        <field name="description">Витрати на інтернет рекламу та послуги з просування.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_marketing_bonuses" model="account.analytic.account.template">
+                                        <field name="name">Маркетингові бонуси</field>
+                                        <field name="code">255600</field>
+                                        <field name="description">Відображаються витрати на ретро-бонуси, компенсації логістичних та інших послуг роздрібних торгових мереж, які, як правило, виплачуються на періодичній основі та залежать від обсягу проданих товарів.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_marketing_other" model="account.analytic.account.template">
+                                        <field name="name">Інша реклама та PR</field>
+                                        <field name="code">255900</field>
+                                        <field name="description">Відображаються інші витрати на рекламу, піар, розробку та позиціонування бренду.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_taxes" model="account.analytic.plan.template">
+                                <field name="name">Податки</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_taxes_income" model="account.analytic.account.template">
+                                        <field name="name">Податок на прибуток</field>
+                                        <field name="code">260100</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_taxes_vat" model="account.analytic.account.template">
+                                        <field name="name">ПДВ</field>
+                                        <field name="code">260200</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_taxes_excise" model="account.analytic.account.template">
+                                        <field name="name">Акциз</field>
+                                        <field name="code">260300</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_taxes_property" model="account.analytic.account.template">
+                                        <field name="name">Майнові податки</field>
+                                        <field name="code">260400</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_taxes_penalties" model="account.analytic.account.template">
+                                        <field name="name">Податкові штрафи</field>
+                                        <field name="code">260500</field>
+                                        <field name="description">Включаються однойменні витрати.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_taxes_other" model="account.analytic.account.template">
+                                        <field name="name">Інші податки</field>
+                                        <field name="code">260600</field>
+                                        <field name="description">Відображаються оплати інших податків та обов'язкових платежів, які неможливо прямо зарахувати до інших статей.</field>
+                                    </record>
+                                </field>
+                            </record>
+
+                            <record id="account_analytic_plan_template_cash_flow_outgoing_operations_other" model="account.analytic.plan.template">
+                                <field name="name">Інші витрати</field>
+                                <field name="cash_flow_article" eval="True"/>
+                                <field name="default_applicability">optional</field>
+                                <field name="account_template_ids">
+                                    <record id="account_analytic_account_template_outgoing_operations_other_refunds" model="account.analytic.account.template">
+                                        <field name="name">Повернення коштів</field>
+                                        <field name="code">270100</field>
+                                        <field name="description">Відображається повернення коштів, як помилково отримані спочатку, і повертаються за домовленостями з контрагентами.</field>
+                                    </record>
+
+                                    <record id="account_analytic_account_template_operations_other_maintenance" model="account.analytic.account.template">
+                                        <field name="name">Ремонт та обслуговування</field>
+                                        <field name="code">270200</field>
+                                        <field name="description">Витрати на ремонти та обслуговування активів</field>
+                                    </record>
+                                </field>
+                            </record>
+                        </field>
+                    </record>
+
+                    <record id="account_analytic_plan_template_cash_flow_outgoing_investment_and_finances" model="account.analytic.plan.template">
+                        <field name="name">Інвестиційна та фінансова діяльність</field>
+                        <field name="cash_flow_article" eval="True"/>
+                        <field name="default_applicability">optional</field>
+                        <field name="account_template_ids">
+                            <record id="account_analytic_account_template_capital_assets" model="account.analytic.account.template">
+                                <field name="name">Капітальні активи</field>
+                                <field name="code">280100</field>
+                                <field name="description">Собівартість продажів (або оплата придбання) капітальних активів у вигляді основних засобів, нематеріальних активів та капітальних інвестицій.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_dividends" model="account.analytic.account.template">
+                                <field name="name">Дивіденди</field>
+                                <field name="code">280200</field>
+                                <field name="description">Витрати на оплату дивідендів.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_percents" model="account.analytic.account.template">
+                                <field name="name">Відсотки</field>
+                                <field name="code">280300</field>
+                                <field name="description">Витрати на оплату відсотків.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_attracted_finances" model="account.analytic.account.template">
+                                <field name="name">Залучення фінансування</field>
+                                <field name="code">280500</field>
+                                <field name="description">Відображаються витрати на організацію залучення фінансування та капіталу як експортно-кредитного фінансування, послуги кредитних брокерів, інвестиційних банків, рейтингових агентств. До цієї статті також включаються оплати на проведення Due diligence.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investor_payments" model="account.analytic.account.template">
+                                <field name="name">Розрахунки з інвесторами</field>
+                                <field name="code">280600</field>
+                                <field name="description">Виплати коштів (витрати) в інших операціях ніж узгоджене повернення капіталу чи виплата дивідендів.</field>
+                            </record>
+
+                            <record id="account_analytic_account_template_investment_other" model="account.analytic.account.template">
+                                <field name="name">Інші інвестиційно-фінансові операції</field>
+                                <field name="code">280900</field>
+                                <field name="description">Виплати по інших фінансово-інвестиційних операціях, які не можна віднести до інших статей</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="account_vat_tax_report_template_export_xml_J0200625">
+        <t t-call="selferp_l10n_ua_ext.export_xml_template_account_base" t-translation="off">
+            <!-- HEAD -->
+            <HZN t-if="data['HZ'] == 'HZN'">1</HZN>
+            <HZU t-elif="data['HZ'] == 'HZU'">1</HZU>
+            <HZ t-else="">1</HZ>
+            <HZY><t t-out="data['HZY']"/></HZY>
+            <HZM><t t-out="data['HZM']"/></HZM>
+            <HZYP t-att="['xsi:nil', 'true' if data['HZYP'] is None else None]"><t t-out="data['HZYP']"/></HZYP>
+            <HZKVP t-if="data['HZKVP']"><t t-out="data['HZKVP']"/></HZKVP>
+            <HZMP t-elif="data['HZMP']"><t t-out="data['HZMP']"/></HZMP>
+            <HNAME><t t-out="data['HNAME']"/></HNAME>
+            <HDDGV t-att="['xsi:nil', 'true' if data['HDDGV'] is None else None]"><t t-out="data['HDDGV']"/></HDDGV>
+            <HNDGV t-att="['xsi:nil', 'true' if data['HNDGV'] is None else None]"><t t-out="data['HNDGV']"/></HNDGV>
+            <HTIN><t t-out="data['HTIN']"/></HTIN>
+            <HNPDV><t t-out="data['HNPDV']"/></HNPDV>
+
+            <!-- BODY -->
+            <R010G3 t-att="['xsi:nil', 'true' if data['R010G3'] is None else None]"><t t-out="data['R010G3']"/></R010G3>
+            <R020G3 t-att="['xsi:nil', 'true' if data['R020G3'] is None else None]"><t t-out="data['R020G3']"/></R020G3>
+            <R030G3 t-att="['xsi:nil', 'true' if data['R030G3'] is None else None]"><t t-out="data['R030G3']"/></R030G3>
+
+            <!-- TABLE №1 -->
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG2 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG2'] is None else None}"><t t-out="r['T1RXXXXG2']"/></T1RXXXXG2>
+            </t>
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG3 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG3'] is None else None}"><t t-out="r['T1RXXXXG3']"/></T1RXXXXG3>
+            </t>
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG4 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG4'] is None else None}"><t t-out="r['T1RXXXXG4']"/></T1RXXXXG4>
+            </t>
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG5 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG5'] is None else None}"><t t-out="r['T1RXXXXG5']"/></T1RXXXXG5>
+            </t>
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG6 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG6'] is None else None}"><t t-out="r['T1RXXXXG6']"/></T1RXXXXG6>
+            </t>
+            <t t-foreach="data['T1RXXXX']" t-as="r">
+                <T1RXXXXG7 t-att="{'ROWNUM': r_index + 1, 'xsi:nil': 'true' if r['T1RXXXXG7'] is None else None}"><t t-out="r['T1RXXXXG7']"/></T1RXXXXG7>
+            </t>
+            <R01G5 t-att="['xsi:nil', 'true' if data['R01G5'] is None else None]"><t t-out="data['R01G5']"/></R01G5>
+            <R01G7 t-att="['xsi:nil', 'true' if data['R01G7'] is None else None]"><t t-out="data['R01G7']"/></R01G7>
+        </t>
+    </template>
+
+
+</odoo>

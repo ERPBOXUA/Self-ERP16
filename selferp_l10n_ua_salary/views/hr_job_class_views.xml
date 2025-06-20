@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_job_class_view_tree" model="ir.ui.view">
+        <field name="name">hr.job.class.view.tree</field>
+        <field name="model">hr.job.class</field>
+        <field name="arch" type="xml">
+            <tree duplicate="0">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="code_zkpptr" optional="hide"/>
+                <field name="issue_etkd" optional="hide"/>
+                <field name="issue_dkhp" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_job_class_view_form" model="ir.ui.view">
+        <field name="name">hr.job.class.view.form</field>
+        <field name="model">hr.job.class</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <group>
+                        <div colspan="2" class="mb-4">
+                            <label for="name" class="fw-bold"/>
+                            <h3>
+                                <div class="d-flex">
+                                    <field name="name"/>
+                                </div>
+                            </h3>
+                            <label for="parent_id" class="fw-bold"/>
+                            <div class="d-flex">
+                                <field name="parent_id" options="{'no_create': True}" context="{'use_search_panel': True}"/>
+                            </div>
+                        </div>
+                        <group>
+                            <field name="code"/>
+                            <field name="code_zkpptr"/>
+                        </group>
+                        <group>
+                            <field name="issue_etkd"/>
+                            <field name="issue_dkhp"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Subclasses">
+                            <field name="child_ids" context="{'default_parent_id': active_id, 'default_code': code}"/>
+                        </page>
+                        <page string="Related Job Positions">
+                            <field name="related_job_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_job_class_search_view" model="ir.ui.view">
+        <field name="name">hr.job.class.view.search</field>
+        <field name="model">hr.job.class</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Job Class" filter_domain="['|', ('code', 'ilike', self), ('name', 'ilike', self)]"/>
+                <field name="code_zkpptr" filter_domain="[('code_zkpptr', 'ilike', self)]"/>
+                <field name="issue_etkd" filter_domain="[('issue_etkd', 'ilike', self)]"/>
+                <field name="issue_dkhp" filter_domain="[('issue_dkhp', 'ilike', self)]"/>
+                <filter name="filter_profession" string="Professions" domain="[('child_ids', '=', False)]"/>
+                <searchpanel class="oe_no_header">
+                    <field name="parent_id" hierarchize="1" limit="0"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="hr_job_class_action" model="ir.actions.act_window">
+        <field name="name">Job Classificator</field>
+        <field name="res_model">hr.job.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="hr_job_class_menu"
+              name="Job Classificator"
+              parent="hr.menu_config_recruitment"
+              action="hr_job_class_action"
+              sequence="5"
+              groups="hr.group_hr_user"/>
+
+
+</odoo>

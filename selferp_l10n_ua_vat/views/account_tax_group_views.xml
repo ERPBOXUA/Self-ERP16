@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="view_tax_group_tree" model="ir.ui.view">
+        <field name="name">account.tax.group.tree.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.tax.group</field>
+        <field name="inherit_id" ref="account.view_tax_group_tree"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="country_code" position="after">
+                <field name="is_vat" />
+                <field name="vat_code"
+                       force_save="1"
+                       attrs="{'readonly': [('is_vat', '!=', True)]}" />
+            </field>
+        </field>
+    </record>
+
+
+    <record id="account_tax_group_view_search" model="ir.ui.view">
+        <field name="name">account.tax.group.search.filters.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.tax.group</field>
+        <field name="inherit_id" ref="account.account_tax_group_view_search"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="country_id" position="after">
+                <field name="vat_code" />
+
+                <filter name="filter_is_vat" string="VAT" domain="[('is_vat', '=', True)]"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_tax_group_form" model="ir.ui.view">
+        <field name="name">account.tax.group.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.tax.group</field>
+        <field name="inherit_id" ref="account.view_tax_group_form"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="is_vat" />
+                <field name="vat_code"
+                       attrs="{'invisible': [('is_vat', '!=', True)]}" />
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

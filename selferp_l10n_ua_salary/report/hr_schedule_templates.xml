@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="hr_schedule_staff_list_template">
+        <t t-call="web.html_container" t-translation="off">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-set="o" t-value="o.with_context(lang='uk_UA')" />
+
+                    <div class="page schedule_report">
+                        <div class="row" style="margin-bottom: 100px; padding-top: 100px;">
+                            <div class="col-5 mx-auto">
+                                <div class="underlined_block_value_container mb-2">
+                                    <div class="ub_value pt-2 pb-1  text-center" t-esc="res_company.name"/>
+                                    <div class="ub_help_info">(назва підприємства)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3 mb-5" style="margin-bottom: 140px;">
+                            <div class="col">
+                                <h2 class="text-center" style="font-family: 'PT_font', serif;  font-size: 30px; font-weight: bold;">НАКАЗ</h2>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 80px;">
+                            <div t-if="o.document_date" class="col-4" style="position: relative; top: -2px;">
+                                <span class="underlined_block_inline_text">від</span>
+                                <span class="underlined_block_value_container_inline" style="min-width: 240px;">
+                                    <span class="ub_value text-center" ><t t-esc="babel_dates.format_date(o.document_date, 'dd MMMM yyyy', locale='uk_UA')"/> р.</span>
+                                </span>
+                            </div>
+                            <div t-else="" class="col-4" style="position: relative; top: -5px;">
+                                <span class="underlined_block_inline_text">від</span>
+                                <span class="underlined_block_value_container_inline" style="width: 130px;">
+                                    <span class="ub_value"></span>
+                                </span>
+                                <span class="underlined_block_inline_text">20</span>
+                                <span class="underlined_block_value_container_inline" style="width: 42px; margin-right: 2px;">
+                                    <span class="ub_value"></span>
+                                </span>
+                                <span class="underlined_block_inline_text">p.</span>
+                            </div>
+                            <div class="col-5">
+                                <div class="d-flex">
+                                    <div class="underlined_block_title text-center">м.</div>
+                                    <div class="underlined_block_value_container" style="width: 300px;">
+                                        <div class="ub_value text-center" t-esc="res_company.city"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 px-3">
+                                <div class="d-flex mx-auto">
+                                    <div class="underlined_block_title text-center ps-5">N</div>
+                                    <div class="underlined_block_value_container"  style="width: 100px;">
+                                        <div class="ub_value"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3 mb-5">
+                            <div class="col">
+                                <h3 class="text-center" style="font-family: 'PT_font', serif; font-size: 24px; font-weight: bold;">
+                                    Про затвердження штатного розпису
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 150px; page-break-inside: avoid;">
+                            <div class="col">
+                                <div class="d-flex mb-4">
+                                    <div class="underlined_block_title text-center">У зв'язку з</div>
+                                    <div class="underlined_block_value_container" style="width: 900px;">
+                                        <div class="ub_value text-center"><t t-esc="o.basis"/></div>
+                                        <div class="ub_help_info">(підстава для затвердження штатного розпису)</div>
+                                    </div>
+                                </div>
+                                <p class="mb-4" style="font-family: 'PT_font', serif; font-size: 20px;">НАКАЗУЮ:</p>
+                                <p>
+                                    <span class="underlined_block_inline_text">Затвердити з</span>
+                                    <span class="underlined_block_value_container_inline" style="min-width: 200px;">
+                                        <span class="ub_value text-center" ><t t-esc="babel_dates.format_date(o.schedule_date, 'dd MMMM yyyy', locale='uk_UA')"/> р.</span>
+                                    </span>
+                                    <span class="underlined_block_inline_text">штатний розпис підприємства (додається).</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mb-3" style="page-break-inside: avoid;">
+                            <div class="col-6">
+                                <div class="d-flex mb-2">
+                                    <div class="underlined_block_title text-center">
+                                        <b>Директор</b>
+                                    </div>
+                                    <div class="underlined_block_value_container mb-2" style="width: 300px;">
+                                        <div class="ub_value pt-2 pb-1"></div>
+                                        <div class="ub_help_info">(підпис)</div>
+                                    </div>
+                                    <div class="underlined_block_inline_text"><t t-esc="res_company.director_id.name"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="hr_schedule_staff_list_info_template">
+        <t t-call="web.html_container" t-translation="off">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-set="o" t-value="o.with_context(lang='uk_UA')" />
+
+                    <t t-set="column_employee_qty" t-value="0"/>
+                    <t t-set="column_total_salary" t-value="0"/>
+
+                    <t t-foreach="o.line_ids" t-as="line">
+                        <t t-set="column_employee_qty" t-value="column_employee_qty + line.employee_qty"/>
+                        <t t-set="column_total_salary" t-value="column_total_salary + line.total_salary"/>
+                    </t>
+
+                    <div class="page">
+                        <div class="row" style="margin-bottom: 50px;">
+                            <div class="col-5 pe-5">
+                                <div class="underlined_block_value_container mb-2 me-4 pt-5">
+                                    <div class="ub_value pt-2 pb-1  text-center" t-esc="res_company.name"/>
+                                    <div class="ub_help_info">(назва підприємства)</div>
+                                </div>
+                            </div>
+                            <div class="col-7 small_text_block">
+                                <p class="mb-1" style="font-family: 'PT_font', serif; font-size: 18px;">ЗАТВЕРДЖУЮ</p>
+                                <p class="mb-1">
+                                    <span class="underlined_block_inline_text">штат у кількості</span>
+                                    <span class="underlined_block_value_container_inline" style="width: 60px; margin-right: 2px;">
+                                        <span class="ub_value text-center" t-esc="column_employee_qty"/>
+                                    </span>
+                                    <span class="underlined_block_inline_text">штатних одиниць</span>
+                                </p>
+                                <p class="mb-2">
+                                    <span class="underlined_block_inline_text">з місячним фондом заробітної плати</span>
+                                    <span class="underlined_block_value_container_inline" style="width: 100px; margin-right: 2px;">
+                                        <span class="ub_value text-center" t-esc="column_total_salary"/>
+                                    </span>
+                                    <span class="underlined_block_inline_text">грн.</span>
+                                </p>
+                                <div class="d-flex mb-2 pt-1">
+                                    <div class="underlined_block_title text-center">
+                                        <b>Директор:</b>
+                                    </div>
+                                    <div class="underlined_block_value_container" style="min-width: 260px;">
+                                        <div class="ub_value text-center">
+                                            <t t-esc="res_company.director_id.name" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div t-if="o.document_date" class="d-flex mb-1">
+                                    <span class="underlined_block_value_container_inline" style="min-width: 240px;">
+                                        <span class="ub_value text-center" ><t t-esc="babel_dates.format_date(o.document_date, 'dd MMMM yyyy', locale='uk_UA')"/> р.</span>
+                                    </span>
+                                </div>
+                                <div t-else="o.document_date" class="d-flex mb-1">
+                                    <span class="underlined_block_value_container_inline" style="width: 140px;">
+                                        <span class="ub_value"></span>
+                                    </span>
+                                    <span class="underlined_block_inline_text">20</span>
+                                    <span class="underlined_block_value_container_inline" style="width: 42px; margin-right: 2px;">
+                                        <span class="ub_value"/>
+                                    </span>
+                                    <span class="underlined_block_inline_text">p.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3 mb-1">
+                            <div class="col">
+                                <h2 class="text-center" style="font-family: 'PT_font', serif; font-weight: bold; font-size: 24px;">ШТАТНИЙ РОЗПИС</h2>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col  px-5">
+                                <p class="mb-2 text-center">
+                                    <span class="underlined_block_inline_text">вводиться в дію з</span>
+                                    <span class="underlined_block_value_container_inline" style="min-width: 200px;">
+                                        <span class="ub_value text-center" ><t t-esc="babel_dates.format_date(o.schedule_date, 'dd MMMM yyyy', locale='uk_UA')"/> р.</span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <table class="table table-bordered custom_table" style="width: 100%;">
+                                <tr style="text-align: center">
+                                    <th style="width: 30px;">N<br/>з/п </th>
+                                    <th style="width: 20%;">Назва<br/>структурного<br/>підрозділу</th>
+                                    <th style="width: 20%;">Посада</th>
+                                    <th>Код<br/>класифі-<br/>катора<br/>професій</th>
+                                    <th>Кількість штатних одиниць</th>
+                                    <th>Посадові оклади, грн.</th>
+                                    <th>Надбавки, грн.</th>
+                                    <th>Місячний фонд заробітної плати, грн.</th>
+                                </tr>
+                                <t t-foreach="o.line_ids" t-as="line">
+                                    <tr>
+                                        <td style="text-align: center;">1</td>
+                                        <td><t t-if="line.department_id" t-esc="line.department_id.name" /></td>
+                                        <td><t t-if="line.job_id" t-esc="line.job_id.name" /></td>
+                                        <td><t t-if="line.job_id.job_class_id" t-esc="line.job_id.job_class_id.code" /></td>
+                                        <td style="text-align: center;"><t t-esc="line.employee_qty" /></td>
+                                        <td style="text-align: right;"><t t-esc="line.salary" /></td>
+                                        <td style="text-align: right;"><t t-esc="line.surcharge" /></td>
+                                        <td style="text-align: right;"><t t-esc="line.total_salary" /></td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td></td>
+                                    <td><b>УСЬОГО:</b></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: center;"><t t-esc="column_employee_qty" /></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="text-align: right;"><t t-esc="column_total_salary" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="page-break-inside: avoid">
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title"><b>Начальник відділу кадрів</b></div>
+                                        <div class="underlined_block_value_container" style="width: 300px;">
+                                            <div class="ub_value"></div>
+                                            <div class="ub_help_info">(підпис)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3" style="font-family: 'PT_font', serif; font-size: 20px;">
+                                <b>ПОГОДЖЕНО:</b>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <div class="d-flex">
+                                        <div class="underlined_block_title"><b>Головний бухгалтер:</b></div>
+                                        <div class="underlined_block_value_container" style="width: 300px;">
+                                            <div class="ub_value"></div>
+                                            <div class="ub_help_info">(підпис)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="mb-2">
+                                        <span class="underlined_block_value_container_inline" style="width: 140px;">
+                                            <span class="ub_value"></span>
+                                        </span>
+                                        <span class="underlined_block_inline_text">20</span>
+                                        <span class="underlined_block_value_container_inline" style="width: 42px; margin-right: 2px;">
+                                            <span class="ub_value"></span>
+                                        </span>
+                                        <span class="underlined_block_inline_text">p.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

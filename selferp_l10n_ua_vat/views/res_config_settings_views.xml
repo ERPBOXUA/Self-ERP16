@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <div name="default_taxes_setting_container" position="after">
+                <h2>VAT</h2>
+                <div class="row mt16 o_settings_container" name="vat_setting_container">
+                    <div class="col-12 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="vat_payer" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">VAT Payer</span>
+                            <span class="fa fa-lg fa-building-o"
+                                  title="Values set here are company-specific."
+                                  aria-label="Values set here are company-specific."
+                                  groups="base.group_multi_company"
+                                  role="img" />
+                            <div class="text-muted">
+                                <p class="mb-0">
+                                    Required settings to keep VAT records in accordance with the legal regulations in Ukraine.
+                                </p>
+                                <p class="mb-0">
+                                    Check the box if the Company has the status of a VAT payer in Ukraine.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible': [('vat_payer', '!=', True)]}">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <span class="o_form_label">Default accounts applied to transactions with VAT</span>
+                                <div class="row">
+                                    <label for="vat_account_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vat_account_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vat_account_unconfirmed_id"
+                                           class="col-lg-6 o_light_label"/>
+                                    <field name="vat_account_unconfirmed_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vat_account_confirmed_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vat_account_confirmed_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vat_account_unconfirmed_credit_id"
+                                           class="col-lg-6 o_light_label"/>
+                                    <field name="vat_account_unconfirmed_credit_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vat_account_confirmed_credit_id"
+                                           class="col-lg-6 o_light_label"/>
+                                    <field name="vat_account_confirmed_credit_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <separator/>
+
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <span class="o_form_label">
+                                    Set up default taxes and default product which will be applied when advance payment is done
+                                </span>
+                                <div class="row">
+                                    <label for="vat_default_tax_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vat_default_tax_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vat_default_tax_credit_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vat_default_tax_credit_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vat_default_product_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vat_default_product_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 o_setting_box" attrs="{'invisible': [('vat_payer', '!=', True)]}">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <span class="o_form_label">Set up journals to record VAT transactions</span>
+                                <div class="row">
+                                    <label for="vat_journal_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vat_journal_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="vendor_vat_journal_id" class="col-lg-6 o_light_label"/>
+                                    <field name="vendor_vat_journal_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                                <div class="row">
+                                    <label for="first_event_journal_id" class="col-lg-6 o_light_label"/>
+                                    <field name="first_event_journal_id"
+                                           options="{'no_create': True}"
+                                           attrs="{'required': [('vat_payer', '=', True)]}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <separator/>
+
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">
+                                Registration periods for VAT Invoice and VAT Invoice Adjustment
+                            </span>
+                            <div class="text-muted">
+                                For VAT invoice/VAT invoice adjustment, created from 1 to 15 days of month (including)
+                            </div>
+                            <div class="content-group">
+                                <div class="mt8 d-flex">
+                                    <div title="Set up the day of the month (deadline) in accordance with the requirements of the law by which (inclusive) the tax invoice/tax invoice adjustment must be registered">
+                                        <field name="vat_reg_terms_1"
+                                               attrs="{'required': [('vat_payer', '=', True)]}"
+                                               style="max-width: 60px !important; text-align: right;" />
+                                    </div>
+                                    <div title="Check the box if the tax invoice/tax invoice adjustment must be registered in the month following the month in which they were drawn up. If the tax invoice/tax invoice adjustment must be registered in the month in which they were drawn up (current month)">
+                                        <field name="vat_reg_terms_1_next_month"
+                                               style="max-width: 30px !important; padding-left: 10px;" />
+                                        <label for="vat_reg_terms_1_next_month" string="next month" class="o_light_label oe_inline p-0" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt16 text-muted">
+                                For VAT invoice/VAT invoice adjustment, created from 16 to last days of month (including)
+                            </div>
+                            <div class="content-group">
+                                <div class="mt8 d-flex">
+                                    <div title="Set up the day of the month (deadline) in accordance with the requirements of the law by which (inclusive) the tax invoice/tax invoice adjustment must be registered">
+                                        <field name="vat_reg_terms_2"
+                                               attrs="{'required': [('vat_payer', '=', True)]}"
+                                               style="max-width: 60px !important; text-align: right;" />
+                                    </div>
+                                    <div title="Check the box if the tax invoice/tax invoice adjustment must be registered in the month following the month in which they were drawn up. If the tax invoice/tax invoice adjustment must be registered in the month in which they were drawn up (current month)">
+                                        <field name="vat_reg_terms_2_next_month"
+                                               style="max-width: 30px !important; padding-left: 10px;" />
+                                        <label for="vat_reg_terms_2_next_month"
+                                               string="next month"
+                                               class="o_light_label oe_inline p-0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_l10n_ua_finance_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-25 13:06+0000\n"
+"PO-Revision-Date: 2023-09-25 13:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_l10n_ua_finance_report
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_finance_report.search_template_product
+msgid "<span class=\"fa fa-folder-open\"/> Products"
+msgstr "<span class=\"fa fa-folder-open\"/> Товари"
+
+#. module: selferp_l10n_ua_finance_report
+#. odoo-python
+#: code:addons/selferp_l10n_ua_finance_report/report/account_report_inventory_report.py:0
+#, python-format
+msgid "Balance"
+msgstr "Вартість"
+
+#. module: selferp_l10n_ua_finance_report
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_finance_report/static/src/js/account_reports.js:0
+#, python-format
+msgid "Categories"
+msgstr "Категорії товару"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_closing_balance
+msgid "Closing balance"
+msgstr "Кінц. с-до"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_closing_qty
+msgid "Closing qty"
+msgstr "Кін. к-ть"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_credit_balance
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_credit_qty
+msgid "Credit"
+msgstr "Вибуття"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.line,name:selferp_l10n_ua_finance_report.account_report_line_inventory_report_current_asset
+msgid "Current Asset"
+msgstr "Оборотні Активи"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_debit_balance
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_debit_qty
+msgid "Debit"
+msgstr "Прихід"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:ir.ui.menu,name:selferp_l10n_ua_finance_report.account_report_menu_finance_reports
+msgid "Finance Reports"
+msgstr "Фінансова звітність"
+
+#. module: selferp_l10n_ua_finance_report
+#. odoo-python
+#: code:addons/selferp_l10n_ua_finance_report/models/account_report.py:0
+#, python-format
+msgid "Invalid domain formula in expression %r of line %r: %s"
+msgstr "Недійсна формула домену у виразі %r рядка %r: %s"
+
+#. module: selferp_l10n_ua_finance_report
+#. odoo-python
+#: code:addons/selferp_l10n_ua_finance_report/models/account_report_expression.py:0
+#, python-format
+msgid "Invalid subformula '%s' for _report_custom_engine_grouped_by_partner in %s"
+msgstr "Недійсна підформула '%s' для _report_custom_engine_grouped_by_partner в %s"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report,name:selferp_l10n_ua_finance_report.account_report_inventory_report
+#: model:ir.actions.client,name:selferp_l10n_ua_finance_report.account_report_action_inventory_report
+#: model:ir.ui.menu,name:selferp_l10n_ua_finance_report.account_report_menu_action_inventory_report
+msgid "Inventory Report"
+msgstr "ОСВ по ТМЦ"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_opening_balance
+msgid "Opening balance"
+msgstr "Поч. с-до"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_opening_qty
+msgid "Opening qty"
+msgstr "Поч. к-ть"
+
+#. module: selferp_l10n_ua_finance_report
+#. odoo-javascript
+#: code:addons/selferp_l10n_ua_finance_report/static/src/js/account_reports.js:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_finance_report.field_account_report__filter_product
+#, python-format
+msgid "Products"
+msgstr "Товари"
+
+#. module: selferp_l10n_ua_finance_report
+#. odoo-python
+#: code:addons/selferp_l10n_ua_finance_report/report/account_report_inventory_report.py:0
+#, python-format
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: selferp_l10n_ua_finance_report
+#: model:account.report.column,name:selferp_l10n_ua_finance_report.account_report_column_inventory_report_uom
+msgid "UoM"
+msgstr "Одиниці виміру"

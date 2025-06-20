@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * selferp_l10n_ua_consignment_note
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-26 08:08+0000\n"
+"PO-Revision-Date: 2022-12-26 08:08+0000\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: uk\n"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_consignment_note.stock_picking_report_ttn
+msgid "'TTN - %s' % (object.name)"
+msgstr "'ТТН - %s' % (object.name)"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.actions.report,name:selferp_l10n_ua_consignment_note.stock_picking_report_ttn
+msgid "Delivery Slip (TTN)"
+msgstr "Товарно-транспортна накладна (ТТН)"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.model.fields,field_description:selferp_l10n_ua_consignment_note.field_stock_picking__vehicle
+msgid "Vehicle"
+msgstr "Автомобіль"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.model.fields,field_description:selferp_l10n_ua_consignment_note.field_stock_picking__vehicle_carrier_id
+msgid "Vehicle carrier"
+msgstr "Автомобільний перевізник"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.model.fields,field_description:selferp_l10n_ua_consignment_note.field_stock_picking__driver_id
+msgid "Driver"
+msgstr "Водій"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.model.fields,field_description:selferp_l10n_ua_consignment_note.field_stock_picking__customer_id
+msgid "Customer"
+msgstr "Замовник"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.model.fields,field_description:selferp_l10n_ua_consignment_note.field_stock_picking__loading_point_id
+msgid "Loading point"
+msgstr "Пункт навантаження"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model:ir.model.fields,field_description:selferp_l10n_ua_consignment_note.field_stock_picking__unloading_point_id
+msgid "Unloading point"
+msgstr "Пункт розвантаження"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_consignment_note.view_picking_form
+msgid "Information for the Consignment note"
+msgstr "Інформація для товарно-транспортної накладної (ТТН)"
+
+#. module: selferp_l10n_ua_consignment_note
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_consignment_note.view_picking_form
+msgid "Consignment note"
+msgstr "ТТН"

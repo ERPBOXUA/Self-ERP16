@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.view.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <button name="action_create_vat_adjustment_invoice"
+                        type="object"
+                        string="Create VAT Adjustment Invoice"
+                        attrs="{'invisible': [('move_type', '!=', 'vat_invoice')]}"/>
+            </header>
+            <field name="state" position="attributes">
+                <attribute name="attrs">{'invisible': [
+                    ('move_type', 'in', ('vat_invoice', 'vat_adjustment_invoice')),
+                ]}</attribute>
+            </field>
+
+            <field name="state" position="after">
+                <field name="vat_invoice_stage"
+                       widget="statusbar"
+                       options="{'clickable': '1'}"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+            </field>
+
+            <div name="button_box" position="after">
+                <field name="state"
+                       class="badge rounded-pill text-bg-info float-end fs-6 border-0"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"
+                       readonly="1"/>
+                <field name="price_change_mode" invisible="1"/>
+                <widget name="web_ribbon"
+                        title="Price Change"
+                        bg_color="bg-info"
+                        attrs="{'invisible': ['|', ('price_change_mode', '!=', True), ('payment_state', 'not in', ('not_paid', False))]}"/>
+                <field name="vat_fully_reconciled" invisible="1"/>
+                <field name="vat_vendor_reconcilable" invisible="1"/>
+                <field name="first_event_source_id" invisible="1"/>
+                <widget name="web_ribbon"
+                        title="Reconciled"
+                        attrs="{'invisible': [('vat_fully_reconciled', '=', False)]}"/>
+            </div>
+
+            <div name="button_box" position="inside">
+                <button name="action_show_vat_contracts"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-book"
+                        attrs="{'invisible': [('vat_contract_count', '=', 0)]}">
+                    <field name="vat_contract_count" string="Contracts" widget="statinfo"/>
+                </button>
+                <button name="action_show_vat_sale_orders"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('vat_sale_order_count', '=', 0)]}">
+                    <field name="vat_sale_order_count" string="Sale Orders" widget="statinfo"/>
+                </button>
+                <button name="action_vat_invoice_reconcile"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-exchange"
+                        attrs="{'invisible': ['|', ('vat_fully_reconciled', '=', True), ('vat_vendor_reconcilable', '=', False)]}"
+                        string="Reconcile"
+                        />
+                <button name="action_show_vat_adjustment_invoices"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('vat_adjustment_invoice_count', '=', 0)]}">
+                    <field name="vat_adjustment_invoice_count" string="VAT Adjustment Invoices" widget="statinfo"/>
+                </button>
+                <button name="action_show_vat_source"
+                        type="object"
+                        string="First event source"
+                        icon="fa-book"
+                        class="btn-primary"
+                        attrs="{'invisible': [('first_event_source_id', '=', False)]}">
+                </button>
+            </div>
+
+            <button name="open_reconcile_view" position="attributes">
+                <attribute name="attrs">{'invisible': [
+                    '|', '|', '|',
+                        ('move_type', 'not in', ('entry', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice')),
+                        ('id', '=', False),
+                        ('has_reconciled_entries', '=', False),
+                        ('vat_vendor_reconcilable', '=', False),
+                ]}</attribute>
+            </button>
+
+            <field name="partner_id" position="before">
+                <label for="partner_id"
+                       string="Customer"
+                       style="font-weight: bold;"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                <label for="partner_id"
+                       string="Vendor"
+                       style="font-weight: bold;"
+                       attrs="{'invisible': [('move_type', 'not in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+            </field>
+
+            <field name="partner_id" position="after">
+                <field name="partner_id"
+                       nolabel="1"
+                       widget="res_partner_many2one"
+                       context="{
+                            'res_partner_search_mode': (context.get('default_move_type', 'entry') in ('vat_invoice', 'vat_adjustment_invoice', 'out_invoice', 'out_refund', 'out_receipt') and 'customer') or (context.get('default_move_type', 'entry') in ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice', 'in_invoice', 'in_refund', 'in_receipt') and 'supplier') or False,
+                            'show_address': context.get('default_move_type', 'entry') not in ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'),
+                            'show_vat': context.get('default_move_type', 'entry') not in ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'),
+                            'default_is_company': True,
+                       }"
+                       domain="[('type', '!=', 'private'), ('company_id', 'in', (False, company_id))]"
+                       options="{'always_reload': True, 'no_quick_create': True}"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+                <field name="vat"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+                <field name="registration_type_adjustment"
+                       attrs="{'invisible': [('move_type', '!=', 'vat_adjustment_invoice')], 'required': [('move_type', '=', 'vat_adjustment_invoice')]}"/>
+                <field name="vat_invoice_adjustment_id"
+                       attrs="{'invisible': [('move_type', '!=', 'vat_adjustment_invoice')]}"/>
+                <field name="external_number"
+                       attrs="{'invisible': [('move_type', 'not in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+            </field>
+
+            <field name="contract_id" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('move_type', 'in', ('entry', 'vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))],
+                    'readonly': [('state', 'in', ('posted', 'cancel'))]
+                }</attribute>
+            </field>
+
+            <xpath expr="//field[@name='ref'][2]" position="attributes">
+                <attribute name="attrs">{
+                    'invisible': [('move_type', 'in', ('in_invoice', 'in_receipt', 'in_refund', 'out_invoice', 'out_refund'))],
+                    'readonly': ['|', ('vat_vendor_reconcilable', '=', True), ('state', '=', 'posted')],
+                }</attribute>
+            </xpath>
+
+            <xpath expr="//group[@id='header_left_group']" position="inside">
+                <field name="is_import" attrs="{'invisible': [('move_type', '!=', 'vendor_vat_invoice')]}"/>
+            </xpath>
+
+            <field name="invoice_date" position="after">
+                <field name="issuance_date"
+                       attrs="{'invisible': [('move_type', 'not in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+            </field>
+
+            <label for="journal_id" position="before">
+                <field name="registration_date"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+            </label>
+
+            <div name="journal_div" position="after">
+                <separator attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+
+                <field name="registration_due_date"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                <field name="vendor_vat_invoice_type"
+                       widget="radio"
+                       attrs="{'invisible': [('move_type', 'not in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+                <field name="vendor_vat_invoice_id"
+                       attrs="{'invisible': [('move_type', '!=', 'vendor_vat_adjustment_invoice')]}"/>
+            </div>
+
+            <xpath expr="//field[@name='line_ids']//tree//field[@name='contract_id']" position="after">
+                <field name="linked_sale_order_id" optional="hide"/>
+                <field name="linked_purchase_order_id" optional="hide"/>
+            </xpath>
+            <xpath expr="//field[@name='line_ids']//form//field[@name='contract_id']" position="after">
+                <field name="linked_sale_order_id"/>
+                <field name="linked_purchase_order_id"/>
+            </xpath>
+
+            <xpath expr="//page[@id='invoice_tab']" position="attributes">
+                <attribute name="attrs">{'invisible': [
+                    ('move_type', 'in', ('entry', 'vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice')),
+                ]}</attribute>
+            </xpath>
+            
+            <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/tree" position="inside">
+                <field name="vat_invoice_tax_id" invisible="1" force_save="1"/>
+            </xpath>
+
+            <xpath expr="//page[@id='invoice_tab']" position="before">
+                <page id="vat_invoice_tab"
+                      name="invoice_tab"
+                      string="Lines"
+                      attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}">
+                    <field name="vat_line_ids">
+                        <tree editable="bottom" string="VAT Items">
+                            <control>
+                                <create name="add_line_control" string="Add a line"/>
+                            </control>
+
+                            <field name="sequence" widget="handle"/>
+
+                            <field name="adjustment_num_line_vat_invoice"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', '!=', 'vat_adjustment_invoice')]}"/>
+                            <field name="adjustment_cause_type"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', '!=', 'vat_adjustment_invoice')], 'required': [('parent.move_type', '=', 'vat_adjustment_invoice')]}"/>
+                            <field name="adjustment_reason_type"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', '!=', 'vat_adjustment_invoice')]}"/>
+                            <field name="adjustment_group"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', '!=', 'vat_adjustment_invoice')]}"/>
+
+                            <field name="product_id"
+                                   domain="
+                                       [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]
+                                       if parent.move_type in ('vat_invoice', 'vat_adjustment_invoice') else
+                                       [('purchase_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]
+                                   "
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))], 'required': [('parent.move_type', 'in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="name"
+                                   widget="section_and_note_text"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', '!=', 'vat_adjustment_invoice')]}"/>
+                            <field name="uktzed_code_id"
+                                   options="{'no_create': True}"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="dkpp_code_id"
+                                   options="{'no_create': True}"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="quantity"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="product_uom_id"
+                                   options="{'no_create': True}"
+                                   optional="show"
+                                   string="UoM"
+                                   groups="uom.group_uom"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="price_unit"
+                                   optional="show"
+                                   string="Price"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="discount"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="total"
+                                   string="Total"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+                            <field name="total_without_vat"
+                                   optional="show"
+                                   string="Total without VAT"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}"/>
+                            <field name="tax_before_vat_ids"
+                                   options="{'no_create': True}"
+                                   domain="
+                                       [('type_tax_use', '=', 'sale'), ('tax_group_id.is_vat', '!=', True)]
+                                       if parent.move_type in ('vat_invoice', 'vat_adjustment_invoice') else
+                                       [('type_tax_use', '=', 'purchase'), ('price_include', '!=', True), ('tax_group_id.is_vat', '!=', True)]
+                                   "
+                                   widget="many2many_tags"
+                                   optional="show"/>
+                            <field name="vat_tax_id"
+                                   options="{'no_create': True}"
+                                   domain="
+                                       [('type_tax_use', '=', 'sale'), ('tax_group_id.is_vat', '=', True)]
+                                       if parent.move_type in ('vat_invoice', 'vat_adjustment_invoice') else
+                                       [('type_tax_use', '=', 'purchase'), ('price_include', '!=', True), ('tax_group_id.is_vat', '=', True)]
+                                   "
+                                   optional="show"/>
+                            <field name="vat_amount" optional="show" string="VAT"/>
+                            <field name="benefit_code_id"
+                                   options="{'no_create': True}"
+                                   optional="show"
+                                   attrs="{'column_invisible': [('parent.move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice'))]}"/>
+
+                            <field name="product_uom_category_id" invisible="1"/>
+                        </tree>
+                    </field>
+
+                    <field name="vat_line_tax_totals" widget="tax_table_totals_field" nolabel="1" class="w-100"/>
+                </page>
+            </xpath>
+
+            <field name="narration" position="attributes">
+                <attribute name="attrs">{'invisible': [
+                    ('move_type', 'in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice')),
+                ]}</attribute>
+            </field>
+
+            <page name="other_info" position="attributes">
+                <attribute name="attrs">{'invisible': [
+                    ('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice', 'out_invoice', 'out_refund', 'in_invoice', 'in_refund')),
+                ]}</attribute>
+            </page>
+
+            <group name="accounting_info_group" position="after">
+                <group name="vat_parameters_info_group"
+                       string="Parameters"
+                       attrs="{'invisible': [('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}">
+                    <field name="company_id" attrs="{'readonly': [('state', '=', 'posted')]}"/>
+                    <field name="inalterable_hash" attrs="{'readonly': [('state', '=', 'posted')]}"/>
+                    <field name="auto_post" attrs="{'readonly': [('state', '=', 'posted')]}"/>
+                    <field name="to_check" attrs="{'readonly': [('state', '=', 'posted')]}"/>
+                    <field name="settlements_with_customs_account_id"
+                           attrs="{'invisible': ['|', ('move_type', '!=', 'vendor_vat_invoice'), ('is_import', '!=', True)], 'required': [('is_import', '=', True)]}"/>
+                </group>
+                <group name="vat_invoice_group"
+                       string="VAT Invoice Info"
+                       attrs="{'invisible': [('move_type', '!=', 'vat_invoice')]}">
+                    <field name="not_issued_to_customer"/>
+                    <field name="reason_type"
+                           attrs="{'invisible': [('not_issued_to_customer', '=', False)], 'required': [('not_issued_to_customer', '=', True)]}"/>
+                    <field name="consolidated_vat_invoice"/>
+                    <field name="consolidated_tax_code"
+                           attrs="{'invisible': [('consolidated_vat_invoice', '=', False)]}"/>
+                    <field name="composed_of_tax_exempt_transactions"/>
+                    <field name="customer_branch_number"/>
+                    <field name="vat_invoice_no_obligation"/>
+                    <field name="vat_invoice_not_standard_account_id"
+                           attrs="{'readonly': [('state', '=', 'posted')]}"/>
+                </group>
+                <group name="vat_adjustment_invoice_group"
+                       string="VAT Invoice Info"
+                       attrs="{'invisible': [('move_type', '!=', 'vat_adjustment_invoice')]}">
+                    <field name="not_issued_to_customer"/>
+                    <field name="reason_type"
+                           attrs="{'invisible': [('not_issued_to_customer', '=', False)], 'required': [('not_issued_to_customer', '=', True)]}"/>
+                    <field name="to_consolidated_vat_invoice"/>
+                    <field name="to_vat_invoice_exempt_from_taxation"/>
+                    <field name="customer_branch_number"/>
+                </group>
+                <group name="vendor_vat_invoice_group"
+                       string="Vendor VAT Invoice Info"
+                       attrs="{'invisible': [('move_type', 'not in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]}">
+                    <field name="cash_method"/>
+                    <field name="not_used_in_business_operations"/>
+                    <field name="to_vat_invoice_exempt_from_taxation"/>
+                    <field name="acquisition_non_current_assets"/>
+                </group>
+            </group>
+
+            <xpath expr="//group[hasclass('oe_subtotal_footer', 'oe_right')]" position="attributes">
+                <attribute name="attrs">{'invisible': [
+                    '|',
+                        ('move_type', 'not in', ('vat_invoice', 'vat_adjustment_invoice', 'vendor_vat_invoice', 'vendor_vat_adjustment_invoice', 'out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')),
+                        ('payment_state', '=', 'invoicing_legacy'),
+                ]}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="account_move_view_tree_vat_invoice" model="ir.ui.view">
+        <field name="name">account.move.view.tree.vat_invoice</field>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <tree string="VAT Invoices"
+                  js_class="account_tree"
+                  decoration-info="state == 'draft'"
+                  decoration-muted="state == 'cancel'"
+                  expand="context.get('expand', False)"
+                  sample="1">
+                <field name="made_sequence_hole" invisible="1"/>
+                <field name="name" decoration-bf="1" decoration-danger="made_sequence_hole"/>
+                <field name="date" optional="show"/>
+                <field name="registration_date"/>
+                <field name="partner_id" string="Customer"/>
+                <field name="vat_contract_ids" widget="many2many_tags" string="Contracts" optional="show"/>
+                <field name="vat_sale_order_ids" widget="many2many_tags" string="Sale Orders" optional="show"/>
+                <field name="to_check" optional="show" widget="boolean_toggle"/>
+                <field name="vat_line_total" string="Total" sum="Total"/>
+                <field name="vat_line_subtotal" sum="Subtotal" optional="show"/>
+                <field name="vat_line_tax" string="Tax" sum="Tax" optional="show"/>
+                <field name="state"
+                       widget="badge"
+                       decoration-success="state == 'posted'"
+                       decoration-info="state == 'draft'"
+                       optional="show"/>
+                <field name="vat_invoice_stage"
+                       widget="badge"
+                       decoration-success="vat_invoice_stage == 'registered'"
+                       decoration-info="vat_invoice_stage == 'draft'"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="move_type" invisible="context.get('default_move_type', True)"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="account_move_view_tree_vendor_vat_invoice" model="ir.ui.view">
+        <field name="name">account.move.view.tree.vendor_vat_invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account_move_view_tree_vat_invoice"/>
+        <field name="mode">primary</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <field name="vat_contract_ids" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="vat_sale_order_ids" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="vat_invoice_stage" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="move_type" position="after">
+                <field name="is_import"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="account_move_view_search_vat_invoice" model="ir.ui.view">
+        <field name="name">account.invoice.view.search.vat_invoice</field>
+        <field name="model">account.move</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"
+                       string="VAT Invoice"
+                       filter_domain="[
+                            '|', '|' , '|', '|',
+                                ('name', 'ilike', self),
+                                ('invoice_origin', 'ilike', self),
+                                ('ref', 'ilike', self),
+                                ('payment_reference', 'ilike', self),
+                                ('partner_id', 'child_of', self),
+                       ]"/>
+
+                <filter name="filter_myinvoices" domain="[('invoice_user_id', '=', uid)]" help="My Invoices"/>
+                <separator/>
+
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_posted" string="Posted" domain="[('state', '=', 'posted')]"/>
+                <filter name="filter_cancel" string="Cancelled" domain="[('state', '=', 'cancel')]"/>
+                <separator/>
+
+                <filter name="filter_to_check" string="To Check" domain="[('to_check', '=', True)]"/>
+                <separator/>
+
+                <filter name="filter_date" string="Accounting Date" date="date"/>
+                <separator/>
+
+                <filter name="group_partner" string="Partner" context="{'group_by': 'partner_id'}"/>
+                <filter name="group_contract" string="Contract" context="{'group_by': 'contract_id'}"/>
+                <filter name="group_sale_order" string="Sale Order" context="{'group_by': 'vat_sale_order_id'}"/>
+                <filter name="group_stage" string="Stage" context="{'group_by': 'vat_invoice_stage'}"/>
+                <filter name="group_status" string="Status" context="{'group_by': 'state'}"/>
+                <separator/>
+
+                <filter name="group_due_date" string="Due Date" context="{'group_by': 'invoice_date_due'}"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="account_move_view_search_vendor_vat_invoice" model="ir.ui.view">
+        <field name="name">account.invoice.view.search.vendor_vat_invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account_move_view_search_vat_invoice"/>
+        <field name="mode">primary</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <filter name="filter_cancel" position="after">
+                <separator/>
+
+                <filter name="filter_vendor_vat_invoice"
+                        string="Vendor VAT Invoice"
+                        domain="[('move_type', '=', 'vendor_vat_invoice')]"/>
+                <filter name="filter_vendor_vat_adjustment_invoice"
+                        string="Vendor VAT Adjustment Invoice"
+                        domain="[('move_type', '=', 'vendor_vat_adjustment_invoice')]"/>
+                <separator/>
+            </filter>
+            <filter name="filter_cancel" position="after">
+                <filter name="filter_issuance_date" string="Issuance Date" date="date"/>
+            </filter>
+
+            <filter name="group_contract" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </filter>
+            <filter name="group_sale_order" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </filter>
+            <filter name="group_stage" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </filter>
+            <filter name="group_status" position="after">
+                <filter name="group_vendor_vat_invoice_type"
+                        string="Document type"
+                        context="{'group_by': 'move_type'}"/>
+            </filter>
+            <filter name="group_due_date" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </filter>
+        </field>
+    </record>
+
+
+    <record id="account_move_action_vat_invoice" model="ir.actions.act_window">
+        <field name="name">VAT Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('move_type', '=', 'vat_invoice')]</field>
+        <field name="view_id" ref="account_move_view_tree_vat_invoice"/>
+        <field name="search_view_id" ref="account_move_view_search_vat_invoice"/>
+        <field name="context">{'default_move_type': 'vat_invoice'}</field>
+    </record>
+
+
+    <record id="account_move_action_vat_adjustment_invoice" model="ir.actions.act_window">
+        <field name="name">VAT Adjustment Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('move_type', '=', 'vat_adjustment_invoice')]</field>
+        <field name="view_id" ref="account_move_view_tree_vat_invoice"/>
+        <field name="search_view_id" ref="account_move_view_search_vat_invoice"/>
+        <field name="context">{'default_move_type': 'vat_adjustment_invoice'}</field>
+    </record>
+
+
+    <record id="account_move_action_vendor_vat_invoice" model="ir.actions.act_window">
+        <field name="name">Vendor VAT Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('move_type', 'in', ('vendor_vat_invoice', 'vendor_vat_adjustment_invoice'))]</field>
+        <field name="view_id" ref="account_move_view_tree_vendor_vat_invoice"/>
+        <field name="search_view_id" ref="account_move_view_search_vendor_vat_invoice"/>
+        <field name="context">{
+            'default_move_type': 'vendor_vat_invoice',
+            'default_vendor_vat_invoice_type': 'vendor_vat_invoice',
+        }</field>
+    </record>
+
+
+    <record id="account_move_action_vat_export_xml" model="ir.actions.server">
+        <field name="name">Export XML</field>
+        <field name="model_id" ref="selferp_l10n_ua_vat.model_account_move"/>
+        <field name="binding_model_id" ref="selferp_l10n_ua_vat.model_account_move"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">action = records.action_vat_export_xml()</field>
+    </record>
+
+
+    <record id="account_move_action_vat_import_xml" model="ir.actions.server">
+        <field name="name">Vendor VAT Invoices Import</field>
+        <field name="model_id" ref="selferp_l10n_ua_vat.model_account_move"/>
+        <field name="binding_model_id" ref="selferp_l10n_ua_vat.model_account_move"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_vat_import_xml()
+        </field>
+    </record>
+
+
+</odoo>

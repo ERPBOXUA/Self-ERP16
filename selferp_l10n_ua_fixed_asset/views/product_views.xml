@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.selferp_l10n_ua_fixed_asset</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="sale.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="invoice_policy" position="attributes">
+                <attribute name="attrs">{'invisible': [('detailed_type', '=', 'assets')]}</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

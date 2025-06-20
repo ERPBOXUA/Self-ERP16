@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="account_contract_menu_contacts"
+              name="Contracts"
+              action="selferp_contract_settlement.account_contract_action"
+              groups="account.group_account_manager"
+              parent="contacts.res_partner_menu_config"
+              sequence="9999" />
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.selferp_contract_settlement</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_contract"
+                        type="object"
+                        class="oe_stat_button"
+                        groups="account.group_account_manager,account.group_account_invoice"
+                        icon="fa-id-card-o"
+                        attrs="{'invisible': [('contract_count', '=', 0)]}">
+                    <field name="contract_count" string="Contracts" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="search_template_account_type">
+        <button type="button" class="o-no-caret btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+            <span class="fa fa-user"/>
+            <t t-if="options.get('account_type') is not None">
+                Account:
+                <t t-set="names_selected" t-value="[options['account_type'][n]['name'] for n in range(len(options['account_type'])) if options['account_type'][n]['selected']]"/>
+                <t t-set="num_selected" t-value="len(names_selected)"/>
+                <t t-out="options['account_display_name']"/>
+            </t>
+            <t t-else="">
+                Accounts
+            </t>
+        </button>
+        <div class="dropdown-menu o_filter_menu" role="menu">
+            <t t-if="options.get('account_type') is not None">
+                <t t-foreach="options['account_type']" t-as="account_type">
+                    <a t-att-title="account_type['name']"
+                        t-att-data-id="account_type['id']"
+                        data-filter="account_type"
+                        class="dropdown-item js_account_report_choice_filter"
+                        role="menuitem"
+                        t-out="account_type['name']"/>
+                </t>
+            </t>
+            <t t-if="options.get('filter_accounts')">
+                <div role="separator" class="dropdown-divider"/>
+                <div role="menuitem" class="o_account_report_search js_account_account_m2m"/>
+            </t>
+        </div>
+    </template>
+
+
+    <template id="search_template" inherit_id="account_reports.search_template">
+        <xpath expr="//div[hasclass('o_account_reports_filter_account_type')]" position="replace">
+            <div t-if="options.get('account_type') is not None or options.get('filter_accounts')" class="btn-group dropdown o_account_reports_filter_account_type">
+                <t t-call="selferp_l10n_ua_ext.search_template_account_type"/>
+            </div>
+        </xpath>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!--
+        Report rendering templates
+    -->
+
+    <template id="hr_salary_esv_pdfo_report_template_J0500109">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0500109'"/>
+        </t>
+    </template>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_J0510109">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0510109'"/>
+        </t>
+    </template>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_J0510209">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0510209'"/>
+        </t>
+    </template>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_J0510309">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0510309'"/>
+        </t>
+    </template>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_J0510409">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0510409'"/>
+        </t>
+    </template>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_J0510509">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0510509'"/>
+        </t>
+    </template>
+
+
+    <template id="hr_salary_esv_pdfo_report_template_J0510609">
+        <t t-call="selferp_l10n_ua_ext.account_editable_report_rendering_template_general" t-translation="off">
+            <t t-set="report_part" t-value="report_part or 'J0510609'"/>
+        </t>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="resume_line_view_form" model="ir.ui.view">
+        <field name="name">hr.resume.line.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="model">hr.resume.line</field>
+        <field name="inherit_id" ref="hr_skills.resume_line_view_form"/>
+        <field name="arch" type="xml">
+            <field name="display_type" position="after">
+                <field name="is_education_fields_visible" invisible="1"/>
+                <field name="is_experience_fields_visible" invisible="1"/>
+                <field name="is_post_graduate_fields_visible" invisible="1"/>
+                <field name="is_education_company_expense_fields_visible" invisible="1"/>
+
+                <field name="diploma" attrs="{'invisible': [('is_education_fields_visible', '=', False)]}"/>
+                <field name="diploma_speciality" attrs="{'invisible': [('is_education_fields_visible', '=', False)]}"/>
+                <field name="diploma_qualification" attrs="{'invisible': [('is_education_fields_visible', '=', False)]}"/>
+
+                <field name="post_graduate_education" attrs="{'invisible': [('is_post_graduate_fields_visible', '=', False)]}"/>
+
+                <field name="job_position" attrs="{'invisible': [('is_experience_fields_visible', '=', False)]}"/>
+                <field name="dismissal_reason" attrs="{'invisible': [('is_experience_fields_visible', '=', False)]}"/>
+
+                <field name="company_expense_education_date" attrs="{'invisible': [('is_education_company_expense_fields_visible', '=', False)]}"/>
+                <field name="company_expense_education_name" attrs="{'invisible': [('is_education_company_expense_fields_visible', '=', False)]}"/>
+                <field name="company_expense_education_period" attrs="{'invisible': [('is_education_company_expense_fields_visible', '=', False)]}"/>
+            </field>
+
+            <field name="date_start" position="before">
+                <field name="study_form" attrs="{'invisible': [('is_education_fields_visible', '=', False)]}"/>
+                <field name="education_type" attrs="{'invisible': [('is_education_fields_visible', '=', False)]}"/>
+
+                <field name="diploma_num_state" attrs="{'invisible': [('is_post_graduate_fields_visible', '=', False)]}"/>
+                <field name="scientific_degree" attrs="{'invisible': [('is_post_graduate_fields_visible', '=', False)]}"/>
+
+                <field name="company_expense_education_type" attrs="{'invisible': [('is_education_company_expense_fields_visible', '=', False)]}"/>
+                <field name="company_expense_education_form" attrs="{'invisible': [('is_education_company_expense_fields_visible', '=', False)]}"/>
+                <field name="company_expense_education_document" attrs="{'invisible': [('is_education_company_expense_fields_visible', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

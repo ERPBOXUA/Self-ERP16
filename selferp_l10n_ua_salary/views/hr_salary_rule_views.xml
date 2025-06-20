@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="hr_salary_rule_view_form" model="ir.ui.view">
+        <field name="name">hr.salary.rule.view.form.inherit.selferp_l10n_ua_salary</field>
+        <field name="inherit_id" ref="hr_payroll_account.hr_salary_rule_view_form"/>
+        <field name="model">hr.salary.rule</field>
+        <field name="arch" type="xml">
+            <field name="struct_id" position="after">
+                <field name="income_feature_code_id" options="{'no_create': True}"/>
+                <field name="report_kind"/>
+            </field>
+            <field name="not_computed_in_net" position="before">
+                <field name="use_employee_expense_account"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-inherit="hr_holidays.LeaveStatsComponent" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@t-foreach='state.leaves']/span[2]" position="replace">
+            <span t-if="leave.in_calendar_days"><t t-esc="leave.number_of_days"/> calendar day(s)</span>
+            <span t-else=""><t t-esc="leave.number_of_days"/> working day(s)</span>
+        </xpath>
+        <xpath expr="//div[@t-foreach='state.departmentLeaves']/span[1]" position="replace">
+            <span t-if="leave.in_calendar_days"><t t-esc="leave.employee_id[1]"/>: <t t-esc="leave.number_of_days"/> calendar day(s)</span>
+            <span t-else=""><t t-esc="leave.employee_id[1]"/>: <t t-esc="leave.number_of_days"/> working day(s)</span>
+        </xpath>
+        <xpath expr="//div[@id='o_leave_stats_department']" position="attributes">
+            <attribute name="class" add="mt16" separator=" "/>
+        </xpath>
+    </t>
+
+</templates>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_order_view_tree" model="ir.ui.view">
+        <field name="name">hr.order.view.tree</field>
+        <field name="model">hr.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="order_date"/>
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="employee_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_order_view_form" model="ir.ui.view">
+        <field name="name">hr.order.view.form</field>
+        <field name="model">hr.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="is_recruitment_fields_visible" invisible="1"/>
+                        <field name="is_dismissal_fields_visible" invisible="1"/>
+                        <field name="is_granting_leave_fields_visible" invisible="1"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="type_id"/>
+                            <field name="employee_id" options="{'no_create': True}"/>
+                            <field name="order_date"/>
+                        </group>
+                        <group>
+                            <field name="contract_id"
+                                   domain="[('employee_id', '!=', False), ('employee_id', '=', employee_id), '|', ('date_end', '&gt;', order_date), ('date_end', '=', False)]"
+                                   options="{'no_create': True}"
+                                   attrs="{'invisible': [('is_recruitment_fields_visible', '=', False), ('is_dismissal_fields_visible', '=', False)]}"/>
+                            <field name="date_of_employment" attrs="{'invisible': [('is_recruitment_fields_visible', '=', False)]}"/>
+
+                            <field name="date_of_dismissal" attrs="{'invisible': [('is_dismissal_fields_visible', '=', False)]}"/>
+                            <field name="article_of_the_labor_code" attrs="{'invisible': [('is_dismissal_fields_visible', '=', False)]}"/>
+                            <field name="basis" attrs="{'invisible': [('is_dismissal_fields_visible', '=', False)]}"/>
+
+                            <field name="vacation_date_from" attrs="{'required': [('is_granting_leave_fields_visible', '=', True)], 'invisible': [('is_granting_leave_fields_visible', '=', False)]}"/>
+                            <field name="vacation_date_to" attrs="{'required': [('is_granting_leave_fields_visible', '=', True)], 'invisible': [('is_granting_leave_fields_visible', '=', False)]}"/>
+                            <field name="work_date_from" attrs="{'required': [('is_granting_leave_fields_visible', '=', True)], 'invisible': [('is_granting_leave_fields_visible', '=', False)]}"/>
+                            <field name="work_date_to" attrs="{'required': [('is_granting_leave_fields_visible', '=', True)], 'invisible': [('is_granting_leave_fields_visible', '=', False)]}"/>
+                            <field name="type_of_vacation" attrs="{'invisible': [('is_granting_leave_fields_visible', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <separator string="Notes" attrs="{'invisible': ['|', '|', ('is_recruitment_fields_visible', '=', True), ('is_dismissal_fields_visible', '=', True), ('is_granting_leave_fields_visible', '=', True)]}"/>
+                    <field name="notes" attrs="{'invisible': ['|', '|', ('is_recruitment_fields_visible', '=', True), ('is_dismissal_fields_visible', '=', True), ('is_granting_leave_fields_visible', '=', True)]}"/>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_order_action" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">hr.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+    <menuitem id="hr_order_menu"
+              name="Orders"
+              action="hr_order_action"
+              parent="hr.menu_hr_root"
+              sequence="7"/>
+
+
+</odoo>

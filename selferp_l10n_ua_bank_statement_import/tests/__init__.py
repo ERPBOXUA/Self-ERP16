@@ -1,0 +1,6 @@
+from . import test_account_bank_statement_import_csv_aval
+from . import test_account_bank_statement_import_csv_credit_agricole
+from . import test_account_bank_statement_import_csv_pumb
+from . import test_account_bank_statement_import_xls_kredobank
+from . import test_account_bank_statement_import_xls_privat
+from . import test_account_bank_statement_import_xls_ukrsib

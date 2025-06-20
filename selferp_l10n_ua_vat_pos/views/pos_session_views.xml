@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_pos_session_form" model="ir.ui.view">
+        <field name="name">pos.session.form.view.inherit.selferp_l10n_ua_vat_pos</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <div class="oe_button_box" position="before">
+                <field name="vat_invoice_id" invisible="1"/>
+            </div>
+            <div class="oe_button_box" position="inside">
+                <button name="action_show_vat_invoice"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        attrs="{'invisible': [('vat_invoice_id', '=', False)]}"
+                        groups="account.group_account_readonly">
+                    <field name="vat_invoice_total" widget="statinfo" string="VAT Invoice"/>
+                </button>
+            </div>
+            <div class="oe_button_box" position="after">
+                <widget name="web_ribbon" title="Taxed" bg_color="bg-success" attrs="{'invisible': [('vat_invoice_id', '=', False)]}"/>
+            </div>
+        </field>
+    </record>
+
+
+    <record id="view_pos_session_tree" model="ir.ui.view">
+        <field name="name">pos.session.tree.view.inherit.selferp_l10n_ua_vat_pos</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_tree"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="vat_state"
+                       string="Taxed"
+                       widget="badge"
+                       decoration-success="vat_state == 'taxed'"
+                />
+            </field>
+        </field>
+    </record>
+
+
+    <record id="view_pos_session_kanban" model="ir.ui.view">
+        <field name="name">pos.session.kanban.selferp_l10n_ua_vat_pos</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_kanban"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <templates position="before">
+                <field name="vat_invoice_id"/>
+            </templates>
+
+            <xpath expr="//div[hasclass('o_kanban_record_body')]" position="inside">
+                <p t-if="record.vat_invoice_id.raw_value" class="badge rounded-pill text-bg-success mb0 ml16">Taxed</p>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_pos_session_search" model="ir.ui.view">
+        <field name="name">pos.session.search.view.selferp_l10n_ua_vat_pos</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_search"/>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <filter name="open_sessions" position="after">
+                <separator/>
+                <filter name="filter_taxed" string="Taxed" domain="[('vat_invoice_id', '!=', False)]"/>
+            </filter>
+        </field>
+    </record>
+
+
+    <record id="pos_session_action_create_vat_invoice" model="ir.actions.server">
+        <field name="name">Create VAT Invoice</field>
+        <field name="model_id" ref="point_of_sale.model_pos_session"/>
+        <field name="binding_model_id" ref="point_of_sale.model_pos_session"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                records.action_create_vat_invoice()
+        </field>
+    </record>
+
+
+</odoo>

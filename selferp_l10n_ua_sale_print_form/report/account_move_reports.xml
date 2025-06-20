@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="account_move_report_invoice" model="ir.actions.report">
+        <field name="name">Vydatkova nakladna</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_sale_print_form.account_move_template_invoice</field>
+        <field name="report_file">selferp_l10n_ua_sale_print_form.account_move_templates_invoice</field>
+        <field name="print_report_name">'Invoice - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
+    </record>
+
+
+    <record id="account_move_report_act" model="ir.actions.report">
+        <field name="name">Akt vykonanykh robit</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">selferp_l10n_ua_sale_print_form.account_move_template_act</field>
+        <field name="report_file">selferp_l10n_ua_sale_print_form.account_move_templates_act</field>
+        <field name="print_report_name">'Akt - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
+    </record>
+
+
+</odoo>

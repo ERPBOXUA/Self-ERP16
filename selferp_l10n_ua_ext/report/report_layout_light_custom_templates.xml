@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="report_layout_template_light_custom">
+        <div class="header report-custom-template-header" t-att-style="report_header_style">
+            <div class="row">
+                <div class="col-6">
+                    <div class="company_address">
+                        <span t-if="company.company_details" t-field="company.company_details"/>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="header-logo float-end">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div t-attf-class="article o_external_layout_light_custom o_company_#{company.id}_layout {{'o_report_layout_background' if company.layout_background in ['Geometric', 'Custom'] else ''}}"
+             t-attf-style="background-image: url({{ 'data:image/png;base64,%s' % company.layout_background_image.decode('utf-8') if company.layout_background_image and company.layout_background == 'Custom' else '/base/static/img/bg_background_template.jpg' if company.layout_background == 'Geometric' else ''}});"
+             t-att-data-oe-model="o and o._name or ''"
+             t-att-data-oe-id="o and o.id or ''"
+             t-att-data-oe-lang="o and o.env.context.get('lang') or ''">
+            <t t-out="0"/>
+        </div>
+
+        <div class="footer o_standard_footer report-custom-template-footer mt-4">
+            <div t-if="report_type == 'pdf'" class="footer-pages-line">
+                <span class="page"/>/<span class="topage"/>
+            </div>
+            <div class="company-info-line">
+                <div t-if="company.website" class="company-info-elem">
+                    <div class="elem-img-container" t-attf-style="background-color: {{company.primary_color or '#714B67;'}}">
+                        <div class="name-image"/>
+                    </div>
+                    <div class="elem-text-container" style="color: black"><t t-esc="company.website"/></div>
+                </div>
+                <div t-if="company.email" class="company-info-elem">
+                    <div class="elem-img-container" t-attf-style="background-color: {{company.primary_color or '#714B67;'}}">
+                        <div class="email-image"/>
+                    </div>
+                    <div class="elem-text-container"><t t-esc="company.email"/></div>
+                </div>
+                <div t-if="company.phone" class="company-info-elem phone-info-elem">
+                    <div class="elem-img-container" t-attf-style="background-color: {{company.primary_color or '#714B67;'}}">
+                        <div class="phone-image"/>
+                    </div>
+                    <div class="elem-text-container"><t t-esc="company.phone"/></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="report_layout_template_light_custom_styles">
+        <t t-foreach="company_ids" t-as="company" t-translation="off">
+            <t t-set="font" t-value="company.font or 'Lato'" />
+            <t t-set="primary" t-value="company.primary_color or 'black'" />
+            <t t-set="secondary" t-value="company.secondary_color or 'black'" />
+            <t t-set="layout" t-value="company.external_report_layout_id.key or 'web.external_layout_standard'" />
+            .o_company_<t t-esc='company.id'/>_layout {
+                font-family: <t t-esc="font" />;
+
+                &amp;.o_external_layout_light_custom {
+                    h2 {
+                        color: <t t-esc='primary'/>;
+                    }
+
+                    #informations strong {
+                        color: <t t-esc='secondary'/>;
+                    }
+
+                    table {
+                        thead {
+                            color: <t t-esc='secondary'/>;
+                        }
+                    }
+
+                    table.o_main_table {
+                        border-top: 2px solid <t t-esc="primary"/> !important;
+                        border-bottom: 2px solid <t t-esc="primary"/> !important;
+                    }
+
+                    table.o_main_table thead tr:first-child th {
+                        border-top: 2px solid <t t-esc="primary"/> !important;
+                    }
+
+                    #total table td:last-child span {
+                        color: <t t-esc="primary"/> !important;
+                    }
+                }
+            }
+
+            .report-custom-template-header {
+                border-bottom: 3px solid <t t-esc="primary"/> !important;
+            }
+
+            .report-custom-template-footer .company-info-line {
+                border-top: 3px solid <t t-esc="primary"/> !important;
+            }
+
+            .report-custom-template-footer .elem-img-container {
+                background-color: <t t-esc="primary"/>;
+            }
+        </t>
+    </template>
+
+
+</odoo>

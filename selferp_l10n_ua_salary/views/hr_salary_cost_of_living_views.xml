@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_salary_cost_of_living_view_tree" model="ir.ui.view">
+        <field name="name">hr.salary.cost_of_living.view.tree</field>
+        <field name="model">hr.salary.cost_of_living</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="value"/>
+                <field name="value_children_from_6_to_18"/>
+                <field name="value_children_under_6"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_cost_of_living_view_form" model="ir.ui.view">
+        <field name="name">hr.salary.cost_of_living.view.form</field>
+        <field name="model">hr.salary.cost_of_living</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date"/>
+                            <field name="value"/>
+                        </group>
+                        <group>
+                            <field name="value_children_from_6_to_18"/>
+                            <field name="value_children_under_6"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="hr_salary_cost_of_living_action" model="ir.actions.act_window">
+        <field name="name">Cost Of Living</field>
+        <field name="res_model">hr.salary.cost_of_living</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.selferp_l10n_ua_vat</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_vat_invoices"
+                        class="oe_stat_button"
+                        type="object"
+                        icon="fa-pencil-square-o">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="vat_invoice_total" widget="monetary"/>
+                        </span>
+                        <span class="o_stat_text">VAT Invoices</span>
+                    </div>
+                </button>
+            </div>
+
+            <button name="action_view_invoice" position="after">
+                <button name="action_view_journal_items"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-bars"
+                        groups="account.group_account_readonly"
+                        attrs="{'invisible': [('move_line_count', '=', 0)]}">
+                    <field name="move_line_count" widget="statinfo" string="Journal Items" />
+                </button>
+            </button>
+
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="before">
+                <field name="vat_invoice_qty"
+                       groups="account.group_account_readonly,account.group_account_invoice"
+                />
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

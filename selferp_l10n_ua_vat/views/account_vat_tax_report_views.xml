@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_tax_vat_tax_report_view_tree" model="ir.ui.view">
+        <field name="name">account.vat.tax_report.view.tree</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="inherit_id" ref="selferp_l10n_ua_ext.account_editable_report_view_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree></tree>
+        </field>
+    </record>
+
+
+    <record id="account_tax_vat_tax_report_view_search" model="ir.ui.view">
+        <field name="name">account.vat.tax_report.view.search</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="inherit_id" ref="selferp_l10n_ua_ext.account_editable_report_view_search"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <search></search>
+        </field>
+    </record>
+
+
+    <record id="account_tax_vat_tax_report_view_form" model="ir.ui.view">
+        <field name="name">account.vat.tax_report.view.form</field>
+        <field name="model">account.vat.tax_report</field>
+        <field name="inherit_id" ref="selferp_l10n_ua_ext.account_editable_report_view_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[@name='docs']" position="inside">
+                <page name="page_J0200125" string="VAT Tax Report">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200125'}"
+                                    icon="fa-pencil"
+                                    string="Edit Report"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200125'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200125'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0200125" />
+                </page>
+                <page name="page_J0200525" string="Appendix 1">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0200525"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0200525" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200525'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200525'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200525'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0200525" />
+                </page>
+                <page name="page_J0215225" string="Appendix 2">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0215225"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0215225" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215225'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215225'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215225'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0215225" />
+                </page>
+                <page name="page_J0200625" string="Appendix 3">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0200625"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0200625" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200625'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200625'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0200625'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0200625" />
+                </page>
+                <page name="page_J0299825" string="Appendix 4">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0299825"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0299825" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0299825'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0299825'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0299825'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0299825" />
+                </page>
+                <page name="page_J0299325" string="Appendix 5">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0299325"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0299325" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0299325'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0299325'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0299325'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0299325" />
+                </page>
+                <page name="page_J0215725" string="Appendix 6">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0215725"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0215725" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215725'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215725'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215725'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0215725" />
+                </page>
+                <page name="page_J0215825" string="Appendix 7">
+                    <div class="mb32 row justify-content-center" states="generated">
+                        <div class="col-12 p-2 text-center">
+                            <field name="include_J0215825"
+                                   attrs="{'readonly': [('state', '!=', 'generated')]}" />
+                            <label for="include_J0215825" string="Include in the declaration" />
+                        </div>
+
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_edit_part"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215825'}"
+                                    icon="fa-pencil"
+                                    string="Edit Addition"
+                                    class="btn-info"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_pdf"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215825'}"
+                                    icon="fa-file-pdf-o"
+                                    string="Download PDF"
+                                    class="btn-success"
+                            />
+                        </div>
+                        <div class="col-12 col-md-4 p-2 d-flex justify-content-center">
+                            <button name="action_download_xml"
+                                    type="object"
+                                    context="{'editable_report_part_name': 'J0215825'}"
+                                    icon="fa-file-text-o"
+                                    string="Download XML"
+                                    class="btn-success"
+                            />
+                        </div>
+                    </div>
+
+                    <field name="rendered_html_part_J0215825" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+    <record id="account_vat_tax_report_action" model="ir.actions.act_window">
+        <field name="name">VAT Tax Reports</field>
+        <field name="res_model">account.vat.tax_report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>

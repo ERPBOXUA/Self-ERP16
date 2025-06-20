@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="true">
+
+    <record id="product_product_expense_duty" model="product.product">
+        <field name="name">Мито</field>
+        <field name="description">Мито</field>
+        <field name="standard_price">0.0</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        <field name="default_code">DUTY</field>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="landed_cost_ok" eval="True"/>
+        <field name="split_method_landed_cost">by_custom_declaration</field>
+    </record>
+
+    <record id="product_product_expense_customs_duty" model="product.product">
+        <field name="name">Митний збір</field>
+        <field name="description">Митний збір</field>
+        <field name="standard_price">0.0</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        <field name="default_code">CUSTOMS_DUTY</field>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="landed_cost_ok" eval="True"/>
+        <field name="split_method_landed_cost">by_custom_declaration</field>
+    </record>
+
+    <record id="product_product_expense_excise_duty" model="product.product">
+        <field name="name">Акцизний збір</field>
+        <field name="description">Акцизний збір</field>
+        <field name="standard_price">0.0</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        <field name="default_code">EXCISE_DUTY</field>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="landed_cost_ok" eval="True"/>
+        <field name="split_method_landed_cost">by_custom_declaration</field>
+    </record>
+
+    <record id="product_product_expense_vat" model="product.product">
+        <field name="name">ПДВ</field>
+        <field name="description">Податок на додану вартість</field>
+        <field name="standard_price">0.0</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        <field name="default_code">VAT</field>
+        <field name="sale_ok" eval="False"/>
+        <field name="purchase_ok" eval="False"/>
+        <field name="landed_cost_ok" eval="True"/>
+        <field name="split_method_landed_cost">by_custom_declaration</field>
+    </record>
+
+</odoo>

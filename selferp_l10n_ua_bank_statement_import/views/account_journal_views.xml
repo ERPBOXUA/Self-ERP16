@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<odoo>
+
+
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">account.journal.form.inherit.selferp_l10n_ua_bank_statement_import</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='bank_account']//field[@name='bank_statements_source']" position="after">
+                <field name="import_mapping_id"
+                       attrs="{'invisible': ['|', ('type', '!=', 'bank'), ('bank_statements_source', '!=', 'file_import')]}" />
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,544 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_l10n_ua_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-11 13:08+0000\n"
+"PO-Revision-Date: 2023-12-11 13:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Post Exchange difference entries for currency Purchase/Sale:</span>"
+msgstr "<span class=\"o_form_label\">Опублікувати записи курсових різниць з купівлі/продажу іноземної валюти:</span>"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Шаблон плану рахунків"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__advance_line_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_move_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Advance Payments"
+msgstr "Авансові платежі (передоплати)"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_bank_statement_line__cd_prepayment_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move__cd_prepayment_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__cd_prepayment_ids
+msgid "Advances"
+msgstr "Аванси"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking_customs_declaration_line__amount
+msgid "Amount"
+msgstr "Сума"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move_line__abs_residual_balance
+msgid "Amount Company Currency"
+msgstr "Сума у валюті компанії"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.account_move_line_view_tree_prepay
+msgid "Amount in Currency"
+msgstr "Сумма у валюті"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__bank_commission
+msgid "Bank commission"
+msgstr "Комісія Банку"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_company__bank_commission_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_config_settings__bank_commission_account_id
+msgid "Bank commission account"
+msgstr "Рахунок для банківської комісії"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,help:selferp_l10n_ua_currency.field_purchase_order__is_import
+#: model:ir.model.fields,help:selferp_l10n_ua_currency.field_purchase_order_line__order_is_import
+#: model:ir.model.fields,help:selferp_l10n_ua_currency.field_stock_picking__is_import
+msgid "Check the box if the purchase order include import operations. The Exchange rate on the date of advance payments (prepayments) and/or Customs Declaration will be taken for calculating the cost of imported products"
+msgstr "Відмітьте галочкою, якщо замовлення на купівлю включає імпортні операції. Вартість імпортних товарів буде розраховуватись з врахуванням курсу валюти на дату авансових платежів (передоплати) та/або по курсу ВМД."
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_res_company
+msgid "Companies"
+msgstr "Компанії"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__company_currency_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_purchase_order__company_currency_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__company_currency_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking_customs_declaration_line__company_currency_id
+msgid "Company Currency"
+msgstr "Валюта компанії"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_res_config_settings
+msgid "Config Settings"
+msgstr "Налаштування"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Create Landed Cost"
+msgstr "Створити додаткові витрати"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__purchase_currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.actions.act_window,name:selferp_l10n_ua_currency.account_payment_action_currency_purchase
+#: model:ir.ui.menu,name:selferp_l10n_ua_currency.account_payment_menu_currency_purchase
+msgid "Currency Purchase"
+msgstr "Купівля валюти"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_bank_statement_line__cd_currency_rate
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move__cd_currency_rate
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__cd_currency_rate
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.account_move_line_view_tree_prepay
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Currency Rate"
+msgstr "Курс валюти"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.actions.act_window,name:selferp_l10n_ua_currency.account_payment_action_currency_sale
+#: model:ir.ui.menu,name:selferp_l10n_ua_currency.account_payment_menu_currency_sale
+msgid "Currency Sale"
+msgstr "Продаж валюти"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__currency_transactions
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_account_payment_search
+msgid "Currency Transactions"
+msgstr "Валютні операції"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_move.py:0
+#, python-format
+msgid "Currency rate compute allowed to import purchase orders only."
+msgstr "Обчислення курсу валют дозволене лише для замовлень на купівлю позначених як імпорт."
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__currency_transactions
+msgid "Currency transactions"
+msgstr "Валютні операції"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move_line__customs_declaration_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_declaration_line_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Customs Declaration"
+msgstr "Вантажна митна декларація (ВМД)"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_declaration_currency_rate
+msgid "Customs Declaration Currency Rate"
+msgstr "Курс валюти у ВМД"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_declaration_date
+msgid "Customs Declaration Date"
+msgstr "Дата ВМД"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Date"
+msgstr "Дата"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking_customs_declaration_line__description
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Description"
+msgstr "Опис"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__interbank_and_nbu_difference
+msgid "Differences between the Interbank exchange rate and the NBU"
+msgstr "Різниця між курсом Міжбанку та НБУ"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_bank_statement_line__is_customs_declaration
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move__is_customs_declaration
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__is_customs_declaration
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_move_form
+msgid "Export"
+msgstr "Експорт"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_move_form
+msgid "Export Date"
+msgstr "Дата експорту"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_company__income_exchange_difference_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_config_settings__income_exchange_difference_account_id
+msgid "Gain from FX difference"
+msgstr "Дохід від купівлі/продажу іноземної валюти"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_bank_statement_line__is_import_vendor_bill
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move__is_import_vendor_bill
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__is_import_vendor_bill
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_purchase_order__is_import
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_purchase_order_line__order_is_import
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__is_import
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_move_form
+msgid "Import"
+msgstr "Імпорт"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_move_form
+msgid "Import Date"
+msgstr "Дата імпорту"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__interbank_currency_exchange_rate
+msgid "Interbank currency exchange rate"
+msgstr "Курс Міжбанк"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_purchase_order__is_company_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__is_company_currency
+msgid "Is Company Currency"
+msgstr "Валюта компанії"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_account_move
+msgid "Journal Entry"
+msgstr "Запис у журналі"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_account_move_line
+msgid "Journal Item"
+msgstr "Запис у журналі"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/purchase_order.py:0
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_purchase_order__landed_cost_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__landed_cost_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking_customs_declaration_line__product_id
+#, python-format
+msgid "Landed Cost"
+msgstr "Додаткові витрати"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_purchase_order__landed_cost_count
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__landed_cost_count
+msgid "Landed Cost Count"
+msgstr "Кількість додаткових витрат"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/purchase_order.py:0
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.purchase_order_form
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+#, python-format
+msgid "Landed Costs"
+msgstr "Додаткові витрати"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_company__expense_exchange_difference_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_config_settings__expense_exchange_difference_account_id
+msgid "Loss from FX difference"
+msgstr "Втрати від купівлі/продажу іноземної валюти"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/account_move_line.py:0
+#, python-format
+msgid "Multiple imports in a single move are not supported"
+msgstr "Кілька імпортів в одному записі не підтримуються"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__nbu_currency_exchange_rate
+msgid "NBU currency exchange rate"
+msgstr "Курс НБУ"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_currency.selection__res_company__currency_provider__nbu
+msgid "National Bank of Ukraine"
+msgstr "Національний банк України"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_account_partial_reconcile
+msgid "Partial Reconcile"
+msgstr "Часткове узгодження"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_account_payment
+msgid "Payments"
+msgstr "Платежі"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_purchase_order
+msgid "Purchase Order"
+msgstr "Замовлення на купівлю"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Рядок замовлення на купівлю"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_company__currency_provider
+msgid "Service Provider"
+msgstr "Постачальник послуг"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_stock_move
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move_line__stock_move_id
+msgid "Stock Move"
+msgstr "Складське переміщення"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/account_move.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_bank_statement_line__stock_picking_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move__stock_picking_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__stock_picking_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking_customs_declaration_line__stock_picking_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_move_form
+#, python-format
+msgid "Stock Picking"
+msgstr "Надходження"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_bank_statement_line__stock_picking_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_move__stock_picking_ids
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__stock_picking_ids
+msgid "Stock Pickings"
+msgstr "Надходження"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/purchase_order.py:0
+#, python-format
+msgid "There are no any stock picking to invoice"
+msgstr "Немає надходжень до інвойсування"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model,name:selferp_l10n_ua_currency.model_stock_picking
+msgid "Transfer"
+msgstr "Переміщення"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_company__transit_in_foreign_currency_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_config_settings__transit_in_foreign_currency_account_id
+msgid "Transit account in foreign currency"
+msgstr "Грошові кошти в дорозі в іноземній валюті"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_company__transit_in_national_currency_account_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_res_config_settings__transit_in_national_currency_account_id
+msgid "Transit account in national currency"
+msgstr "Грошові кошти в дорозі в національній валюті"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__vendor_bill_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+#, python-format
+msgid "Vendor Bill"
+msgstr "Рахунок постачальника"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/purchase_order.py:0
+#, python-format
+msgid "You can't confirm an import order with different type of products! Create separate purchase orders for each product type, please."
+msgstr "Ви не можете підтвердити замовлення імпорту з продуктами різного типу! Створіть окремі замовлення для продуктів різного типу, будь ласка."
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_currency.selection__res_company__currency_provider__nbu
+msgid "National Bank of Ukraine"
+msgstr "Національний банк України"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Allocate"
+msgstr "Розподілити"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__cargo_customs_number
+msgid "CCD number"
+msgstr "№ ВМД"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_move__customs_cost
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_cost
+msgid "Customs Cost"
+msgstr "Митна вартість"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_duty_rate
+msgid "Customs Duty Rate"
+msgstr "Ставка мита"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_move__customs_duty_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_duty_amount
+msgid "Customs Duty Amount"
+msgstr "Сума мита"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_duty_UKTZED
+msgid "Customs Duty UKTZED"
+msgstr "Ставки мита з УКТЗЕД"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_move__excise_duty_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__excise_duty_amount
+msgid "Excise Duty"
+msgstr "Сума акцизу"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__excise_duty_rate
+msgid "Excise Duty rate"
+msgstr "Ставка акцизу"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__include_vat_to_cost
+msgid "Include VAT to cost"
+msgstr "Включати ПДВ у склад с/в"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#, python-format
+msgid "Only account manager can confirm customs declaration."
+msgstr "Тільки менеджер може підтверджувати ВМД"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Parts of Custom Declaration"
+msgstr "Розділи ВМД"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Products from Custom Declaration"
+msgstr "Продукти з ВМД"
+
+#. module: selferp_l10n_ua_currency
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_currency.view_picking_form
+msgid "Total"
+msgstr "Усього"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_move__vat_amount
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__vat_amount
+msgid "VAT amount"
+msgstr "Сума ПДВ"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__vat_rate
+msgid "VAT rate"
+msgstr "Ставка ПДВ"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_move__customs_declaration_cost
+msgid "Customs Declaration Cost"
+msgstr "Вартість"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#, python-format
+msgid "No customs declaration cost found. Change count or validate it."
+msgstr "Не обраховано вартість товарів. Вкажіть кількість обо провалідуйте документ."
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_move__customs_fee
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_stock_picking__customs_fee
+msgid "Customs Fee"
+msgstr "Митний збір"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#, python-format
+msgid "No UKTZED code or customs duty rate found."
+msgstr "Не вказано УКTЗЕД код або значення ставок для нього."
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#, python-format
+msgid "UKTZED rate full is not a number."
+msgstr "Ставка в довіднику УКTЗЕД не є числом."
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__currency_sell_date
+msgid "Currency Sell Date"
+msgstr "Дата перерахування валюти на продаж"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__currency_sell_date_difference
+msgid "Currency Sell Date Difference"
+msgstr "Курсова різниця продажу валюти"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields,field_description:selferp_l10n_ua_currency.field_account_payment__currency_sell_date_rate
+msgid "Currency Sell Date Rate"
+msgstr "Курс продажи валюти"
+
+#. module: selferp_l10n_ua_currency
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_currency.selection__product_template__split_method_landed_cost__by_custom_declaration
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_currency.selection__stock_landed_cost_lines__split_method__by_custom_declaration
+msgid "By custom declaration"
+msgstr "За даними з ВМД"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_landed_cost.py:0
+#, python-format
+msgid "The split method based on customs declaration data cannot be used for the following landed cost %s"
+msgstr "Метод розподілу на основі даних з ВМД не доступний для даної додаткової витрати %s"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_picking.py:0
+#, python-format
+msgid "Customs cost should be greater than 0."
+msgstr "Митна вартість повинна буте більша за 0."
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_landed_cost.py:0
+#, python-format
+msgid "Many or none declaration lines for product %s and cos %s"
+msgstr "Багато або відсутні лінії у ВМД для продукту %s та витрати %s"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_landed_cost.py:0
+#, python-format
+msgid "Wrong declaration line for product %s"
+msgstr "Невірна лінія в митній декларації для продукту %s"
+
+#. module: selferp_l10n_ua_currency
+#. odoo-python
+#: code:addons/selferp_l10n_ua_currency/models/stock_landed_cost.py:0
+#, python-format
+msgid "Please specify only one stock picking to be able to use split method based on the data in the customs declaration (CCD)"
+msgstr "Для використання методу розподілу з врахуванням даних із ВМД необхідно вказати лише одне вхідне складське переміщення"

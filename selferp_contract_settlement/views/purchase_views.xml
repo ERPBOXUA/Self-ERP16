@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.selferp_contract_settlement</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+           <field name="partner_ref" position="before">
+               <field name="contract_id"
+                      context="{'default_partner_id': partner_id, 'default_operation_type': 'purchase'}"
+                      attrs="{'readonly': [('state', 'not in', ('draft', 'sent'))]}"/>
+           </field>
+        </field>
+    </record>
+
+
+    <record id="purchase_order_tree" model="ir.ui.view">
+        <field name="name">purchase.order.tree.inherit.selferp_contract_settlement</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="contract_id" readonly="1" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="purchase_order_view_tree" model="ir.ui.view">
+        <field name="name">purchase.order.view.tree.inherit.selferp_contract_settlement</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="contract_id" readonly="1" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="purchase_order_kpis_tree" model="ir.ui.view">
+        <field name="name">purchase.order.kpis.tree.inherit.selferp_contract_settlement</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="contract_id" readonly="1" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+
+
+    <menuitem id="account_contract_menu_purchase"
+              name="Vendor contracts"
+              action="selferp_contract_settlement.account_contract_action_vendor"
+              groups="account.group_account_manager"
+              parent="purchase.menu_procurement_management"
+              sequence="9999" />
+
+
+</odoo>

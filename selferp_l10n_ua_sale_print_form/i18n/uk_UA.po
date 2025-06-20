@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * selferp_l10n_ua_sale_print_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-26 08:08+0000\n"
+"PO-Revision-Date: 2022-12-26 08:08+0000\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: uk\n"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_sale_print_form.account_move_report_invoice
+msgid "'Invoice - %s' % (object.name)"
+msgstr "'Видаткова накладна - %s' % (object.name)"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,name:selferp_l10n_ua_sale_print_form.account_move_report_invoice
+msgid "Invoices UA"
+msgstr "Рахунки (укр)"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_res_company__bank_partner_id
+msgid "Bank Partner"
+msgstr "Банк-партнер"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_res_company__chief_accountant_id
+msgid "Chief Accountant"
+msgstr "Головний бухгалтер"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_res_company__director_id
+msgid "Director"
+msgstr "Директор"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_res_company__general_bank_account_id
+msgid "Main bank account"
+msgstr "Основний банківський рахунок"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_sale_print_form.account_move_report_act
+msgid "'Akt - %s' % (object.name)"
+msgstr "'Акт - %s' % (object.name)"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,print_report_name:selferp_l10n_ua_sale_print_form.account_move_report_invoice
+msgid "'BILL - %s' % (object.name)"
+msgstr "'Рахунок - %s' % (object.name)"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,name:selferp_l10n_ua_sale_print_form.account_move_report_act
+msgid "Akt vykonanykh robit"
+msgstr "Акт виконаних робіт"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,name:selferp_l10n_ua_sale_print_form.account_move_report_invoice
+msgid "Vydatkova nakladna"
+msgstr "Видаткова накладна"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.actions.report,name:selferp_l10n_ua_sale_print_form.account_move_report_bill
+msgid "Rakhunok na oplatu"
+msgstr "Рахунок на оплату"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_account_bank_statement_line__assembly_location
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_account_move__assembly_location
+#: model:ir.model.fields,field_description:selferp_l10n_ua_sale_print_form.field_account_payment__assembly_location
+msgid "Assembly location"
+msgstr "Місце складання"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model,name:selferp_l10n_ua_sale_print_form.model_address_custom_mixin
+msgid "Creates an address string that starts with the country and is separated by commas"
+msgstr "Створює строку адреси, яка починається з країни і розділена комами"
+
+#. module: selferp_l10n_ua_sale_print_form
+#: model:ir.model.fields,help:selferp_l10n_ua_sale_print_form.field_res_company__general_bank_account_id
+msgid ""
+"Bank Account Number to which the invoice will be paid. A Company bank "
+"account if this is a Customer Invoice or Vendor Credit Note, otherwise a "
+"Partner bank account number."
+msgstr ""
+"Номер банківського рахунку, куди буде платіж по документу продажу."
+"Банківський рахунок компанії, якщо це документ продажу замовнику чи сторно від "
+"замовника, інакше - номер банківського рахунку партнера."

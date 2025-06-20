@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="decimal_precision_vat_invoice_quantity" model="decimal.precision">
+        <field name="name">VAT quantity</field>
+        <field name="digits">8</field>
+    </record>
+
+</odoo>

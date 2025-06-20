@@ -1,0 +1,588 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selferp_l10n_ua_fixed_asset
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-23 09:33+0000\n"
+"PO-Revision-Date: 2024-02-23 09:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_move.py:0
+#, python-format
+msgid " (%s of %s)"
+msgstr " (%s з %s)"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_move.py:0
+#, python-format
+msgid "%s created from invoice: %s"
+msgstr "%s створено з рахунку: %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/report/account_assets_report.py:0
+#, python-format
+msgid "%s m"
+msgstr "%s м"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/report/account_assets_report.py:0
+#, python-format
+msgid "%s y"
+msgstr "%s р"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "%s: On Run"
+msgstr "%s: Введення в експлуатацію"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "%s: Sell"
+msgstr "%s: Продаж"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "A depreciation entry will be posted on %s.<br/> A disposal entry will be posted on the %s account <b>%s</b>."
+msgstr "Запис амортизації буде опубліковано на дату %s.<br/> Запис про утилізацію буде розміщено на рахунку %s <b>%s</b>."
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "A depreciation entry will be posted on and including the date %s.<br/> Asset as held for sale entry will be posted on account <b>%s</b>."
+msgstr "Запис амортизації буде опубліковано включно по дату %s.<br/> Буде створено запис з класифікацією активу як утримуваного для продажу на рахунку <b>%s</b>."
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "A gross increase has been created: %s"
+msgstr "Створено валовий приріст: %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__move_asset_on_run_id
+msgid "Account Move for Asset On Run"
+msgstr "Проведення Основного засобу в експлуатацію"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__move_asset_sell_id
+msgid "Account Move for Sell Asset"
+msgstr "Проведення Продажу Основного засобу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:account.report.column,name:selferp_l10n_ua_fixed_asset.account_report_column_assets_report_acquisition_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__acquisition_date
+msgid "Acquisition Date"
+msgstr "Дата придбання"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "All the lines should be from the same account"
+msgstr "Усі рядки повинні бути з одного й того ж рахунку"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "All the lines should be with the same product"
+msgstr "Усі рядки повинні мати один і той же продукт"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__amortized_cost
+msgid "Amortized Cost"
+msgstr "Амортизована вартість"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_move.py:0
+#: code:addons/selferp_l10n_ua_fixed_asset/models/maintenance_equipment.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset_re_evaluate_line__asset_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_maintenance_equipment__asset_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.hr_equipment_view_form
+#, python-format
+msgid "Asset"
+msgstr "Основний засіб"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__account_asset_counterpart_id
+msgid "Asset Counterpart Account"
+msgstr "Контрагентний рахунок активу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:account.report.column,name:selferp_l10n_ua_fixed_asset.account_report_column_assets_report_asset_number
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__asset_number
+msgid "Asset Number"
+msgstr "Інвентарний номер"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_asset_modify__asset_type
+msgid "Asset Type"
+msgstr "Тип активу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Asset held on sell. %s"
+msgstr "Основний засіб утриманий для продажу. %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Asset sold. %s"
+msgstr "Основний засіб проданий. %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Asset unpaused. %s"
+msgstr "Актив знову діє. %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/ir_actions_report.py:0
+#, python-format
+msgid "Asset's moves could not be printed."
+msgstr "Проводки Основного засобу не можуть друкуватися."
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model,name:selferp_l10n_ua_fixed_asset.model_account_asset
+msgid "Asset/Revenue Recognition"
+msgstr "Активи/Визнання доходу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_fixed_asset.selection__product_template__detailed_type__assets
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_fixed_asset.selection__product_template__type__assets
+msgid "Assets"
+msgstr "Основні засоби"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset_re_evaluate_line__value_re_evaluate_move_line
+msgid "Balance"
+msgstr "Баланс"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.asset_modify_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Cancellation of sale. %s"
+msgstr "Скасування продажу. %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__account_capital_investment_id
+msgid "Capital Investment Account"
+msgstr "Рахунок капітальних інвестицій"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,help:selferp_l10n_ua_fixed_asset.field_account_asset__transfer_of_assets_balances
+msgid "Check the box if the initial balances of assets (assets that are already in a depreciation process in your accounting) are imported from another software"
+msgstr "Відмітьте галочкою, якщо початкові залишки активів (активів, які вже знаходяться в процесі амортизації у вашому обліку) є імпортовані з іншого програмного забезпечення"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:account.report.column,name:selferp_l10n_ua_fixed_asset.account_report_column_assets_report_commissioning_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__commissioning_date
+msgid "Commissioning Date"
+msgstr "Дата ведення в експлуатацію"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Commissioning date cannot be earlier than acquisition date"
+msgstr "Дата ведення в експлуатацію не може бути раніше ніж дата придбання"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__account_counterpart_id
+msgid "Counterpart Account"
+msgstr "Контрагентний рахунок"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.actions.server,name:selferp_l10n_ua_fixed_asset.account_asset_action_create_equipment
+msgid "Create Equipment"
+msgstr "Створити устаткування"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset_re_evaluate_line__currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__invoice_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+msgid "Customer Invoices"
+msgstr "Рахунки клієнтів"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_move.py:0
+#, python-format
+msgid "Deferred expense"
+msgstr "Витрати майбутніх періодів"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_move.py:0
+#, python-format
+msgid "Deferred revenue"
+msgstr "Доходи майбутніх періодів"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__depreciation_value
+msgid "Depreciation Value"
+msgstr "Сума амортизації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Depreciation board modified %s"
+msgstr "Таблицю амортизації змінено %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset_re_evaluate_line__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Disposal"
+msgstr "Ліквідація"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Dispose"
+msgstr "Ліквідувати"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__equipment_id
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+#, python-format
+msgid "Equipment"
+msgstr "Устаткування"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Equipment already exists"
+msgstr "Устаткування вже існує"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__held_on_sell_name
+msgid "Held On Sell Name"
+msgstr "Примітка при утриманні на продаж"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.asset_modify_form
+msgid "Held on Sell"
+msgstr "Утримати для продажу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__held_on_sell_date
+msgid "Held on Sell Date"
+msgstr "Дата утримання на продаж"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Journal Entries"
+msgstr "Записи в журналі"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_move.py:0
+#, python-format
+msgid "Journal Items of %s should have a label in order to generate an asset"
+msgstr "Елементи журналу %s повинні мати мітку, щоб генерувати актив"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__method
+msgid "Method"
+msgstr "Метод"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#: model:ir.model,name:selferp_l10n_ua_fixed_asset.model_asset_modify
+#, python-format
+msgid "Modify Asset"
+msgstr "Редагувати актив"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Move on run. %s"
+msgstr "Запис введення в експлуатацію. %s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields.selection,name:selferp_l10n_ua_fixed_asset.selection__account_asset__state__on_hold
+msgid "On Hold"
+msgstr "Утримуваний для продажу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+msgid "Operations"
+msgstr "Операції"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:account.report.column,name:selferp_l10n_ua_fixed_asset.account_report_column_assets_report_original_value
+msgid "Original Value"
+msgstr "Оригінальне значення"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Pause"
+msgstr "Пауза"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model,name:selferp_l10n_ua_fixed_asset.model_product_template
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__product_id
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_asset_modify__product_id
+msgid "Product"
+msgstr "Товар"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__prorata_date
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+msgid "Prorata Date"
+msgstr "Дата початку нарахування амортизації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Re-evaluate"
+msgstr "Модернізувати"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_asset_modify__value_re_evaluate
+msgid "Re-evaluate Amount"
+msgstr "Сума модернізації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model,name:selferp_l10n_ua_fixed_asset.model_account_asset_re_evaluate_line
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__re_evaluate_line_ids
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+msgid "Re-evaluate Lines"
+msgstr "Рядки модернізації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset_re_evaluate_line__re_evaluate_move_line_id
+msgid "Re-evaluate Move Line"
+msgstr "Рядок модернізації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model,name:selferp_l10n_ua_fixed_asset.model_ir_actions_report
+msgid "Report Action"
+msgstr "Дія звіту"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Resume"
+msgstr "Продовжити"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Sale"
+msgstr "Продаж"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+#, python-format
+msgid "Sell"
+msgstr "Продаж"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__account_sell_id
+msgid "Sell Account"
+msgstr "Рахунок продажу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Sell Asset"
+msgstr "Продаж Основного засобу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__sell_date
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_asset_modify__sell_date
+msgid "Sell Date"
+msgstr "Дата продажу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.asset_modify_form
+msgid "Sell Later"
+msgstr "Продати пізніше"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Sell Move"
+msgstr "Проведення продажу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__state
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_asset_modify__asset_state
+msgid "Status"
+msgstr "Статус"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "There are unposted depreciations prior to the selected operation date, please deal with them first."
+msgstr "Є ненараховані амортизації до вибраної дати операції, будь ласка, спочатку врахуйте їх."
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "This option (No Prorata) is not active for the Ukrainian localisation"
+msgstr "Дана опція (Без пропорції) не активна для української локалізації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model_terms:ir.ui.view,arch_db:selferp_l10n_ua_fixed_asset.view_account_asset_form
+msgid "Total Re-evaluate"
+msgstr "Сума модернізації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__transfer_of_assets_balances
+msgid "Transfer of assets balances"
+msgstr "Перенесення залишків по активах"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,help:selferp_l10n_ua_fixed_asset.field_account_asset__account_capital_investment_id
+msgid "Transit account used to record the purchase of the asset before it is used in business activities."
+msgstr "Транзитний рахунок, який використовується для обліку придбання активу до його використання в господарській діяльності."
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset__gaap
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_asset_modify__gaap
+msgid "UA GAAP"
+msgstr "П(С)БО"
+
+#. module: selferp_l10n_ua_fixed_asset
+#: model:ir.model.fields,field_description:selferp_l10n_ua_fixed_asset.field_account_asset_re_evaluate_line__value_re_evaluate
+msgid "Value"
+msgstr "Сума модернізації"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset_re_evaluate_line.py:0
+#, python-format
+msgid "Value Re-evaluate must be less than Value Re-evaluate Move Line"
+msgstr "Сума модернізації повинна бути менше ніж баланс рядка"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "Value Re-evaluate shouldn`t be more than Book Value"
+msgstr "Сума модернізації не повинна бути більше ніж Балансова вартість"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Value decrease for: %(asset)s"
+msgstr "Зменшення вартості для: %(asset)s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "Value increase for: %(asset)s"
+msgstr "Збільшення вартості для: %(asset)s"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "You cannot resume at a date equal to or before the pause date"
+msgstr "Ви не можете відновити на дату, що дорівнює або передує даті паузи"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "You cannot sell asset without Sell Date, Customer Invoice or Loss Account"
+msgstr "Ви не можете продати Основний засіб без вказання Дати продажу, Рахунка клієнта чи Рахунка для браку і втрат"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/models/account_asset.py:0
+#, python-format
+msgid "You must fill in Commissioning date"
+msgstr "Треба заповнити Дату введення в експлуатацію"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "gain"
+msgstr "доходу"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "gain/loss"
+msgstr "доходу/витрат"
+
+#. module: selferp_l10n_ua_fixed_asset
+#. odoo-python
+#: code:addons/selferp_l10n_ua_fixed_asset/wizard/asset_modify.py:0
+#, python-format
+msgid "loss"
+msgstr "витрат"

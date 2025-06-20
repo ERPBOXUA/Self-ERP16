@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="hr_order_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <t t-set="o" t-value="o.with_context(lang='uk_UA')" />
+
+                    <t t-if="o.type_id == o.env.ref('selferp_l10n_ua_salary.hr_order_type_granting_leave')">
+                        <t t-call="selferp_l10n_ua_salary.hr_order_vacation_report_template"/>
+                    </t>
+                    <t t-elif="o.type_id == o.env.ref('selferp_l10n_ua_salary.hr_order_type_dismissal')">
+                        <t t-call="selferp_l10n_ua_salary.hr_order_dismissal_report_template"/>
+                    </t>
+                    <t t-elif="o.type_id == o.env.ref('selferp_l10n_ua_salary.hr_order_type_recruitment')">
+                        <t t-call="selferp_l10n_ua_salary.hr_order_recruitment_report_template"/>
+                    </t>
+                    <t t-else="">
+                        <t t-call="selferp_l10n_ua_salary.hr_order_other_report_template"/>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <template id="hr_order_vacation_report_template">
+        <div t-translation="off" class="page order_report">
+            <div class="row mb-3" style="margin-bottom: 20px;">
+                <div class="col-7 pe-3 justify-content-center align-center mt-4">
+                    <div class="underlined_block_value_container mb-0 me-5">
+                        <div class="ub_value pt-2 pb-1  text-center" t-esc="res_company.name"/>
+                    </div>
+                    <div style="margin-bottom: 10px; width: 100%; text-align: center;">Найменування підприємства (установи, організації)</div>
+                </div>
+                <div class="col-5">
+                    <div style="width: 300px; padding-left: 50px; padding-bottom: 8px; text-align: center; font-size: 14px;">Типова форма № П-3</div>
+                    <p class="mb-0 text-center" style="width: 300px; padding-left: 50px; line-height: 1.1;">ЗАТВЕРДЖЕНО</p>
+                    <p style="width: 300px; padding-left: 50px; text-align: center; line-height: 1.1;">
+                        Наказ Держкомстату України<br/>
+                        05.12.2008 № 489<br/>
+                    </p>
+                    <table class="table table-bordered custom_table_small" style="width: 300px;">
+                        <tr style="text-align: center">
+                            <td>Код ЄДРПОУ</td>
+                            <td style="width: 130px;"><t t-esc="res_company.company_registry"/></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td>Дата складання</td>
+                            <td><t t-if="o.order_date" t-esc="o.order_date.strftime('%d.%m.%Y')"/></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 style="margin-bottom: 2px; text-align: center; font-weight: bold; font-size: 22px;">
+                        НАКАЗ <t t-esc="o.name"/>
+                    </h1>
+                    <h4 class="text-center mb-0" style="font-size: 18px;">
+                        (розпорядження)<br/>
+                        про надання відпустки
+                    </h4>
+                    <div class="d-flex justify-content-end">
+                        <table class="table table-bordered custom_table_small" style="width: 200px;">
+                            <tr style="text-align: center">
+                                <td>Табельний номер</td>
+                            </tr>
+                            <tr style="text-align: center">
+                                <td><t t-esc="o.employee_id.registration_number if o.employee_id.registration_number else '&#160;'"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pb-4">
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center"><t t-esc="o.employee_id.name"/></div>
+                        <div class="ub_help_info">(прізвище, ім’я, по батькові)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-esc="o.employee_id.department_id.name if o.employee_id.department_id.name else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">назва структурного підрозділу</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-if="o.employee_id.job_id" t-esc="o.employee_id.job_id.name if o.employee_id.job_id.name else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">назва професії (посади)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center"><t t-esc="o.type_of_vacation if o.type_of_vacation else '&#160;'"/></div>
+                        <div class="ub_help_info">вид відпустки (щорічна основна, додаткова, навчальна, без збереження заробітної плати та ін.)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">&#160;</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 80px;">
+                <div class="col">
+                    <div class="d-flex mb-4">
+                        <div style="width: 60%;">
+                            <div class="d-flex" style="width: 100%">
+                                <div class="underlined_block_title">За період роботи з</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value text-center">
+                                        <t t-if="o.work_date_from" >
+                                            <t t-esc="babel_dates.format_date(o.work_date_from, 'dd MMMM yyyy', locale='uk_UA')"/> року
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 40%;">
+                            <div class="d-flex" style="width: 100%">
+                                <div class="underlined_block_title">по</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value text-center">
+                                        <t t-if="o.work_date_to">
+                                            <t t-esc="babel_dates.format_date(o.work_date_to, 'dd MMMM yyyy', locale='uk_UA')"/> року
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div style="width: 60%;">
+                            <div class="d-flex" style="width: 100%">
+                                <div class="underlined_block_title">Період відпустки з</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value text-center">
+                                        <t t-if="o.vacation_date_from">
+                                            <t t-esc="babel_dates.format_date(o.vacation_date_from, 'dd MMMM yyyy', locale='uk_UA')"/> року
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 40%;">
+                            <div class="d-flex" style="width: 100%">
+                                <div class="underlined_block_title">по</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value text-center">
+                                        <t t-if="o.vacation_date_to">
+                                            <t t-esc="babel_dates.format_date(o.vacation_date_to, 'dd MMMM yyyy', locale='uk_UA')"/> року
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex pb-2 mb-4">
+                        <div class="underlined_block_title">на <t t-esc="(o.vacation_date_to - o.vacation_date_from).days + 1"/> календарних дні(в)</div>
+                    </div>
+                    <div class="mb-5 vat_checkbox_data_elem-container">
+                        <span class="vat_checkbox_data_elem"/> Надання матеріальної допомоги на оздоровлення (у разі необхідності відмітити <b>х</b>)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex align-items-center center mb-5">
+                        <div style="width: 33%; font-size: 18px;">
+                            <b>Керівник підприємства</b><br/>
+                            (установи, організації)
+                        </div>
+                        <div style="width: 33%;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 33%;">
+                            <div class="underlined_block_value_container pt-2" style="min-width: 300px;">
+                                <div class="ub_value text-center"><t t-esc="res_company.director_id.name"/></div>
+                                <div class="ub_help_info">ПІБ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-5">
+                        <div style="width: 33%; font-size: 18px;">
+                            Керівник структурного підрозділу
+                        </div>
+                        <div style="width: 33%; padding-top: 10px;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 33%; padding-top: 10px;">
+                            <div class="underlined_block_value_container pt-2" style="min-width: 300px;">
+                                <div class="ub_value text-center">
+                                    <t t-if="o.employee_id.department_id and o.employee_id.department_id.manager_id" t-esc="o.employee_id.department_id.manager_id.name"/>
+                                </div>
+                                <div class="ub_help_info">ПІБ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 40%; font-size: 18px;">
+                            <b>З наказом (розпорядженням) ознайомлений</b>
+                        </div>
+                        <div style="width: 30%;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 30%; padding-top: 8px;">
+                            <div class="d-flex" style="width: 250px;">
+                                <div class="underlined_block_title" style="margin-right: 2px;">"</div>
+                                <div class="underlined_block_value_container flex_0" style="margin-right: 2px; min-width: 35px;">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">"</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">20</div>
+                                <div class="underlined_block_value_container flex_0" style="min-width: 35px;">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">p</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="hr_order_dismissal_report_template">
+        <div t-translation="off" class="page order_report">
+            <div class="row mb-3" style="margin-bottom: 20px;">
+                <div class="col-7 pe-3 justify-content-center align-center mt-4">
+                    <div class="underlined_block_value_container mb-0 me-5">
+                        <div class="ub_value pt-2 pb-1  text-center" t-esc="res_company.name"/>
+                    </div>
+                    <div style="margin-bottom: 10px; width: 100%; text-align: center;">Найменування підприємства (установи, організації)</div>
+                </div>
+                <div class="col-5">
+                    <div style="width: 300px; padding-left: 50px; padding-bottom: 8px; text-align: center; font-size: 14px;">Типова форма № П-4</div>
+                    <p class="mb-0 text-center" style="width: 300px; padding-left: 50px; line-height: 1.1;">Затверджено</p>
+                    <p style="width: 300px; padding-left: 50px; text-align: center; line-height: 1.1;">
+                        Наказ Держкомстату України<br/>
+                        05.12.2008 № 489<br/>
+                    </p>
+                    <table class="table table-bordered custom_table_small" style="width: 300px;">
+                        <tr style="text-align: center">
+                            <td>Код ЄДРПОУ</td>
+                            <td style="width: 130px;"><t t-esc="res_company.company_registry"/></td>
+                        </tr>
+                        <tr style="text-align: center">
+                            <td>Дата складання</td>
+                            <td><t t-if="o.order_date" t-esc="o.order_date.strftime('%d.%m.%Y')"/></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 style="margin-bottom: 2px; text-align: center; font-weight: bold; font-size: 22px;">
+                        НАКАЗ <t t-esc="o.name"/>
+                    </h1>
+                    <h4 class="text-center mb-5" style="font-size: 18px;">
+                        (розпорядження)<br/>
+                        про припинення трудового договору (контракту)
+                    </h4>
+                    <div class="mb-2" style="font-size: 18px; font-weight: bold;">
+                        <b>Звільнити з</b>
+                        <div class="underlined_block_value_container_inline" style="width: 210px;">
+                            <div class="ub_value text-center" style="top: 1px; font-weight: bold;">
+                                <t t-if="o.date_of_dismissal" >
+                                    <t t-esc="babel_dates.format_date(o.date_of_dismissal, 'dd MMMM yyyy', locale='uk_UA')"/> р.
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <table class="table table-bordered custom_table_small" style="width: 200px;">
+                            <tr style="text-align: center">
+                                <td style="font-size: 18px;">Табельний номер</td>
+                            </tr>
+                            <tr style="text-align: center">
+                                <td style="font-size: 18px;"><t t-esc="o.employee_id.registration_number if o.employee_id.registration_number else '&#160;'"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pb-4">
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center"><t t-esc="o.employee_id.name"/></div>
+                        <div class="ub_help_info">(прізвище, ім’я, по батькові)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-esc="o.employee_id.department_id.name if o.employee_id.department_id.name else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">(назва структурного підрозділу)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-if="o.employee_id.job_id" t-esc="o.employee_id.job_id.name if o.employee_id.job_id.name else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">назва професії (посади), розряд, клас (категорія) кваліфікації</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-esc="o.article_of_the_labor_code if o.article_of_the_labor_code else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">(причина звільнення)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-esc="o.basis if o.basis else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">(підстави звільнення)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 80px;">
+                <div class="col">
+                    <div class="mb-5 vat_checkbox_data_elem-container">
+                        <span class="vat_checkbox_data_elem"/>
+                        Вихідна допомога
+                        <div class="underlined_block_value_container_inline" style="width: 200px;">
+                            <div class="ub_value"></div>
+                        </div> грн.
+                        <div class="underlined_block_value_container_inline" style="width: 50px;">
+                            <div class="ub_value"></div>
+                        </div> коп.)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex align-items-center center mb-5">
+                        <div style="width: 33%; font-size: 18px;">
+                            <b>Керівник підприємства</b><br/>
+                            (установи, організації)
+                        </div>
+                        <div style="width: 33%;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 33%;">
+                            <div class="underlined_block_value_container pt-2" style="min-width: 300px;">
+                                <div class="ub_value text-center"><t t-esc="res_company.director_id.name"/></div>
+                                <div class="ub_help_info">ПІБ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 40%; font-size: 18px;">
+                            <b>З наказом (розпорядженням) ознайомлений</b>
+                        </div>
+                        <div style="width: 30%;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 30%; padding-top: 8px;">
+                            <div class="d-flex" style="width: 250px;">
+                                <div class="underlined_block_title" style="margin-right: 2px;">"</div>
+                                <div class="underlined_block_value_container flex_0" style="margin-right: 2px; min-width: 35px;">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">"</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">20</div>
+                                <div class="underlined_block_value_container flex_0" style="min-width: 35px;">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">p</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="hr_order_recruitment_report_template">
+        <div t-translation="off" class="page order_report">
+            <div class="row mb-3" style="margin-bottom: 20px;">
+                <div class="col-7 pe-3 justify-content-center align-center mt-4">
+                    <div class="underlined_block_value_container mb-0 me-5">
+                        <div class="ub_value pt-2 pb-1  text-center" t-esc="res_company.name"/>
+                    </div>
+                    <div style="margin-bottom: 10px; width: 100%; text-align: center;">Найменування підприємства (установи, організації)</div>
+                </div>
+                <div class="col-5">
+                    <div style="width: 300px; padding-left: 50px; padding-bottom: 8px; text-align: center; font-size: 14px;">Типова форма № П-1</div>
+                    <p class="mb-0 text-center" style="width: 300px; padding-left: 50px; line-height: 1.1;">Затверджено</p>
+                    <p style="width: 300px; padding-left: 50px; text-align: center; line-height: 1.1;">
+                        Наказ Держкомстату України<br/>
+                        05.12.2008 №489<br/>
+                    </p>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 style="margin-bottom: 2px; text-align: center; font-weight: bold; font-size: 22px;">
+                        НАКАЗ (РОЗПОРЯДЖЕННЯ) <t t-esc="o.name"/> <span t-if="o.order_date">від <t t-esc="o.order_date.strftime('%d.%m.%Y')"/></span>
+                    </h1>
+                    <h4 class="text-center mb-5" style="font-size: 18px;">
+                        про прийняття на роботу
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pb-4">
+                    <div class="underlined_block_value_container mb-5">
+                        <div class="ub_value pt-2 pb-1  text-center"><t t-esc="o.employee_id.name"/></div>
+                        <div class="ub_help_info">(прізвище, ім’я, по батькові)</div>
+                    </div>
+                    <div style="position: relative; width: 100%; height: 50px; border-bottom: 1px solid black;">
+                        <div style="padding: 15px 0 0 50px; font-size: 18px; font-weight: bold;">
+                            <b>Прийняти на роботу з</b>
+                            <div class="underlined_block_value_container_inline" style="width: 300px;">
+                                <div class="ub_value text-center" style="top: 1px; font-weight: bold;">
+                                    <t t-if="o.date_of_employment">
+                                        <t t-esc="babel_dates.format_date(o.date_of_employment, 'dd MMMM yyyy', locale='uk_UA')"/> року
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: absolute; top: 1px; right: 0; height: 50px;">
+                            <table class="table table-bordered custom_table_small" style="flex: 0; width: 200px;">
+                                <tr style="text-align: center">
+                                    <td style="font-size: 18px;">Табельний номер</td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td style="font-size: 18px;"><t t-esc="o.employee_id.registration_number if o.employee_id.registration_number else '&#160;'"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2" style="padding-left: 233px; font-size: 18px; font-weight: bold;">
+                        <b>до</b>
+                        <div class="underlined_block_value_container_inline" style="width: 300px;">
+                            <div class="ub_value text-center" style="top: 1px; font-weight: bold;">
+                                <t t-if="o.contract_id and o.contract_id.date_end">
+                                    <t t-esc="babel_dates.format_date(o.contract_id.date_end, 'dd MMMM yyyy', locale='uk_UA')"/> року
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 w-100 text-center" style="font-size: 13px;">
+                        (заповнюється у разі строкового трудового договору (контракту))
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-esc="o.employee_id.department_id.name if o.employee_id.department_id.name else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">(назва структурного підрозділу)</div>
+                    </div>
+                    <div class="underlined_block_value_container mb-2">
+                        <div class="ub_value pt-2 pb-1  text-center">
+                            <t t-if="o.employee_id.job_id" t-esc="o.employee_id.job_id.name if o.employee_id.job_id.name else '&#160;'"/>
+                        </div>
+                        <div class="ub_help_info">назва професії (посади), кваліфікація</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <div class="mb-3 text-center"  style="font-size: 18px;">
+                        <u><b>умови прийняття на роботу</b></u><br/>
+                        (необхідне відмітити позначкою" <b>х</b>"):
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        на конкурсній основі
+                    </div>
+                    <div class="vat_checkbox_data_elem-container d-flex pe-3">
+                        <div style="white-space: nowrap">
+                            <span class="vat_checkbox_data_elem"/>
+                            за умовами контракту до
+                        </div>
+                        <div class="underlined_block_value_container ms-1">
+                            <div class="ub_value"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2" style="font-size: 14px;">
+                        у разі необхідності вказати дату (дд.мм.рррр.)
+                    </div>
+                    <div class="vat_checkbox_data_elem-container d-flex mb-2">
+                        <div style="white-space: nowrap">
+                            <span class="vat_checkbox_data_elem"/>
+                            зі строком випробування
+                        </div>
+                        <div class="underlined_block_value_container_inline" style="width: 40px;">
+                            <div class="ub_value"></div>
+                        </div>
+                        <div>місяців</div>
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        на час виконання певної роботи
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        на період відсутності основного працівника
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        із кадрового резерву
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        за результатами успішного стажування
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        переведення
+                    </div>
+                    <div class="vat_checkbox_data_elem-container d-flex mb-2 pe-3">
+                        <span class="vat_checkbox_data_elem"/>
+                        <div class="underlined_block_value_container ms-1" style="width: 300px;">
+                            <div class="ub_value"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3 text-center" style="font-size: 18px;">
+                        <u><b>умови роботи:</b></u><br/>
+                        (необхідне відмітити позначкою" <b>х</b>"):
+                    </div>
+                    <div class="d-flex vat_checkbox_data_elem-container mb-2">
+                        <div class="pe-5">робота:</div>
+                        <div class="pe-3" style="white-space: nowrap">
+                            <span t-if="o.employee_id.employment_type and o.employee_id.employment_type == 'employment_main_place'" class="vat_checkbox_data_elem" style="top: -1px;" t-esc="'X'"/>
+                            <span t-else="" class="vat_checkbox_data_elem"/>
+                            основна
+                        </div>
+                        <div class="pe-5" style="white-space: nowrap">
+                            <span t-if="o.employee_id.employment_type and o.employee_id.employment_type in ('external_part_time', 'internal_part_time')" class="vat_checkbox_data_elem" style="top: -1px;" t-esc="'X'"/>
+                            <span t-else="" class="vat_checkbox_data_elem"/>
+                            за сумісництвом
+                        </div>
+                    </div>
+                    <div class="font-size: 18px;">
+                        <div style="font-size: 18px;">умови праці (згідно атестації робочого місця):</div>
+                        <div class="underlined_block_value_container">
+                            <div class="ub_value"></div>
+                        </div>
+                        <div class="underlined_block_value_container">
+                            <div class="ub_value"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex vat_checkbox_data_elem-container mb-2">
+                        <div style="white-space: nowrap">
+                            <span class="vat_checkbox_data_elem"/>
+                            тривалість робочого дня (тижня)
+                        </div>
+                        <div class="underlined_block_value_container_inline" style="width: 30px;">
+                            <div class="ub_value"></div>
+                        </div>
+                        <div style="font-size: 18px;">год</div>
+                        <div class="underlined_block_value_container_inline" style="width: 30px;">
+                            <div class="ub_value"></div>
+                        </div>
+                        <div style="font-size: 18px;">хв</div>
+                    </div>
+                    <div class="vat_checkbox_data_elem-container mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        тривалість робочого дня (тижня) при роботі з неповним робочим часом
+                        <div class="underlined_block_value_container_inline" style="width: 100px;">
+                            <div class="ub_value"></div>
+                        </div>
+                        год.
+                    </div>
+                    <div class="vat_checkbox_data_elem-container d-flex mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        <div class="underlined_block_value_container ms-1">
+                            <div class="ub_value"></div>
+                        </div>
+                    </div>
+                    <div class="vat_checkbox_data_elem-container d-flex mb-2">
+                        <span class="vat_checkbox_data_elem"/>
+                        <div class="underlined_block_value_container ms-1">
+                            <div class="ub_value"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div t-if="o.contract_id and o.contract_id.wage" class="mb-4 text-center" style="font-size: 18px;">
+                <t t-set="contract_wage" t-value="babel_numbers.format_currency(o.contract_id.wage, '', locale='uk_UA').split(',')"/>
+                оклад (тарифна ставка) <t t-esc="contract_wage[0]"/> грн. <t t-esc="contract_wage[1]"/> коп.
+            </div>
+            <div t-else="" class="mb-4 text-center" style="font-size: 18px;">
+                оклад (тарифна ставка)
+                <div class="underlined_block_value_container_inline" style="width: 150px;">
+                    <div class="ub_value"></div>
+                </div>
+                грн.
+                <div class="underlined_block_value_container_inline" style="width: 50px;">
+                    <div class="ub_value"></div>
+                </div>
+                коп.
+            </div>
+            <div class="row mb-2">
+                <div class="col-6 d-flex pe-3">
+                    <div style="font-size: 18px;">Надбавка за</div>
+                    <div class="underlined_block_value_container ms-1" style="width: 200px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div class="underlined_block_value_container ms-1" style="width: 30px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div style="font-size: 18px;">%</div>
+                </div>
+                <div class="col-6 d-flex">
+                    <div style="font-size: 18px;">Надбавка за</div>
+                    <div class="underlined_block_value_container ms-1" style="width: 200px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div class="underlined_block_value_container ms-1" style="width: 30px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div style="font-size: 18px;">%</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6 d-flex pe-3">
+                    <div style="font-size: 18px;">Надбавка за</div>
+                    <div class="underlined_block_value_container ms-1" style="width: 200px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div class="underlined_block_value_container ms-1" style="width: 30px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div style="font-size: 18px;">%</div>
+                </div>
+                <div class="col-6 d-flex">
+                    <div style="font-size: 18px;">Надбавка за</div>
+                    <div class="underlined_block_value_container ms-1" style="width: 200px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div class="underlined_block_value_container ms-1" style="width: 30px;">
+                        <div class="ub_value"></div>
+                    </div>
+                    <div style="font-size: 18px;">%</div>
+                </div>
+            </div>
+            <div class="mb-5 text-center" style="font-size: 18px;">
+                доплата
+                <div class="underlined_block_value_container_inline" style="width: 150px;">
+                    <div class="ub_value"></div>
+                </div>
+                грн.
+                <div class="underlined_block_value_container_inline" style="width: 50px;">
+                    <div class="ub_value"></div>
+                </div>
+                коп.
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex align-items-center center mb-5">
+                        <div style="width: 33%; font-size: 18px;">
+                            <b>Керівник підприємства</b><br/>
+                            (установи, організації)
+                        </div>
+                        <div style="width: 33%;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 33%;">
+                            <div class="underlined_block_value_container pt-2" style="min-width: 300px;">
+                                <div class="ub_value text-center"><t t-esc="res_company.director_id.name"/></div>
+                                <div class="ub_help_info">ПІБ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 40%; font-size: 18px;">
+                            <b>З наказом (розпорядженням) ознайомлений</b>
+                        </div>
+                        <div style="width: 30%;">
+                            <div class="underlined_block_value_container pt-2" style="width: 200px;">
+                                <div class="ub_value"/>
+                                <div class="ub_help_info">підпис</div>
+                            </div>
+                        </div>
+                        <div style="width: 30%; padding-top: 8px;">
+                            <div class="d-flex" style="width: 250px;">
+                                <div class="underlined_block_title" style="margin-right: 2px;">"</div>
+                                <div class="underlined_block_value_container flex_0" style="margin-right: 2px; min-width: 35px;">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">"</div>
+                                <div class="underlined_block_value_container">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">20</div>
+                                <div class="underlined_block_value_container flex_0" style="min-width: 35px;">
+                                    <div class="ub_value"></div>
+                                </div>
+                                <div class="underlined_block_title">p</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="hr_order_other_report_template">
+        <div t-translation="off" class="page order_report">
+            <div class="row mb-3">
+                <div class="col justify-content-center align-center">
+                    <p class="pt-2 pb-1 text-center" style="font-weight: bold; font-size: 16px;" t-esc="res_company.name"/>
+                </div>
+            </div>
+            <div class="row mb-4 justify-content-end">
+                <div class="col-4 text-center">
+                    Код ЕДРПОУ: <t t-if="res_company.company_registry" t-esc="res_company.company_registry"/>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 style="margin-bottom: 2px; text-align: center; font-weight: bold; font-size: 22px;">
+                        НАКАЗ
+                    </h1>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-4 text-center">
+                    <t t-esc="babel_dates.format_date(o.order_date, 'dd MMMM yyyy', locale='uk_UA')"/>
+                </div>
+                <div class="col-4 text-center">
+                    <t t-if="res_company.city" t-esc="res_company.city"/>
+                </div>
+                <div class="col-4 text-center">
+                    <t t-esc="o.name"/>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col html-block">
+                    <t t-esc="o.notes"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="account_benefit_code_view_tree" model="ir.ui.view">
+        <field name="name">account.benefit_code.tree</field>
+        <field name="model">account.benefit_code</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="not active">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="account_benefit_code_view_search" model="ir.ui.view">
+        <field name="name">account.benefit_code.search</field>
+        <field name="model">account.benefit_code</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"
+                       string="Benefits Guide"
+                       filter_domain="[
+                       '|',
+                            ('code', 'ilike', self),
+                            ('name', 'ilike', self),
+                       ]"/>
+
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="account_benefit_code_view_form" model="ir.ui.view">
+        <field name="name">account.benefit_code.form</field>
+        <field name="model">account.benefit_code</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+
+                    <widget name="web_ribbon"
+                            title="Archived"
+                            bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="document_name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="account_benefit_code_action" model="ir.actions.act_window">
+        <field name="name">Benefits Guide</field>
+        <field name="res_model">account.benefit_code</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+</odoo>
